@@ -86,5 +86,5 @@
 1 Viridescent Bog
 1 Wastes
 1 Windgrace's Judgment
-1 World Breaker
 1 Worldsoul's Rage
+1 Zuran Orb
