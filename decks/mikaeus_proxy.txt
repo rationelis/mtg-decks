@@ -1,0 +1,80 @@
+1 Altar of Dementia
+1 Animate Dead
+1 Ashnod's Altar
+1 Bastion of Remembrance
+1 Black Market
+1 Blood Artist
+1 Bloodghast
+1 Bojuka Bog
+1 Bolas's Citadel
+1 Buried Alive
+1 Cabal Coffers
+1 Cabal Stronghold
+1 Carrion Feeder
+1 Charcoal Diamond
+1 Damnation
+1 Defile
+1 Demonic Tutor
+1 Diabolic Intent
+1 Dictate of Erebos
+1 Entomb
+1 Expedition Map
+1 Exsanguinate
+1 Feed the Swarm
+1 Fellwar Stone
+1 Field of the Dead
+1 Geralf's Messenger
+1 Grave Pact
+1 Gray Merchant of Asphodel
+1 Grim Haruspex
+1 Hero's Downfall
+1 High Market
+1 Infernal Grasp
+1 Isengard, Saruman's Fortress
+1 Jet Medallion
+1 Kokusho, the Evening Star
+1 Living Death
+1 Malakir Rebirth
+1 Midnight Reaper
+1 Mind Stone
+1 Morbid Opportunist
+1 Myriad Landscape
+1 Necropotence
+1 Nim Deathmantle
+1 Nykthos, Shrine to Nyx
+1 Ophiomancer
+1 Phyrexian Altar
+1 Phyrexian Arena
+1 Phyrexian Reclamation
+1 Phyrexian Tower
+1 Pitiless Plunderer
+1 Puppeteer Clique
+1 Razaketh, the Foulblooded
+1 Reanimate
+1 Reassembling Skeleton
+1 Reliquary Tower
+1 Sidisi, Undead Vizier
+1 Sign in Blood
+1 Skullclamp
+11 Snow-Covered Swamp
+1 Sol Ring
+1 Soul-Guide Lantern
+11 Swamp
+1 Swiftfoot Boots
+1 Takenuma, Abandoned Mire
+1 Torment of Hailfire
+1 Toxic Deluge
+1 Triskelion
+1 Urborg, Tomb of Yawgmoth
+1 Vampiric Tutor
+1 Victim of Night
+1 Victimize
+1 Viscera Seer
+1 Walking Ballista
+1 War Room
+1 Westvale Abbey
+1 Woe Strider
+1 Yahenni, Undying Partisan
+1 Yawgmoth, Thran Physician
+1 Zulaport Cutthroat
+1 Mikaeus, the Unhallowed
