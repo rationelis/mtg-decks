@@ -1,3 +1,4 @@
+1 Stella Lee, Wild Card
 1 An Offer You Can't Refuse
 1 Arcane Signet
 1 Big Score
@@ -63,7 +64,6 @@
 1 Solve the Equation
 1 Spell Pierce
 1 Star Compass
-1 Stella Lee, Wild Card
 1 Strike It Rich
 1 Sulfur Falls
 1 Talisman of Creativity

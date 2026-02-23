@@ -1,3 +1,4 @@
+1 Magus Lucea Kane
 1 Aberrant
 1 Abundance
 1 Acolyte Hybrid
@@ -40,7 +41,6 @@
 1 Inspiring Call
 7 Island
 1 Lictor
-1 Magus Lucea Kane
 1 Malanthrope
 1 Mawloc
 7 Mountain

@@ -1,3 +1,4 @@
+1 Shelob, Child of Ungoliant
 1 Arasta of the Endless Web
 1 Arcane Signet
 1 Bastion of Remembrance
@@ -26,6 +27,7 @@
 1 Ishkanah, Grafwidow
 1 Jungle Hollow
 1 Kodama's Reach
+1 Krark-Clan Ironworks
 1 Llanowar Elves
 1 Llanowar Wastes
 1 Lure
@@ -74,5 +76,4 @@
 1 Viscera Seer
 1 Watcher in the Web
 1 Woodland Cemetery
-2 Zulaport Cutthroat
-1 Shelob, Child of Ungoliant
+1 Zulaport Cutthroat
