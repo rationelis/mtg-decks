@@ -41,12 +41,12 @@ def main():
     if removed:
         print("Out:")
         for name, qty in sorted(removed.items()):
-            print(f"  -{qty} {name}")
+            print(f"{qty} {name}")
 
     if added:
         print("In:")
         for name, qty in sorted(added.items()):
-            print(f"  +{qty} {name}")
+            print(f"{qty} {name}")
 
     total = sum(removed.values())
     print(f"\nTotal changes: {total}")

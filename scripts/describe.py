@@ -21,7 +21,7 @@ import sys
 import time
 
 API_URL = "https://api.scryfall.com/cards/named"
-API_DELAY = 0.1
+API_DELAY = 1
 
 
 def fetch_card(name):
@@ -34,7 +34,9 @@ def fetch_card(name):
 
     if "card_faces" in data:
         mana_cost = " // ".join(f.get("mana_cost", "") for f in data["card_faces"])
-        oracle_text = "\n---\n".join(f.get("oracle_text", "") for f in data["card_faces"])
+        oracle_text = "\n---\n".join(
+            f.get("oracle_text", "") for f in data["card_faces"]
+        )
     else:
         mana_cost = data.get("mana_cost", "")
         oracle_text = data.get("oracle_text", "")
