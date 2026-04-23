@@ -1,29 +1,27 @@
 1 Shelob, Child of Ungoliant
+1 Agent of the Iron Throne
+1 Ancient Animus
 1 Arasta of the Endless Web
 1 Arcane Signet
-1 Bastion of Remembrance
-1 Bite Down
 1 Bojuka Bog
-1 Chainweb Aracnir
 1 Command Tower
-1 Contest of Claws
-1 Cosmic Hunger
-1 Costly Plunder
 1 Cultivate
 1 Deadly Dispute
 1 Deathreap Ritual
+1 Disciple of the Vault
 1 Elvish Mystic
 1 Eternal Witness
 1 Evolving Wilds
+1 Exsanguinate
 1 Farseek
-1 Fecundity
+1 Feasting Hobbit
 11 Forest
 1 Foul Orchard
 1 Gilded Goose
 1 Golgari Charm
 1 Golgari Rot Farm
 1 Golgari Signet
-1 Grim Haruspex
+1 Inscription of Abundance
 1 Ishkanah, Grafwidow
 1 Jungle Hollow
 1 Kodama's Reach
@@ -31,49 +29,53 @@
 1 Llanowar Elves
 1 Llanowar Wastes
 1 Lure
-1 Midnight Reaper
+1 Marionette Apprentice
+1 Marionette Master
+1 Mazirek, Kraul Death Priest
+1 Mirkwood Bats
 1 Moldervine Reclamation
-1 Morbid Opportunist
 1 Nadier's Nightblade
 1 Nature's Lore
 1 Necroblossom Snarl
+1 Night of the Sweets' Revenge
 1 Night's Whisper
 1 Path of Ancestry
-1 Penumbra Spider
-1 Pitiless Plunderer
+1 Peregrin Took
 1 Plumb the Forbidden
-1 Poison-Tip Archer
 1 Prey Upon
 1 Prizefight
 1 Putrefy
-1 Ram Through
 1 Rampant Growth
-1 Read the Bones
 1 Reclamation Sage
-1 Roar of Challenge
-1 Rotwidow Pack
 1 Sakura-Tribe Elder
+1 Savvy Hunter
 1 Setessan Tactics
-1 Silklash Spider
 1 Skullclamp
-1 Skullport Merchant
 1 Snakeskin Veil
 1 Sol Ring
-1 Spider Spawning
-1 Spinning Wheel Kick
-1 Sporeweb Weaver
-12 Swamp
+11 Swamp
 1 Swiftfoot Boots
 1 Tainted Wood
 1 Temple of Malady
 1 Terramorphic Expanse
 1 Thornbite Staff
 1 Tireless Provisioner
-1 Twin-Silk Spider
+1 Trail of Crumbs
 1 Tyvar's Stand
 1 Undying Malice
 1 Village Rites
+1 Viridian Longbow
 1 Viscera Seer
-1 Watcher in the Web
 1 Woodland Cemetery
-1 Zulaport Cutthroat
+
+1 Academy Manufactor
+1 Chatterfang, Squirrel General
+1 Grinding Station
+1 Gyome, Master Chef
+1 Heroic Intervention
+1 Jaheira, Friend of the Forest
+1 Lightning Greaves
+1 Ninja Pizza
+1 Saryth, the Viper's Fang
+1 Torment of Hailfire
+1 Ulvenwald Tracker
