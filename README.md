@@ -2,15 +2,20 @@
 
 My MTG decklists in version control.
 
-## Deck Overview
+## Tuned Decks
 
-| Deck            | Commander                  | Colors | Type                           |
-| --------------- | -------------------------- | ------ | ------------------------------ |
-| Creative Energy | Satya, Aetherflux Genius   | ⚪🔵🔴 | Energy, ETB Clones             |
-| Quick Draw      | Stella Lee, Wild Card      | 🔵🔴   | Cantrip Storm                  |
-| Tyranid Swarm   | Magus Lucea Kane           | 🔵🔴🟢 | Tyranid Tribal, +1/+1 Counters |
-| Unabated Malice | Shelob, Child of Ungoliant | ⚫🟢   | Token engine                   |
-| World Shaper    | Hearthhull, the Worldseed  | ⚫🔴🟢 | Lands Sacrifice                |
+| Deck                   | Commander                  | Colors | Type               |
+| ---------------------- | -------------------------- | ------ | ------------------ |
+| Golden Power           | Satya, Aetherflux Genius   | ⚪🔵🔴 | Energy, ETB Clones |
+| Bring Your Interaction | Stella Lee, Wild Card      | 🔵🔴   | Cantrip Storm      |
+| Unabated Malice        | Shelob, Child of Ungoliant | ⚫🟢   | Token engine       |
+
+## Mostly Precon Decks
+
+| Deck          | Commander                 | Colors | Type                           |
+| ------------- | ------------------------- | ------ | ------------------------------ |
+| Tyranid Swarm | Magus Lucea Kane          | 🔵🔴🟢 | Tyranid Tribal, +1/+1 Counters |
+| World Shaper  | Hearthhull, the Worldseed | ⚫🔴🟢 | Lands Sacrifice                |
 
 - `decks/` - Current decklists
 - `precons/` - Original precons (for reference)
