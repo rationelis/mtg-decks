@@ -2,20 +2,17 @@
 
 My MTG decklists in version control.
 
-## Tuned Decks
+[Archidekt](https://archidekt.com/folders/1542764)
 
-| Deck                   | Commander                  | Colors | Type               |
-| ---------------------- | -------------------------- | ------ | ------------------ |
-| Golden Power           | Satya, Aetherflux Genius   | ⚪🔵🔴 | Energy, ETB Clones |
-| Bring Your Interaction | Stella Lee, Wild Card      | 🔵🔴   | Cantrip Storm      |
-| Unabated Malice        | Shelob, Child of Ungoliant | ⚫🟢   | Token engine       |
+## Decks
 
-## Mostly Precon Decks
-
-| Deck          | Commander                 | Colors | Type                           |
-| ------------- | ------------------------- | ------ | ------------------------------ |
-| Tyranid Swarm | Magus Lucea Kane          | 🔵🔴🟢 | Tyranid Tribal, +1/+1 Counters |
-| World Shaper  | Hearthhull, the Worldseed | ⚫🔴🟢 | Lands Sacrifice                |
+| Analysed? | Precon? | Deck                   | Commander                  | Colors | Type                           |
+| --------- | ------- | ---------------------- | -------------------------- | ------ | ------------------------------ |
+| ✅        | No      | Unabated Malice        | Shelob, Child of Ungoliant | ⚫🟢   | Token engine                   |
+|           | Yes     | Golden Power           | Satya, Aetherflux Genius   | ⚪🔵🔴 | Energy, ETB Clones             |
+|           | Yes     | Bring Your Interaction | Stella Lee, Wild Card      | 🔵🔴   | Cantrip Storm                  |
+|           | Yes     | Tyranid Swarm          | Magus Lucea Kane           | 🔵🔴🟢 | Tyranid Tribal, +1/+1 Counters |
+|           | Yes     | World Shaper           | Hearthhull, the Worldseed  | ⚫🔴🟢 | Lands Sacrifice                |
 
 - `decks/` - Current decklists
 - `precons/` - Original precons (for reference)
