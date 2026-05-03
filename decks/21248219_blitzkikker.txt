@@ -1,16 +1,13 @@
 1 Henzie "Toolbox" Torre
-1 Alexios, Deimos of Kosmos
 1 Altar of Dementia
 1 Arcane Signet
 1 Archon of Cruelty
 1 Ashnod's Altar
 1 Attrition
 1 Ayara, Widow of the Realm // Ayara, Furnace Queen
-1 Balancing Act
 1 Balor
 1 Beast Within
 1 Birds of Paradise
-1 Birthing Ritual
 1 Bladewing, Deathless Tyrant
 1 Blasphemous Act
 1 Bloodfell Caves
@@ -21,11 +18,7 @@
 1 Chainer, Nightmare Adept
 1 Chaos Warp
 1 Command Tower
-1 Culling Ritual
-1 Doors of Durin
 1 Dragonhawk, Fate's Tempest
-1 Drakuseth, Maw of Flames
-1 Dusk Mangler
 1 Etali, Primal Storm
 1 Evolutionary Leap
 1 Evolving Wilds
@@ -36,29 +29,19 @@
 10 Forest
 1 Gamekeeper
 1 Garruk's Uprising
-1 Ghalta, Stampede Tyrant
 1 Goblin Bombardment
 1 Golgari Guildgate
 1 Golgari Signet
 1 Goreclaw, Terror of Qal Sisma
-1 Gorex, the Tombshell
-1 Gray Merchant of Asphodel
 1 Greater Good
-1 Greater Harvester
 1 Gruff Triplets
 1 Gruul Guildgate
-1 Gwenna, Eyes of Gaea
-1 Gwenom, Remorseless
-1 Havoc Demon
 1 Heroic Intervention
 1 Ilharg, the Raze-Boar
-1 Industrial Advancement
 1 Jungle Hollow
 1 Junji, the Midnight Sky
 1 Karlach, Fury of Avernus
 1 Kessig Cagebreakers
-1 Kethek, Crucible Goliath
-1 Kodama's Reach
 1 Kokusho, the Evening Star
 1 Life // Death
 1 Living Death
@@ -66,37 +49,19 @@
 1 Meren of Clan Nel Toth
 1 Mosswort Bridge
 5 Mountain
-1 Murderous Redcap
-1 Myojin of Roaring Blades
-1 Nasty End
-1 Nature's Claim
-1 Nature's Lore
 1 Ojer Kaslem, Deepest Growth // Temple of Cultivation
 1 Old One Eye
 1 Pathbreaker Ibex
-1 Phyrexian Delver
 1 Phyrexian Reclamation
 1 Primeval Herald
-1 Primeval Herald
 1 Protean Hulk
-1 Protean Hulk
-1 Putrefy
 1 Putrefy
 1 Rakdos Guildgate
-1 Rampaging Brontodon
 1 Rampant Rejuvenator
-1 Rankle, Master of Pranks
 1 Return of the Wildspeaker
-1 Rhythm of the Wild
-1 Rise of the Witch-king
 1 Riveteers Ascendancy
 1 Rugged Highlands
-1 Rushed Rebirth
-1 Sakura-Tribe Elder
-1 Samut, Vizier of Naktamun
 1 Scourge of the Throne
-1 Scourge of the Throne
-1 Seedguide Ash
 1 Seedguide Ash
 1 Shadow in the Warp
 1 Skullclamp
@@ -104,17 +69,10 @@
 1 Solemn Simulacrum
 1 Spinerock Knoll
 10 Swamp
-1 Swiftfoot Boots
 1 Talisman of Resilience
 1 Terror of the Peaks
-1 The Skullspore Nexus
-1 Three Visits
 1 Treeshaker Chimera
-1 Undying Malice
 1 Victimize
 1 Viscera Seer
-1 Whip of Erebos
 1 Wight of the Reliquary
-1 Woodfall Primus
 1 Ziatora, the Incinerator
-1 Ziatora's Envoy
