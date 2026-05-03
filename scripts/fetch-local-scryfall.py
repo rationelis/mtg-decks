@@ -1,19 +1,30 @@
 #!/usr/bin/env python3
 """
-Fetch card descriptions from Scryfall for a decklist.
+Fetch card descriptions from Scryfall for a local decklist file.
 
-Queries the Scryfall API to get card details including name, mana cost,
-type line, and oracle text. Handles double-faced cards by combining
-both faces. Each unique card is only fetched once.
+Reads a local text file containing card names and queries the Scryfall API
+to get card details including name, mana cost, type line, and oracle text.
+Handles double-faced cards by combining both faces. Each unique card is
+only fetched once.
+
+Input Format:
+    Text file with one card per line, optionally prefixed with quantity:
+    4 Lightning Bolt
+    1 Tarmogoyf
+    Mountain
 
 Usage:
-    python3 describe.py <decklist.txt>
+    python3 fetch-local-scryfall.py <decklist.txt>
 
 Example:
-    python3 describe.py ../decks/quick_draw.txt
+    python3 fetch-local-scryfall.py ../decks/quick_draw.txt
 
 Output:
     Card details printed to stdout, one card per block separated by "===".
+
+Note:
+    Rate limited to 1 request per second per Scryfall's guidelines.
+    For Archidekt decks with category labels, use fetch-remote-archidekt.py instead.
 """
 
 import requests
@@ -46,6 +57,7 @@ def fetch_card(name):
         "mana_cost": mana_cost,
         "type_line": data.get("type_line", ""),
         "oracle_text": oracle_text,
+        "price": data.get("prices", {}).get("eur", "N/A"),
     }
 
 
@@ -78,6 +90,7 @@ def main():
                 print(f"Mana Cost: {card['mana_cost']}")
                 print(f"Type: {card['type_line']}")
                 print(f"Oracle Text:\n{card['oracle_text']}")
+                print(f"Price (EUR): {card['price']}")
                 print("\n" + "=" * 60 + "\n")
             else:
                 print(f"Name: {name}\nError: Not found\n", file=sys.stderr)

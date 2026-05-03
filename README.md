@@ -1,38 +1,43 @@
 # mtg-decks
 
-My MTG decklists in version control.
+My MTG decklists in version control. [Archidekt folder](https://archidekt.com/folders/1542764)
 
-[Archidekt](https://archidekt.com/folders/1542764)
+| Analysed? | Precon? | Deck                   | Commander                  | Colors | Type                           |   Price |
+| --------- | ------- | ---------------------- | -------------------------- | ------ | ------------------------------ | ------: |
+| ✅        | No      | Blitzkikker            | Henzie "Toolbox" Torre     | ⚫🔴🟢 | Blitz                          | €208.48 |
+| ✅        | No      | Unabated Malice        | Shelob, Child of Ungoliant | ⚫🟢   | Token engine                   | €134.45 |
+|           | Yes     | Golden Power           | Satya, Aetherflux Genius   | ⚪🔵🔴 | Energy, ETB Clones             |  €63.84 |
+|           | Yes     | Bring Your Interaction | Stella Lee, Wild Card      | 🔵🔴   | Cantrip Storm                  |  €74.27 |
+|           | Yes     | Tyranid Swarm          | Magus Lucea Kane           | 🔵🔴🟢 | Tyranid Tribal, +1/+1 Counters | €139.33 |
+|           | Yes     | World Shaper           | Hearthhull, the Worldseed  | ⚫🔴🟢 | Lands Sacrifice                |  €69.93 |
 
-## Decks
-
-| Analysed? | Precon? | Deck                   | Commander                  | Colors | Type                           |
-| --------- | ------- | ---------------------- | -------------------------- | ------ | ------------------------------ |
-| ✅        | No      | Unabated Malice        | Shelob, Child of Ungoliant | ⚫🟢   | Token engine                   |
-|           | Yes     | Golden Power           | Satya, Aetherflux Genius   | ⚪🔵🔴 | Energy, ETB Clones             |
-|           | Yes     | Bring Your Interaction | Stella Lee, Wild Card      | 🔵🔴   | Cantrip Storm                  |
-|           | Yes     | Tyranid Swarm          | Magus Lucea Kane           | 🔵🔴🟢 | Tyranid Tribal, +1/+1 Counters |
-|           | Yes     | World Shaper           | Hearthhull, the Worldseed  | ⚫🔴🟢 | Lands Sacrifice                |
-
-- `decks/` - Current decklists
-- `precons/` - Original precons (for reference)
+`decks/` format: `{archidekt_id}_name.txt`
 
 ## Scripts
 
-Helper scripts in `scripts/`. All read decklist files and output to stdout.
+### Deck Analysis
 
 ```bash
-# Check deck sizes (Commander = 100 cards)
-python3 scripts/check-sizes.py decks/*.txt
+python3 scripts/check-sizes.py decks/*.txt       # Verify 100 cards
+python3 scripts/diff.py old.txt new.txt           # Compare decklists
+python3 scripts/oldest-printing.py deck.txt       # Find oldest printings
+```
 
-# Find oldest printing of each card
-python3 scripts/oldest-printing.py decks/quick_draw.txt
+### Card Data
 
-# Compare two decklists
-python3 scripts/diff.py precons/creative_energy.txt decks/creative_energy.txt
+```bash
+# Fetch from local file via Scryfall
+python3 scripts/fetch-local-scryfall.py decks/21248219_blitzkikker.txt
 
-# Fetch card descriptions from Scryfall
-python3 scripts/describe.py decks/world_shaper.txt
+# Fetch from Archidekt (with categories & pricing)
+python3 scripts/fetch-remote-archidekt.py 21248219
+```
+
+### Price Analysis
+
+```bash
+python3 scripts/get-deck-info.py 21248219        # Quick name & price
+python3 scripts/analyze-deck-price.py 21248219   # Statistical analysis
 ```
 
 Requires `requests`: `pip install requests`
