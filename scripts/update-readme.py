@@ -17,7 +17,6 @@ import sys
 import requests
 from pathlib import Path
 
-
 API_URL = "https://archidekt.com/api/decks/{deck_id}/"
 DECKS_DIR = "decks"
 README_FILE = "README.md"
@@ -25,7 +24,7 @@ README_FILE = "README.md"
 
 def extract_deck_id(filename):
     """Extract deck ID from filename pattern: {id}_name.txt"""
-    match = re.match(r'^(\d+)_.*\.txt$', filename)
+    match = re.match(r"^(\d+)_.*\.txt$", filename)
     return match.group(1) if match else None
 
 
@@ -61,10 +60,7 @@ def fetch_deck_info(deck_id):
 
         total_price += unit_price * quantity
 
-    return {
-        "name": deck_name,
-        "price": total_price
-    }
+    return {"name": deck_name, "price": total_price}
 
 
 def scan_decks():
@@ -87,10 +83,7 @@ def scan_decks():
         info = fetch_deck_info(deck_id)
 
         if info:
-            decks[deck_id] = {
-                "file": file.name,
-                **info
-            }
+            decks[deck_id] = {"file": file.name, **info}
 
     return decks
 
@@ -104,7 +97,7 @@ def update_readme(decks):
         sys.exit(1)
 
     content = readme_path.read_text()
-    lines = content.split('\n')
+    lines = content.split("\n")
 
     # Find the table and update it
     updated_lines = []
@@ -112,54 +105,61 @@ def update_readme(decks):
     header_line_idx = None
 
     for i, line in enumerate(lines):
-        # Detect table start (header with | Analysed? | Precon? | Deck |...)
-        if '| Analysed?' in line and '| Deck' in line:
+        # Detect table start (header with | Analysed? | Proxy? | Deck |...)
+        if "| Analysed?" in line and "| Deck" in line:
             in_table = True
             header_line_idx = i
             # Check if Price column exists, if not add it
-            if '| Price' not in line:
-                line = line.rstrip() + ' | Price   |'
+            if "| Price" not in line:
+                line = line.rstrip() + " | Price   |"
             updated_lines.append(line)
             continue
 
         # Handle separator line (|----|----|----|)
         if in_table and header_line_idx is not None and i == header_line_idx + 1:
             # This should be the separator line
-            if '| Price' not in lines[header_line_idx]:
+            if "| Price" not in lines[header_line_idx]:
                 # Was added, so add separator
-                line = line.rstrip() + ' | ------: |'
-            elif line.count('|') < lines[header_line_idx].count('|'):
+                line = line.rstrip() + " | ------: |"
+            elif line.count("|") < lines[header_line_idx].count("|"):
                 # Price column exists in header but not separator
-                line = line.rstrip() + ' | ------: |'
+                line = line.rstrip() + " | ------: |"
             updated_lines.append(line)
             continue
 
         # Update table rows with prices
-        if in_table and line.strip().startswith('|') and '---' not in line and i > header_line_idx + 1:
-            parts = line.split('|')
+        if (
+            in_table
+            and line.strip().startswith("|")
+            and "---" not in line
+            and i > header_line_idx + 1
+        ):
+            parts = line.split("|")
             # Remove empty first element (before first |)
-            if len(parts) > 0 and parts[0].strip() == '':
+            if len(parts) > 0 and parts[0].strip() == "":
                 parts = parts[1:]
             # Remove empty last element (after last |)
-            if len(parts) > 0 and parts[-1].strip() == '':
+            if len(parts) > 0 and parts[-1].strip() == "":
                 parts = parts[:-1]
 
             if len(parts) >= 6:  # Valid data row (should have at least 6 columns)
-                # Column indices: 0=Analysed?, 1=Precon?, 2=Deck, 3=Commander, 4=Colors, 5=Type, 6=Price(optional)
+                # Column indices: 0=Analysed?, 1=Proxy?, 2=Deck, 3=Commander, 4=Colors, 5=Type, 6=Price(optional)
                 deck_name = parts[2].strip() if len(parts) > 2 else ""
 
                 # Find matching deck by name
                 matching_price = None
                 for deck_id, info in decks.items():
                     # Match by deck name (case-insensitive, flexible)
-                    api_name = info['name'].lower()
+                    api_name = info["name"].lower()
                     table_name = deck_name.lower().strip()
 
                     # Handle [BREW] and [PRECON] prefixes from API
-                    api_name_clean = api_name.replace('[brew]', '').replace('[precon]', '').strip()
+                    api_name_clean = (
+                        api_name.replace("[brew]", "").replace("[precon]", "").strip()
+                    )
 
                     if table_name in api_name_clean or api_name_clean in table_name:
-                        matching_price = info['price']
+                        matching_price = info["price"]
                         break
 
                 # Format price
@@ -175,10 +175,10 @@ def update_readme(decks):
                         parts.append("         ")
 
                 # Rebuild line with proper formatting
-                line = '| ' + ' | '.join(p.strip() for p in parts) + ' |'
+                line = "| " + " | ".join(p.strip() for p in parts) + " |"
 
             updated_lines.append(line)
-        elif in_table and line.strip() and not line.strip().startswith('|'):
+        elif in_table and line.strip() and not line.strip().startswith("|"):
             # End of table
             in_table = False
             updated_lines.append(line)
@@ -186,7 +186,7 @@ def update_readme(decks):
             updated_lines.append(line)
 
     # Write back
-    new_content = '\n'.join(updated_lines)
+    new_content = "\n".join(updated_lines)
     readme_path.write_text(new_content)
 
     return True
