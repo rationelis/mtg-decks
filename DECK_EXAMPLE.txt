@@ -1,0 +1,64 @@
+# This file is documentation only - it lives at the repo root, not inside
+# decks/ or collections/, so the build ignores it. Copy the bits you need
+# into a real file under decks/ or collections/.
+#
+# Every list (bulk.txt, decks/*.txt, collections/*.txt) shares this exact
+# format. What a file *means* comes from which folder it's in, plus the
+# optional metadata below - not from a different syntax.
+
+# --- metadata (all optional, all "# key: value") ---------------------------
+# name:      display name shown in the UI (default: Title Cased Filename)
+# commander: shown under the deck name (Commander/EDH decks only)
+# archidekt: Archidekt deck id, for cross-referencing (default: parsed from
+#            a "{id}_name.txt" filename)
+# status:    "active" | "archived" (default: "archived" if this file lives
+#            under a decks/archived/ folder, else "active")
+# proxy:     "true" | "false" - informational only, shown as a badge
+#            (default: "false")
+# collection: "true" | "false" - informational only, shown as a badge.
+#            Marks a list under decks/ as really a wishlist/collection
+#            (e.g. not a 100-card Commander deck, or cards you don't own
+#            yet) without having to move the file into collections/
+#            (default: "false")
+
+# commander: Henzie "Toolbox" Torre
+# proxy: true
+
+# --- entries -----------------------------------------------------------
+# Quantity may be written as "1x" or "1". Both styles below are identical.
+1x Sol Ring
+1 Arcane Signet
+
+# Pin a specific printing by appending "(SET) NUM" - this only changes
+# which printing's image/set/rarity is displayed. It never affects
+# ownership diffing, which is always by bare card name. The collector
+# number may contain a hyphen (e.g. a The List reprint like "KTK-234").
+1x Mystical Tutor (DMR) 289
+
+# A trailing "*F*" marks that specific copy as foil:
+1 The Swarmlord (40K) 4 *F*
+
+# Double-faced and split cards are written as "Front // Back":
+1 Ayara, Widow of the Realm // Ayara, Furnace Queen
+1 Life // Death
+
+# Lines starting with # that aren't "key: value" are plain comments and
+# are ignored, same as blank lines.
+
+# --- what goes where ----------------------------------------------------
+# bulk.txt              everything you physically own, as one flat list.
+#                       Kept alphabetically sorted (see `mask sort-bulk`) -
+#                       it has no meaningful order, so sorting keeps it
+#                       easy to scan and diff in git.
+# decks/*.txt           a deck. Ownership is never written here - it's
+#                       always computed by diffing this list against
+#                       bulk.txt. A deck can list cards you don't own yet.
+# decks/archived/*.txt  a retired/disassembled deck. Hidden from the main
+#                       decks list by default, still browsable.
+# collections/*.txt     anything else you want to browse/diff against bulk
+#                       that isn't really a "deck" (a wishlist, a cube,
+#                       a binder of spare cards, etc). Optional - delete
+#                       the folder if you don't need it.
+# precons/*.txt         untouched precon reference lists, for `mask diff`
+#                       against your modified version. Not shown in the
+#                       web app.

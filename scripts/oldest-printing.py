@@ -18,21 +18,15 @@ Output format:
 import sys
 import time
 import urllib.parse
+from pathlib import Path
 
 import requests
 
+sys.path.insert(0, str(Path(__file__).resolve().parent / "build"))
+
+from parse import parse_entries  # noqa: E402
+
 API_DELAY = 0.1
-
-
-def parse_line(line):
-    """Parse a line like '4 Lightning Bolt' into (quantity, name)."""
-    line = line.strip()
-    if not line or line.startswith("#"):
-        return None
-    parts = line.split(" ", 1)
-    if len(parts) == 2 and parts[0].isdigit():
-        return int(parts[0]), parts[1].strip()
-    return 1, line
 
 
 def fetch_oldest_printing(card_name):
@@ -62,25 +56,18 @@ def main():
 
     cache = {}
 
-    with open(sys.argv[1], "r", encoding="utf-8") as f:
-        for line in f:
-            parsed = parse_line(line)
-            if not parsed:
-                continue
+    for entry in parse_entries(Path(sys.argv[1])):
+        if entry.name not in cache:
+            try:
+                cache[entry.name] = fetch_oldest_printing(entry.name)
+            except requests.RequestException as e:
+                print(f"Error fetching {entry.name}: {e}", file=sys.stderr)
+                cache[entry.name] = (entry.name, "ERR", "?")
+            time.sleep(API_DELAY)
 
-            qty, card_name = parsed
-
-            if card_name not in cache:
-                try:
-                    cache[card_name] = fetch_oldest_printing(card_name)
-                except requests.RequestException as e:
-                    print(f"Error fetching {card_name}: {e}", file=sys.stderr)
-                    cache[card_name] = (card_name, "ERR", "?")
-                time.sleep(API_DELAY)
-
-            name, set_code, collector_number = cache[card_name]
-            for _ in range(qty):
-                print(f"{name} ({set_code}) {collector_number}")
+        name, set_code, collector_number = cache[entry.name]
+        for _ in range(entry.qty):
+            print(f"{name} ({set_code}) {collector_number}")
 
 
 if __name__ == "__main__":

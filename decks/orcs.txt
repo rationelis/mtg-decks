@@ -1,0 +1,119 @@
+# collection: true
+1x Alesha's Vanguard
+1x Ambuscade Shaman
+1x Angrath's Ambusher
+1x Argivian Cavalier
+1x Armory Veteran
+1x Ascendant Dustspeaker
+1x Battle Brawler
+1x Bellowing Saddlebrute
+1x Blood-Chin Fanatic
+1x Brassclaw Orcs
+1x Brazen Blademaster
+1x Brutal Hordechief
+1x Burakos, Party Leader
+1x Cadira, Caller of the Small
+1x Captain Vargus Wrath
+1x Cheerful Osteomancer // Raise Dead
+1x Cirith Ungol Patrol
+1x Coercive Recruiter
+1x Cutthroat Negotiator
+1x Devoted Paladin
+1x Dire Fleet Captain
+1x Dire Fleet Neckbreaker
+1x Dire Fleet Ravager
+1x Dire Fleet Warmonger
+1x Effortless Master
+1x Elemental Expressionist
+1x Fathom Fleet Boarder
+1x Fathom Fleet Swordjack
+1x Feywild Caretaker
+1x Frenzied Saddlebrute
+1x Garrison Excavator
+1x Gemcutter Buccaneer
+1x Gorbag of Minas Morgul
+1x Grakk the Pacifist
+1x Gruesome Scourger
+1x Guild Thief
+1x Half-Orc, Half-
+1x Headstrong Brute
+1x Imperious Inkmage
+1x Intrepid Outlander
+1x Ire Shaman
+1x Ironclaw Buzzardiers
+1x Ironclaw Orcs
+1x Ironwill Forger
+1x Jeskai Brushmaster
+1x Jeskai Devotee
+1x Krumar Bond-Kin
+1x Mardu Outrider
+1x Mardu Roughrider
+1x Mardu Warshrieker
+1x Marshal of the Lost
+1x Mauhúr, Uruk-hai Captain
+1x Merciless Executioner
+1x Mer-Ek Nightblade
+1x Moria Scavenger
+1x Orc General
+1x Orcish Artillery
+1x Orcish Bloodpainter
+1x Orcish Bowmasters
+1x Orcish Cannoneers
+1x Orcish Captain
+1x Orcish Conscripts
+1x Orcish Farmer
+1x Orcish Healer
+1x Orcish Hellraiser
+1x Orcish Librarian
+1x Orcish Lumberjack
+1x Orcish Mechanics
+1x Orcish Paratroopers
+1x Orcish Settlers
+1x Orcish Siegemaster
+1x Orcish Spy
+1x Orcish Squatters
+1x Orcish Vandal
+1x Orcish Veteran
+1x Orc Sureshot
+1x Pigment Wrangler // Striking Palette
+1x Pitiless Horde
+1x Plargg and Nassari
+1x Plargg, Dean of Chaos // Augusta, Dean of Order
+1x Plundering Pirate
+1x Poisoner's Apprentice
+1x Port Razer
+1x Prismari Pledgemage
+1x Redoubled Stormsinger
+1x Reigning Victor
+1x Rootha, Mastering the Moment
+1x Rootha, Mercurial Artist
+1x Ruin Raider
+1x Ruthless Knave
+1x Screamreach Brawler
+1x Sek'Kuar, Deathkeeper
+1x Shagrat, Loot Bearer
+1x Shaman of the Great Hunt
+1x Storm Fleet Arsonist
+1x Strife Scholar // Awaken the Ages
+1x Strongbox Raider
+1x Tackle Artist
+1x Temur Battlecrier
+1x Tersa Lightshatter
+1x Thrasher Brute
+1x Tymora's Invoker
+1x Uglúk of the White Hand
+1x Unyielding Krumar
+1x Uruk-hai Berserker
+1x Vaultbreaker
+1x Venerated Stormsinger
+1x Vengeful Warchief
+1x Warbringer
+1x Warg Rider
+1x Wayspeaker Bodyguard
+1x White Plume Adventurer
+1x Wild-Magic Sorcerer
+1x Zurgo and Ojutai
+1x Zurgo Bellstriker
+1x Zurgo Helmsmasher
+1x Zurgo Stormrender
+1x Zurgo, Thunder's Decree

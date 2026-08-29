@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+
+# Frontend build artifacts and dependencies - fully reproducible from
+# scripts/build/*.py + web/src, so they don't belong in git.
+web/node_modules/
+web/dist/
+web/public/data/

@@ -1,3 +1,5 @@
+# commander: Henzie "Toolbox" Torre
+# proxy: true
 1 Henzie "Toolbox" Torre
 1 Altar of Dementia
 1 Arcane Signet

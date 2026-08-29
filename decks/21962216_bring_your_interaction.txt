@@ -1,14 +1,15 @@
-1 Stella Lee, Wild Card
+# commander: Stella Lee, Wild Card
+1 Stella Lee, Wild Card (OTC) 3 *F*
 1 An Offer You Can't Refuse
-1 Arcane Signet
-1 Big Score
+1 Arcane Signet (OTC) 252
+1 Big Score (OTC) 155
 1 Bitter Reunion
 1 Brainstorm
-1 Cascade Bluffs
+1 Cascade Bluffs (OTC) 276
 1 Cathartic Reunion
 1 Cerulean Wisps
 1 Chaos Charm
-1 Command Tower
+1 Command Tower (OTC) 280
 1 Compelling Deterrence
 1 Concerted Defense
 1 Consider
@@ -20,52 +21,55 @@
 1 Dive Down
 1 Expedite
 1 Expel from Orazca
-1 Faithless Looting
+1 Faithless Looting (OTC) 165
 1 Fellwar Stone
-1 Ferrous Lake
+1 Ferrous Lake (OTC) 294
 1 Fever Charm
 1 Fiery Islet
-1 Frostboil Snarl
+1 Frostboil Snarl (OTC) 298
 1 Highway Robbery
 1 Impulsive Pilferer
-16 Island
-1 Izzet Boilerworks
-1 Izzet Signet
+7 Island (OTJ) 279
+7 Island (OTJ) 280
+2 Island
+1 Izzet Boilerworks (OTC) 302
+1 Izzet Signet (OTC) 259
 1 Jolt
 1 Merchant Scroll
 1 Mind Stone
 1 Miscast
 1 Mission Briefing
 1 Mizzium Skin
-10 Mountain
+7 Mountain (OTJ) 283
+3 Mountain (OTJ) 284
 1 Muddle the Mixture
 1 Mystic Sanctuary
 1 Mystical Tutor
 1 Negate
 1 Noble's Purse
-1 Opt
+1 Opt (OTC) 104
 1 Perilous Voyage
 1 Personal Tutor
 1 Pirate's Pillage
-1 Ponder
-1 Preordain
+1 Ponder (OTC) 105
+1 Preordain (OTC) 107
 1 Refocus
 1 Rite of Flame
 1 Samut's Sprint
 1 Seize the Spoils
 1 Select for Inspection
-1 Serum Visions
-1 Shivan Reef
+1 Serum Visions (OTC) 112
+1 Shivan Reef (OTC) 320
 1 Shore Up
 1 Simian Spirit Guide
 1 Sky Diamond
 1 Snap
-1 Sol Ring
+1 Sol Ring (OTC) 267
 1 Solve the Equation
 1 Spell Pierce
 1 Star Compass
 1 Strike It Rich
-1 Sulfur Falls
+1 Sulfur Falls (OTC) 322
 1 Talisman of Creativity
 1 Thrill of Possibility
 1 Twisted Fealty

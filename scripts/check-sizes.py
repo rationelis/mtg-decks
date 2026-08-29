@@ -20,16 +20,9 @@ Output:
 import sys
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent / "build"))
 
-def count_cards(path):
-    """Count total cards in a decklist."""
-    count = 0
-    with open(path, "r", encoding="utf-8") as f:
-        for line in f:
-            parts = line.split()
-            if parts and parts[0].isdigit():
-                count += int(parts[0])
-    return count
+from parse import parse_entries  # noqa: E402
 
 
 def main():
@@ -39,7 +32,7 @@ def main():
 
     for filepath in sys.argv[1:]:
         path = Path(filepath)
-        count = count_cards(path)
+        count = sum(e.qty for e in parse_entries(path))
         status = "✅" if count == 100 else "❌"
         print(f"{status} {path.name}: {count} cards")
 

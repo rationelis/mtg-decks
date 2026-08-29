@@ -21,54 +21,13 @@ Example:
     # Output: 208.48
 """
 
-import requests
-import sys
 import json as json_lib
+import sys
+from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-API_URL = "https://archidekt.com/api/decks/{deck_id}/"
-
-
-def fetch_deck_info(deck_id):
-    """Fetch deck name and calculate total price."""
-    try:
-        url = API_URL.format(deck_id=deck_id)
-        resp = requests.get(url, timeout=30)
-        resp.raise_for_status()
-    except requests.exceptions.RequestException as e:
-        print(f"Error fetching deck: {e}", file=sys.stderr)
-        sys.exit(1)
-
-    data = resp.json()
-
-    # Get deck name
-    deck_name = data.get("name", "Unknown Deck")
-
-    # Calculate total price
-    card_entries = data.get("cards", [])
-    excluded_categories = {"Sideboard", "Maybeboard"}
-    total_price = 0.0
-
-    for entry in card_entries:
-        categories = entry.get("categories", [])
-        main_category = categories[0] if categories else "Uncategorized"
-
-        # Skip excluded categories
-        if main_category in excluded_categories:
-            continue
-
-        # Get price and quantity
-        card = entry.get("card", {})
-        price_data = card.get("prices", {})
-        unit_price = price_data.get("cm") or 0.0
-        quantity = entry.get("quantity", 1)
-
-        total_price += unit_price * quantity
-
-    return {
-        "name": deck_name,
-        "price": total_price
-    }
+from archidekt import fetch_deck, total_price_cm  # noqa: E402
 
 
 def main():
@@ -76,18 +35,15 @@ def main():
         print(__doc__.strip(), file=sys.stderr)
         sys.exit(1)
 
-    # Parse arguments
     deck_id = sys.argv[1].strip()
     output_format = "table"
-
     for arg in sys.argv[2:]:
         if arg.startswith("--format="):
             output_format = arg.split("=", 1)[1]
 
-    # Fetch data
-    info = fetch_deck_info(deck_id)
+    deck = fetch_deck(deck_id)
+    info = {"name": deck.get("name", "Unknown Deck"), "price": total_price_cm(deck)}
 
-    # Output in requested format
     if output_format == "json":
         print(json_lib.dumps(info))
     elif output_format == "price":

@@ -16,52 +16,29 @@ Output:
     Price distribution analysis with statistics and insights.
 """
 
-import requests
 import sys
+from pathlib import Path
 from statistics import mean, median
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-API_URL = "https://archidekt.com/api/decks/{deck_id}/"
+from archidekt import fetch_deck, main_deck_entries, unit_price_cm  # noqa: E402
 
 
 def fetch_deck_prices(deck_id):
-    """Fetch deck and extract card prices."""
-    try:
-        url = API_URL.format(deck_id=deck_id)
-        resp = requests.get(url, timeout=30)
-        resp.raise_for_status()
-    except requests.exceptions.RequestException as e:
-        print(f"Error fetching deck: {e}", file=sys.stderr)
-        sys.exit(1)
+    """Fetch deck and extract card prices (one entry per physical copy)."""
+    deck = fetch_deck(deck_id)
+    entries = main_deck_entries(deck)
 
-    data = resp.json()
-    card_entries = data.get("cards", [])
-
-    if not card_entries:
+    if not entries:
         print("No cards found in deck.", file=sys.stderr)
         sys.exit(1)
 
-    # Extract prices, excluding Sideboard and Maybeboard
-    excluded_categories = {"Sideboard", "Maybeboard"}
     prices = []
-
-    for entry in card_entries:
-        categories = entry.get("categories", [])
-        main_category = categories[0] if categories else "Uncategorized"
-
-        # Skip excluded categories
-        if main_category in excluded_categories:
-            continue
-
-        # Get price and quantity
-        card = entry.get("card", {})
-        price_data = card.get("prices", {})
-        unit_price = price_data.get("cm") or 0.0
+    for entry in entries:
+        unit_price = unit_price_cm(entry)
         quantity = entry.get("quantity", 1)
-
-        # Add each copy as a separate entry
-        for _ in range(quantity):
-            prices.append(unit_price)
+        prices.extend([unit_price] * quantity)
 
     return prices
 

@@ -13,17 +13,18 @@ Output shows cards removed from A and cards added in B.
 
 import sys
 from collections import Counter
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent / "build"))
+
+from parse import parse_entries  # noqa: E402
 
 
-def load_deck(path):
+def load_deck(path) -> Counter:
     """Load a decklist and return a Counter of card names."""
-    cards = Counter()
-    with open(path, "r", encoding="utf-8") as f:
-        for line in f:
-            parts = line.strip().split(maxsplit=1)
-            if len(parts) == 2 and parts[0].isdigit():
-                qty, name = int(parts[0]), parts[1]
-                cards[name] += qty
+    cards: Counter = Counter()
+    for entry in parse_entries(Path(path)):
+        cards[entry.name] += entry.qty
     return cards
 
 

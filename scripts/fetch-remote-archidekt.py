@@ -16,11 +16,13 @@ Output:
     Deck statistics followed by card details, one card per block.
 """
 
-import requests
 import sys
 from collections import defaultdict
+from pathlib import Path
 
-API_URL = "https://archidekt.com/api/decks/{deck_id}/"
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+
+from archidekt import fetch_deck, main_deck_entries  # noqa: E402
 
 
 def build_type_line(oracle_card):
@@ -202,33 +204,15 @@ def main():
 
     deck_id = sys.argv[1].strip()
 
-    # Fetch deck data
-    try:
-        url = API_URL.format(deck_id=deck_id)
-        resp = requests.get(url, timeout=30)
-        resp.raise_for_status()
-    except requests.exceptions.RequestException as e:
-        print(f"Error fetching deck: {e}", file=sys.stderr)
-        sys.exit(1)
-
-    data = resp.json()
-
-    # Extract card entries
-    card_entries = data.get("cards", [])
-    if not card_entries:
+    deck = fetch_deck(deck_id)
+    entries = main_deck_entries(deck)
+    if not entries:
         print("No cards found in deck.", file=sys.stderr)
         sys.exit(1)
 
-    # Process all cards
-    cards = [extract_card_data(entry) for entry in card_entries]
+    main_deck_cards = [extract_card_data(entry) for entry in entries]
 
-    # Filter out Sideboard and Maybeboard
-    excluded_categories = {"Sideboard", "Maybeboard"}
-    main_deck_cards = [
-        card for card in cards if card["main_category"] not in excluded_categories
-    ]
-
-    # Calculate and print statistics (main deck only)
+    # Calculate and print statistics
     stats = calculate_statistics(main_deck_cards)
     print_statistics(stats)
 
