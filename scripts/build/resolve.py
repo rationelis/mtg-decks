@@ -24,6 +24,7 @@ stays the bare oracle name, so ownership diffing is unaffected.
 from __future__ import annotations
 
 import json
+import ssl
 import time
 import urllib.error
 import urllib.parse
@@ -41,6 +42,27 @@ CARD_BY_SET_NUMBER_URL = "https://api.scryfall.com/cards/{set}/{number}"
 BATCH_SIZE = 75
 REQUEST_DELAY = 0.25  # seconds, per Scryfall's fair-use guidance
 USER_AGENT = "mtg-bulk-viewer/1.0 (+https://github.com/)"
+
+
+def _build_ssl_context() -> ssl.SSLContext:
+    """Build an SSL context that verifies against certifi's CA bundle.
+
+    Some Python installs (notably python.org builds on macOS) ship without
+    a usable system CA bundle, which makes urllib.request.urlopen() raise
+    CERTIFICATE_VERIFY_FAILED for every HTTPS request. If certifi is
+    available, use its bundle explicitly instead of relying on whatever
+    the interpreter's default SSL context finds (or doesn't). Falls back
+    to ssl's normal default context if certifi isn't installed.
+    """
+    try:
+        import certifi
+
+        return ssl.create_default_context(cafile=certifi.where())
+    except ImportError:
+        return ssl.create_default_context()
+
+
+_SSL_CONTEXT = _build_ssl_context()
 
 
 @dataclass
@@ -78,7 +100,7 @@ def _http_post_json(url: str, payload: dict[str, Any]) -> dict[str, Any]:
     delay = REQUEST_DELAY
     for attempt in range(4):
         try:
-            with urllib.request.urlopen(req, timeout=30) as resp:
+            with urllib.request.urlopen(req, timeout=30, context=_SSL_CONTEXT) as resp:
                 return json.loads(resp.read().decode("utf-8"))
         except urllib.error.HTTPError as e:
             if e.code == 429 and attempt < 3:
@@ -100,7 +122,7 @@ def _http_get_json(url: str, params: dict[str, str] | None = None) -> dict[str, 
     delay = REQUEST_DELAY
     for attempt in range(4):
         try:
-            with urllib.request.urlopen(req, timeout=30) as resp:
+            with urllib.request.urlopen(req, timeout=30, context=_SSL_CONTEXT) as resp:
                 return json.loads(resp.read().decode("utf-8"))
         except urllib.error.HTTPError as e:
             if e.code == 404:

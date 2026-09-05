@@ -22,3 +22,8 @@ underlying steps by hand - see [README.md](README.md#releasing-a-new-bulk-versio
 
 Value of bulk: EUR 367.05.
 Note: Initial release.
+
+## [v0.2] - 2026-09-05
+
+Value of bulk: EUR 570.70.
+Note: Rest of bulk
