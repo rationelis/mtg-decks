@@ -1,85 +1,85 @@
 1 Aberrant (40K) 86
 1 Abundance (CMM) 884
 1 Acolyte Hybrid (40K) 70
-1x Adarkar Wastes
-1x Aether Hub
-1x Aether Refinery
-1x Aether Revolt
-1x Aether Spike
-1x Aethergeode Miner
+1 Adarkar Wastes
+1 Aether Hub
+1 Aether Refinery
+1 Aether Revolt
+1 Aether Spike
+1 Aethergeode Miner
 1 Aetherize (SCD) 42
-1x Aethersquall Ancient
-1x Aetherstorm Roc
-1x Aethertide Whale
-1x Aetherworks Marvel
+1 Aethersquall Ancient
+1 Aetherstorm Roc
+1 Aethertide Whale
+1 Aetherworks Marvel
 1 Aftermath Analyst (MKM) 148
-1x Akroma's Will
-1x Amped Raptor
-1x An Offer You Can't Refuse
+1 Akroma's Will
+1 Amped Raptor
+1 An Offer You Can't Refuse
 2x Arcane Signet
 1 Arcane Signet (CMM) 367
 1 Arcane Signet (C20) 237
 1 Ash Barrens (CMM) 419
-1x Assaultron Dominator
+1 Assaultron Dominator
 1 Atalan Jackal (40K) 105
 1 Augur of Autumn (DSC) 171
-1x Aurora Shifter
-1x Automated Assembly Line
+1 Aurora Shifter
+1 Automated Assembly Line
 1 Baloth Prime (EOC) 13
-1x Battlefield Forge
+1 Battlefield Forge
 1 Beast Within (PLST) BBD-190
-1x Behemoth of Vault 0
-1x Big Score
+1 Behemoth of Vault 0
+1 Big Score
 1 Binding the Old Gods (KHM) 206
 1 Biophagus (40K) 87
-1x Bitter Reunion
+1 Bitter Reunion
 1 Blasphemous Act (C18) 120
-1x Blaster Hulk
+1 Blaster Hulk
 1 Bojuka Bog (PLST) C18-238
 1 Bone Sabres (40K) 88
 1 Braids, Arisen Nightmare (DMU) 84
-1x Brainstorm
+1 Brainstorm
 1 Bred for the Hunt (DGM) 59
 1 Broodlord (40K) 89
-1x Brotherhood Scribe
+1 Brotherhood Scribe
 1 Cabaretti Courtyard (SNC) 249
 1 Canyon Slough (WHO) 259
-1x Cascade Bluffs
-1x Castle Vantress
-1x Cathartic Reunion
+1 Cascade Bluffs
+1 Castle Vantress
+1 Cathartic Reunion
 1 Cave of Temptation (MH1) 237
 1 Centaur Vinecrasher (CMA) 95
-1x Cerulean Wisps
-1x Chaos Charm
+1 Cerulean Wisps
+1 Chaos Charm
 1 Cinder Glade (NCC) 394
 1 Cinder Glade (C20) 263
 1 Clamavus (40K) 90
-1x Clifftop Retreat
-1x Coalition Relic
+1 Clifftop Retreat
+1 Coalition Relic
 2x Command Tower
 1 Command Tower (CMR) 350
 1 Command Tower (ELD) 333
-1x Compelling Deterrence
-1x Concerted Defense
-1x Confiscation Coup
-1x Consider
-1x Conversion Apparatus
-1x Crimson Wisps
+1 Compelling Deterrence
+1 Concerted Defense
+1 Confiscation Coup
+1 Consider
+1 Conversion Apparatus
+1 Crimson Wisps
 1 Cultivate (CLB) 821
 1 Cultivate (PLST) C18-138
 1 Dakmor Salvage (UMA) 240
-1x Daze
+1 Daze
 1 Death's Presence (MIC) 137
 1 Deathleaper, Terror Weapon (40K) 115
-1x Decoction Module
-1x Demand Answers
-1x Demolition Field
-1x Desperate Ritual
-1x Dispel
-1x Dive Down
-1x Dr. Madison Li
-1x Electrosiphon
-1x Era of Innovation
+1 Decoction Module
+1 Demand Answers
+1 Demolition Field
+1 Desperate Ritual
+1 Dispel
+1 Dive Down
+1 Dr. Madison Li
+1 Electrosiphon
+1 Era of Innovation
 1 Escape to the Wilds (CLB) 843
 1 Escape Tunnel (MKM) 261
 1 Eumidian Hatchery (EOC) 20
@@ -89,234 +89,234 @@
 1 Evolving Wilds (PLST) C18-245
 1 Exocrine (40K) 76
 1 Exotic Orchard (C20) 273
-1x Expedite
-1x Expel from Orazca
+1 Expedite
+1 Expel from Orazca
 1 Exploration Broodship (EOC) 14
 1 Explore (C19) 164
 1 Fabled Passage (ELD) 244
-1x Fabrication Module
-1x Faithless Looting
-1x Farewell
+1 Fabrication Module
+1 Faithless Looting
+1 Farewell
 1 Farseek (CMM) 894
 1 Farseek (PLST) C17-149
-1x Fellwar Stone
-1x Ferrous Lake
+1 Fellwar Stone
+1 Ferrous Lake
 1 Festering Thicket (EOC) 21
-1x Fever Charm
-1x Fiery Islet
+1 Fever Charm
+1 Fiery Islet
 8 Forest (SNC) 270
 8 Forest (ELD) 266
 1 Formless Genesis (DSC) 61
 1 Frontier Bivouac (PLST) KTK-234
 2x Frostboil Snarl
-1x Furycalm Snarl
-1x Galvanic Discharge
+1 Furycalm Snarl
+1 Galvanic Discharge
 1 Game Trail (NCC) 405
 1 Gargoyle Flock (40K) 123
 1 Gaze of Granite (C20) 214
-1x Generous Gift
+1 Generous Gift
 1 Genestealer Locus (40K) 21
 1 Genestealer Patriarch (40K) 22
 1 Ghyrson Starn, Kelermorph (40K) 124
-1x Glacial Fortress
-1x Glimmer of Genius
+1 Glacial Fortress
+1 Glimmer of Genius
 1 God-Eternal Bontu (WAR) 92
-1x Goldspan Dragon
+1 Goldspan Dragon
 1 Goliath Truck (40K) 158
-1x Gonti's Aether Heart
+1 Gonti's Aether Heart
 1 Groundskeeper (SOI) 208
-1x Guide of Souls
+1 Guide of Souls
 1 Hammer of Purphoros (THS) 124
 1 Hardened Scales (KTK) 133
 1 Harrow (DDE) 57
 1 Harrow (PLST) C18-150
 1 Haruspex (40K) 91
 1 Hearthhull, the Worldseed (EOC) 1 *F*
-1x HELIOS One
+1 HELIOS One
 1 Herald's Horn (CMM) 953
 1 Hierophant Bio-Titan (40K) 92
-1x Highway Robbery
+1 Highway Robbery
 1 Horizon Explorer (EOC) 15
 1 Hormagaunt Horde (40K) 93
 1 Hull Breach (HOP) 89
 1 Icon of Ancestry (CMM) 955
-1x Impulsive Pilferer
+1 Impulsive Pilferer
 1 Infernal Grasp (J25) 456
 1 Inspiring Call (MOC) 304
 20x Island
 7 Island (M21) 265
-1x Izzet Boilerworks
-1x Izzet Generatorium
-1x Izzet Signet
-1x Jolt
-1x Jolted Awake
+1 Izzet Boilerworks
+1 Izzet Generatorium
+1 Izzet Signet
+1 Jolt
+1 Jolted Awake
 1 Juri, Master of the Revue (CMR) 282
 1 Karplusan Forest (DMU) 250
 1 Korvold, Fae-Cursed King (ELD) 329
-1x Liberty Prime, Recharged
+1 Liberty Prime, Recharged
 1 Lictor (40K) 94
-1x Lightning Runner
+1 Lightning Runner
 1 Llanowar Wastes (C20) 286
 1 Loamcrafter Faun (WOC) 19
-1x Localized Destruction
+1 Localized Destruction
 1 Maestros Theater (SNC) 251
 1 Magus Lucea Kane (40K) 174 *F*
 1 Malanthrope (40K) 132
 1 Mawloc (40K) 133
 1 Mayhem Devil (RVR) 374
 1 Mazirek, Kraul Death Priest (2XM) 209
-1x Merchant Scroll
-1x Mind Stone
-1x Miscast
-1x Mission Briefing
-1x Mizzium Skin
+1 Merchant Scroll
+1 Mind Stone
+1 Miscast
+1 Mission Briefing
+1 Mizzium Skin
 1 Moraug, Fury of Akoum (ZNR) 150
 14x Mountain
 7 Mountain (C15) 335
 3 Mountain (ELD) 262
 1 Mountain Valley (C18) 268
-1x Muddle the Mixture
+1 Muddle the Mixture
 1 Multani, Yavimaya's Avatar (ZNC) 75
 1 Myriad Landscape (C14) 61
-1x Mystic Gate
-1x Mystic Monastery
-1x Mystic Sanctuary
-1x Mystical Tutor (DMR) 289
+1 Mystic Gate
+1 Mystic Monastery
+1 Mystic Sanctuary
+1 Mystical Tutor (DMR) 289
 1 Nature's Lore (DMR) 170
-1x Negate
+1 Negate
 1 New Horizons (XLN) 198
 1 Nexos (40K) 95
 1 Night's Whisper (LTC) 205
-1x Noble's Purse
+1 Noble's Purse
 1 Old One Eye (40K) 96
 1 Omnath, Locus of Rage (ZNC) 97
 1 Opal Palace (C21) 306
-1x Opt
+1 Opt
 1 Oracle of Mul Daya (JMP) 415
 1 Overgrowth (J22) 702
-1x Panharmonicon
+1 Panharmonicon
 1 Path of Ancestry (CMM) 423
-1x Path to Exile
-1x Perilous Voyage
-1x Personal Tutor
+1 Path to Exile
+1 Perilous Voyage
+1 Personal Tutor
 1 Pest Infestation (OTP) 30
-1x Pirate's Pillage
+1 Pirate's Pillage
 8x Plains
 1 Planetary Annihilation (EOC) 12
-1x Plasma Caster
-1x Ponder
-1x Port Town
-1x Prairie Stream
-1x Preordain
-1x Professional Face-Breaker
+1 Plasma Caster
+1 Ponder
+1 Port Town
+1 Prairie Stream
+1 Preordain
+1 Professional Face-Breaker
 1 Purestrain Genestealer (40K) 97
 1 Putrefy (PLST) GK1-68
 1 Rakdos Charm (GK2) 68
 1 Rampaging Baloths (C21) 203
 1 Rampant Growth (9ED) 263
 1 Ravener (40K) 138
-1x Razorfield Ripper
-1x Refocus
-1x Riddle Gate Gargoyle
-1x Rite of Flame
+1 Razorfield Ripper
+1 Refocus
+1 Riddle Gate Gargoyle
+1 Rite of Flame
 1 Riveteers Overlook (SNC) 255
 1 Rocky Tar Pit (DMC) 228
-1x Roil Cartographer
+1 Roil Cartographer
 1 Roiling Regrowth (ZNR) 201
 1 Rugged Highlands (M20) 250
-1x Salvation Colossus
-1x Samut's Sprint
-1x Satya, Aetherflux Genius
+1 Salvation Colossus
+1 Samut's Sprint
+1 Satya, Aetherflux Genius
 1 Satyr Wayfinder (UMA) 180
 1 Scouring Swarm (EOC) 16
 1 Screamer-Killer (40K) 84
-1x Seize the Spoils
-1x Select for Inspection
-1x Sentry Bot
-1x Serum Visions
+1 Seize the Spoils
+1 Select for Inspection
+1 Sentry Bot
+1 Serum Visions
 1 Shadow in the Warp (40K) 140
 1 Sheltered Thicket (PLST) AKH-248
 2x Shivan Reef
-1x Shore Up
-1x Simian Spirit Guide
-1x Sky Diamond
+1 Shore Up
+1 Simian Spirit Guide
+1 Sky Diamond
 1 Skyshroud Claim (BBD) 213
 1 Smoldering Marsh (NCC) 428
-1x Snap
+1 Snap
 2x Sol Ring
 1 Sol Ring (CMM) 410
 1 Sol Ring (C19) 221
-1x Solar Transformer
-1x Solemn Simulacrum
-1x Solve the Equation
+1 Solar Transformer
+1 Solemn Simulacrum
+1 Solve the Equation
 1 Soul of Windgrace (DMU) 220
-1x Spell Pierce
-1x Sphinx of the Revelation
+1 Spell Pierce
+1 Sphinx of the Revelation
 1 Splendid Reclamation (VOW) 221
 1 Sporocyst (40K) 98
 1 Springbloom Druid (MH1) 181
 1 Sprouting Goblin (DMU) 145
-1x Star Compass
+1 Star Compass
 1 Starstorm (C20) 160
-1x Stella Lee, Wild Card
-1x Stone Idol Generator
-1x Strike It Rich
+1 Stella Lee, Wild Card
+1 Stone Idol Generator
+1 Strike It Rich
 2x Sulfur Falls
 1 Sulfurous Springs (LTC) 334
 5 Swamp (UND) 91
-1x Swords to Plowshares
-1x Synth Eradicator
+1 Swords to Plowshares
+1 Synth Eradicator
 1 Szarel, Genesis Shepherd (EOC) 4 *F*
-1x Talisman of Conviction
+1 Talisman of Conviction
 2x Talisman of Creativity
-1x Talisman of Progress
+1 Talisman of Progress
 1 Tear Asunder (DMU) 183
 1 Temple of Abandon (CLB) 921
-1x Temple of Enlightenment
-1x Temple of Epiphany
+1 Temple of Enlightenment
+1 Temple of Epiphany
 1 Temple of Epiphany (CMM) 1042
 1 Temple of Mystery (M20) 255
-1x Temple of Triumph
+1 Temple of Triumph
 1 Termagant Swarm (40K) 99
 1 Terramorphic Expanse (CMR) 357
 1 Terramorphic Expanse (CM2) 273
 1 Tervigon (40K) 100
 1 The First Tyrannic War (40K) 121
 1 The Gitrog Monster (INR) 431
-1x The Motherlode, Excavator
+1 The Motherlode, Excavator
 1 The Red Terror (40K) 83
 1 The Swarmlord (40K) 4 *F*
 1 Thornwood Falls (M20) 258
-1x Thrill of Possibility
+1 Thrill of Possibility
 1 Tireless Tracker (PLST) SOI-233
 1 Titania, Protector of Argoth (CMA) 157
 1 Toxicrene (40K) 101
 1 Trygon Prime (40K) 143
-1x Tune the Narrative
+1 Tune the Narrative
 1 Twilight Mire (NCC) 443
-1x Twisted Fealty
-1x Twitch
+1 Twisted Fealty
+1 Twitch
 1 Tyranid Harridan (40K) 144
 1 Tyranid Invasion (40K) 102
 1 Tyranid Prime (40K) 145
 1 Tyrant Guard (40K) 103
-1x Unauthorized Exit
+1 Unauthorized Exit
 1 Unclaimed Territory (CMM) 1050
-1x Unexpected Windfall
-1x Unnatural Speed
-1x Unstable Amulet
+1 Unexpected Windfall
+1 Unnatural Speed
+1 Unstable Amulet
 1 Uurg, Spawn of Turg (DMU) 225
 1 Venomthrope (40K) 147
 1 Vernal Fen (EOC) 24
 1 Viridescent Bog (PIP) 154
-1x Volatile Stormdrake
+1 Volatile Stormdrake
 1 Wastes (OGW) 183
-1x Wheel of Potential
-1x Whirler Virtuoso
+1 Wheel of Potential
+1 Whirler Virtuoso
 1 Windgrace's Judgment (NCC) 358
 1 Winged Hive Tyrant (40K) 148
 1 World Breaker (M3C) 253
 1 Worldsoul's Rage (MKM) 244
-1x Wrath of the Skies
-1x You See a Guard Approach
+1 Wrath of the Skies
+1 You See a Guard Approach
 1 Zoanthrope (40K) 149
