@@ -42,11 +42,21 @@ export function renderCardView(
 
 function diffBadge(row: CardRow): HTMLElement | false {
   if (row.ownedQty === undefined || row.missingQty === undefined) return false;
-  const missing = row.missingQty > 0;
+  if (row.missingQty > 0) return false; // the not-owned overlay communicates this instead
+  return h("span", { class: "diff-badge owned" }, "owned");
+}
+
+/** Hearthstone-style "you don't own this" treatment: a translucent,
+ * blue-grey shaded overlay with a warning icon, layered over the card
+ * image whenever any copies are missing. */
+function notOwnedOverlay(row: CardRow): HTMLElement | false {
+  if (row.missingQty === undefined || row.missingQty <= 0) return false;
+  const label = row.missingQty > 1 ? `Missing ×${row.missingQty}` : "Not owned";
   return h(
-    "span",
-    { class: missing ? "diff-badge missing" : "diff-badge owned" },
-    missing ? `${row.missingQty} missing` : "owned",
+    "div",
+    { class: "not-owned-overlay", title: `${row.missingQty} missing` },
+    h("span", { class: "not-owned-icon" }, "⚠"),
+    h("span", { class: "not-owned-label" }, label),
   );
 }
 
@@ -91,14 +101,16 @@ function renderGallery(container: HTMLElement, rows: CardRow[], showDiff: boolea
 function renderGalleryCard(row: CardRow, showDiff: boolean): HTMLElement {
   const card = row.card;
   const priceLabel = card.price_eur != null ? `€${card.price_eur.toFixed(2)}` : "—";
+  const missing = showDiff && (row.missingQty ?? 0) > 0;
 
   return h(
     "figure",
-    { class: "gallery-card" },
+    { class: missing ? "gallery-card gallery-card-missing" : "gallery-card" },
     h(
       "div",
       { class: "gallery-card-image" },
       cardImage(card, "gallery-card-link"),
+      showDiff && notOwnedOverlay(row),
       row.qty > 1 && h("span", { class: "qty-badge" }, `×${row.qty}`),
       showDiff && diffBadge(row),
       !card.resolved && h("span", { class: "unresolved-badge", title: "Unresolved card name" }, "⚠"),
@@ -152,8 +164,9 @@ function renderTable(container: HTMLElement, rows: CardRow[], showDiff: boolean)
 
 function renderTableRow(row: CardRow, showDiff: boolean): HTMLElement {
   const card = row.card;
+  const missing = showDiff && (row.missingQty ?? 0) > 0;
   const cells: (HTMLElement | false)[] = [
-    h("td", { class: "cell-image" }, cardImage(card)),
+    h("td", { class: missing ? "cell-image cell-image-missing" : "cell-image" }, cardImage(card)),
     h("td", { class: "cell-qty" }, String(row.qty)),
     showDiff && h("td", { class: "cell-owned" }, String(row.ownedQty ?? 0)),
     showDiff &&
@@ -166,6 +179,12 @@ function renderTableRow(row: CardRow, showDiff: boolean): HTMLElement {
       "td",
       { class: "cell-name" },
       card.name,
+      missing &&
+        h(
+          "span",
+          { class: "not-owned-badge", title: `${row.missingQty} missing` },
+          " ⚠ not owned",
+        ),
       !card.resolved && h("span", { class: "unresolved-badge", title: "Unresolved card name" }, " ⚠"),
     ),
     h("td", { class: "cell-mana" }, card.mana_cost || "—"),
@@ -175,5 +194,8 @@ function renderTableRow(row: CardRow, showDiff: boolean): HTMLElement {
     h("td", { class: "cell-set" }, card.set ? card.set.toUpperCase() : "—"),
     h("td", { class: "cell-price" }, card.price_eur != null ? `€${card.price_eur.toFixed(2)}` : "—"),
   ];
-  return h("tr", { class: card.resolved ? undefined : "unresolved-row" }, ...cells);
+  const rowClasses = [!card.resolved && "unresolved-row", missing && "row-missing"]
+    .filter(Boolean)
+    .join(" ");
+  return h("tr", { class: rowClasses || undefined }, ...cells);
 }

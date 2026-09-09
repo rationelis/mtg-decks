@@ -50,17 +50,10 @@ export async function renderBulk(root: HTMLElement): Promise<void> {
   });
 
   const totalQty = bulk.entries.reduce((sum, e) => sum + e.qty, 0);
-  const pricedRows = rows.filter((r) => r.card.price_eur != null);
-  const totalValue = pricedRows.reduce((sum, r) => sum + (r.card.price_eur ?? 0) * r.qty, 0);
 
   root.append(
     h("h1", {}, "Bulk"),
     h("p", { class: "subtitle" }, `${bulk.entries.length} unique cards, ${totalQty} total`),
-    h(
-      "p",
-      { class: "subtitle" },
-      `💶 Estimated value: €${totalValue.toFixed(2)} (${pricedRows.length}/${bulk.entries.length} priced)`,
-    ),
     h("p", { class: "price-note" }, priceNote(meta)),
     h(
       "div",

@@ -43,14 +43,15 @@ comment sets optional metadata:
 Recognized keys: `name`, `commander`, `archidekt`, `status`
 (`active`/`archived`), `proxy` (`true`/`false`), `collection`
 (`true`/`false` - marks a list under `decks/` as really a wishlist, e.g.
-`decks/orcs.txt`, without moving it into `collections/`). None are
-required - a plain list with zero metadata works fine.
+`decks/25657626_oops_all_orcs.txt`, without moving it into
+`collections/`). None are required - a plain list with zero metadata
+works fine.
 
 **Ownership is never stored.** A deck/collection is a *desired* list; the
 app computes Owned/Missing live in the browser by comparing it against
 `bulk.txt`. This means a deck can list cards you don't own yet (see
-`decks/orcs.txt`, a wishlist with an empty overlap with `bulk.txt`) without
-that being a data-modeling problem.
+`decks/25657626_oops_all_orcs.txt`, a wishlist with an empty overlap with
+`bulk.txt`) without that being a data-modeling problem.
 
 ## The web app
 
@@ -86,32 +87,47 @@ Cardmarket fetch date and reminding you that prices change over time.
 
 ### Pricing cards you don't own yet
 
-A wishlist deck (e.g. `decks/orcs.txt`) has no overlap with your
-bulk-mirror deck, so it would normally show no prices at all. If a public
-Archidekt decklist mirrors that wishlist (doesn't have to be yours),
-`scripts/fetch-list-prices.py` can fetch *its* Cardmarket prices as a
-reference/fallback - so "price to complete" is real instead of always
-"-":
+A proxy deck or wishlist (e.g. `decks/25657626_oops_all_orcs.txt`) has
+little or no overlap with your bulk-mirror deck, so it would normally
+show no prices at all. Every deck/collection file already carries its
+own Archidekt deck id (the `NNNN_` filename prefix, or a `#
+archidekt: NNNN` metadata line), so one command fetches reference
+Cardmarket prices for all of them in one pass - so "price to complete"
+is real instead of always "-":
+
+```bash
+mask fetch-list-prices
+mask build-data
+```
+
+A list with no resolvable Archidekt id is skipped with a warning (rename
+it to `NNNN_name.txt` or add a `# archidekt: NNNN` line to fix that). To
+fetch one ad-hoc reference deck under a custom label instead - e.g.
+someone else's public decklist that isn't one of your own files -  pass
+a label and deck id explicitly:
 
 ```bash
 mask fetch-list-prices orcs 25657626   # https://archidekt.com/decks/25657626/oops_all_orcs
 mask build-data
 ```
 
-Each label's prices are merged into `cache/list-prices.json`; an owned
+Every source's prices are merged into `cache/list-prices.json`; an owned
 card's real bulk price always takes priority over a reference price if a
 card happens to be in both.
 
-## Releasing a new bulk version
+## Keeping prices fresh
 
-1. Update `bulk.txt` (and/or decks/collections) and mirror the same
-   changes into your Archidekt bulk deck.
-2. `mask release <version>` (or by hand: `mask sort-bulk`, `mask
-   fetch-bulk-prices <id>`, then `mask build-data`) - sorts bulk.txt,
-   fetches fresh Cardmarket prices, and rebuilds the JSON data.
-3. Add a row to [`CHANGELOG.md`](CHANGELOG.md) noting the Cardmarket fetch
-   date and what changed.
-4. Commit, tag (`git tag vX.Y.Z`), and push (`git push --tags`).
+Update `bulk.txt` (and/or decks/collections) and mirror the same changes
+into your Archidekt bulk deck, then refresh prices and rebuild:
+
+```bash
+mask fetch-bulk-prices <archidekt_deck_id>   # e.g. 25868036
+mask build-data
+```
+
+Commit the updated `bulk.txt` and `cache/*.json` and push - the deploy
+workflow rebuilds the site (and also reruns weekly on its own to catch
+any drift).
 
 ## Scripts
 

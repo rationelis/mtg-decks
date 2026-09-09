@@ -8,7 +8,7 @@ export function priceNote(meta: BuildMeta): string {
   if (!bulkPrices) {
     return (
       "💶 No prices yet - run `mask fetch-bulk-prices <archidekt_deck_id>` " +
-      "(or `mask release`) to fetch real Cardmarket prices via Archidekt."
+      "to fetch real Cardmarket prices via Archidekt."
     );
   }
   const date = new Date(bulkPrices.fetchedAt).toLocaleDateString(undefined, {

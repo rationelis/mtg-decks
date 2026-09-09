@@ -86,62 +86,36 @@ python3 scripts/fetch-bulk-prices.py "$archidekt_deck"
 
 ## fetch-list-prices (label) (archidekt_deck)
 
-> Fetch reference Cardmarket prices for a deck you don't (fully) own
+> Fetch reference Cardmarket prices for decks/collections you don't (fully) own
 
-Fetches every card + Cardmarket price from any public Archidekt deck (not
-necessarily your own) and merges it into cache/list-prices.json under the
-given label. Used as a fallback price for cards missing from
-cache/bulk-prices.json - e.g. a wishlist like decks/orcs.txt that mirrors
-a public Archidekt decklist you don't own yet. An owned card's real bulk
-price always wins over this. Run `mask build-data` afterwards to apply.
+With no arguments, fetches every deck/collection under decks/ and
+collections/ that has a known Archidekt deck id - taken from its
+"NNNN_name.txt" filename or a `# archidekt: NNNN` metadata line - and
+rebuilds cache/list-prices.json from scratch, keyed by each list's own
+id. Used as a fallback price for cards missing from
+cache/bulk-prices.json - e.g. a proxy deck or wishlist like
+decks/25657626_oops_all_orcs.txt that isn't mirrored into your bulk. An
+owned card's real bulk price always wins over this. Run `mask
+build-data` afterwards to apply.
 
-This is standalone and re-runnable per reference deck - it is NOT part of
-`mask release`, which is only for your owned-bulk pricing snapshot.
+Pass a label and an Archidekt deck id to instead fetch one ad-hoc
+reference deck (e.g. someone else's public decklist that mirrors a
+wishlist you don't have a local id for) merged on top of the cache.
 
-**Example:** `mask fetch-list-prices orcs 25657626`
-
-```bash
-if [[ -z "$label" ]] || [[ -z "$archidekt_deck" ]]; then
-    echo "Usage: mask fetch-list-prices <label> <archidekt_deck_id>"
-    echo "Example: mask fetch-list-prices orcs 25657626"
-    exit 1
-fi
-
-python3 scripts/fetch-list-prices.py "$label" "$archidekt_deck"
-```
-
-## release (version) (archidekt_deck)
-
-> Sort bulk.txt, fetch fresh Cardmarket prices, rebuild data, and prep a tagged release
-
-Sorts bulk.txt alphabetically, fetches current Cardmarket prices for your
-bulk collection from an Archidekt bulk-mirror deck (defaults to 25868036 -
-https://archidekt.com/decks/25868036/bulk), rebuilds the static JSON
-data, then prints the remaining manual steps: log the fetch in
-CHANGELOG.md, commit, and tag.
-
-**Example:** `mask release v1.2.0`
+**Example:** `mask fetch-list-prices` (everything with a known id)
+**Example:** `mask fetch-list-prices orcs 25657626` (one ad-hoc deck)
 
 ```bash
-if [[ -z "$version" ]]; then
-    echo "Usage: mask release <version> [archidekt_deck]"
-    echo "Example: mask release v1.2.0"
+if [[ -n "$label" ]] && [[ -n "$archidekt_deck" ]]; then
+    python3 scripts/fetch-list-prices.py "$label" "$archidekt_deck"
+elif [[ -z "$label" ]] && [[ -z "$archidekt_deck" ]]; then
+    python3 scripts/fetch-list-prices.py
+else
+    echo "Usage: mask fetch-list-prices [<label> <archidekt_deck_id>]"
+    echo "Example: mask fetch-list-prices               (everything with a known id)"
+    echo "Example: mask fetch-list-prices orcs 25657626  (one ad-hoc deck)"
     exit 1
 fi
-
-deck_id="${archidekt_deck:-25868036}"
-
-python3 scripts/sort-bulk.py
-python3 scripts/fetch-bulk-prices.py "$deck_id"
-python3 scripts/build/build.py
-
-echo
-echo "Prices refreshed for $version. Remaining steps:"
-echo "  1. Add a row to CHANGELOG.md (fetch date + total value are in"
-echo "     cache/bulk-prices.json / printed above)"
-echo "  2. git add -A && git commit -m \"Release $version\""
-echo "  3. GIT_EDITOR=true git tag -a $version -m \"$version\""
-echo "  4. git push && git push --tags"
 ```
 
 ## check

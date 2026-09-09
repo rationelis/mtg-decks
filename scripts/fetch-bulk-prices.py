@@ -21,10 +21,8 @@ Example:
     python3 scripts/fetch-bulk-prices.py 25868036
     # https://archidekt.com/decks/25868036/bulk -> cache/bulk-prices.json
 
-After running: rebuild data (`mask build-data`), then commit
-cache/bulk-prices.json alongside your bulk.txt changes, tag the release,
-and log the fetch date in CHANGELOG.md. `mask release <version>` does
-all of this in one step.
+After running: rebuild data (`mask build-data`) and commit
+cache/bulk-prices.json alongside your bulk.txt changes.
 """
 
 from __future__ import annotations
@@ -37,7 +35,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 sys.path.insert(0, str(Path(__file__).resolve().parent / "build"))
 
-from archidekt import fetch_deck, main_deck_entries, price_map, total_price_cm  # noqa: E402
+from archidekt import fetch_deck, main_deck_entries, price_map  # noqa: E402
 from parse import normalize_name  # noqa: E402
 
 CACHE_PATH = Path(__file__).resolve().parent.parent / "cache" / "bulk-prices.json"
@@ -75,15 +73,11 @@ def main() -> None:
         for name in sorted(unpriced):
             print(f"  - {name}", file=sys.stderr)
 
-    total_value = round(total_price_cm(deck), 2)
-    print(f"Total Cardmarket value: EUR {total_value:.2f} (quantity-weighted, whole deck).")
-
     payload = {
         "source": "cardmarket-via-archidekt",
         "archidektDeckId": deck_id,
         "deckName": deck_name,
         "fetchedAt": datetime.now(timezone.utc).isoformat(timespec="seconds"),
-        "totalValueEur": total_value,
         "prices": dict(sorted(prices.items())),
     }
     CACHE_PATH.parent.mkdir(parents=True, exist_ok=True)
@@ -93,10 +87,7 @@ def main() -> None:
     )
 
     print(f"Written to {CACHE_PATH}")
-    print(
-        "Next: mask build-data, then commit + tag + log it in CHANGELOG.md "
-        f"(total value: EUR {total_value:.2f})."
-    )
+    print("Next: mask build-data, then commit cache/bulk-prices.json.")
 
 
 if __name__ == "__main__":
