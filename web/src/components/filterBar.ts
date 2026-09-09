@@ -41,6 +41,10 @@ export function createFilterBar(onChange: (state: FilterState) => void): HTMLEle
     },
   }) as HTMLInputElement;
 
+  // Selecting pips filters for cards whose color identity is *exactly*
+  // the selected set (not "any of"), so e.g. picking W+U finds Azorius
+  // cards specifically rather than every card that happens to be white
+  // or blue - this is what makes multicolor filtering useful.
   const colorPips = COLORS.map((c) => {
     const btn = h(
       "button",

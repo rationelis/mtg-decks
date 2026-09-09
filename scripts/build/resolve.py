@@ -81,6 +81,7 @@ class CardData:
     scryfall_uri: str | None = None
     scryfall_id: str | None = None
     price_eur: float | None = None
+    released_at: str | None = None
     last_checked: str | None = None
     fuzzy_matched_from: str | None = None
 
@@ -186,6 +187,7 @@ def _card_to_data(card: dict[str, Any], now: str) -> CardData:
         image_uri=_image_uri(card),
         scryfall_uri=card.get("scryfall_uri"),
         scryfall_id=card.get("id"),
+        released_at=card.get("released_at"),
         last_checked=now,
     )
 
@@ -420,6 +422,7 @@ def _use_cache_fallback(
             scryfall_uri=cached.get("scryfall_uri"),
             scryfall_id=cached.get("scryfall_id"),
             price_eur=None,
+            released_at=cached.get("released_at"),
             last_checked=cached.get("last_checked"),
         )
         result[key] = data

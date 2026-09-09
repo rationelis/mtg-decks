@@ -25,10 +25,18 @@ const UNRESOLVED_PLACEHOLDER: Omit<CardData, "name"> = {
   image_uri: null,
   scryfall_uri: null,
   price_eur: null,
+  released_at: null,
 };
 
 function lookupCard(name: string, cards: CardsIndex): CardData {
   return cards[normalizeName(name)] ?? { name, ...UNRESOLVED_PLACEHOLDER };
+}
+
+/** Basic lands are never tracked in bulk.txt (there's no point counting
+ * Forests), so a deck listing them would otherwise always show as
+ * "missing" them. Treat them as always fully owned instead. */
+function isBasicLand(card: CardData): boolean {
+  return card.type_line.toLowerCase().includes("basic land");
 }
 
 /** Aggregate quantities in a list by normalized name (bulk.txt may list the
@@ -61,6 +69,10 @@ export function diffList(
 ): DiffRow[] {
   const bulkQty = quantityMap(bulk);
   return list.entries.map((e) => {
+    const card = lookupCard(e.name, cards);
+    if (isBasicLand(card)) {
+      return { name: e.name, qty: e.qty, ownedQty: e.qty, missingQty: 0, card };
+    }
     const key = normalizeName(e.name);
     const available = bulkQty.get(key) ?? 0;
     const ownedQty = Math.min(e.qty, available);
@@ -69,7 +81,7 @@ export function diffList(
       qty: e.qty,
       ownedQty,
       missingQty: e.qty - ownedQty,
-      card: lookupCard(e.name, cards),
+      card,
     };
   });
 }

@@ -48,9 +48,11 @@ export function matchesFilter(card: CardData, f: FilterState): boolean {
   }
 
   if (f.colors.size > 0) {
-    const cardColors = card.colors.length > 0 ? card.colors : ["C"];
-    const matchesAny = cardColors.some((c) => f.colors.has(c));
-    if (!matchesAny) return false;
+    const cardColors = new Set(card.colors.length > 0 ? card.colors : ["C"]);
+    if (cardColors.size !== f.colors.size) return false;
+    for (const c of cardColors) {
+      if (!f.colors.has(c)) return false;
+    }
   }
 
   if (f.manaMin !== null && card.mana_value < f.manaMin) return false;

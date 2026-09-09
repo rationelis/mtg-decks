@@ -1,5 +1,6 @@
 import { createFilterBar } from "../components/filterBar";
 import { renderCardView, type ViewMode } from "../components/cardView";
+import { createPriciestButton } from "../components/priciestButton";
 import { createSortSelect } from "../components/sortSelect";
 import { createViewToggle } from "../components/viewToggle";
 import { getBulk, getCards, getList, getMeta } from "../data";
@@ -35,7 +36,7 @@ export async function renderList(root: HTMLElement, kind: string, id: string): P
   let activeTab: Tab = "all";
   let currentFilter: FilterState | null = null;
   let sortKey: SortKey = "name-asc";
-  let mode: ViewMode = "list";
+  let mode: ViewMode = "gallery";
 
   const resultsContainer = h("div", { class: "results" });
 
@@ -73,9 +74,14 @@ export async function renderList(root: HTMLElement, kind: string, id: string): P
   const sortSelect = createSortSelect((key) => {
     sortKey = key;
     render();
-  });
+  }) as HTMLSelectElement;
   const viewToggle = createViewToggle(mode, (newMode) => {
     mode = newMode;
+    render();
+  });
+
+  const priciestButton = createPriciestButton(sortSelect, (key) => {
+    sortKey = key;
     render();
   });
 
@@ -118,7 +124,12 @@ export async function renderList(root: HTMLElement, kind: string, id: string): P
     ),
     h("p", { class: "price-note" }, priceNote(meta)),
     h("div", { class: "tabs" }, ...Object.values(tabButtons)),
-    h("div", { class: "toolbar" }, filterBar, sortSelect, viewToggle),
+    h(
+      "div",
+      { class: "toolbar" },
+      filterBar,
+      h("div", { class: "toolbar-actions" }, sortSelect, priciestButton, viewToggle),
+    ),
     resultsContainer,
   );
 

@@ -26,9 +26,14 @@ Note: Initial release.
 ## [v0.2] - 2026-09-05
 
 Value of bulk: EUR 570.70.
-Note: Rest of bulk
+Note: Rest of bulk.
 
 ## [v0.3] - 2026-09-09
 
 Value of bulk: EUR 563.43.
-Note: Addes some orcs
+Note: Added some orcs.
+
+## [v0.4] - 2026-09-09
+
+Value of bulk: EUR 570.16.
+Note: Added some incorrect sets.

@@ -30,6 +30,7 @@ _CARD_FIELDS = (
     "image_uri",
     "scryfall_uri",
     "price_eur",
+    "released_at",
 )
 
 

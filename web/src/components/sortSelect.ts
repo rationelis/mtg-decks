@@ -8,6 +8,8 @@ const OPTIONS: [SortKey, string][] = [
   ["mv-desc", "Mana value (high→low)"],
   ["price-asc", "Price (low→high)"],
   ["price-desc", "Price (high→low)"],
+  ["released-desc", "Release date (new→old)"],
+  ["released-asc", "Release date (old→new)"],
 ];
 
 export function createSortSelect(onChange: (key: SortKey) => void): HTMLElement {

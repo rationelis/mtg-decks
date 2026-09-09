@@ -171,7 +171,7 @@
 1 Dispel
 1 Dive Down
 1 Down in the Valley (HOB) 124
-1 Dr. Madison Li (PIP) 531
+1 Dr. Madison Li (PIP) 3
 1 Draconic Roar (IMA) 123
 1 Dragon Fodder (FDN) 535
 1 Dragonloft Idol (IMA) 215
@@ -375,7 +375,7 @@
 1 Leonin Skyhunter (FDN) 498
 1 Leonin Vanguard (FDN) 499
 1 Leyline Dowser (OTC) 39
-1 Liberty Prime, Recharged (PIP) 533
+1 Liberty Prime, Recharged (PIP) 5
 1 Lictor (40K) 94
 1 Lightning Runner
 1 Lightning Strike (TLA) 146
@@ -397,7 +397,7 @@
 1 Maestros Theater (SNC) 251
 1 Magnificent End (HOB) 20
 1 Magnigoth Sentry (FDN) 556
-1 Magus Lucea Kane (40K) 174
+1 Magus Lucea Kane (40K) 7
 1 Mai, Jaded Edge (TLA) 147
 1 Malanthrope (40K) 132
 1 Malcolm, the Eyes (OTJ) 295
@@ -606,6 +606,7 @@
 1 Sporocyst (40K) 98
 1 Springbloom Druid (MH1) 181
 1 Sprouting Goblin (DMU) 145
+1 Star Compass (IMA) 229
 1 Starlight Snare (FDN) 514
 1 Starstorm (C20) 160
 1 Stella Lee, Wild Card
@@ -645,7 +646,7 @@
 1 Temple of Mystery (M20) 255
 1 Temple of the False God (OTC) 334
 1 Temple of Triumph
-1 Temur Battlecrier (TDM) 425 *F*
+1 Temur Battlecrier (TDM) 228
 1 Termagant Swarm (40K) 99
 1 Terramorphic Expanse (CMR) 357
 1 Terramorphic Expanse (CM2) 273

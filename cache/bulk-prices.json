@@ -1,7 +1,7 @@
 {
   "archidektDeckId": "25868036",
   "deckName": "BULK",
-  "fetchedAt": "2026-09-09T08:17:28+00:00",
+  "fetchedAt": "2026-09-09T14:40:25+00:00",
   "prices": {
     "aang, the last airbender": 0.25,
     "aberrant": 5.5,
@@ -13,7 +13,7 @@
     "aether hub": 0.17,
     "aether refinery": 0.23,
     "aether revolt": 0.23,
-    "aether spike": 0.04,
+    "aether spike": 0.06,
     "aethergeode miner": 0.18,
     "aetherize": 0.5,
     "aethersphere harvester": 0.09,
@@ -169,6 +169,7 @@
     "dispel": 0.66,
     "dive down": 0.15,
     "down in the valley": 0.27,
+    "dr. madison li": 0.44,
     "draconic roar": 0.18,
     "dragon fodder": 0.06,
     "dragonloft idol": 0.18,
@@ -366,6 +367,7 @@
     "leonin skyhunter": 0.23,
     "leonin vanguard": 1.85,
     "leyline dowser": 0.39,
+    "liberty prime, recharged": 0.55,
     "lictor": 0.05,
     "lightning runner": 0.1,
     "lightning strike": 0.02,
@@ -387,6 +389,7 @@
     "maestros theater": 0.39,
     "magnificent end": 0.02,
     "magnigoth sentry": 0.25,
+    "magus lucea kane": 3.98,
     "mai, jaded edge": 0.1,
     "malanthrope": 0.21,
     "malcolm, the eyes": 0.4,
@@ -590,6 +593,7 @@
     "sporocyst": 14.3,
     "springbloom druid": 0.15,
     "sprouting goblin": 0.2,
+    "star compass": 0.2,
     "starlight snare": 0.02,
     "starstorm": 0.1,
     "stella lee, wild card": 3.9,
@@ -627,6 +631,7 @@
     "temple of mystery": 0.2,
     "temple of the false god": 0.22,
     "temple of triumph": 0.15,
+    "temur battlecrier": 0.5,
     "termagant swarm": 0.5,
     "terramorphic expanse": 0.05,
     "terror of mount velus": 0.81,
@@ -696,7 +701,7 @@
     "viridian longbow": 0.65,
     "viscera seer": 0.57,
     "voiceless spirit": 0.02,
-    "volatile stormdrake": 0.77,
+    "volatile stormdrake": 1.93,
     "volcanic torrent": 0.08,
     "volley veteran": 0.19,
     "vow to erebor": 0.02,
@@ -705,7 +710,7 @@
     "wastes": 0.72,
     "watcher in the web": 0.15,
     "wayfarer's bauble": 0.39,
-    "wheel of potential": 0.19,
+    "wheel of potential": 0.39,
     "whirler virtuoso": 0.23,
     "wilderland scrounger": 0.08,
     "wildheart invoker": 0.35,
@@ -728,5 +733,5 @@
     "óin the brave": 0.06
   },
   "source": "cardmarket-via-archidekt",
-  "totalValueEur": 563.43
+  "totalValueEur": 570.16
 }

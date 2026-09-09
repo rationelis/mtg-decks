@@ -108,6 +108,19 @@ h1 {
 
 /* Home / deck table */
 
+.section-header {
+  font-size: 1.05rem;
+  margin: 1.5rem 0 0.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+
+.section-header:first-of-type {
+  margin-top: 1rem;
+  padding-top: 0;
+  border-top: none;
+}
+
 .deck-table,
 .card-table {
   width: 100%;
@@ -172,10 +185,16 @@ h1 {
 
 .toolbar {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: 0.75rem;
-  align-items: center;
   margin: 1rem 0;
+}
+
+.toolbar-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  align-items: center;
 }
 
 .filter-bar {
@@ -183,7 +202,10 @@ h1 {
   flex-wrap: wrap;
   gap: 0.5rem;
   align-items: center;
-  flex: 1;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  background: color-mix(in srgb, currentColor 3%, transparent);
 }
 
 .filter-bar input,

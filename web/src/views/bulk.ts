@@ -1,5 +1,6 @@
 import { createFilterBar } from "../components/filterBar";
 import { renderCardView, type ViewMode } from "../components/cardView";
+import { createPriciestButton } from "../components/priciestButton";
 import { createSortSelect } from "../components/sortSelect";
 import { createViewToggle } from "../components/viewToggle";
 import { getBulk, getCards, getMeta } from "../data";
@@ -43,20 +44,10 @@ export async function renderBulk(root: HTMLElement): Promise<void> {
     render();
   });
 
-  const priciestButton = h(
-    "button",
-    {
-      type: "button",
-      class: "priciest-button",
-      title: "Sort by price, most expensive first",
-      onclick: () => {
-        sortKey = "price-desc";
-        sortSelect.value = "price-desc";
-        render();
-      },
-    },
-    "💰 Priciest first",
-  );
+  const priciestButton = createPriciestButton(sortSelect, (key) => {
+    sortKey = key;
+    render();
+  });
 
   const totalQty = bulk.entries.reduce((sum, e) => sum + e.qty, 0);
   const pricedRows = rows.filter((r) => r.card.price_eur != null);
@@ -71,7 +62,12 @@ export async function renderBulk(root: HTMLElement): Promise<void> {
       `💶 Estimated value: €${totalValue.toFixed(2)} (${pricedRows.length}/${bulk.entries.length} priced)`,
     ),
     h("p", { class: "price-note" }, priceNote(meta)),
-    h("div", { class: "toolbar" }, filterBar, sortSelect, priciestButton, viewToggle),
+    h(
+      "div",
+      { class: "toolbar" },
+      filterBar,
+      h("div", { class: "toolbar-actions" }, sortSelect, priciestButton, viewToggle),
+    ),
     resultsContainer,
   );
 

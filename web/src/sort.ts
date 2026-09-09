@@ -6,7 +6,9 @@ export type SortKey =
   | "mv-asc"
   | "mv-desc"
   | "price-asc"
-  | "price-desc";
+  | "price-desc"
+  | "released-asc"
+  | "released-desc";
 
 export function sortRows<T extends { card: CardData }>(rows: T[], key: SortKey): T[] {
   const sorted = [...rows];
@@ -28,6 +30,12 @@ export function sortRows<T extends { card: CardData }>(rows: T[], key: SortKey):
       break;
     case "price-desc":
       sorted.sort((a, b) => (b.card.price_eur ?? -1) - (a.card.price_eur ?? -1));
+      break;
+    case "released-asc":
+      sorted.sort((a, b) => (a.card.released_at ?? "").localeCompare(b.card.released_at ?? ""));
+      break;
+    case "released-desc":
+      sorted.sort((a, b) => (b.card.released_at ?? "").localeCompare(a.card.released_at ?? ""));
       break;
   }
   return sorted;

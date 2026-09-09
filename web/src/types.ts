@@ -15,6 +15,7 @@ export interface CardData {
   image_uri: string | null;
   scryfall_uri: string | null;
   price_eur: number | null;
+  released_at: string | null;
 }
 
 /** Keyed by normalizeName(card.name). */
