@@ -27,3 +27,8 @@ Note: Initial release.
 
 Value of bulk: EUR 570.70.
 Note: Rest of bulk
+
+## [v0.3] - 2026-09-09
+
+Value of bulk: EUR 563.43.
+Note: Addes some orcs
