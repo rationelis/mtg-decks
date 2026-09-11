@@ -25,12 +25,14 @@
 1 Airbending Lesson (TLA) 8
 1 Ajani's Pridemate (FDN) 135
 1 Akroma's Will
+1 Alesha's Vanguard (FRF) 60
 1 Amped Raptor
 1 An Offer You Can't Refuse
 1 Ancestor Dragon (FDN) 489
 1 Ancient Animus (CMR) 215
 1 Angel of Invention (TDC) 109
 1 Angelic Edict (FDN) 490
+1 Angrath's Ambusher (RIX) 202
 1 Anticausal Vestige (EOE) 1
 1 Appa, Loyal Sky Bison (TLA) 9
 1 Arasta of the Endless Web (TDC) 244
@@ -40,7 +42,10 @@
 1 Arcane Signet (CMM) 367
 1 Arcane Signet (C20) 237
 1 Archmage Emeritus (SOC) 188
+1 Argivian Cavalier (DMU) 4
 1 Armory Veteran (AFR) 130
+1 Armory Veteran (AFR) 130
+1 Ascendant Dustspeaker (SOS) 8
 1 Ascendant Dustspeaker (SOS) 8
 1 Ash Barrens (CMM) 419
 1 Assaultron Dominator
@@ -53,6 +58,7 @@
 1 Baloth Prime (EOC) 13
 1 Baral's Expertise (TDC) 146
 1 Bastion of Remembrance (TDC) 171
+1 Battle Brawler (FRF) 63
 1 Battle-Rattle Shaman (FDN) 533
 1 Battlefield Forge
 1 Bear Cub (FDN) 552
@@ -61,6 +67,7 @@
 1 Beast-Kin Ranger (FDN) 100
 1 Behemoth of Vault 0
 1 Bejeweled Warg (HOB) 117
+1 Bellowing Saddlebrute (KTK) 64
 1 Beorn, Reluctant Host // Till and Tend (HOB) 118
 1 Bespoke Battlewagon (DRC) 71
 1 Bident of Thassa (M3C) 177
@@ -87,6 +94,7 @@
 1 Bothersome Noisemaker (HOB) 89
 1 Braids, Arisen Nightmare (DMU) 84
 1 Brainstorm
+1 Brazen Blademaster (LCI) 136
 1 Bred for the Hunt (DGM) 59
 1 Brineborn Cutthroat (FDN) 152
 1 Broadcast Rambler (DFT) 293
@@ -97,8 +105,10 @@
 1 Burnished Hart (FDN) 250
 1 Burrog Befuddler (FDN) 504
 1 Cabaretti Courtyard (SNC) 249
+1 Cadira, Caller of the Small (CLB) 417
 1 Cancel (FDN) 505
 1 Canyon Slough (WHO) 259
+1 Captain Vargus Wrath (CMR) 273
 1 Carnelian Orb of Dragonkind (FDN) 534
 1 Cascade Bluffs
 1 Castle Vantress
@@ -112,15 +122,18 @@
 1 Chaos Charm
 1 Chaos Warp (SOC) 239
 1 Cheerful Osteomancer // Raise Dead (SOS) 76
+1 Cheerful Osteomancer // Raise Dead (SOS) 76
 1 Chief Warg's Company (HOB) 151
 1 Child of Night (M19) 89
 1 Cinder Glade (NCC) 394
 1 Cinder Glade (C20) 263
+1 Cirith Ungol Patrol (LTR) 80
 1 Clamavus (40K) 90
 1 Clear Shot (OTP) 28
 1 Clifftop Retreat
 1 Clinquant Skymage (FDN) 33
 1 Coalition Relic
+1 Coercive Recruiter (CMR) 169
 1 Combustible Gearhulk (DRC) 102
 2x Command Tower
 1 Command Tower (CMR) 350
@@ -165,7 +178,11 @@
 1 Desolation of Smaug (HOB) 93
 1 Desperate Ritual
 1 Devoted Paladin (AFR) 11
+1 Devoted Paladin (AFR) 11
 1 Dig Through Time (SOC) 195
+1 Dire Fleet Captain (XLN) 221
+1 Dire Fleet Ravager (CLB) 749
+1 Dire Fleet Warmonger (M21) 217
 1 Diregraf Ghoul (FDN) 171
 1 Disciple of the Vault (2XM) 86
 1 Dispel
@@ -189,9 +206,11 @@
 1 Eagle's Rescue (HOB) 155
 1 Eaten Alive (INR) 106
 1 Eaten by Piranhas (FDN) 507
+1 Effortless Master (TDM) 181
 1 Electrosiphon
 1 Electrostatic Field (OTC) 164
 1 Elemental Eruption (OTC) 27
+1 Elemental Expressionist (STX) 181
 1 Elspeth's Smite (FDN) 493
 1 Elven Passage (HOB) 181
 1 Elven Raft-Steerer (HOB) 37
@@ -231,6 +250,8 @@
 1 Farseek (PLST) C17-149
 1 Farseek (FCA) 45
 1 Fathom Fleet Boarder (RIX) 71
+1 Fathom Fleet Boarder (RIX) 71
+1 Fathom Fleet Swordjack (CMR) 177
 1 Feasting Hobbit (LTC) 37
 1 Fecundity (C13) 145
 1 Felidar Savior (FDN) 12
@@ -239,6 +260,7 @@
 1 Ferrous Lake
 1 Festering Thicket (EOC) 21
 1 Fever Charm
+1 Feywild Caretaker (CLB) 69
 1 Fiery Annihilation (FDN) 86
 1 Fiery Islet
 1 Filigree Racer (M3C) 108
@@ -258,6 +280,7 @@
 1 Formless Genesis (DSC) 61
 1 Foul Orchard (KHC) 110
 1 Frenzied Goblin (FDN) 199
+1 Frenzied Saddlebrute (CMR) 180
 1 Front Porch Sentries (HOB) 67
 1 Frontier Bivouac (PLST) KTK-234
 1 Frontier Bivouac (40K) 281
@@ -270,6 +293,7 @@
 1 Gandalf, Wandering Wizard (HOB) 41
 1 Gargoyle Flock (40K) 123
 1 Gargoyle Sentinel (M19) 236
+1 Garrison Excavator (SOS) 116
 1 Garrison Excavator (SOS) 116
 1 Gatekeeper Gargoyle (GRN) 235
 1 Gaze of Granite (C20) 214
@@ -300,12 +324,15 @@
 1 Gollum the Abandoned (HOB) 72
 1 Gollum, Silent Slinker // Meager Meal (HOB) 71
 1 Gonti's Aether Heart
+1 Gorbag of Minas Morgul (LTR) 86
 1 Great Fierce Bee (HOB) 73
 1 Great Ugly-Looking Goblin // Clap! Snap! (HOB) 74
 1 Grenzo, Havoc Raiser (TDC) 216
 1 Grim Haruspex (CLB) 754
 1 Groundskeeper (SOI) 208
+1 Gruesome Scourger (M20) 104
 1 Guide of Souls
+1 Guild Thief (AFR) 61
 1 Gundabad Opportunist (HOB) 101
 1 Guttersnipe (TDC) 217
 1 Hammer of Purphoros (THS) 124
@@ -315,6 +342,7 @@
 1 Haruspex (40K) 91
 1 Haughty Djinn (TDC) 154
 1 Head of the Homestead (BLB) 216
+1 Headstrong Brute (XLN) 147
 1 Heaped Harvest (BLB) 175
 1 Hearthhull, the Worldseed (EOC) 1 *F*
 1 HELIOS One
@@ -336,6 +364,7 @@
 1 Icewind Elemental (FDN) 42
 1 Icon of Ancestry (CMM) 955
 1 Imperious Inkmage (SOS) 195
+1 Imperious Inkmage (SOS) 195
 1 Impulsive Pilferer
 1 Incinerating Blast (FDN) 90
 1 Infernal Grasp (J25) 456
@@ -344,6 +373,7 @@
 1 Inspiring Call (MOC) 304
 1 Inspiring Overseer (FDN) 496
 1 Into the Roil (FDN) 509
+1 Intrepid Outlander (AFR) 191
 1 Intrepid Outlander (AFR) 191
 1 Invasion Reinforcements (TLA) 24
 1 Iron Hills (HOB) 185
@@ -354,6 +384,8 @@
 1 Izzet Signet
 1 Jazal Goldmane (FDN) 497
 1 Jeong Jeong's Deserters (TLA) 25
+1 Jeskai Brushmaster (TDM) 195
+1 Jeskai Devotee (TDM) 110
 1 Joined Researchers // Secret Rendezvous (SOS) 23
 1 Jolt
 1 Jolted Awake
@@ -368,6 +400,7 @@
 1 Koala-Sheep (TLE) 80
 1 Kodama's Reach (ECC) 113
 1 Korvold, Fae-Cursed King (ELD) 329
+1 Krumar Bond-Kin (KTK) 77
 1 Lake-town Lookout (HOB) 18
 1 Lake-town Mariners // Gone Fishing (HOB) 44
 1 Large Bear (HOB) 159
@@ -401,12 +434,18 @@
 1 Mai, Jaded Edge (TLA) 147
 1 Malanthrope (40K) 132
 1 Malcolm, the Eyes (OTJ) 295
+1 Mardu Roughrider (KTK) 187
+1 Mardu Warshrieker (KTK) 117
 1 Marionette Apprentice (MH3) 100
 1 Marionette Master (AFC) 102
+1 Marshal of the Lost (TDM) 207
+1 Mauhúr, Uruk-hai Captain (LTR) 214
 1 Mawloc (40K) 133
 1 Mayhem Devil (RVR) 374
 1 Mazirek, Kraul Death Priest (2XM) 209
+1 Mer-Ek Nightblade (KTK) 79
 1 Merchant Scroll
+1 Merciless Executioner (FRF) 76
 1 Midnight Clock (DRC) 79
 1 Midnight Reaper (FDN) 609
 1 Midnight Tilling (ECL) 182
@@ -461,6 +500,11 @@
 1 Opal Palace (C21) 306
 1 Opt
 1 Oracle of Mul Daya (JMP) 415
+1 Orc Sureshot (FRF) 78
+1 Orcish Artillery (10E) 220
+1 Orcish Cannoneers (DKM) 17
+1 Orcish Hellraiser (MH1) 136
+1 Orcish Vandal (DOM) 137
 1 Ordinary Bear (HOB) 133
 1 Overclocked Electromancer (M3C) 110
 1 Overgrowth (J22) 702
@@ -478,17 +522,22 @@
 1 Pestilent Souleater (NPH) 149
 1 Phyrexian Ironworks (MH3) 130
 1 Pigment Wrangler // Striking Palette (SOS) 126
+1 Pigment Wrangler // Striking Palette (SOS) 126
 1 Pillarfield Ox (CNS) 76
 1 Pinecone Strike (HOB) 107
 1 Pirate's Cutlass (FDN) 563
 1 Pirate's Pillage
 1 Pitchburn Devils (M21) 156
+1 Pitiless Horde (DTK) 112
 1 Pitiless Plunderer (LCC) 208
 1 Planetary Annihilation (EOC) 12
+1 Plargg, Dean of Chaos // Augusta, Dean of Order (STX) 155
 1 Plasma Caster
 1 Plumb the Forbidden (SOC) 224
 1 Plunder the Trollshaws (HOB) 51
+1 Plundering Pirate (LCI) 160
 1 Poison-Tip Archer (BLC) 256
+1 Poisoner's Apprentice (SOS) 92
 1 Ponder
 1 Pongify (TDC) 160
 1 Port Town
@@ -497,6 +546,7 @@
 1 Preordain
 1 Prey Upon (UMA) 178
 1 Prideful Parent (FDN) 21
+1 Prismari Pledgemage (STX) 215
 1 Prizefight (SNC) 154
 1 Professional Face-Breaker
 1 Propaganda (M3C) 191
@@ -526,7 +576,9 @@
 1 Read the Bones (DSC) 154
 1 Reassembling Skeleton (TDC) 195
 1 Reclamation Sage (FDN) 231
+1 Redoubled Stormsinger (SOC) 251
 1 Refocus
+1 Reigning Victor (TDM) 216
 1 Reiterating Bolt (MH3) 134
 1 Rescue (DOM) 63
 1 Reverent Howl (HOB) 81
@@ -537,9 +589,12 @@
 1 Rocky Tar Pit (DMC) 228
 1 Roil Cartographer
 1 Roiling Regrowth (ZNR) 201
+1 Rootha, Mastering the Moment (SOC) 8
+1 Rootha, Mercurial Artist (STX) 227
 1 Rotwidow Pack (MH1) 212
 1 Rousing Refrain (SOC) 253
 1 Rugged Highlands (M20) 250
+1 Ruthless Knave (XLN) 119
 1 Ruthless Negotiation (BLB) 108
 1 Sakura-Tribe Elder (SOC) 285
 1 Salvation Colossus
@@ -552,6 +607,7 @@
 1 Scorching Dragonfire (FDN) 545
 1 Scouring Swarm (EOC) 16
 1 Screamer-Killer (40K) 84
+1 Screamreach Brawler (DTK) 155
 1 Scroll Thief (DDT) 17
 1 Scurry of Gremlins (MH3) 203
 1 Seismic Stomp (EMA) 146
@@ -562,6 +618,7 @@
 1 Serum Visions
 1 Setessan Tactics (JOU) 140
 1 Shadow in the Warp (40K) 140
+1 Shaman of the Great Hunt (FRF) 113
 1 Shark Typhoon (DSC) 127
 1 Shelob, Child of Ungoliant (LTR) 230
 1 Sheltered Thicket (PLST) AKH-248
@@ -614,12 +671,15 @@
 1 Stir Up Trouble (HOB) 84
 1 Stone Idol Generator
 1 Stony-Voiced Goblins (HOB) 85
+1 Storm Fleet Arsonist (XLN) 162
 1 Storm Fleet Spy (FDN) 515
 1 Storm of Memories (TLE) 126
 1 Storm-Kiln Artist (SOC) 255
 1 Strife Scholar // Awaken the Ages (SOS) 131
+1 Strife Scholar // Awaken the Ages (SOS) 131
 1 Strike It Rich
 1 Stromkirk Bloodthief (FDN) 185
+1 Strongbox Raider (FDN) 96
 2x Sulfur Falls
 1 Sulfurous Springs (LTC) 334
 1 Sunshower Druid (BLB) 195
@@ -630,6 +690,7 @@
 1 Swords to Plowshares
 1 Synth Eradicator
 1 Szarel, Genesis Shepherd (EOC) 4 *F*
+1 Tackle Artist (SOS) 133
 1 Tackle Artist (SOS) 133
 1 Tainted Wood (DSC) 305
 1 Tajuru Pathwarden (FDN) 558
@@ -667,6 +728,7 @@
 1 Thornbite Staff (MOR) 145
 1 Thornweald Archer (FDN) 559
 1 Thornwood Falls (M20) 258
+1 Thrasher Brute (BBD) 52
 1 Thrashing Brontodon (FDN) 560
 1 Three Tree Scribe (BLB) 199
 1 Thrill of Possibility
@@ -691,11 +753,13 @@
 1 Twisted Fealty
 1 Twitch
 1 Ty Lee, Artful Acrobat (TLA) 158
+1 Tymora's Invoker (CLB) 101
 1 Tyranid Harridan (40K) 144
 1 Tyranid Invasion (40K) 102
 1 Tyranid Prime (40K) 145
 1 Tyrant Guard (40K) 103
 1 Tyvar's Stand (SOC) 291
+1 Uglúk of the White Hand (LTR) 235
 1 Unauthorized Exit
 1 Uncharted Haven (FDN) 564
 1 Unclaimed Territory (CMM) 1050
@@ -704,13 +768,18 @@
 1 Unnatural Speed
 1 Unstable Amulet
 1 Untamed Hunger (FDN) 529
+1 Unyielding Krumar (KTK) 94
+1 Uruk-hai Berserker (LTR) 112
 1 Uthros Psionicist (EOE) 84
 1 Uurg, Spawn of Turg (DMU) 225
 1 Vampire Interloper (FDN) 530
 1 Vampire Neonate (FDN) 531
 1 Vampire Spawn (FDN) 532
+1 Vaultbreaker (FRF) 117
 1 Velvetwing Butterflies // Gaze in Wonder (HOB) 30
+1 Venerated Stormsinger (TDM) 97
 1 Vengeful Bloodwitch (FDN) 76
+1 Vengeful Warchief (M20) 121
 1 Venomthrope (40K) 147
 1 Vernal Fen (EOC) 24
 1 Village Rites (LCC) 212
@@ -722,11 +791,13 @@
 1 Volcanic Torrent (SOC) 260
 1 Volley Veteran (FDN) 550
 1 Vow to Erebor (HOB) 31
+1 Warbringer (DTK) 168
 1 Warg Tactics (HOB) 139
 1 Wargling (HOB) 140
 1 Wastes (OGW) 183
 1 Watcher in the Web (SOI) 239
 1 Wayfarer's Bauble (M3C) 315
+1 Wayspeaker Bodyguard (TDM) 34
 1 Wheel of Potential
 1 Whirler Virtuoso
 1 Wilderland Scrounger (HOB) 141

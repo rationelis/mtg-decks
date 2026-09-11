@@ -365,6 +365,12 @@
       "deckName": "Oops all orcs",
       "fetchedAt": "2026-09-09T19:00:22+00:00",
       "pricedCount": 116
+    },
+    "orcs": {
+      "archidektDeckId": "25657626",
+      "deckName": "Oops all orcs",
+      "fetchedAt": "2026-09-11T17:29:53+00:00",
+      "pricedCount": 116
     }
   }
 }
