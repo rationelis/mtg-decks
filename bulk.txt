@@ -68,6 +68,7 @@
 1 Behemoth of Vault 0
 1 Bejeweled Warg (HOB) 117
 1 Bellowing Saddlebrute (KTK) 64
+1 Beorn's Hospitality (HOB) 120
 1 Beorn, Reluctant Host // Till and Tend (HOB) 118
 1 Bespoke Battlewagon (DRC) 71
 1 Bident of Thassa (M3C) 177
@@ -75,6 +76,7 @@
 1 Bigfin Bouncer (FDN) 31
 1 Bilbo Baggins, Burglar // Take a Glance (HOB) 34
 1 Bilbo's Deadly Slice (HOB) 62
+1 Bilbo, Luckwearer // Burglar's Plot (HOB) 32
 1 Binding the Old Gods (KHM) 206
 1 Biogenic Upgrade (FDN) 553
 1 Biophagus (40K) 87
@@ -89,9 +91,11 @@
 1 Bloodtithe Collector (FDN) 516
 1 Bojuka Bog (PLST) C18-238
 1 Bojuka Bog (SOC) 363
+1 Bolg of the North (HOB) 148
 1 Bombur, Gentle Dreamer (HOB) 88
 1 Bone Sabres (40K) 88
 1 Bothersome Noisemaker (HOB) 89
+1 Boughside Wanderers (HOB) 121
 1 Braids, Arisen Nightmare (DMU) 84
 1 Brainstorm
 1 Brazen Blademaster (LCI) 136
@@ -175,6 +179,7 @@
 1 Demand Answers
 1 Demolition Field
 1 Demonic Pact (ORI) 92
+1 Desert Were-Worm (HOB) 92
 1 Desolation of Smaug (HOB) 93
 1 Desperate Ritual
 1 Devoted Paladin (AFR) 11
@@ -187,7 +192,9 @@
 1 Disciple of the Vault (2XM) 86
 1 Dispel
 1 Dive Down
+1 Dori, Bearer of Friends (HOB) 94
 1 Down in the Valley (HOB) 124
+1 Down, Down to Goblin-town (HOB) 65
 1 Dr. Madison Li (PIP) 3
 1 Draconic Roar (IMA) 123
 1 Dragon Fodder (FDN) 535
@@ -198,10 +205,12 @@
 1 Drudge Sentinel (DOM) 89
 1 Druid of the Cowl (FDN) 554
 1 Duskwatch Hunter (HOB) 153
+1 Duskwatch Hunter (HOB) 153
 1 Dwarven Mauler (HOB) 95
 1 Dwarven Provisioner (HOB) 9
 1 Dwynen's Elite (FDN) 218
 1 Dynavolt Tower (KLD) 208
+1 Dáin, Lord of the Iron Hills (HOB) 8
 1 Eagle of the Great Shelf (HOB) 11
 1 Eagle's Rescue (HOB) 155
 1 Eaten Alive (INR) 106
@@ -274,8 +283,6 @@
 1 Fists of Flame (TLE) 166
 1 Fleeting Distraction (FDN) 155
 1 Forced Worship (NPH) 11
-8 Forest (SNC) 270
-8 Forest (ELD) 266
 1 Forger's Foundry (OTC) 14
 1 Formless Genesis (DSC) 61
 1 Foul Orchard (KHC) 110
@@ -287,9 +294,12 @@
 2x Frostboil Snarl
 1 Furnace Punisher (ONE) 291
 1 Furycalm Snarl
+1 Fíli the Pathfinder (HOB) 14
+1 Galion, Elvenking's Butler (HOB) 125
 1 Galion, Elvenking's Butler (HOB) 125
 1 Galvanic Discharge
 1 Game Trail (NCC) 405
+1 Gandalf, Wandering Wizard (HOB) 41
 1 Gandalf, Wandering Wizard (HOB) 41
 1 Gargoyle Flock (40K) 123
 1 Gargoyle Sentinel (M19) 236
@@ -305,6 +315,7 @@
 1 Giant's Boulder (HOB) 173
 1 Gilded Goose (SOC) 269
 1 Glacial Fortress
+1 Glamdring, Foe-hammer // Gleam of Death (HOB) 174
 1 Glider Kids (TLA) 21
 1 Glimmer of Genius
 1 Glóin the Mighty // Easy Pickings (HOB) 227
@@ -323,6 +334,7 @@
 1 Goliath Truck (40K) 158
 1 Gollum the Abandoned (HOB) 72
 1 Gollum, Silent Slinker // Meager Meal (HOB) 71
+1 Gollum, Silent Slinker // Meager Meal (HOB) 71
 1 Gonti's Aether Heart
 1 Gorbag of Minas Morgul (LTR) 86
 1 Great Fierce Bee (HOB) 73
@@ -331,8 +343,10 @@
 1 Grim Haruspex (CLB) 754
 1 Groundskeeper (SOI) 208
 1 Gruesome Scourger (M20) 104
+1 Guardian of the Halls (HOB) 127
 1 Guide of Souls
 1 Guild Thief (AFR) 61
+1 Gundabad Opportunist (HOB) 101
 1 Gundabad Opportunist (HOB) 101
 1 Guttersnipe (TDC) 217
 1 Hammer of Purphoros (THS) 124
@@ -354,6 +368,7 @@
 1 Highborn Vampire (FDN) 522
 1 Highway Robbery
 1 Hinterland Sanctifier (FDN) 730
+1 Hobbit Hole (HOB) 184
 1 Hobbit Hole (HOB) 184
 1 Horizon Explorer (EOC) 15
 1 Hormagaunt Horde (40K) 93
@@ -377,6 +392,7 @@
 1 Intrepid Outlander (AFR) 191
 1 Invasion Reinforcements (TLA) 24
 1 Iron Hills (HOB) 185
+1 Iron Hills Blacksmith (HOB) 216
 1 Ironclaw Buzzardiers (TSP) 165
 1 Ishkanah, Grafwidow (DSC) 187
 1 Izzet Boilerworks
@@ -402,7 +418,9 @@
 1 Korvold, Fae-Cursed King (ELD) 329
 1 Krumar Bond-Kin (KTK) 77
 1 Lake-town Lookout (HOB) 18
+1 Lake-town Lookout (HOB) 18
 1 Lake-town Mariners // Gone Fishing (HOB) 44
+1 Lakeshore Apothecary (HOB) 43
 1 Large Bear (HOB) 159
 1 Legion Loyalty (TDC) 122
 1 Leonin Skyhunter (FDN) 498
@@ -421,6 +439,7 @@
 1 Locthwain Gargoyle (ELD) 225
 1 Long Lake Nuisance (HOB) 45
 1 Long-Bodied Grey Dog (HOB) 1
+1 Long-Bodied Grey Dog (HOB) 1
 1 Longshot, Rebel Bowman (TLE) 120
 1 Lumberknot (INR) 206
 1 Lumengrid Gargoyle (CMR) 321
@@ -428,6 +447,7 @@
 1 Lure (IMA) 175
 1 Maalfeld Twins (FDN) 523
 1 Maestros Theater (SNC) 251
+1 Magnificent End (HOB) 20
 1 Magnificent End (HOB) 20
 1 Magnigoth Sentry (FDN) 556
 1 Magus Lucea Kane (40K) 7
@@ -453,7 +473,9 @@
 1 Mild-Mannered Librarian (FDN) 228
 1 Mind Stone
 1 Mirkwood (HOB) 188
+1 Mirkwood (HOB) 188
 1 Mirkwood Bats (LTR) 421
+1 Mirkwood Meditator (HOB) 48
 1 Mirkwood Meditator (HOB) 48
 1 Mirkwood Nurturer (HOB) 160
 1 Miscast
@@ -468,8 +490,6 @@
 1 Monk Gyatso (TLE) 81
 1 Moraug, Fury of Akoum (ZNR) 150
 1 Morbid Opportunist (SOC) 219
-7 Mountain (C15) 335
-3 Mountain (ELD) 262
 1 Mountain Valley (C18) 268
 1 Muddle the Mixture
 1 Multani, Yavimaya's Avatar (ZNC) 75
@@ -494,6 +514,7 @@
 1 Nori, Teller of Tales (HOB) 161
 1 Octavia, Living Thesis (OTC) 103
 1 Offer Immortality (FDN) 525
+1 Old Fat Spider Can't See Me (HOB) 50
 1 Old One Eye (40K) 96
 1 Old Thrush (HOB) 2
 1 Omnath, Locus of Rage (ZNC) 97
@@ -506,6 +527,7 @@
 1 Orcish Hellraiser (MH1) 136
 1 Orcish Vandal (DOM) 137
 1 Ordinary Bear (HOB) 133
+1 Ori, Keeper of Songs (HOB) 23
 1 Overclocked Electromancer (M3C) 110
 1 Overgrowth (J22) 702
 1 Pacifism (FDN) 501
@@ -535,6 +557,7 @@
 1 Plasma Caster
 1 Plumb the Forbidden (SOC) 224
 1 Plunder the Trollshaws (HOB) 51
+1 Plunder the Trollshaws (HOB) 51
 1 Plundering Pirate (LCI) 160
 1 Poison-Tip Archer (BLC) 256
 1 Poisoner's Apprentice (SOS) 92
@@ -557,11 +580,14 @@
 1 Pyretic Charge (OTC) 29
 1 Quandrix Charm (SOS) 217
 1 Quarrel (HOB) 135
+1 Quarrel (HOB) 135
 1 Quick Study (FDN) 513
 1 Quick-Draw Katana (FDN) 130
 1 Rabaroo Troop (TLA) 32
 1 Radical Idea (OTC) 110
 1 Rage into the Valley (HOB) 79
+1 Rage into the Valley (HOB) 79
+1 Ragged Short Spear (HOB) 108
 1 Ragged Short Spear (HOB) 108
 1 Raging Redcap (FDN) 543
 1 Rakdos Charm (GK2) 68
@@ -571,6 +597,7 @@
 1 Ranger's Guile (M21) 199
 1 Rapacious Dragon (TDC) 229
 1 Ravener (40K) 138
+1 Ravening Warg (HOB) 80
 1 Ravening Warg (HOB) 80
 1 Razorfield Ripper
 1 Read the Bones (DSC) 154
@@ -671,6 +698,7 @@
 1 Stir Up Trouble (HOB) 84
 1 Stone Idol Generator
 1 Stony-Voiced Goblins (HOB) 85
+1 Stony-Voiced Goblins (HOB) 85
 1 Storm Fleet Arsonist (XLN) 162
 1 Storm Fleet Spy (FDN) 515
 1 Storm of Memories (TLE) 126
@@ -685,7 +713,6 @@
 1 Sunshower Druid (BLB) 195
 1 Suspicious Shambler (FDN) 527
 1 Swab Goblin (FDN) 548
-5 Swamp (UND) 91
 1 Swiftfoot Boots (TDC) 328
 1 Swords to Plowshares
 1 Synth Eradicator
@@ -714,9 +741,11 @@
 1 Terror of Mount Velus (FDN) 549
 1 Tervigon (40K) 100
 1 Tezzeret's Gambit (M3C) 194
+1 The Chief Warg (HOB) 150
 1 The Eagles Are Coming! (HOB) 12
 1 The First Tyrannic War (40K) 121
 1 The Gitrog Monster (INR) 431
+1 The Lord of the Eagles (HOB) 46
 1 The Motherlode, Excavator
 1 The Mountain-king's Return (HOB) 22
 1 The Red Terror (40K) 83
@@ -736,6 +765,7 @@
 1 Thriving Heath (TLE) 262
 1 Thrór's Map (HOB) 179
 1 Thunderclap Drake (SOC) 204
+1 Tidings of War (HOB) 115
 1 Tireless Provisioner (BLC) 243
 1 Tireless Tracker (PLST) SOI-233
 1 Titania, Protector of Argoth (CMA) 157
@@ -777,6 +807,7 @@
 1 Vampire Spawn (FDN) 532
 1 Vaultbreaker (FRF) 117
 1 Velvetwing Butterflies // Gaze in Wonder (HOB) 30
+1 Velvetwing Butterflies // Gaze in Wonder (HOB) 30
 1 Venerated Stormsinger (TDM) 97
 1 Vengeful Bloodwitch (FDN) 76
 1 Vengeful Warchief (M20) 121
@@ -791,6 +822,7 @@
 1 Volcanic Torrent (SOC) 260
 1 Volley Veteran (FDN) 550
 1 Vow to Erebor (HOB) 31
+1 Vow to Erebor (HOB) 31
 1 Warbringer (DTK) 168
 1 Warg Tactics (HOB) 139
 1 Wargling (HOB) 140
@@ -798,6 +830,7 @@
 1 Watcher in the Web (SOI) 239
 1 Wayfarer's Bauble (M3C) 315
 1 Wayspeaker Bodyguard (TDM) 34
+1 Well-Worn Spatula (HOB) 180
 1 Wheel of Potential
 1 Whirler Virtuoso
 1 Wilderland Scrounger (HOB) 141
@@ -808,7 +841,9 @@
 1 Winged Boots (OTC) 124
 1 Winged Hive Tyrant (40K) 148
 1 Wood Elves (HOB) 142
+1 Wood Elves (HOB) 142
 1 Woodland Cemetery (SOC) 424
+1 Woodland Weavemaster (HOB) 143
 1 World Breaker (M3C) 253
 1 Worldsoul's Rage (MKM) 244
 1 Wrath of the Skies
