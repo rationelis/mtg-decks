@@ -241,9 +241,12 @@ tr.row-missing .cell-name {
   flex: 1 1 220px;
 }
 
-.type-input,
-.set-input {
+.type-input {
   width: 130px;
+}
+
+.set-select {
+  max-width: 220px;
 }
 
 .range-group {
@@ -281,7 +284,8 @@ tr.row-missing .cell-name {
   border-color: var(--accent);
 }
 
-.reset-button {
+.reset-button,
+.copy-link-button {
   padding: 0.35rem 0.7rem;
   border-radius: 0.35rem;
   border: 1px solid var(--border);
@@ -289,6 +293,10 @@ tr.row-missing .cell-name {
   color: inherit;
   cursor: pointer;
   font-size: 0.85rem;
+}
+
+.copy-link-button {
+  min-width: 5.5rem;
 }
 
 .result-count {

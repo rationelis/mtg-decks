@@ -21,6 +21,7 @@ const UNRESOLVED_PLACEHOLDER: Omit<CardData, "name"> = {
   type_line: "",
   oracle_text: "",
   set: "",
+  set_name: "",
   rarity: "",
   image_uri: null,
   scryfall_uri: null,

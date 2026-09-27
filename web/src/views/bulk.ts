@@ -6,11 +6,12 @@ import { createViewToggle } from "../components/viewToggle";
 import { getBulk, getCards, getMeta } from "../data";
 import { bulkRows } from "../diff";
 import { h, clear } from "../dom";
-import { matchesFilter, type FilterState } from "../filters";
+import { filterFromParams, filterToParams, matchesFilter, type FilterState } from "../filters";
 import { priceNote } from "../priceNote";
+import { replaceQueryParams } from "../router";
 import { sortRows, type SortKey } from "../sort";
 
-export async function renderBulk(root: HTMLElement): Promise<void> {
+export async function renderBulk(root: HTMLElement, params: URLSearchParams): Promise<void> {
   clear(root);
   root.append(h("h1", {}, "Bulk"), h("p", { class: "loading" }, "Loading bulk…"));
 
@@ -21,20 +22,23 @@ export async function renderBulk(root: HTMLElement): Promise<void> {
 
   const resultsContainer = h("div", { class: "results" });
   let sortKey: SortKey = "name-asc";
-  let currentFilter: FilterState | null = null;
+  let currentFilter: FilterState = filterFromParams(params);
   let mode: ViewMode = "gallery";
 
   function render(): void {
-    const filtered = currentFilter
-      ? rows.filter((r) => matchesFilter(r.card, currentFilter!))
-      : rows;
+    const filtered = rows.filter((r) => matchesFilter(r.card, currentFilter));
     renderCardView(resultsContainer, sortRows(filtered, sortKey), { mode });
   }
 
-  const filterBar = createFilterBar((state) => {
-    currentFilter = state;
-    render();
-  });
+  const filterBar = createFilterBar(
+    rows.map((r) => r.card),
+    (state) => {
+      currentFilter = state;
+      replaceQueryParams(filterToParams(state));
+      render();
+    },
+    currentFilter,
+  );
   const sortSelect = createSortSelect((key) => {
     sortKey = key;
     render();

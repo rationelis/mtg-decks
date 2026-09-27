@@ -26,6 +26,7 @@ _CARD_FIELDS = (
     "type_line",
     "oracle_text",
     "set",
+    "set_name",
     "rarity",
     "image_uri",
     "scryfall_uri",

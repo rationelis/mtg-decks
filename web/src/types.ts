@@ -11,6 +11,7 @@ export interface CardData {
   type_line: string;
   oracle_text: string;
   set: string;
+  set_name: string;
   rarity: string;
   image_uri: string | null;
   scryfall_uri: string | null;

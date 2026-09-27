@@ -6,13 +6,19 @@ import { createViewToggle } from "../components/viewToggle";
 import { getBulk, getCards, getList, getMeta } from "../data";
 import { diffList, type DiffRow } from "../diff";
 import { h, clear } from "../dom";
-import { matchesFilter, type FilterState } from "../filters";
+import { filterFromParams, filterToParams, matchesFilter, type FilterState } from "../filters";
 import { priceNote } from "../priceNote";
+import { replaceQueryParams } from "../router";
 import { sortRows, type SortKey } from "../sort";
 
 type Tab = "all" | "owned" | "missing";
 
-export async function renderList(root: HTMLElement, kind: string, id: string): Promise<void> {
+export async function renderList(
+  root: HTMLElement,
+  kind: string,
+  id: string,
+  params: URLSearchParams,
+): Promise<void> {
   clear(root);
   root.append(h("p", { class: "loading" }, "Loading…"));
 
@@ -34,7 +40,7 @@ export async function renderList(root: HTMLElement, kind: string, id: string): P
   clear(root);
 
   let activeTab: Tab = "all";
-  let currentFilter: FilterState | null = null;
+  let currentFilter: FilterState = filterFromParams(params);
   let sortKey: SortKey = "name-asc";
   let mode: ViewMode = "gallery";
 
@@ -47,8 +53,7 @@ export async function renderList(root: HTMLElement, kind: string, id: string): P
   }
 
   function render(): void {
-    let rows = rowsForTab(activeTab);
-    if (currentFilter) rows = rows.filter((r) => matchesFilter(r.card, currentFilter!));
+    const rows = rowsForTab(activeTab).filter((r) => matchesFilter(r.card, currentFilter));
     renderCardView(resultsContainer, sortRows(rows, sortKey), { mode, showDiffColumns: true });
   }
 
@@ -67,10 +72,15 @@ export async function renderList(root: HTMLElement, kind: string, id: string): P
     });
   }
 
-  const filterBar = createFilterBar((state) => {
-    currentFilter = state;
-    render();
-  });
+  const filterBar = createFilterBar(
+    diff.map((r) => r.card),
+    (state) => {
+      currentFilter = state;
+      replaceQueryParams(filterToParams(state));
+      render();
+    },
+    currentFilter,
+  );
   const sortSelect = createSortSelect((key) => {
     sortKey = key;
     render();

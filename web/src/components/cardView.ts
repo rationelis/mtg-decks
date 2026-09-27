@@ -191,7 +191,11 @@ function renderTableRow(row: CardRow, showDiff: boolean): HTMLElement {
     h("td", { class: "cell-mv" }, card.resolved ? String(card.mana_value) : "—"),
     h("td", { class: "cell-type" }, card.type_line || "—"),
     h("td", { class: "cell-rarity" }, card.rarity || "—"),
-    h("td", { class: "cell-set" }, card.set ? card.set.toUpperCase() : "—"),
+    h(
+      "td",
+      { class: "cell-set", title: card.set ? card.set.toUpperCase() : undefined },
+      card.set_name || (card.set ? card.set.toUpperCase() : "—"),
+    ),
     h("td", { class: "cell-price" }, card.price_eur != null ? `€${card.price_eur.toFixed(2)}` : "—"),
   ];
   const rowClasses = [!card.resolved && "unresolved-row", missing && "row-missing"]

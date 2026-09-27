@@ -76,6 +76,7 @@ class CardData:
     type_line: str = ""
     oracle_text: str = ""
     set: str = ""
+    set_name: str = ""
     rarity: str = ""
     image_uri: str | None = None
     scryfall_uri: str | None = None
@@ -183,6 +184,7 @@ def _card_to_data(card: dict[str, Any], now: str) -> CardData:
         type_line=card.get("type_line", ""),
         oracle_text=_oracle_text(card),
         set=card.get("set", ""),
+        set_name=card.get("set_name", ""),
         rarity=card.get("rarity", ""),
         image_uri=_image_uri(card),
         scryfall_uri=card.get("scryfall_uri"),
@@ -417,6 +419,7 @@ def _use_cache_fallback(
             type_line=str(cached.get("type_line", "")),
             oracle_text=str(cached.get("oracle_text", "")),
             set=str(cached.get("set", "")),
+            set_name=str(cached.get("set_name", "")),
             rarity=str(cached.get("rarity", "")),
             image_uri=cached.get("image_uri"),
             scryfall_uri=cached.get("scryfall_uri"),
