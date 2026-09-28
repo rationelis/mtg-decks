@@ -22,7 +22,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-from archidekt import fetch_deck, main_deck_entries  # noqa: E402
+from archidekt import fetch_deck, main_deck_entries, unit_price_cm  # noqa: E402
 
 
 def build_type_line(oracle_card):
@@ -78,8 +78,7 @@ def extract_card_data(card_entry):
     subcategories = categories[1:] if len(categories) > 1 else []
 
     # Extract price (CardMarket)
-    prices = card.get("prices", {})
-    price_cm = prices.get("cm") or 0.0
+    price_cm = unit_price_cm(card_entry)
 
     return {
         "name": oracle_card.get("name", "Unknown"),

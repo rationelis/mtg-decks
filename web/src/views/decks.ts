@@ -1,14 +1,8 @@
 import { getBulk, getCards, getIndex, getList } from "../data";
 import { diffList } from "../diff";
 import { h, clear } from "../dom";
+import { isCollectionLike } from "../listKind";
 import type { IndexEntry } from "../types";
-
-/** A list under decks/ can still really be a wishlist/collection (see
- * IndexEntry.collection), and every list under collections/ is one by
- * kind - either way, a commander isn't relevant for it. */
-function isCollectionLike(entry: IndexEntry): boolean {
-  return entry.kind === "collection" || entry.collection;
-}
 
 export async function renderDecks(root: HTMLElement): Promise<void> {
   clear(root);

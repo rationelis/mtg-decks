@@ -61,7 +61,24 @@ def oracle_name(entry: dict) -> str:
 
 
 def unit_price_cm(entry: dict) -> float:
-    return entry.get("card", {}).get("prices", {}).get("cm") or 0.0
+    """Best-effort Cardmarket unit price for `entry`'s picked printing.
+
+    Archidekt tracks normal and foil average prices separately (`cm` /
+    `cmfoil`); a foil-modifier entry often has a real price only under
+    `cmfoil`, which would otherwise look unpriced. Falls back to the
+    other finish's average, and finally to `cmMinimum` (the cheapest
+    live Cardmarket listing across all finishes) for very new cards
+    whose averages haven't been computed yet, before giving up.
+    """
+    prices = entry.get("card", {}).get("prices", {})
+    is_foil = "foil" in (entry.get("modifier") or "").lower()
+    primary, secondary = ("cmfoil", "cm") if is_foil else ("cm", "cmfoil")
+    return (
+        prices.get(primary)
+        or prices.get(secondary)
+        or prices.get("cmMinimum")
+        or 0.0
+    )
 
 
 def price_map(deck: dict, normalize) -> tuple[dict[str, float], list[str]]:

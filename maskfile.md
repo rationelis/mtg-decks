@@ -65,7 +65,7 @@ python3 scripts/build/build.py
 cd web && npm install && npm run build
 ```
 
-## fetch-bulk-prices (archidekt_deck)
+## fetch-bulk-prices [archidekt_deck]
 
 > Fetch real Cardmarket prices for owned cards from an Archidekt bulk-mirror deck
 
@@ -84,7 +84,7 @@ fi
 python3 scripts/fetch-bulk-prices.py "$archidekt_deck"
 ```
 
-## fetch-list-prices (label) (archidekt_deck)
+## fetch-list-prices [label] [archidekt_deck]
 
 > Fetch reference Cardmarket prices for decks/collections you don't (fully) own
 
@@ -116,6 +116,49 @@ else
     echo "Example: mask fetch-list-prices orcs 25657626  (one ad-hoc deck)"
     exit 1
 fi
+```
+
+## refresh-all [archidekt_deck]
+
+> Fetch bulk + every list's prices, then rebuild all data in one shot
+
+Runs the full "I just added/changed some decks/bulk" refresh as one
+command: `fetch-bulk-prices` (real Cardmarket prices for owned cards),
+then `fetch-list-prices` with no arguments (reference prices for every
+deck/collection under decks/ and collections/ that has a known
+Archidekt id - e.g. a new `NNNN_name.txt` file you just added), then
+`build-data`. Equivalent to running those three tasks by hand, just in
+one go after e.g. a prerelease haul or a new decklist.
+
+If `archidekt_deck` is omitted, reuses the bulk-mirror deck id already
+recorded in cache/bulk-prices.json from the last time it was fetched -
+so once you've fetched it at least once, plain `mask refresh-all` is
+enough.
+
+**Example:** `mask refresh-all` (reuse the last bulk-mirror deck id)
+**Example:** `mask refresh-all 25868036` (explicit bulk-mirror deck id)
+
+```bash
+deck_id="$archidekt_deck"
+if [[ -z "$deck_id" ]]; then
+    deck_id=$(python3 -c "
+import json
+from pathlib import Path
+p = Path('cache/bulk-prices.json')
+print(json.loads(p.read_text()).get('archidektDeckId', '') if p.exists() else '')
+")
+fi
+
+if [[ -z "$deck_id" ]]; then
+    echo "Usage: mask refresh-all [<bulk_archidekt_deck_id>]"
+    echo "No bulk-mirror deck id given, and none found in cache/bulk-prices.json yet -"
+    echo "run 'mask fetch-bulk-prices <id>' once so refresh-all has one to reuse."
+    exit 1
+fi
+
+python3 scripts/fetch-bulk-prices.py "$deck_id"
+python3 scripts/fetch-list-prices.py
+python3 scripts/build/build.py
 ```
 
 ## check

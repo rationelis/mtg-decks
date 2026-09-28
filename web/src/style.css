@@ -193,6 +193,13 @@ tr.row-missing .cell-name {
   font-size: 0.78rem;
 }
 
+.shared-badge {
+  color: #a24fc4;
+  font-weight: 600;
+  font-size: 0.78rem;
+  cursor: help;
+}
+
 .archived-section {
   margin-top: 1.5rem;
   color: var(--muted);
@@ -285,7 +292,8 @@ tr.row-missing .cell-name {
 }
 
 .reset-button,
-.copy-link-button {
+.copy-link-button,
+.export-button {
   padding: 0.35rem 0.7rem;
   border-radius: 0.35rem;
   border: 1px solid var(--border);
@@ -297,6 +305,22 @@ tr.row-missing .cell-name {
 
 .copy-link-button {
   min-width: 5.5rem;
+}
+
+.export-button {
+  white-space: nowrap;
+}
+
+.shopping-list-actions {
+  margin: 0.25rem 0 0.5rem;
+}
+
+.shopping-list-actions .export-button {
+  background: var(--accent);
+  color: white;
+  border-color: var(--accent);
+  font-weight: 600;
+  padding: 0.5rem 1rem;
 }
 
 .result-count {
@@ -321,6 +345,7 @@ tr.row-missing .cell-name {
 
 .stats {
   display: flex;
+  flex-wrap: wrap;
   gap: 2rem;
   margin: 0.75rem 0 1.25rem;
 }
@@ -466,7 +491,8 @@ tr.row-missing .cell-name {
 
 .gallery-card-image .qty-badge,
 .gallery-card-image .diff-badge,
-.gallery-card-image .unresolved-badge {
+.gallery-card-image .unresolved-badge,
+.gallery-card-image .shared-badge {
   position: absolute;
   font-size: 0.68rem;
   font-weight: 700;
@@ -494,6 +520,14 @@ tr.row-missing .cell-name {
   right: 0.35rem;
   background: rgba(0, 0, 0, 0.65);
   color: #ffb648;
+}
+
+.gallery-card-image .shared-badge {
+  bottom: 0.35rem;
+  left: 0.35rem;
+  background: rgba(0, 0, 0, 0.65);
+  color: #c98be0;
+  cursor: help;
 }
 
 /* "Not owned" flavor, gallery mode - inspired by Hearthstone's

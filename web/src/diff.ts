@@ -36,7 +36,7 @@ function lookupCard(name: string, cards: CardsIndex): CardData {
 /** Basic lands are never tracked in bulk.txt (there's no point counting
  * Forests), so a deck listing them would otherwise always show as
  * "missing" them. Treat them as always fully owned instead. */
-function isBasicLand(card: CardData): boolean {
+export function isBasicLand(card: CardData): boolean {
   return card.type_line.toLowerCase().includes("basic land");
 }
 

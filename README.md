@@ -125,6 +125,16 @@ mask fetch-bulk-prices <archidekt_deck_id>   # e.g. 25868036
 mask build-data
 ```
 
+Added or changed a deck/collection too (e.g. a new NNNN_name.txt from a
+prerelease)? `mask refresh-all` does the above plus fetch-list-prices
+for every list with a known Archidekt id, in one command - and once
+you've run fetch-bulk-prices at least once, it even remembers your
+bulk-mirror deck id, so plain `mask refresh-all` is enough:
+
+```bash
+mask refresh-all
+```
+
 Commit the updated `bulk.txt` and `cache/*.json` and push - the deploy
 workflow rebuilds the site (and also reruns weekly on its own to catch
 any drift).

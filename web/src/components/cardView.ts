@@ -11,6 +11,17 @@ export interface CardRow {
   card: CardData;
   ownedQty?: number;
   missingQty?: number;
+  /** Set only when the number of copies actually needed across *every*
+   * active deck exceeds what bulk.txt has, beyond what this row's own
+   * missingQty already accounts for (see views/list.ts's
+   * additionalNeeded) - i.e. a real "you should buy more" signal, not
+   * just harmless overlap between decks. */
+  contention?: {
+    additionalNeeded: number;
+    sharedWith: { name: string; qty: number }[];
+    totalDemand: number;
+    bulkQty: number;
+  };
 }
 
 export type ViewMode = "gallery" | "list";
@@ -44,6 +55,24 @@ function diffBadge(row: CardRow): HTMLElement | false {
   if (row.ownedQty === undefined || row.missingQty === undefined) return false;
   if (row.missingQty > 0) return false; // the not-owned overlay communicates this instead
   return h("span", { class: "diff-badge owned" }, "owned");
+}
+
+function sharedBadge(row: CardRow): HTMLElement | false {
+  const contention = row.contention;
+  if (!contention || contention.additionalNeeded <= 0) return false;
+  const detail = contention.sharedWith.map((s) => s.name + " (x" + s.qty + ")").join(", ");
+  const label = "order " + contention.additionalNeeded + " more";
+  const title =
+    "Also wanted by: " +
+    detail +
+    ". Total demand across active decks: " +
+    contention.totalDemand +
+    ", you own: " +
+    contention.bulkQty +
+    " - " +
+    label +
+    " to cover every deck.";
+  return h("span", { class: "shared-badge", title }, label);
 }
 
 /** Hearthstone-style "you don't own this" treatment: a translucent,
@@ -113,6 +142,7 @@ function renderGalleryCard(row: CardRow, showDiff: boolean): HTMLElement {
       showDiff && notOwnedOverlay(row),
       row.qty > 1 && h("span", { class: "qty-badge" }, `×${row.qty}`),
       showDiff && diffBadge(row),
+      showDiff && sharedBadge(row),
       !card.resolved && h("span", { class: "unresolved-badge", title: "Unresolved card name" }, "⚠"),
     ),
     h(
@@ -185,6 +215,7 @@ function renderTableRow(row: CardRow, showDiff: boolean): HTMLElement {
           { class: "not-owned-badge", title: `${row.missingQty} missing` },
           " ⚠ not owned",
         ),
+      showDiff && sharedBadge(row),
       !card.resolved && h("span", { class: "unresolved-badge", title: "Unresolved card name" }, " ⚠"),
     ),
     h("td", { class: "cell-mana" }, card.mana_cost || "—"),
