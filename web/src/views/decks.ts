@@ -1,7 +1,7 @@
-import { getBulk, getCards, getIndex, getList } from "../data";
-import { diffList } from "../diff";
+import { getCards, getIndex, getList } from "../data";
 import { h, clear } from "../dom";
 import { isCollectionLike } from "../listKind";
+import { normalizeName } from "../normalize";
 import type { IndexEntry } from "../types";
 
 export async function renderDecks(root: HTMLElement): Promise<void> {
@@ -52,8 +52,9 @@ export async function renderDecks(root: HTMLElement): Promise<void> {
 
   root.append(...sections);
 
-  // Progressive enhancement: fill in owned/missing/price once the
-  // (small) shared data files and each list's entries have loaded.
+  // Progressive enhancement: fill in owned/missing/price once each
+  // list's entries (which already carry ownedQty/missingQty - see
+  // scripts/build/allocate.py) and the shared cards.json have loaded.
   void fillInStats(active, rowsById);
 }
 
@@ -128,7 +129,7 @@ async function fillInStats(
   entries: IndexEntry[],
   rowsById: Map<string, HTMLElement>,
 ): Promise<void> {
-  const [cards, bulk] = await Promise.all([getCards(), getBulk()]);
+  const cards = await getCards();
 
   await Promise.all(
     entries.map(async (entry) => {
@@ -136,14 +137,14 @@ async function fillInStats(
       if (!row) return;
 
       const list = await getList(entry.kind, entry.id);
-      const diff = diffList(list, bulk, cards);
 
-      const ownedCount = diff.reduce((sum, r) => sum + r.ownedQty, 0);
-      const missingCount = diff.reduce((sum, r) => sum + r.missingQty, 0);
-      const missingPrice = diff.reduce(
-        (sum, r) => sum + (r.missingQty > 0 ? (r.card.price_eur ?? 0) * r.missingQty : 0),
-        0,
-      );
+      const ownedCount = list.entries.reduce((sum, e) => sum + (e.ownedQty ?? 0), 0);
+      const missingCount = list.entries.reduce((sum, e) => sum + (e.missingQty ?? 0), 0);
+      const missingPrice = list.entries.reduce((sum, e) => {
+        if (!e.missingQty) return sum;
+        const card = cards[normalizeName(e.name)];
+        return sum + (card?.price_eur ?? 0) * e.missingQty;
+      }, 0);
 
       const ownedCell = row.querySelector(".cell-owned");
       const missingCell = row.querySelector(".cell-missing");

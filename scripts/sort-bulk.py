@@ -2,9 +2,8 @@
 """Sort bulk.txt alphabetically by card name, in place.
 
 Only bulk.txt is sorted - it's a flat "everything I own" list with no
-meaningful order, so sorting it keeps it easy to scan and diff in git.
-Decks/collections/precons are intentionally left untouched: their line
-order often mirrors a curated layout (a precon in particular mirrors the
+meaningful order. Decks/collections/precons are intentionally left untouched: their
+line order often mirrors a curated layout (a precon in particular mirrors the
 original product's printed decklist), which sorting would destroy for no
 benefit - ownership diffing is already order-independent (diff.py compares
 via a Counter, not line position).
@@ -20,7 +19,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent / "build"))
 
-from parse import ENTRY_RE, normalize_name  # noqa: E402
+from parse import normalize_name, parse_entry_line  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 
@@ -38,12 +37,12 @@ def sort_file(path: Path) -> bool:
         stripped = line.strip()
         if not stripped:
             continue
-        if stripped.startswith("#") or not ENTRY_RE.match(stripped):
+        if stripped.startswith("#") or parse_entry_line(stripped) is None:
             header.append(line)
         else:
             entries.append(line)
 
-    entries.sort(key=lambda line: normalize_name(ENTRY_RE.match(line.strip()).group("name")))
+    entries.sort(key=lambda line: normalize_name(parse_entry_line(line.strip()).name))
 
     new_text = "\n".join(header + entries) + "\n"
     if new_text == old_text:

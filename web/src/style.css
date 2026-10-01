@@ -168,14 +168,6 @@ h1 {
   width: 88px;
 }
 
-.unresolved-row {
-  opacity: 0.7;
-}
-
-.unresolved-badge {
-  color: #e0562f;
-}
-
 /* "Not owned" flavor, list mode - inspired by Hearthstone's translucent,
    blue-grey shaded treatment for cards you don't have. */
 .cell-image-missing img {
@@ -191,13 +183,6 @@ tr.row-missing .cell-name {
   color: #7d97c9;
   font-weight: 600;
   font-size: 0.78rem;
-}
-
-.shared-badge {
-  color: #a24fc4;
-  font-weight: 600;
-  font-size: 0.78rem;
-  cursor: help;
 }
 
 .archived-section {
@@ -309,18 +294,6 @@ tr.row-missing .cell-name {
 
 .export-button {
   white-space: nowrap;
-}
-
-.shopping-list-actions {
-  margin: 0.25rem 0 0.5rem;
-}
-
-.shopping-list-actions .export-button {
-  background: var(--accent);
-  color: white;
-  border-color: var(--accent);
-  font-weight: 600;
-  padding: 0.5rem 1rem;
 }
 
 .result-count {
@@ -490,9 +463,7 @@ tr.row-missing .cell-name {
 }
 
 .gallery-card-image .qty-badge,
-.gallery-card-image .diff-badge,
-.gallery-card-image .unresolved-badge,
-.gallery-card-image .shared-badge {
+.gallery-card-image .diff-badge {
   position: absolute;
   font-size: 0.68rem;
   font-weight: 700;
@@ -513,21 +484,6 @@ tr.row-missing .cell-name {
   right: 0.35rem;
   color: white;
   background: #2e9e4f;
-}
-
-.gallery-card-image .unresolved-badge {
-  bottom: 0.35rem;
-  right: 0.35rem;
-  background: rgba(0, 0, 0, 0.65);
-  color: #ffb648;
-}
-
-.gallery-card-image .shared-badge {
-  bottom: 0.35rem;
-  left: 0.35rem;
-  background: rgba(0, 0, 0, 0.65);
-  color: #c98be0;
-  cursor: help;
 }
 
 /* "Not owned" flavor, gallery mode - inspired by Hearthstone's
@@ -587,4 +543,67 @@ tr.row-missing .cell-name {
 .gallery-card-price {
   font-variant-numeric: tabular-nums;
   font-weight: 600;
+}
+
+.gallery-card-price[title],
+.cell-price[title] {
+  text-decoration: underline dotted var(--muted);
+  cursor: help;
+}
+
+.card-popover {
+  z-index: 50;
+  width: 260px;
+  max-width: calc(100vw - 2rem);
+  padding: 0.85rem 1rem;
+  border-radius: 0.6rem;
+  border: 1px solid var(--border);
+  background: canvas;
+  color: canvastext;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  font-size: 0.85rem;
+}
+
+.card-popover h3 {
+  margin: 0 0 0.5rem;
+  padding-right: 1.5rem;
+  font-size: 1rem;
+}
+
+.card-popover p {
+  margin: 0.25rem 0;
+}
+
+.card-popover ul {
+  margin: 0.25rem 0 0;
+  padding-left: 1.1rem;
+}
+
+.card-popover .popover-close {
+  position: absolute;
+  top: 0.4rem;
+  right: 0.5rem;
+  border: none;
+  background: none;
+  color: var(--muted);
+  font-size: 1.1rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0.2rem;
+}
+
+.card-popover .popover-summary {
+  padding: 0.4rem 0.55rem;
+  margin: 0 0 0.5rem;
+  border-radius: 0.4rem;
+  background: color-mix(in srgb, orange 18%, transparent);
+}
+
+.card-popover .popover-summary strong {
+  display: block;
+}
+
+.card-popover .popover-note,
+.card-popover .popover-error {
+  color: var(--muted);
 }

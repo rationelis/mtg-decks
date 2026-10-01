@@ -12,7 +12,7 @@
 1 Aetherworks Marvel (M3C) 281
 1 Akroma's Will (M3C) 165
 1 Amped Raptor (MH3) 114
-1 Arcane Signet (M3C) 283
+1 Arcane Signet
 1 Assaultron Dominator
 1 Aurora Shifter (M3C) 97
 1 Automated Assembly Line
@@ -23,7 +23,7 @@
 1 Castle Vantress (M3C) 327
 1 Clifftop Retreat
 1 Coalition Relic (M3C) 286
-1 Command Tower (M3C) 331
+1 Command Tower
 1 Confiscation Coup (M3C) 178
 1 Conversion Apparatus (M3C) 128
 1 Decoction Module (M3C) 288
@@ -68,7 +68,7 @@
 1 Salvation Colossus (M3C) 95
 1 Sentry Bot
 1 Shivan Reef (M3C) 375
-1 Sol Ring (M3C) 305
+1 Sol Ring
 1 Solar Transformer (MH3) 211
 1 Solemn Simulacrum (M3C) 306
 1 Sphinx of the Revelation (M3C) 127
@@ -80,7 +80,7 @@
 1 Talisman of Creativity (M3C) 308
 1 Talisman of Progress (M3C) 313
 1 Temple of Enlightenment (M3C) 386
-1 Temple of Epiphany (M3C) 387
+1 Temple of Epiphany
 1 Temple of Triumph (M3C) 392
 1 The Motherlode, Excavator
 1 Tune the Narrative

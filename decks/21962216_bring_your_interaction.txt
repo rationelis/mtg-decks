@@ -1,7 +1,7 @@
 # commander: Stella Lee, Wild Card
 1 Stella Lee, Wild Card (OTC) 3 *F*
 1 An Offer You Can't Refuse
-1 Arcane Signet (OTC) 252
+1 Arcane Signet
 1 Big Score (OTC) 155
 1 Bitter Reunion
 1 Brainstorm
@@ -9,7 +9,7 @@
 1 Cathartic Reunion
 1 Cerulean Wisps
 1 Chaos Charm
-1 Command Tower (OTC) 280
+1 Command Tower
 1 Compelling Deterrence
 1 Concerted Defense
 1 Consider
@@ -64,7 +64,7 @@
 1 Simian Spirit Guide
 1 Sky Diamond
 1 Snap
-1 Sol Ring (OTC) 267
+1 Sol Ring
 1 Solve the Equation
 1 Spell Pierce
 1 Star Compass

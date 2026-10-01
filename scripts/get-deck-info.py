@@ -25,6 +25,8 @@ import json as json_lib
 import sys
 from pathlib import Path
 
+import requests
+
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from archidekt import fetch_deck, total_price_cm  # noqa: E402
@@ -41,7 +43,11 @@ def main():
         if arg.startswith("--format="):
             output_format = arg.split("=", 1)[1]
 
-    deck = fetch_deck(deck_id)
+    try:
+        deck = fetch_deck(deck_id)
+    except requests.RequestException as e:
+        print(f"Error fetching deck {deck_id}: {e}", file=sys.stderr)
+        sys.exit(1)
     info = {"name": deck.get("name", "Unknown Deck"), "price": total_price_cm(deck)}
 
     if output_format == "json":

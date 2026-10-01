@@ -11,6 +11,7 @@ import json
 from pathlib import Path
 from typing import Any
 
+from allocate import EntryOwnership, Usage
 from parse import CardList
 from resolve import CardData
 
@@ -18,7 +19,6 @@ from resolve import CardData
 # (last_checked, fuzzy_matched_from) that only matter for the build itself.
 _CARD_FIELDS = (
     "name",
-    "resolved",
     "mana_cost",
     "mana_value",
     "colors",
@@ -31,6 +31,7 @@ _CARD_FIELDS = (
     "image_uri",
     "scryfall_uri",
     "price_eur",
+    "price_state",
     "released_at",
 )
 
@@ -39,7 +40,14 @@ def _card_json(data: CardData) -> dict[str, Any]:
     return {field: getattr(data, field) for field in _CARD_FIELDS}
 
 
-def _list_json(card_list: CardList) -> dict[str, Any]:
+def _list_json(card_list: CardList, ownership: list[EntryOwnership] | None) -> dict[str, Any]:
+    entries = []
+    for i, e in enumerate(card_list.entries):
+        entry: dict[str, Any] = {"name": e.name, "qty": e.qty}
+        if ownership is not None:
+            entry["ownedQty"] = ownership[i].owned_qty
+            entry["missingQty"] = ownership[i].missing_qty
+        entries.append(entry)
     return {
         "id": card_list.id,
         "kind": card_list.kind,
@@ -50,7 +58,7 @@ def _list_json(card_list: CardList) -> dict[str, Any]:
         "proxy": card_list.proxy,
         "collection": card_list.collection,
         "sourcePath": card_list.source_path,
-        "entries": [{"name": e.name, "qty": e.qty} for e in card_list.entries],
+        "entries": entries,
     }
 
 
@@ -69,11 +77,27 @@ def _index_entry(card_list: CardList) -> dict[str, Any]:
     }
 
 
+def _usage_json(usage: dict[str, Usage]) -> dict[str, Any]:
+    return {
+        key: {
+            "owned": u.owned,
+            "available": u.available,
+            "allocations": [
+                {"listId": a.list_id, "listName": a.list_name, "quantity": a.quantity}
+                for a in u.allocations
+            ],
+        }
+        for key, u in usage.items()
+    }
+
+
 def emit_all(
     data_dir: Path,
     bulk: CardList,
     lists: list[CardList],
     card_data: dict[str, CardData],
+    usage: dict[str, Usage],
+    entry_ownership: dict[str, list[EntryOwnership]],
     warnings: list[str],
     generated_at: str,
     bulk_prices_meta: dict[str, Any] | None = None,
@@ -86,23 +110,25 @@ def emit_all(
     cards_json = {key: _card_json(data) for key, data in card_data.items()}
     _write(data_dir / "cards.json", cards_json)
 
-    _write(data_dir / "bulk.json", _list_json(bulk))
+    _write(data_dir / "bulk.json", _list_json(bulk, None))
 
     for card_list in lists:
-        _write(lists_dir / f"{card_list.kind}-{card_list.id}.json", _list_json(card_list))
+        key = f"{card_list.kind}-{card_list.id}"
+        _write(
+            lists_dir / f"{key}.json",
+            _list_json(card_list, entry_ownership.get(key)),
+        )
+
+    _write(data_dir / "usage.json", _usage_json(usage))
 
     index = [_index_entry(cl) for cl in lists]
     _write(data_dir / "index.json", index)
 
-    unresolved = sorted(
-        {data.name for data in card_data.values() if not data.resolved}
-    )
     _write(
         data_dir / "meta.json",
         {
             "generatedAt": generated_at,
             "uniqueCardCount": len(card_data),
-            "unresolvedCount": len(unresolved),
             "warnings": warnings,
             "bulkPrices": bulk_prices_meta,
             "listPrices": list_prices_meta,

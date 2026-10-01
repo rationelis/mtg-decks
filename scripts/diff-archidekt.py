@@ -20,6 +20,8 @@ import sys
 from collections import Counter
 from pathlib import Path
 
+import requests
+
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 sys.path.insert(0, str(Path(__file__).resolve().parent / "build"))
 
@@ -65,7 +67,11 @@ def main():
     deck_id = sys.argv[1].strip()
     local_path = sys.argv[2].strip()
 
-    remote_deck = name_counter(fetch_deck(deck_id))
+    try:
+        remote_deck = name_counter(fetch_deck(deck_id))
+    except requests.RequestException as e:
+        print(f"Error fetching deck {deck_id}: {e}", file=sys.stderr)
+        sys.exit(1)
 
     print(f"Loading local deck from {local_path}...", file=sys.stderr)
     local_deck = load_local_deck(local_path)

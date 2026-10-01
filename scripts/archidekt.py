@@ -8,41 +8,32 @@ the one place that logic lives now.
 from __future__ import annotations
 
 import sys
-import time
 from collections import Counter
+from pathlib import Path
+from typing import Any
 
 import requests
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+
+from net import get_json  # noqa: E402
+
 API_URL = "https://archidekt.com/api/decks/{deck_id}/"
 EXCLUDED_CATEGORIES = {"Sideboard", "Maybeboard"}
-MAX_ATTEMPTS = 5
-RETRY_DELAY = 2.0  # seconds, doubles after each failed attempt
 
 
 def fetch_deck(deck_id: str) -> dict:
     """Fetch a deck's raw JSON from Archidekt, retrying transient failures
-    (timeouts, connection errors, 5xx, 429) with exponential backoff.
-    Exits with an error if every attempt fails.
+    (timeouts, connection errors, 5xx, 429) with exponential backoff (see
+    scripts/net.py). Raises requests.RequestException if every attempt
+    fails - callers decide whether that's fatal (a one-off CLI script) or
+    just a warning (the main build, which degrades pricing gracefully).
     """
     url = API_URL.format(deck_id=deck_id)
-    delay = RETRY_DELAY
-    last_error: Exception | None = None
-
-    for attempt in range(1, MAX_ATTEMPTS + 1):
-        print(f"Fetching Archidekt deck {deck_id} (attempt {attempt}/{MAX_ATTEMPTS})...", file=sys.stderr)
-        try:
-            resp = requests.get(url, timeout=30)
-            resp.raise_for_status()
-            return resp.json()
-        except requests.exceptions.RequestException as e:
-            last_error = e
-            if attempt < MAX_ATTEMPTS:
-                print(f"  failed: {e}. Retrying in {delay:.0f}s...", file=sys.stderr)
-                time.sleep(delay)
-                delay *= 2
-
-    print(f"Error fetching deck {deck_id} after {MAX_ATTEMPTS} attempts: {last_error}", file=sys.stderr)
-    sys.exit(1)
+    data = get_json(url)
+    if data is None:
+        raise requests.HTTPError(f"Archidekt deck {deck_id} not found (HTTP 404).")
+    return data
 
 
 def main_deck_entries(deck: dict) -> list[dict]:
@@ -81,20 +72,39 @@ def unit_price_cm(entry: dict) -> float:
     )
 
 
-def price_map(deck: dict, normalize) -> tuple[dict[str, float], list[str]]:
-    """Per-card Cardmarket unit prices for `deck`'s main-deck entries, keyed
-    by `normalize(name)` (pass parse.normalize_name) so callers can merge
-    the result straight into a build-compatible price cache. If the same
-    name appears more than once (e.g. two printings), the last one wins.
-    Returns (prices, names_with_no_price).
+def price_entry(entry: dict) -> dict[str, Any]:
+    """The priced printing's identity (set + collector number) alongside
+    its unit price, so callers can tell whether a bulk/list price is for
+    the exact printing a source file pinned, or just "a" printing (see
+    REFACTOR.md §6.4). Archidekt's `editioncode` is the Scryfall-style
+    set code; `collectorNumber` may be absent for very old entries.
     """
-    prices: dict[str, float] = {}
+    card = entry.get("card", {})
+    edition = card.get("edition", {}) or {}
+    return {
+        "price_eur": unit_price_cm(entry),
+        "set": str(edition.get("editioncode", "")).lower(),
+        "collector_number": str(card.get("collectorNumber", "")),
+    }
+
+
+def price_map(deck: dict, normalize) -> tuple[dict[str, dict[str, Any]], list[str]]:
+    """Per-card Cardmarket pricing for `deck`'s main-deck entries, keyed by
+    `normalize(name)` (pass parse.normalize_name) so callers can merge the
+    result straight into a build-compatible price cache. Each value is
+    `{price_eur, set, collector_number}` - the printing Archidekt priced,
+    so the build can tell an "exact" price (matches a pinned printing)
+    from a "fallback" one (priced a different printing of the same
+    card). If the same name appears more than once (e.g. two printings),
+    the last one wins. Returns (prices, names_with_no_price).
+    """
+    prices: dict[str, dict[str, Any]] = {}
     unpriced: list[str] = []
     for entry in main_deck_entries(deck):
         name = oracle_name(entry)
-        price = unit_price_cm(entry)
-        if price:
-            prices[normalize(name)] = price
+        priced = price_entry(entry)
+        if priced["price_eur"]:
+            prices[normalize(name)] = priced
         else:
             unpriced.append(name)
     return prices, unpriced

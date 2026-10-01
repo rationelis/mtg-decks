@@ -16,17 +16,16 @@ Output format:
 """
 
 import sys
-import time
 import urllib.parse
 from pathlib import Path
 
 import requests
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
 sys.path.insert(0, str(Path(__file__).resolve().parent / "build"))
 
+from net import get_json  # noqa: E402
 from parse import parse_entries  # noqa: E402
-
-API_DELAY = 0.1
 
 
 def fetch_oldest_printing(card_name):
@@ -34,11 +33,9 @@ def fetch_oldest_printing(card_name):
     encoded = urllib.parse.quote(card_name)
     url = f"https://api.scryfall.com/cards/search?q=!%22{encoded}%22&order=released&dir=asc&unique=prints"
 
-    response = requests.get(url, timeout=10)
-    response.raise_for_status()
-    data = response.json()
+    data = get_json(url)
 
-    if "data" not in data or not data["data"]:
+    if not data or "data" not in data or not data["data"]:
         return card_name, "???", "?"
 
     card = data["data"][0]
@@ -63,7 +60,6 @@ def main():
             except requests.RequestException as e:
                 print(f"Error fetching {entry.name}: {e}", file=sys.stderr)
                 cache[entry.name] = (entry.name, "ERR", "?")
-            time.sleep(API_DELAY)
 
         name, set_code, collector_number = cache[entry.name]
         for _ in range(entry.qty):

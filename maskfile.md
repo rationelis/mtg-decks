@@ -15,28 +15,35 @@ decklist) and diffing (`mask diff`) doesn't depend on line order anyway.
 python3 scripts/sort-bulk.py
 ```
 
-## build-data
+## build [archidekt_deck]
 
-> Resolve card names and generate static JSON data for the web app
+> Resolve card names, fetch prices, allocate bulk, and generate static JSON data for the web app
 
-Parses bulk.txt plus every list under decks/ and collections/, resolves
-every unique card name's identity against Scryfall (using
-cache/card-data.json to avoid re-resolving known cards), and writes
-static JSON into web/public/data/ for the frontend to fetch. Pricing
-never comes from Scryfall: if cache/bulk-prices.json exists (see `mask
-fetch-bulk-prices`), its real Cardmarket prices are applied to any card
-it covers; everything else simply has no price.
+The one command that does everything (see REFACTOR.md §5): parses
+bulk.txt plus every list under decks/ and collections/, resolves every
+unique card name's identity against Scryfall (using cache/card-data.json
+to avoid re-resolving known cards), fetches real Cardmarket prices for
+your bulk-mirror Archidekt deck plus reference prices for every
+deck/collection with a known Archidekt id, allocates bulk supply across
+your active decks, and writes static JSON into web/public/data/ for the
+frontend to fetch.
 
-**OPTIONS**
+Any data-integrity problem (a malformed line, an unknown card name, a
+pinned printing that doesn't exist or doesn't match, or conflicting pins
+for the same card across files) stops the build and prints every such
+problem, with nothing written. Pricing problems (a network hiccup
+reaching Archidekt) are warnings only, never a build failure.
 
-- strict
-  - flags: --strict
-  - type: bool
-  - desc: Exit non-zero if any card failed to resolve
+Pass an Archidekt deck id once to link (or relink) your bulk-mirror
+deck - it's remembered in cache/bulk-prices.json afterwards, so plain
+`mask build` is enough from then on.
+
+**Example:** `mask build` (reuse the last-linked bulk-mirror deck)
+**Example:** `mask build 25868036` (link/relink the bulk-mirror deck)
 
 ```bash
-if [[ "$strict" == "true" ]]; then
-    python3 scripts/build/build.py --strict
+if [[ -n "$archidekt_deck" ]]; then
+    python3 scripts/build/build.py --bulk-deck "$archidekt_deck"
 else
     python3 scripts/build/build.py
 fi
@@ -65,100 +72,25 @@ python3 scripts/build/build.py
 cd web && npm install && npm run build
 ```
 
-## fetch-bulk-prices [archidekt_deck]
+## fetch-list-prices (label) (archidekt_deck)
 
-> Fetch real Cardmarket prices for owned cards from an Archidekt bulk-mirror deck
+> Fetch a reference Cardmarket price for one ad-hoc deck you don't own
 
-Fetches every card + Cardmarket price from an Archidekt deck that mirrors
-your physical bulk collection, and writes cache/bulk-prices.json. Run
-`mask build-data` afterwards to apply the new prices.
+Every deck/collection under decks/ and collections/ that already has a
+known Archidekt id is fetched automatically by `mask build`. This task is
+only for a one-off extra source that isn't one of your own files - e.g.
+someone else's public decklist that mirrors a wishlist. Merged into
+cache/list-prices.json; run `mask build` afterwards to apply.
 
-**Example:** `mask fetch-bulk-prices 25868036`
+**Example:** `mask fetch-list-prices orcs 25657626`
 
 ```bash
-if [[ -z "$archidekt_deck" ]]; then
-    echo "Usage: mask fetch-bulk-prices <archidekt_deck_id>"
+if [[ -z "$label" ]] || [[ -z "$archidekt_deck" ]]; then
+    echo "Usage: mask fetch-list-prices <label> <archidekt_deck_id>"
     exit 1
 fi
 
-python3 scripts/fetch-bulk-prices.py "$archidekt_deck"
-```
-
-## fetch-list-prices [label] [archidekt_deck]
-
-> Fetch reference Cardmarket prices for decks/collections you don't (fully) own
-
-With no arguments, fetches every deck/collection under decks/ and
-collections/ that has a known Archidekt deck id - taken from its
-"NNNN_name.txt" filename or a `# archidekt: NNNN` metadata line - and
-rebuilds cache/list-prices.json from scratch, keyed by each list's own
-id. Used as a fallback price for cards missing from
-cache/bulk-prices.json - e.g. a proxy deck or wishlist like
-decks/25657626_oops_all_orcs.txt that isn't mirrored into your bulk. An
-owned card's real bulk price always wins over this. Run `mask
-build-data` afterwards to apply.
-
-Pass a label and an Archidekt deck id to instead fetch one ad-hoc
-reference deck (e.g. someone else's public decklist that mirrors a
-wishlist you don't have a local id for) merged on top of the cache.
-
-**Example:** `mask fetch-list-prices` (everything with a known id)
-**Example:** `mask fetch-list-prices orcs 25657626` (one ad-hoc deck)
-
-```bash
-if [[ -n "$label" ]] && [[ -n "$archidekt_deck" ]]; then
-    python3 scripts/fetch-list-prices.py "$label" "$archidekt_deck"
-elif [[ -z "$label" ]] && [[ -z "$archidekt_deck" ]]; then
-    python3 scripts/fetch-list-prices.py
-else
-    echo "Usage: mask fetch-list-prices [<label> <archidekt_deck_id>]"
-    echo "Example: mask fetch-list-prices               (everything with a known id)"
-    echo "Example: mask fetch-list-prices orcs 25657626  (one ad-hoc deck)"
-    exit 1
-fi
-```
-
-## refresh-all [archidekt_deck]
-
-> Fetch bulk + every list's prices, then rebuild all data in one shot
-
-Runs the full "I just added/changed some decks/bulk" refresh as one
-command: `fetch-bulk-prices` (real Cardmarket prices for owned cards),
-then `fetch-list-prices` with no arguments (reference prices for every
-deck/collection under decks/ and collections/ that has a known
-Archidekt id - e.g. a new `NNNN_name.txt` file you just added), then
-`build-data`. Equivalent to running those three tasks by hand, just in
-one go after e.g. a prerelease haul or a new decklist.
-
-If `archidekt_deck` is omitted, reuses the bulk-mirror deck id already
-recorded in cache/bulk-prices.json from the last time it was fetched -
-so once you've fetched it at least once, plain `mask refresh-all` is
-enough.
-
-**Example:** `mask refresh-all` (reuse the last bulk-mirror deck id)
-**Example:** `mask refresh-all 25868036` (explicit bulk-mirror deck id)
-
-```bash
-deck_id="$archidekt_deck"
-if [[ -z "$deck_id" ]]; then
-    deck_id=$(python3 -c "
-import json
-from pathlib import Path
-p = Path('cache/bulk-prices.json')
-print(json.loads(p.read_text()).get('archidektDeckId', '') if p.exists() else '')
-")
-fi
-
-if [[ -z "$deck_id" ]]; then
-    echo "Usage: mask refresh-all [<bulk_archidekt_deck_id>]"
-    echo "No bulk-mirror deck id given, and none found in cache/bulk-prices.json yet -"
-    echo "run 'mask fetch-bulk-prices <id>' once so refresh-all has one to reuse."
-    exit 1
-fi
-
-python3 scripts/fetch-bulk-prices.py "$deck_id"
-python3 scripts/fetch-list-prices.py
-python3 scripts/build/build.py
+python3 scripts/fetch-list-prices.py "$label" "$archidekt_deck"
 ```
 
 ## check

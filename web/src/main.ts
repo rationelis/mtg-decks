@@ -18,10 +18,10 @@ async function showStatusBanner(): Promise<void> {
 
   try {
     const meta = await getMeta();
-    if (meta.unresolvedCount === 0 && meta.warnings.length === 0) return;
+    if (meta.warnings.length === 0) return;
 
     banner.hidden = false;
-    banner.textContent = `⚠ ${meta.unresolvedCount} unresolved card(s), ${meta.warnings.length} build warning(s) — data generated ${new Date(meta.generatedAt).toLocaleString()}`;
+    banner.textContent = `\u26a0 ${meta.warnings.length} build warning(s) \u2014 data generated ${new Date(meta.generatedAt).toLocaleString()}`;
     banner.title = meta.warnings.join("\n");
   } catch {
     // If meta.json itself can't be loaded, silently skip the banner -

@@ -1,9 +1,12 @@
 // Shapes mirror exactly what scripts/build/emit.py writes - the build is
-// the single source of truth for what "normalized card data" means.
+// the single source of truth for what "normalized card data" means. See
+// scripts/build/tests/test_emit_shape.py and types.test.ts for the
+// shape-pinning tests that keep the two sides from drifting silently.
+
+export type PriceState = "exact" | "fallback" | "unavailable";
 
 export interface CardData {
   name: string;
-  resolved: boolean;
   mana_cost: string;
   mana_value: number;
   colors: string[];
@@ -16,6 +19,7 @@ export interface CardData {
   image_uri: string | null;
   scryfall_uri: string | null;
   price_eur: number | null;
+  price_state: PriceState;
   released_at: string | null;
 }
 
@@ -25,6 +29,9 @@ export type CardsIndex = Record<string, CardData>;
 export interface ListEntry {
   name: string;
   qty: number;
+  /** Present on every list except bulk.json - see scripts/build/allocate.py. */
+  ownedQty?: number;
+  missingQty?: number;
 }
 
 export type ListKind = "bulk" | "deck" | "collection";
@@ -79,8 +86,24 @@ export interface ListPricesMeta {
 export interface BuildMeta {
   generatedAt: string;
   uniqueCardCount: number;
-  unresolvedCount: number;
   warnings: string[];
   bulkPrices: BulkPricesMeta | null;
   listPrices: ListPricesMeta | null;
 }
+
+/** One deck's claim on a card's bulk supply (see scripts/build/allocate.py). */
+export interface Allocation {
+  listId: string;
+  listName: string;
+  quantity: number;
+}
+
+/** Keyed by normalizeName(card.name) - basic lands never appear here
+ * (see scripts/build/allocate.py's is_basic_land). */
+export interface Usage {
+  owned: number;
+  available: number;
+  allocations: Allocation[];
+}
+
+export type UsageIndex = Record<string, Usage>;

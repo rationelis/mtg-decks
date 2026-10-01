@@ -1,15 +1,44 @@
 import { createFilterBar } from "../components/filterBar";
-import { renderCardView, type ViewMode } from "../components/cardView";
+import { renderCardView, type CardRow, type ViewMode } from "../components/cardView";
 import { createPriciestButton } from "../components/priciestButton";
 import { createSortSelect } from "../components/sortSelect";
 import { createViewToggle } from "../components/viewToggle";
 import { getBulk, getCards, getMeta } from "../data";
-import { bulkRows } from "../diff";
 import { h, clear } from "../dom";
 import { filterFromParams, filterToParams, matchesFilter, type FilterState } from "../filters";
+import { normalizeName } from "../normalize";
 import { priceNote } from "../priceNote";
 import { replaceQueryParams } from "../router";
 import { sortRows, type SortKey } from "../sort";
+import type { CardData, CardList, CardsIndex } from "../types";
+
+const UNRESOLVED_PLACEHOLDER: Omit<CardData, "name"> = {
+  mana_cost: "",
+  mana_value: 0,
+  colors: [],
+  color_identity: [],
+  type_line: "",
+  oracle_text: "",
+  set: "",
+  set_name: "",
+  rarity: "",
+  image_uri: null,
+  scryfall_uri: null,
+  price_eur: null,
+  price_state: "unavailable",
+  released_at: null,
+};
+
+/** Bulk has no ownership columns of its own - it IS the inventory - so
+ * its rows are just a straight (name, qty, card) projection with no
+ * diffing needed. */
+function bulkRows(bulk: CardList, cards: CardsIndex): CardRow[] {
+  return bulk.entries.map((e) => ({
+    name: e.name,
+    qty: e.qty,
+    card: cards[normalizeName(e.name)] ?? { name: e.name, ...UNRESOLVED_PLACEHOLDER },
+  }));
+}
 
 export async function renderBulk(root: HTMLElement, params: URLSearchParams): Promise<void> {
   clear(root);

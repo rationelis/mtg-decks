@@ -1,0 +1,17 @@
+[
+  "name",
+  "mana_cost",
+  "mana_value",
+  "colors",
+  "color_identity",
+  "type_line",
+  "oracle_text",
+  "set",
+  "set_name",
+  "rarity",
+  "image_uri",
+  "scryfall_uri",
+  "price_eur",
+  "price_state",
+  "released_at"
+]

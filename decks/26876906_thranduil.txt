@@ -1,14 +1,14 @@
 # commander: Thranduil, the Elvenking
 1 Thranduil, the Elvenking (hob) 167
 1 Abomination of Llanowar (cmr) 265
-1 Arcane Signet (c21) 234
+1 Arcane Signet
 1 Assassin's Trophy (pmkm) 187p
-1 Beast Within (ddl) 69
+1 Beast Within
 1 Buried Alive (uma) 88
 1 Celeborn the Wise (ltr) 156
 1 Command Tower (eld) 333
 1 Counterspell (ema) 43
-1 Cultivate (c17) 147
+1 Cultivate
 1 Deathbloom Ritualist (bro) 208
 1 Deathrite Shaman (rvr) 175
 1 Devoted Druid (plst) SHM-110
@@ -18,14 +18,14 @@
 1 Elrond, Lord of Rivendell (ltr) 49
 1 Elrond, Moon-Reader (hob) 36
 1 Elven Passage (hob) 181
-1 Elvish Archdruid (gn3) 93
+1 Elvish Archdruid
 1 Elvish Harbinger (dd1) 4
-1 Elvish Mystic (cmm) 284
+1 Elvish Mystic
 1 Emil, Vastlands Roamer (sos) 146
-1 Exotic Orchard (dmc) 209
+1 Exotic Orchard
 1 Ezuri, Claw of Progress (2x2) 211
 1 Ezuri, Renegade Leader (SOM) 119
-1 Farseek (rav) 163
+1 Farseek
 1 Fauna Shaman (m11) 172
 12 Forest (ecl) 273
 2 Forest (ecl) 273
@@ -43,37 +43,37 @@
 4 Island (eoe) 270
 1 Island (eoe) 270
 1 Izoni, Center of the Web (pmkm) 209p
-1 Jungle Hollow (ema) 239
+1 Jungle Hollow
 1 Krydle of Baldur's Gate (plst) AFR-343
 1 Lathril, Blade of the Elves (pfdn) 242s *F*
-1 Llanowar Elves (10e) 274
-1 Llanowar Wastes (ori) 248
+1 Llanowar Elves
+1 Llanowar Wastes
 1 Lluwen, Imperfect Naturalist (pecl) 232p
 1 Maralen, Fae Ascendant (ecl) 233
 1 Marwyn, the Nurturer (j25) 687
 1 Momir Vig, Simic Visionary (plst) GK2-119
 1 Nath of the Gilt-Leaf (lrw) 250
-1 Nature's Lore (5ed) 316
+1 Nature's Lore
 1 Negate (aer) 40
 1 Nissa, Worldsoul Speaker (drc) 13
-1 Path of Ancestry (plst) C17-56
+1 Path of Ancestry
 1 Priest of Titania (c14) 210
 1 Quirion Ranger (plst) VIS-117
-1 Rampant Growth (6ed) 246
-1 Reclamation Sage (2xm) 178
+1 Rampant Growth
+1 Reclamation Sage
 1 Rishkar, Peema Renegade (blc) 235
 1 Selfless Safewright (pecl) 193p
 1 Selvala, Heart of the Wilds (plst) CN2-70
 1 Shaman of the Pack (khc) 92
-1 Sol Ring (cma) 231
+1 Sol Ring
 1 Sutina, Speaker of the Tajuru (j25) 56
 4 Swamp (ecl) 271
 1 Tainted Isle (clb) 920
 1 Tainted Wood (dsc) 305
 1 Temple of Deceit (drc) 176
-1 Temple of Malady (tdc) 403
-1 Temple of Mystery (m21) 254
-1 Thornwood Falls (tdm) 269
+1 Temple of Malady
+1 Temple of Mystery
+1 Thornwood Falls
 1 Thranduil's Company (hob) 168
 1 Timberwatch Elf (psal) B18
 1 Tyvar, Jubilant Brawler (pone) 218p

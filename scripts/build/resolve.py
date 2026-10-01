@@ -2,73 +2,50 @@
 
 Scryfall is used for identity only (name, mana cost/value, colors, type,
 oracle text, set, rarity, image, scryfall page link) - never for price.
-Pricing comes exclusively from cache/bulk-prices.json (real Cardmarket
-prices fetched via Archidekt, see scripts/fetch-bulk-prices.py /
-resolve.apply_bulk_prices). A card with no entry there simply has no
-price; that's a signal to mirror it into your Archidekt bulk deck and
-re-run the fetch, not something this module tries to guess at.
+Pricing comes exclusively from cache/bulk-prices.json / cache/list-prices.json
+(real Cardmarket prices fetched via Archidekt, see build.py). A card with
+no entry there simply has no price; that's a signal to mirror it into
+your Archidekt bulk deck and re-run the build, not something this module
+tries to guess at.
 
 Identity fields are cached indefinitely in cache/card-data.json, keyed by
 a normalized name, and re-fetched over the network on every build in
 batches of up to 75 names via Scryfall's /cards/collection endpoint. If
-the network is unavailable, previously cached identity data is reused -
-the build degrades gracefully rather than failing.
+the network is unavailable, previously-confidently-resolved cached
+identity data is reused (never a fuzzy-matched guess) - the build degrades
+gracefully rather than failing; anything that was never confidently
+resolved before is a hard error (see REFACTOR.md §6.2).
 
 A name can optionally be pinned to a specific printing (e.g. "Mystical
-Tutor (DMR) 289" in a source file, see parse.py); resolve_names() then
-looks that printing up directly via /cards/{set}/{number} and uses its
-image/set/rarity for display. This never changes the lookup key, which
-stays the bare oracle name, so ownership diffing is unaffected.
+Tutor (DMR) 289" in a source file, see parse.py). Every such pin is
+verified directly via /cards/{set}/{number} and must both exist and
+actually be a printing of that same card - a mismatch or a conflicting
+pin across files is a hard error (see REFACTOR.md §6.1), never silently
+ignored. This never changes the lookup key, which stays the bare oracle
+name, so ownership diffing is unaffected.
 """
 
 from __future__ import annotations
 
-import json
-import ssl
-import time
-import urllib.error
-import urllib.parse
-import urllib.request
 from dataclasses import asdict, dataclass, field
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
-from parse import normalize_name
+import requests
+
+from net import get_json, post_json
+from parse import BuildError, CardList, normalize_name
 
 COLLECTION_URL = "https://api.scryfall.com/cards/collection"
 NAMED_FUZZY_URL = "https://api.scryfall.com/cards/named"
 CARD_BY_SET_NUMBER_URL = "https://api.scryfall.com/cards/{set}/{number}"
 BATCH_SIZE = 75
-REQUEST_DELAY = 0.25  # seconds, per Scryfall's fair-use guidance
-USER_AGENT = "mtg-bulk-viewer/1.0 (+https://github.com/)"
-
-
-def _build_ssl_context() -> ssl.SSLContext:
-    """Build an SSL context that verifies against certifi's CA bundle.
-
-    Some Python installs (notably python.org builds on macOS) ship without
-    a usable system CA bundle, which makes urllib.request.urlopen() raise
-    CERTIFICATE_VERIFY_FAILED for every HTTPS request. If certifi is
-    available, use its bundle explicitly instead of relying on whatever
-    the interpreter's default SSL context finds (or doesn't). Falls back
-    to ssl's normal default context if certifi isn't installed.
-    """
-    try:
-        import certifi
-
-        return ssl.create_default_context(cafile=certifi.where())
-    except ImportError:
-        return ssl.create_default_context()
-
-
-_SSL_CONTEXT = _build_ssl_context()
 
 
 @dataclass
 class CardData:
     name: str
-    resolved: bool
     mana_cost: str = ""
     mana_value: float = 0.0
     colors: list[str] = field(default_factory=list)
@@ -82,59 +59,22 @@ class CardData:
     scryfall_uri: str | None = None
     scryfall_id: str | None = None
     price_eur: float | None = None
+    price_state: str = "unavailable"  # "exact" | "fallback" | "unavailable"
     released_at: str | None = None
     last_checked: str | None = None
     fuzzy_matched_from: str | None = None
 
 
-def _http_post_json(url: str, payload: dict[str, Any]) -> dict[str, Any]:
-    data = json.dumps(payload).encode("utf-8")
-    req = urllib.request.Request(
-        url,
-        data=data,
-        headers={
-            "Content-Type": "application/json",
-            "Accept": "application/json",
-            "User-Agent": USER_AGENT,
-        },
-        method="POST",
-    )
-    delay = REQUEST_DELAY
-    for attempt in range(4):
-        try:
-            with urllib.request.urlopen(req, timeout=30, context=_SSL_CONTEXT) as resp:
-                return json.loads(resp.read().decode("utf-8"))
-        except urllib.error.HTTPError as e:
-            if e.code == 429 and attempt < 3:
-                time.sleep(delay)
-                delay *= 3
-                continue
-            raise
-    raise urllib.error.URLError("exhausted retries")
+@dataclass(frozen=True)
+class PinOccurrence:
+    """One "(SET) NUM" printing pin found in a source file."""
 
-
-def _http_get_json(url: str, params: dict[str, str] | None = None) -> dict[str, Any] | None:
-    if params:
-        query = "&".join(f"{k}={urllib.parse.quote(v)}" for k, v in params.items())
-        url = f"{url}?{query}"
-    req = urllib.request.Request(
-        url,
-        headers={"Accept": "application/json", "User-Agent": USER_AGENT},
-    )
-    delay = REQUEST_DELAY
-    for attempt in range(4):
-        try:
-            with urllib.request.urlopen(req, timeout=30, context=_SSL_CONTEXT) as resp:
-                return json.loads(resp.read().decode("utf-8"))
-        except urllib.error.HTTPError as e:
-            if e.code == 404:
-                return None
-            if e.code == 429 and attempt < 3:
-                time.sleep(delay)
-                delay *= 3
-                continue
-            raise
-    return None
+    path: str
+    line: int
+    name: str
+    set: str
+    collector_number: str
+    is_bulk: bool
 
 
 def _face_colors(card: dict[str, Any]) -> list[str]:
@@ -176,7 +116,6 @@ def _image_uri(card: dict[str, Any]) -> str | None:
 def _card_to_data(card: dict[str, Any], now: str) -> CardData:
     return CardData(
         name=card.get("name", ""),
-        resolved=True,
         mana_cost=_mana_cost(card),
         mana_value=card.get("cmc", 0.0),
         colors=_face_colors(card),
@@ -194,151 +133,45 @@ def _card_to_data(card: dict[str, Any], now: str) -> CardData:
     )
 
 
+def _cached_card_data(name: str, cached: dict[str, Any]) -> CardData:
+    """Explicit field-by-field extraction (rather than **cached) so a
+    malformed/older cache entry can't crash the build - anything missing
+    just falls back to CardData's own defaults."""
+    return CardData(
+        name=str(cached.get("name", name)),
+        mana_cost=str(cached.get("mana_cost", "")),
+        mana_value=float(cached.get("mana_value", 0.0)),
+        colors=list(cached.get("colors", [])),
+        color_identity=list(cached.get("color_identity", [])),
+        type_line=str(cached.get("type_line", "")),
+        oracle_text=str(cached.get("oracle_text", "")),
+        set=str(cached.get("set", "")),
+        set_name=str(cached.get("set_name", "")),
+        rarity=str(cached.get("rarity", "")),
+        image_uri=cached.get("image_uri"),
+        scryfall_uri=cached.get("scryfall_uri"),
+        scryfall_id=cached.get("scryfall_id"),
+        price_eur=None,
+        released_at=cached.get("released_at"),
+        last_checked=cached.get("last_checked"),
+    )
+
+
 def load_cache(cache_path: Path) -> dict[str, dict[str, Any]]:
+    import json
+
     if not cache_path.exists():
         return {}
     return json.loads(cache_path.read_text(encoding="utf-8"))
 
 
 def save_cache(cache_path: Path, cache: dict[str, dict[str, Any]]) -> None:
+    import json
+
     cache_path.write_text(
         json.dumps(cache, indent=2, sort_keys=True, ensure_ascii=False) + "\n",
         encoding="utf-8",
     )
-
-
-def resolve_names(
-    names: set[str],
-    cache: dict[str, dict[str, Any]],
-    printing_hints: dict[str, tuple[str, str]] | None = None,
-) -> tuple[dict[str, CardData], list[str]]:
-    """Resolve every requested name to a CardData, updating `cache` in place.
-
-    `printing_hints` maps a normalized name to a (set, collector_number)
-    pin - e.g. from a "(DMR) 289" suffix in a source file - and only
-    affects which printing's image/set/rarity is displayed; it never
-    changes the lookup key, so ownership diffing stays name-based.
-
-    Returns (name -> CardData, warnings).
-    """
-    warnings: list[str] = []
-    result: dict[str, CardData] = {}
-    now = datetime.now(timezone.utc).isoformat(timespec="seconds")
-
-    pending = sorted(names)
-    batches = [pending[i : i + BATCH_SIZE] for i in range(0, len(pending), BATCH_SIZE)]
-
-    not_found: list[str] = []
-
-    for batch in batches:
-        identifiers = [{"name": n} for n in batch]
-        try:
-            response = _http_post_json(COLLECTION_URL, {"identifiers": identifiers})
-        except (urllib.error.URLError, TimeoutError, OSError) as e:
-            warnings.append(
-                f"Scryfall unreachable ({e}); falling back to cached data for this batch."
-            )
-            for name in batch:
-                _use_cache_fallback(name, cache, result, warnings)
-            continue
-
-        for card in response.get("data", []):
-            data = _card_to_data(card, now)
-            # Scryfall's /cards/collection only returns a card in `data`
-            # when the requested identifier was an exact (case-insensitive)
-            # name match, so the normalized requested name and the
-            # normalized canonical name are the same key.
-            key = normalize_name(data.name)
-            result[key] = data
-            cache[key] = asdict(data)
-
-        for nf in response.get("not_found", []):
-            nf_name = nf.get("name")
-            if nf_name and normalize_name(nf_name) not in result:
-                not_found.append(nf_name)
-
-        time.sleep(REQUEST_DELAY)
-
-    # Fuzzy fallback, one request at a time, for anything not_found.
-    for name in not_found:
-        try:
-            card = _http_get_json(NAMED_FUZZY_URL, {"fuzzy": name})
-        except (urllib.error.URLError, TimeoutError, OSError) as e:
-            warnings.append(f"Scryfall unreachable while fuzzy-resolving '{name}' ({e}).")
-            _use_cache_fallback(name, cache, result, warnings)
-            continue
-
-        time.sleep(REQUEST_DELAY)
-
-        if card is None:
-            warnings.append(f"Unresolved card name: '{name}' (no fuzzy match found).")
-            _use_cache_fallback(name, cache, result, warnings, unresolved_name=name)
-            continue
-
-        data = _card_to_data(card, now)
-        if normalize_name(data.name) != normalize_name(name):
-            data.fuzzy_matched_from = name
-            warnings.append(
-                f"Resolved '{name}' -> '{data.name}' via fuzzy match. "
-                "Consider fixing the source file."
-            )
-        result[normalize_name(name)] = data
-        cache[normalize_name(name)] = asdict(data)
-
-    # Anything still missing from `result` (only possible if a name
-    # collapses to a normalized key we've already resolved differently,
-    # or a genuine unresolved miss with no cache) gets a placeholder.
-    for name in names:
-        key = normalize_name(name)
-        if key not in result:
-            _use_cache_fallback(name, cache, result, warnings, unresolved_name=name)
-
-    if printing_hints:
-        _resolve_specific_printings(result, cache, printing_hints, warnings, now)
-
-    return result, warnings
-
-
-def _resolve_specific_printings(
-    result: dict[str, CardData],
-    cache: dict[str, dict[str, Any]],
-    printing_hints: dict[str, tuple[str, str]],
-    warnings: list[str],
-    now: str,
-) -> None:
-    """Pin the displayed printing for names annotated with a "(SET) NUM"
-    suffix, via a direct Scryfall /cards/{set}/{number} lookup. Replaces
-    that name's CardData with the pinned printing's identity fields; the
-    result dict's key is unchanged, so this never affects diffing.
-    """
-    for key, (set_code, number) in printing_hints.items():
-        if key not in result:
-            continue
-        try:
-            card = _http_get_json(
-                CARD_BY_SET_NUMBER_URL.format(set=set_code.lower(), number=number)
-            )
-        except (urllib.error.URLError, TimeoutError, OSError) as e:
-            warnings.append(
-                f"Could not fetch pinned printing '({set_code}) {number}' for "
-                f"'{result[key].name}' ({e}); keeping its default printing."
-            )
-            continue
-
-        time.sleep(REQUEST_DELAY)
-
-        if card is None:
-            warnings.append(
-                f"Pinned printing '({set_code}) {number}' not found for "
-                f"'{result[key].name}'; keeping its default printing."
-            )
-            continue
-
-        price = result[key].price_eur
-        data = _card_to_data(card, now)
-        data.price_eur = price
-        result[key] = data
-        cache[key] = asdict(data)
 
 
 def prune_cache(cache: dict[str, dict[str, Any]], names: set[str]) -> int:
@@ -353,23 +186,331 @@ def prune_cache(cache: dict[str, dict[str, Any]], names: set[str]) -> int:
     return len(stale)
 
 
-def apply_bulk_prices(
-    card_data: dict[str, CardData], bulk_prices: dict[str, float]
-) -> int:
-    """Set price_eur to the real Cardmarket price for any card present in
-    the bulk-mirror price cache (see scripts/fetch-bulk-prices.py).
+def collect_pins(bulk: CardList, lists: list[CardList]) -> dict[str, list[PinOccurrence]]:
+    """Every "(SET) NUM" printing pin found across bulk + every list,
+    grouped by normalized card name key."""
+    pins: dict[str, list[PinOccurrence]] = {}
+    for card_list in [bulk, *lists]:
+        is_bulk = card_list.kind == "bulk"
+        for entry in card_list.entries:
+            if not (entry.set and entry.collector_number):
+                continue
+            key = normalize_name(entry.name)
+            pins.setdefault(key, []).append(
+                PinOccurrence(
+                    path=card_list.source_path,
+                    line=entry.line,
+                    name=entry.name,
+                    set=entry.set,
+                    collector_number=entry.collector_number,
+                    is_bulk=is_bulk,
+                )
+            )
+    return pins
 
-    This always wins over apply_list_prices - it reflects a card you
-    actually own, so it always takes priority regardless of call order.
-    A card covered by neither simply has no price (None), which the UI
-    shows as "-". Returns how many cards were priced.
+
+def resolve_pin_conflicts(
+    pins: dict[str, list[PinOccurrence]],
+) -> tuple[dict[str, PinOccurrence], list[BuildError]]:
+    """For each key with one or more pins, pick the authoritative pin for
+    identity/price-matching purposes, and flag any pin outside bulk.txt
+    that disagrees with it as a BuildError (see REFACTOR.md §6.1).
+
+    bulk.txt is the sole source of truth for "what you physically have" -
+    its own pin(s) are authoritative, and never conflict with each other
+    even when there's more than one (owning two different printings of
+    the same card is normal; that's two lines in bulk.txt, not a
+    conflict). A pin in any other file is only flagged when bulk.txt has
+    at least one pin for that name and this one matches none of them -
+    i.e. it claims a printing you don't have recorded as owned. When
+    bulk.txt has no pin for a name at all (e.g. a basic land, or simply
+    never pinned), there is no physical truth to disagree with, so every
+    file's choice of pin for that name is treated as a non-binding
+    display preference - including when two non-bulk files disagree with
+    each other.
+
+    Returns (authoritative pin per key - used to pick a display printing
+    and to judge price exactness, errors).
+    """
+    authoritative: dict[str, PinOccurrence] = {}
+    errors: list[BuildError] = []
+
+    for key, occurrences in pins.items():
+        bulk_occs = [o for o in occurrences if o.is_bulk]
+        if not bulk_occs:
+            # No physical truth recorded for this name - nothing to
+            # arbitrate; still pick a deterministic representative for
+            # display purposes.
+            authoritative[key] = min(occurrences, key=lambda o: (o.path, o.line))
+            continue
+
+        chosen = min(bulk_occs, key=lambda o: o.line)
+        authoritative[key] = chosen
+        owned_pins = {(o.set.lower(), o.collector_number.lower()) for o in bulk_occs}
+
+        for occ in occurrences:
+            if occ.is_bulk:
+                continue  # bulk's own multiple pins never conflict with each other
+            if (occ.set.lower(), occ.collector_number.lower()) in owned_pins:
+                continue  # matches a printing actually recorded as owned
+            errors.append(
+                BuildError(
+                    path=occ.path,
+                    line=occ.line,
+                    message=(
+                        f'Conflicting printing pin for "{occ.name}": '
+                        f"({occ.set}) {occ.collector_number} here, but bulk.txt has "
+                        f"({chosen.set}) {chosen.collector_number} at "
+                        f"{chosen.path}:{chosen.line}."
+                    ),
+                )
+            )
+
+    return authoritative, errors
+
+
+def _collection_identifier(name: str) -> str:
+    """The name text to send to Scryfall's /cards/collection endpoint.
+
+    That endpoint - unlike /cards/named?exact= - does not match a
+    split/DFC/adventure card's combined "Front // Back" name; only its
+    front face resolves. The canonical card is still found (and its
+    `name` field in the response is the full combined name, matching
+    what source files write), so this only affects what text is sent,
+    never what key the result is stored/looked up under.
+    """
+    return name.partition(" // ")[0].strip()
+
+
+def _occurrences_by_key(bulk: CardList, lists: list[CardList]) -> dict[str, list[tuple[str, int]]]:
+    occurrences: dict[str, list[tuple[str, int]]] = {}
+    for card_list in [bulk, *lists]:
+        for entry in card_list.entries:
+            key = normalize_name(entry.name)
+            occurrences.setdefault(key, []).append((card_list.source_path, entry.line))
+    return occurrences
+
+
+def _name_by_key(bulk: CardList, lists: list[CardList]) -> dict[str, str]:
+    """First-seen raw name text per normalized key (bulk checked first,
+    since it best represents what's physically written on the card)."""
+    names: dict[str, str] = {}
+    for card_list in [bulk, *lists]:
+        for entry in card_list.entries:
+            key = normalize_name(entry.name)
+            names.setdefault(key, entry.name)
+    return names
+
+
+def resolve_identity(
+    bulk: CardList,
+    lists: list[CardList],
+    cache: dict[str, dict[str, Any]],
+) -> tuple[dict[str, CardData], dict[str, PinOccurrence], list[BuildError], list[str]]:
+    """Resolve every unique card name referenced by bulk + lists into a
+    CardData, updating `cache` in place. Returns (card_data keyed by
+    normalized name, authoritative pins keyed by normalized name, hard
+    errors, warnings).
+    """
+    errors: list[BuildError] = []
+    warnings: list[str] = []
+    result: dict[str, CardData] = {}
+    now = datetime.now(timezone.utc).isoformat(timespec="seconds")
+
+    name_by_key = _name_by_key(bulk, lists)
+    occurrences_by_key = _occurrences_by_key(bulk, lists)
+    all_keys = set(name_by_key)
+
+    pins_by_key = collect_pins(bulk, lists)
+    authoritative_pins, pin_errors = resolve_pin_conflicts(pins_by_key)
+    errors.extend(pin_errors)
+
+    pending_keys = sorted(all_keys)
+    batches = [pending_keys[i : i + BATCH_SIZE] for i in range(0, len(pending_keys), BATCH_SIZE)]
+
+    not_found_keys: list[str] = []
+
+    for batch_keys in batches:
+        identifiers = [{"name": _collection_identifier(name_by_key[k])} for k in batch_keys]
+        try:
+            response = post_json(COLLECTION_URL, {"identifiers": identifiers})
+        except requests.RequestException as e:
+            warnings.append(
+                f"Scryfall unreachable ({e}); falling back to cached data for this batch."
+            )
+            for key in batch_keys:
+                _use_cache_or_error(key, name_by_key, occurrences_by_key, cache, result, errors, warnings)
+            continue
+
+        found_keys: set[str] = set()
+        for card in response.get("data", []):
+            data = _card_to_data(card, now)
+            # Scryfall's /cards/collection only returns a card in `data`
+            # when the requested identifier was an exact (case-insensitive)
+            # name match, so the normalized requested name and the
+            # normalized canonical name are the same key.
+            key = normalize_name(data.name)
+            result[key] = data
+            cache[key] = asdict(data)
+            found_keys.add(key)
+
+        for key in batch_keys:
+            if key not in found_keys:
+                not_found_keys.append(key)
+
+    # Fuzzy lookup for anything not found - suggestion only, never
+    # auto-accepted into `result` (see REFACTOR.md §6.2).
+    for key in not_found_keys:
+        name = name_by_key[key]
+        suggestion: str | None = None
+        try:
+            card = get_json(NAMED_FUZZY_URL, {"fuzzy": name})
+            if card is not None:
+                suggestion = card.get("name")
+        except requests.RequestException:
+            pass  # suggestion is best-effort only; absence doesn't change anything
+
+        message = f'Unknown card name: "{name}"'
+        if suggestion and normalize_name(suggestion) != key:
+            message += f' (did you mean "{suggestion}"?)'
+
+        if _use_cache_or_error(
+            key, name_by_key, occurrences_by_key, cache, result, errors, warnings, force_error_message=message
+        ):
+            continue
+
+    # Pin verification: every authoritative pin must exist on Scryfall and
+    # actually be a printing of the pinned name.
+    for key, pin in authoritative_pins.items():
+        if key not in result:
+            continue  # the name itself already errored above
+        try:
+            card = get_json(
+                CARD_BY_SET_NUMBER_URL.format(
+                    set=pin.set.lower(), number=pin.collector_number
+                )
+            )
+        except requests.RequestException as e:
+            warnings.append(
+                f"Could not verify pinned printing '({pin.set}) {pin.collector_number}' for "
+                f"'{result[key].name}' ({e}); keeping its default printing."
+            )
+            continue
+
+        if card is None:
+            errors.append(
+                BuildError(
+                    path=pin.path,
+                    line=pin.line,
+                    message=(
+                        f"Pinned printing ({pin.set}) {pin.collector_number} was not found "
+                        "on Scryfall."
+                    ),
+                )
+            )
+            continue
+
+        pinned_key = normalize_name(card.get("name", ""))
+        if pinned_key != key:
+            errors.append(
+                BuildError(
+                    path=pin.path,
+                    line=pin.line,
+                    message=(
+                        f"Pinned printing ({pin.set}) {pin.collector_number} does not match "
+                        f'"{pin.name}" - that printing is a different card '
+                        f'("{card.get("name", "")}").'
+                    ),
+                )
+            )
+            continue
+
+        price = result[key].price_eur
+        data = _card_to_data(card, now)
+        data.price_eur = price
+        result[key] = data
+        cache[key] = asdict(data)
+
+    return result, authoritative_pins, errors, warnings
+
+
+def _use_cache_or_error(
+    key: str,
+    name_by_key: dict[str, str],
+    occurrences_by_key: dict[str, list[tuple[str, int]]],
+    cache: dict[str, dict[str, Any]],
+    result: dict[str, CardData],
+    errors: list[BuildError],
+    warnings: list[str],
+    force_error_message: str | None = None,
+) -> bool:
+    """Try to satisfy `key` from a confidently-resolved cache entry;
+    otherwise append a BuildError per occurrence of that name and return
+    True (signalling "this key failed"). A cache entry only counts as
+    confidently resolved if it was previously resolved exactly (never a
+    fuzzy guess) - see REFACTOR.md §6.2.
+    """
+    if key in result:
+        return False
+
+    name = name_by_key[key]
+    cached = cache.get(key)
+    if force_error_message is None and cached and not cached.get("fuzzy_matched_from"):
+        result[key] = _cached_card_data(name, cached)
+        warnings.append(f"Scryfall unreachable for '{name}'; reused previously-resolved cache entry.")
+        return False
+
+    message = force_error_message or (
+        f"Scryfall unreachable and \"{name}\" was never confidently resolved before."
+    )
+    for path, line in occurrences_by_key.get(key, []):
+        errors.append(BuildError(path=path, line=line, message=message))
+    return True
+
+
+def apply_bulk_prices(
+    card_data: dict[str, CardData],
+    bulk_prices: dict[str, Any],
+    pins: dict[str, PinOccurrence],
+) -> int:
+    """Set price_eur (and price_state) to the real Cardmarket price for
+    any card present in the bulk-mirror price cache. A priced entry whose
+    (set, number) doesn't match this card's pinned printing is still
+    applied (it's the real price for the copy you own), but marked
+    "fallback" rather than "exact" since it's not pricing the exact
+    printing currently displayed. Always wins over apply_list_prices -
+    it reflects a card you actually own. Returns how many cards were
+    priced.
     """
     applied = 0
-    for key, price in bulk_prices.items():
+    for key, entry in bulk_prices.items():
         data = card_data.get(key)
-        if data is not None:
-            data.price_eur = price
-            applied += 1
+        if data is None:
+            continue
+        if isinstance(entry, dict):
+            price = entry.get("price_eur")
+            priced_set = str(entry.get("set", ""))
+            priced_num = str(entry.get("collector_number", ""))
+        else:
+            # Legacy flat-float cache format - no printing info available.
+            price = entry
+            priced_set = ""
+            priced_num = ""
+        if price is None:
+            continue
+
+        data.price_eur = price
+        pin = pins.get(key)
+        if pin is None:
+            data.price_state = "exact"
+        elif (priced_set.lower(), priced_num.lower()) == (
+            pin.set.lower(),
+            pin.collector_number.lower(),
+        ):
+            data.price_state = "exact"
+        else:
+            data.price_state = "fallback"
+        applied += 1
     return applied
 
 
@@ -377,59 +518,18 @@ def apply_list_prices(
     card_data: dict[str, CardData], list_prices: dict[str, float]
 ) -> int:
     """Fill in a reference Cardmarket price for cards you don't own, from
-    one or more reference decks (see scripts/fetch-list-prices.py) - e.g.
-    a wishlist mirrored from a public Archidekt decklist, so its "price
-    to complete" is real instead of always "-".
-
-    Only fills gaps: never overwrites a price already set by
-    apply_bulk_prices, since an owned card's real price always wins.
-    Returns how many cards were priced.
+    one or more reference decks - e.g. a wishlist mirrored from a public
+    Archidekt decklist, so its "price to complete" is real instead of
+    always "-". Always "fallback": a list price is a reference/wishlist
+    estimate, never "your" copy, regardless of whether it happens to
+    match a pinned printing. Only fills gaps: never overwrites a price
+    already set by apply_bulk_prices. Returns how many cards were priced.
     """
     applied = 0
     for key, price in list_prices.items():
         data = card_data.get(key)
         if data is not None and data.price_eur is None:
             data.price_eur = price
+            data.price_state = "fallback"
             applied += 1
     return applied
-
-
-def _use_cache_fallback(
-    name: str,
-    cache: dict[str, dict[str, Any]],
-    result: dict[str, CardData],
-    warnings: list[str],
-    unresolved_name: str | None = None,
-) -> None:
-    key = normalize_name(name)
-    if key in result:
-        return
-    cached = cache.get(key)
-    if cached:
-        # Explicit field-by-field extraction (rather than **cached) so a
-        # malformed/older cache entry can't crash the build - anything
-        # missing just falls back to CardData's own defaults.
-        data = CardData(
-            name=str(cached.get("name", name)),
-            resolved=True,
-            mana_cost=str(cached.get("mana_cost", "")),
-            mana_value=float(cached.get("mana_value", 0.0)),
-            colors=list(cached.get("colors", [])),
-            color_identity=list(cached.get("color_identity", [])),
-            type_line=str(cached.get("type_line", "")),
-            oracle_text=str(cached.get("oracle_text", "")),
-            set=str(cached.get("set", "")),
-            set_name=str(cached.get("set_name", "")),
-            rarity=str(cached.get("rarity", "")),
-            image_uri=cached.get("image_uri"),
-            scryfall_uri=cached.get("scryfall_uri"),
-            scryfall_id=cached.get("scryfall_id"),
-            price_eur=None,
-            released_at=cached.get("released_at"),
-            last_checked=cached.get("last_checked"),
-        )
-        result[key] = data
-    else:
-        result[key] = CardData(name=unresolved_name or name, resolved=False)
-        if not unresolved_name:
-            warnings.append(f"No cached or fresh data available for '{name}'.")

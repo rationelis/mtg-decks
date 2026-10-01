@@ -1,27 +1,19 @@
 import { h, clear } from "../dom";
 import { renderIncrementally } from "../incremental";
+import { formatPriceLabel, priceTitle } from "../priceNote";
 import type { CardData } from "../types";
+import { openCardPopover, type PopoverContext } from "./cardPopover";
 
 /** One row of card data to render, shared by the bulk browser and the
  * per-deck list view. `ownedQty`/`missingQty` are only present when a row
- * came from a diff against bulk. */
+ * came from a list that carries allocation-aware ownership (see
+ * scripts/build/allocate.py) - bulk's own rows never have them. */
 export interface CardRow {
   name: string;
   qty: number;
   card: CardData;
   ownedQty?: number;
   missingQty?: number;
-  /** Set only when the number of copies actually needed across *every*
-   * active deck exceeds what bulk.txt has, beyond what this row's own
-   * missingQty already accounts for (see views/list.ts's
-   * additionalNeeded) - i.e. a real "you should buy more" signal, not
-   * just harmless overlap between decks. */
-  contention?: {
-    additionalNeeded: number;
-    sharedWith: { name: string; qty: number }[];
-    totalDemand: number;
-    bulkQty: number;
-  };
 }
 
 export type ViewMode = "gallery" | "list";
@@ -29,6 +21,7 @@ export type ViewMode = "gallery" | "list";
 export interface CardViewOptions {
   mode: ViewMode;
   showDiffColumns?: boolean;
+  listName?: string;
 }
 
 /** Renders `rows` as either an image gallery or a spacious table, sharing
@@ -45,9 +38,9 @@ export function renderCardView(
   );
 
   if (options.mode === "gallery") {
-    renderGallery(container, rows, !!options.showDiffColumns);
+    renderGallery(container, rows, !!options.showDiffColumns, options.listName);
   } else {
-    renderTable(container, rows, !!options.showDiffColumns);
+    renderTable(container, rows, !!options.showDiffColumns, options.listName);
   }
 }
 
@@ -55,24 +48,6 @@ function diffBadge(row: CardRow): HTMLElement | false {
   if (row.ownedQty === undefined || row.missingQty === undefined) return false;
   if (row.missingQty > 0) return false; // the not-owned overlay communicates this instead
   return h("span", { class: "diff-badge owned" }, "owned");
-}
-
-function sharedBadge(row: CardRow): HTMLElement | false {
-  const contention = row.contention;
-  if (!contention || contention.additionalNeeded <= 0) return false;
-  const detail = contention.sharedWith.map((s) => s.name + " (x" + s.qty + ")").join(", ");
-  const label = "order " + contention.additionalNeeded + " more";
-  const title =
-    "Also wanted by: " +
-    detail +
-    ". Total demand across active decks: " +
-    contention.totalDemand +
-    ", you own: " +
-    contention.bulkQty +
-    " - " +
-    label +
-    " to cover every deck.";
-  return h("span", { class: "shared-badge", title }, label);
 }
 
 /** Hearthstone-style "you don't own this" treatment: a translucent,
@@ -89,47 +64,61 @@ function notOwnedOverlay(row: CardRow): HTMLElement | false {
   );
 }
 
+function popoverContext(row: CardRow, listName: string | undefined): PopoverContext | undefined {
+  if (row.missingQty === undefined || !listName) return undefined;
+  return { listName, missingQty: row.missingQty };
+}
+
 /** Where a card's image should link to: its Scryfall page when known,
- * falling back to the raw image (e.g. for older cached data resolved
- * before scryfall_uri was tracked). null only when there's no image at
+ * falling back to the raw image. null only when there's no image at
  * all to link to. */
 function cardLinkHref(card: CardData): string | null {
   return card.scryfall_uri || card.image_uri || null;
 }
 
-/** An <img> for a card, optionally wrapped in a link to its Scryfall
- * page - shared by gallery and list mode so there's one clickable-image
- * implementation. */
-function cardImage(card: CardData, linkClass?: string): HTMLElement {
+/** An <img> for a card. Clicking it opens the allocation detail popover
+ * instead of navigating - shared by gallery and list mode so there's one
+ * clickable-image implementation. */
+function cardImage(card: CardData, row: CardRow, listName: string | undefined, className?: string): HTMLElement {
+  const onclick = (e: Event) => {
+    e.preventDefault();
+    openCardPopover(e.currentTarget as HTMLElement, card, popoverContext(row, listName));
+  };
+
   if (!card.image_uri) {
-    return h("div", { class: "no-image-placeholder", title: card.oracle_text || card.name }, card.name);
+    return h(
+      "div",
+      { class: "no-image-placeholder", title: card.oracle_text || card.name, onclick },
+      card.name,
+    );
   }
   const img = h("img", {
     src: card.image_uri,
     loading: "lazy",
     alt: card.name,
-    title: card.oracle_text || card.name,
+    title: cardLinkHref(card) ? "Click for allocation details" : card.oracle_text || card.name,
   });
-  const href = cardLinkHref(card);
-  return href
-    ? h("a", { href, target: "_blank", rel: "noopener", class: linkClass }, img)
-    : img;
+  return h("a", { href: "#", class: className, onclick }, img);
 }
 
 // --- Gallery mode ----------------------------------------------------------
 
-function renderGallery(container: HTMLElement, rows: CardRow[], showDiff: boolean): void {
+function renderGallery(
+  container: HTMLElement,
+  rows: CardRow[],
+  showDiff: boolean,
+  listName: string | undefined,
+): void {
   const grid = h("div", { class: "gallery-grid" });
   container.append(grid);
-  renderIncrementally(grid, rows, (row) => renderGalleryCard(row, showDiff), {
+  renderIncrementally(grid, rows, (row) => renderGalleryCard(row, showDiff, listName), {
     batchSize: 60,
     sentinelTag: "div",
   });
 }
 
-function renderGalleryCard(row: CardRow, showDiff: boolean): HTMLElement {
+function renderGalleryCard(row: CardRow, showDiff: boolean, listName: string | undefined): HTMLElement {
   const card = row.card;
-  const priceLabel = card.price_eur != null ? `€${card.price_eur.toFixed(2)}` : "—";
   const missing = showDiff && (row.missingQty ?? 0) > 0;
 
   return h(
@@ -138,26 +127,33 @@ function renderGalleryCard(row: CardRow, showDiff: boolean): HTMLElement {
     h(
       "div",
       { class: "gallery-card-image" },
-      cardImage(card, "gallery-card-link"),
+      cardImage(card, row, listName, "gallery-card-link"),
       showDiff && notOwnedOverlay(row),
       row.qty > 1 && h("span", { class: "qty-badge" }, `×${row.qty}`),
       showDiff && diffBadge(row),
-      showDiff && sharedBadge(row),
-      !card.resolved && h("span", { class: "unresolved-badge", title: "Unresolved card name" }, "⚠"),
     ),
     h(
       "figcaption",
       {},
       h("span", { class: "gallery-card-name" }, card.name),
       h("span", { class: "gallery-card-meta" }, card.type_line || "—"),
-      h("span", { class: "gallery-card-price" }, priceLabel),
+      h(
+        "span",
+        { class: "gallery-card-price", title: priceTitle(card) },
+        formatPriceLabel(card),
+      ),
     ),
   );
 }
 
 // --- List mode (a spacious table, big thumbnails) ---------------------------
 
-function renderTable(container: HTMLElement, rows: CardRow[], showDiff: boolean): void {
+function renderTable(
+  container: HTMLElement,
+  rows: CardRow[],
+  showDiff: boolean,
+  listName: string | undefined,
+): void {
   const table = h(
     "table",
     { class: "card-table" },
@@ -185,18 +181,22 @@ function renderTable(container: HTMLElement, rows: CardRow[], showDiff: boolean)
   table.append(tbody);
   container.append(table);
 
-  renderIncrementally(tbody, rows, (row) => renderTableRow(row, showDiff), {
+  renderIncrementally(tbody, rows, (row) => renderTableRow(row, showDiff, listName), {
     batchSize: 80,
     sentinelTag: "tr",
     sentinelColspan: showDiff ? 11 : 9,
   });
 }
 
-function renderTableRow(row: CardRow, showDiff: boolean): HTMLElement {
+function renderTableRow(row: CardRow, showDiff: boolean, listName: string | undefined): HTMLElement {
   const card = row.card;
   const missing = showDiff && (row.missingQty ?? 0) > 0;
   const cells: (HTMLElement | false)[] = [
-    h("td", { class: missing ? "cell-image cell-image-missing" : "cell-image" }, cardImage(card)),
+    h(
+      "td",
+      { class: missing ? "cell-image cell-image-missing" : "cell-image" },
+      cardImage(card, row, listName),
+    ),
     h("td", { class: "cell-qty" }, String(row.qty)),
     showDiff && h("td", { class: "cell-owned" }, String(row.ownedQty ?? 0)),
     showDiff &&
@@ -215,11 +215,9 @@ function renderTableRow(row: CardRow, showDiff: boolean): HTMLElement {
           { class: "not-owned-badge", title: `${row.missingQty} missing` },
           " ⚠ not owned",
         ),
-      showDiff && sharedBadge(row),
-      !card.resolved && h("span", { class: "unresolved-badge", title: "Unresolved card name" }, " ⚠"),
     ),
     h("td", { class: "cell-mana" }, card.mana_cost || "—"),
-    h("td", { class: "cell-mv" }, card.resolved ? String(card.mana_value) : "—"),
+    h("td", { class: "cell-mv" }, String(card.mana_value)),
     h("td", { class: "cell-type" }, card.type_line || "—"),
     h("td", { class: "cell-rarity" }, card.rarity || "—"),
     h(
@@ -227,10 +225,8 @@ function renderTableRow(row: CardRow, showDiff: boolean): HTMLElement {
       { class: "cell-set", title: card.set ? card.set.toUpperCase() : undefined },
       card.set_name || (card.set ? card.set.toUpperCase() : "—"),
     ),
-    h("td", { class: "cell-price" }, card.price_eur != null ? `€${card.price_eur.toFixed(2)}` : "—"),
+    h("td", { class: "cell-price", title: priceTitle(card) }, formatPriceLabel(card)),
   ];
-  const rowClasses = [!card.resolved && "unresolved-row", missing && "row-missing"]
-    .filter(Boolean)
-    .join(" ");
+  const rowClasses = [missing && "row-missing"].filter(Boolean).join(" ");
   return h("tr", { class: rowClasses || undefined }, ...cells);
 }

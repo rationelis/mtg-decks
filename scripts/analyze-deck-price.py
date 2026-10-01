@@ -20,6 +20,8 @@ import sys
 from pathlib import Path
 from statistics import mean, median
 
+import requests
+
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from archidekt import fetch_deck, main_deck_entries, unit_price_cm  # noqa: E402
@@ -27,7 +29,11 @@ from archidekt import fetch_deck, main_deck_entries, unit_price_cm  # noqa: E402
 
 def fetch_deck_prices(deck_id):
     """Fetch deck and extract card prices (one entry per physical copy)."""
-    deck = fetch_deck(deck_id)
+    try:
+        deck = fetch_deck(deck_id)
+    except requests.RequestException as e:
+        print(f"Error fetching deck {deck_id}: {e}", file=sys.stderr)
+        sys.exit(1)
     entries = main_deck_entries(deck)
 
     if not entries:

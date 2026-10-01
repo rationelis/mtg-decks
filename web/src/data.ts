@@ -1,4 +1,4 @@
-import type { BuildMeta, CardList, CardsIndex, IndexEntry } from "./types";
+import type { BuildMeta, CardList, CardsIndex, IndexEntry, UsageIndex } from "./types";
 
 // import.meta.env.BASE_URL already ends with "/" (Vite guarantees this).
 const DATA_BASE = `${import.meta.env.BASE_URL}data/`;
@@ -32,6 +32,7 @@ export const getCards = memoize(() => fetchJson<CardsIndex>("cards.json"));
 export const getBulk = memoize(() => fetchJson<CardList>("bulk.json"));
 export const getIndex = memoize(() => fetchJson<IndexEntry[]>("index.json"));
 export const getMeta = memoize(() => fetchJson<BuildMeta>("meta.json"));
+export const getUsage = memoize(() => fetchJson<UsageIndex>("usage.json"));
 
 const listLoaders = new Map<string, () => Promise<CardList>>();
 
