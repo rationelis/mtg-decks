@@ -1,10 +1,10 @@
 # commander: Satya, Aetherflux Genius
 1 Satya, Aetherflux Genius (M3C) 3 *F*
 1 Adarkar Wastes (M3C) 316
-1 Aether Hub (M3C) 317
+1 Aether Hub (DRC) 145
 1 Aether Refinery (M3C) 106
-1 Aether Revolt
-1 Aether Spike
+1 Aether Revolt (MH3) 113
+1 Aether Spike (MH3) 398
 1 Aethergeode Miner (M3C) 163
 1 Aethersquall Ancient (M3C) 174
 1 Aetherstorm Roc (M3C) 164
@@ -12,80 +12,80 @@
 1 Aetherworks Marvel (M3C) 281
 1 Akroma's Will (M3C) 165
 1 Amped Raptor (MH3) 114
-1 Arcane Signet
-1 Assaultron Dominator
+1 Arcane Signet (M3C) 283
+1 Assaultron Dominator (PIP) 54
 1 Aurora Shifter (M3C) 97
-1 Automated Assembly Line
+1 Automated Assembly Line (PIP) 10
 1 Battlefield Forge (M3C) 321
-1 Behemoth of Vault 0
+1 Behemoth of Vault 0 (PIP) 127
 1 Blaster Hulk (M3C) 107
-1 Brotherhood Scribe
+1 Brotherhood Scribe (PIP) 13
 1 Castle Vantress (M3C) 327
-1 Clifftop Retreat
+1 Clifftop Retreat (TDC) 351
 1 Coalition Relic (M3C) 286
-1 Command Tower
+1 Command Tower (M3C) 331
 1 Confiscation Coup (M3C) 178
 1 Conversion Apparatus (M3C) 128
-1 Decoction Module (M3C) 288
-1 Demolition Field (M3C) 335
-1 Dr. Madison Li
-1 Electrosiphon
-1 Era of Innovation (M3C) 183
-1 Fabrication Module
+1 Decoction Module (DRC) 128
+1 Demolition Field (FDN) 687
+1 Dr. Madison Li (PIP) 3 *F*
+1 Electrosiphon (PIP) 104
+1 Era of Innovation (DRC) 75
+1 Fabrication Module (KLD) 211
 1 Farewell (M3C) 170
 1 Frostboil Snarl (M3C) 344
 1 Furycalm Snarl (M3C) 345
-1 Galvanic Discharge
-1 Generous Gift
-1 Glacial Fortress
-1 Glimmer of Genius (M3C) 187
+1 Galvanic Discharge (MH3) 122
+1 Generous Gift (CMM) 624
+1 Glacial Fortress (TDC) 367
+1 Glimmer of Genius (DRC) 78
 1 Goldspan Dragon (M3C) 212
 1 Gonti's Aether Heart (M3C) 294
-1 Guide of Souls
-1 HELIOS One
+1 Guide of Souls (MH3) 29
+1 HELIOS One (PIP) 149
 3 Island (MH3) 312
 1 Island (MH3) 313
 1 Izzet Generatorium (MH3) 191
 1 Jolted Awake (MH3) 33
-1 Liberty Prime, Recharged
+1 Liberty Prime, Recharged (PIP) 5 *F*
 1 Lightning Runner (M3C) 215
 1 Localized Destruction (M3C) 93
 3 Mountain (MH3) 316
 1 Mountain (MH3) 317
 1 Mystic Gate (M3C) 359
-1 Mystic Monastery (M3C) 360
-1 Panharmonicon
-1 Path to Exile
+1 Mystic Monastery (BLC) 318
+1 Panharmonicon (DRC) 135
+1 Path to Exile (FIC) 248
 5 Plains (MH3) 310
 3 Plains (MH3) 311
-1 Plasma Caster
+1 Plasma Caster (PIP) 64
 1 Port Town (M3C) 364
 1 Prairie Stream (M3C) 365
 1 Professional Face-Breaker (M3C) 216
 1 Razorfield Ripper (M3C) 94
-1 Riddle Gate Gargoyle
+1 Riddle Gate Gargoyle (MH3) 201
 1 Roil Cartographer (MH3) 67
 1 Salvation Colossus (M3C) 95
-1 Sentry Bot
+1 Sentry Bot (PIP) 24
 1 Shivan Reef (M3C) 375
-1 Sol Ring
-1 Solar Transformer (MH3) 211
+1 Sol Ring (M3C) 305
+1 Solar Transformer (DRC) 137
 1 Solemn Simulacrum (M3C) 306
 1 Sphinx of the Revelation (M3C) 127
 1 Stone Idol Generator (M3C) 129
-1 Sulfur Falls
-1 Swords to Plowshares (M3C) 173
-1 Synth Eradicator
-1 Talisman of Conviction (M3C) 307
-1 Talisman of Creativity (M3C) 308
-1 Talisman of Progress (M3C) 313
+1 Sulfur Falls (LTC) 333
+1 Swords to Plowshares (SOC) 179
+1 Synth Eradicator (PIP) 67
+1 Talisman of Conviction (TDC) 329
+1 Talisman of Creativity (SOC) 357
+1 Talisman of Progress (TDC) 333
 1 Temple of Enlightenment (M3C) 386
-1 Temple of Epiphany
+1 Temple of Epiphany (M3C) 387
 1 Temple of Triumph (M3C) 392
-1 The Motherlode, Excavator
-1 Tune the Narrative
+1 The Motherlode, Excavator (PIP) 62
+1 Tune the Narrative (MH3) 75
 1 Unstable Amulet (MH3) 142
-1 Volatile Stormdrake
-1 Wheel of Potential
-1 Whirler Virtuoso (M3C) 278
-1 Wrath of the Skies
+1 Volatile Stormdrake (MH3) 79
+1 Wheel of Potential (MH3) 144
+1 Whirler Virtuoso (DRC) 122
+1 Wrath of the Skies (MH3) 49

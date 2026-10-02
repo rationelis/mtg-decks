@@ -1,80 +1,80 @@
 # commander: Stella Lee, Wild Card
 1 Stella Lee, Wild Card (OTC) 3 *F*
-1 An Offer You Can't Refuse
-1 Arcane Signet
-1 Big Score (OTC) 155
-1 Bitter Reunion
-1 Brainstorm
+1 An Offer You Can't Refuse (FDN) 160
+1 Arcane Signet (M3C) 283
+1 Big Score (SOC) 237
+1 Bitter Reunion (OTC) 156
+1 Brainstorm (FCA) 28
 1 Cascade Bluffs (OTC) 276
-1 Cathartic Reunion
-1 Cerulean Wisps
-1 Chaos Charm
-1 Command Tower
-1 Compelling Deterrence
-1 Concerted Defense
-1 Consider
-1 Crimson Wisps
-1 Daze
-1 Demand Answers
-1 Desperate Ritual
-1 Dispel
-1 Dive Down
-1 Expedite
-1 Expel from Orazca
+1 Cathartic Reunion (ECC) 91
+1 Cerulean Wisps (SHM) 31
+1 Chaos Charm (MIR) 163
+1 Command Tower (M3C) 331
+1 Compelling Deterrence (INR) 57
+1 Concerted Defense (ZNR) 52
+1 Consider (TDC) 148
+1 Crimson Wisps (SHM) 88
+1 Daze (EMA) 44
+1 Demand Answers (MKM) 122
+1 Desperate Ritual (CHK) 163
+1 Dispel (WWK) 26
+1 Dive Down (FDN) 588
+1 Expedite (CMR) 413
+1 Expel from Orazca (RIX) 37
 1 Faithless Looting (OTC) 165
-1 Fellwar Stone
+1 Fellwar Stone (SOC) 347
 1 Ferrous Lake (OTC) 294
-1 Fever Charm
-1 Fiery Islet
+1 Fever Charm (ONS) 202
+1 Fiery Islet (WHO) 278
 1 Frostboil Snarl (OTC) 298
-1 Highway Robbery
-1 Impulsive Pilferer
+1 Highway Robbery (OTJ) 129
+1 Impulsive Pilferer (OTC) 171
 7 Island (OTJ) 279
 7 Island (OTJ) 280
 2 Island
-1 Izzet Boilerworks (OTC) 302
-1 Izzet Signet (OTC) 259
-1 Jolt
-1 Merchant Scroll
-1 Mind Stone
-1 Miscast
-1 Mission Briefing
-1 Mizzium Skin
+1 Izzet Boilerworks (M3C) 350
+1 Izzet Signet (TDC) 320
+1 Jolt (MIR) 70
+1 Merchant Scroll (HML) 33
+1 Mind Stone (SOC) 352
+1 Miscast (M21) 57
+1 Mission Briefing (MKC) 110
+1 Mizzium Skin (RTR) 45
 7 Mountain (OTJ) 283
 3 Mountain (OTJ) 284
-1 Muddle the Mixture
-1 Mystic Sanctuary
-1 Mystical Tutor
-1 Negate
+1 Muddle the Mixture (RAV) 60
+1 Mystic Sanctuary (SOC) 388
+1 Mystical Tutor (DMR) 289
+1 Negate (M20) 69
 1 Noble's Purse
 1 Opt (OTC) 104
-1 Perilous Voyage
-1 Personal Tutor
-1 Pirate's Pillage
-1 Ponder (OTC) 105
-1 Preordain (OTC) 107
+1 Perilous Voyage (XLN) 67
+1 Personal Tutor (CMM) 110
+1 Pirate's Pillage (2X2) 120
+1 Ponder (TDC) 159
+1 Preordain (TDC) 161
 1 Refocus
-1 Rite of Flame
-1 Samut's Sprint
-1 Seize the Spoils
-1 Select for Inspection
+1 Rite of Flame (CSP) 96
+1 Samut's Sprint (WAR) 142
+1 Seize the Spoils (KHM) 149
+1 Select for Inspection (KLD) 63
 1 Serum Visions (OTC) 112
 1 Shivan Reef (OTC) 320
-1 Shore Up
-1 Simian Spirit Guide
-1 Sky Diamond
-1 Snap
-1 Sol Ring
-1 Solve the Equation
-1 Spell Pierce
-1 Star Compass
-1 Strike It Rich
+1 Shore Up (BLB) 69
+1 Simian Spirit Guide (TSR) 190
+1 Sky Diamond (VOC) 167
+1 Snap (ULG) 43
+1 Sol Ring (OTC) 267
+1 Solve the Equation (STX) 54
+1 Spell Pierce (DFT) 64
+1 Star Compass (IMA) 229
+1 Strike It Rich (H2R) 12
 1 Sulfur Falls (OTC) 322
-1 Talisman of Creativity
-1 Thrill of Possibility
-1 Twisted Fealty
-1 Twitch
-1 Unauthorized Exit
-1 Unexpected Windfall
-1 Unnatural Speed
-1 You See a Guard Approach
+1 Talisman of Creativity (SOC) 357
+1 Thrill of Possibility (FDN) 210
+1 Twisted Fealty (WOE) 154
+1 Twitch (WWK) 43
+1 Unauthorized Exit (MKM) 298
+1 Unexpected Windfall (PIP) 193
+1 Unnatural Speed (CHK) 197
+1 You See a Guard Approach (AFR) 85

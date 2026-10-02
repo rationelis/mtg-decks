@@ -53,7 +53,10 @@ from dataclasses import dataclass, field
 from pathlib import Path
 
 LINE_RE = re.compile(r"^(?P<qty>\d+)\s*x?\s+(?P<body>.+)$", re.IGNORECASE)
-FOIL_SUFFIX_RE = re.compile(r"^(?P<rest>.+?)\s*\*(?P<foil>F)\*$", re.IGNORECASE)
+FOIL_SUFFIX_RE = re.compile(
+    r"^(?P<rest>.+?)\s*\*(?P<foil>[FE])\*$",
+    re.IGNORECASE,
+)
 PIN_SUFFIX_RE = re.compile(
     r"^(?P<name>.+?)\s*\((?P<set>[A-Za-z0-9]{2,6})\)\s+(?P<num>[A-Za-z0-9-]+)$",
     re.IGNORECASE,
@@ -151,7 +154,12 @@ def parse_entry_line(line: str) -> Entry | None:
     except EntryGrammarError:
         return None
     return Entry(
-        name=name, qty=qty, line=0, set=set_code, collector_number=collector_number, foil=foil
+        name=name,
+        qty=qty,
+        line=0,
+        set=set_code,
+        collector_number=collector_number,
+        foil=foil,
     )
 
 
@@ -232,7 +240,9 @@ def parse_entries(path: Path) -> list[Entry]:
     return entries
 
 
-def parse_card_list(path: Path, kind: str, root: Path) -> tuple[CardList, list[BuildError]]:
+def parse_card_list(
+    path: Path, kind: str, root: Path
+) -> tuple[CardList, list[BuildError]]:
     """Parse a single card-list text file into a CardList, plus any
     build-stopping BuildErrors found in it (empty when the file is clean).
     """
