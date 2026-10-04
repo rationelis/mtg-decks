@@ -1,83 +1,81 @@
 # commander: Thranduil, the Elvenking
-1 Thranduil, the Elvenking (hob) 167
-1 Abomination of Llanowar (cmr) 265
-1 Arcane Signet (40K) 227
-1 Assassin's Trophy (pmkm) 187p
-1 Beast Within (EOC) 93
-1 Buried Alive (WTH) 63
-1 Celeborn the Wise (ltr) 156
-1 Command Tower (M3C) 331
-1 Counterspell (ema) 43
-1 Cultivate (ECC) 103
-1 Deathbloom Ritualist (bro) 208
-1 Deathrite Shaman (rvr) 175
-1 Devoted Druid (plst) SHM-110
-1 Dismal Backwater (tdm) 254
-1 Dwynen, Gilt-Leaf Daen (ori) 172
-1 Edric, Spymaster of Trest (c16) 195
-1 Elrond, Lord of Rivendell (ltr) 49
-1 Elrond, Moon-Reader (hob) 36
-1 Elven Passage (hob) 181
-1 Elvish Archdruid (FDN) 219
-1 Elvish Harbinger (EVG) 4
-1 Elvish Mystic (SOC) 266
-1 Emil, Vastlands Roamer (sos) 146
-1 Exotic Orchard (40K) 278
-1 Ezuri, Claw of Progress (C15) 44
-1 Ezuri, Renegade Leader (SOM) 119
-1 Farseek (40K) 214
-1 Fauna Shaman (m11) 172
-12 Forest (ecl) 273
-2 Forest (ecl) 273
-1 Frantic Search (cmm) 96
-1 Fyndhorn Elves (dkm) 26
-1 Galion, Elvenking's Butler (hob) 125
-1 Gilanra, Caller of Wirewood (cmr) 230
-1 Glissa Sunslayer (ecc) 122
-1 Glissa, Herald of Predation (mom) 226
-1 Harald, King of Skemfar (khm) 323
-1 High Perfect Morcant (ECL) 229
-1 Immaculate Magistrate (CMA) 117
-1 Imperious Perfect (fdn) 719 *F*
-1 Incubation Druid (fic) 309
-4 Island (eoe) 270
-1 Island (eoe) 270
-1 Izoni, Center of the Web (pmkm) 209p
-1 Jungle Hollow (BLC) 313
-1 Krydle of Baldur's Gate (plst) AFR-343
-1 Lathril, Blade of the Elves (pfdn) 242s *F*
-1 Llanowar Elves (FDN) 227
-1 Llanowar Wastes (BLC) 315
-1 Lluwen, Imperfect Naturalist (pecl) 232p
-1 Maralen, Fae Ascendant (ecl) 233
-1 Marwyn, the Nurturer (j25) 687
-1 Momir Vig, Simic Visionary (plst) GK2-119
-1 Nath of the Gilt-Leaf (C16) 213
-1 Nature's Lore (SOC) 278
-1 Negate (M20) 69
-1 Nissa, Worldsoul Speaker (drc) 13
-1 Path of Ancestry (40K) 287
-1 Priest of Titania (c14) 210
-1 Quirion Ranger (VIS) 117
-1 Rampant Growth (40K) 220
-1 Reclamation Sage (FDN) 231
-1 Rishkar, Peema Renegade (blc) 235
-1 Selfless Safewright (pecl) 193p
-1 Selvala, Heart of the Wilds (plst) CN2-70
-1 Shaman of the Pack (khc) 92
-1 Sol Ring (M3C) 305
-1 Sutina, Speaker of the Tajuru (j25) 56
-4 Swamp (ecl) 271
-1 Tainted Isle (clb) 920
-1 Tainted Wood (dsc) 305
-1 Temple of Deceit (drc) 176
-1 Temple of Malady (M3C) 388
-1 Temple of Mystery (40K) 299
-1 Thornwood Falls (40K) 302
-1 Thranduil's Company (hob) 168
-1 Timberwatch Elf (CMA) 156
-1 Tyvar, Jubilant Brawler (pone) 218p
-1 Underground River (bro) 267
-1 Wirewood Channeler (KHC) 79
-1 Woodland Weavemaster (hob) 143
-1 Yavimaya Coast (dsc) 327
+1 Thranduil, the Elvenking
+1 Abomination of Llanowar
+1 Arcane Signet
+1 Assassin's Trophy
+1 Beast Within
+1 Buried Alive
+1 Celeborn the Wise
+1 Command Tower
+1 Counterspell
+1 Cultivate
+1 Deathbloom Ritualist
+1 Deathrite Shaman
+1 Devoted Druid
+1 Dismal Backwater
+1 Dwynen, Gilt-Leaf Daen
+1 Edric, Spymaster of Trest
+1 Elrond, Lord of Rivendell
+1 Elrond, Moon-Reader
+1 Elven Passage
+1 Elvish Archdruid
+1 Elvish Harbinger
+1 Elvish Mystic
+1 Emil, Vastlands Roamer
+1 Exotic Orchard
+1 Ezuri, Claw of Progress
+1 Ezuri, Renegade Leader
+1 Farseek
+1 Fauna Shaman
+14 Forest
+1 Frantic Search
+1 Fyndhorn Elves
+1 Galion, Elvenking's Butler
+1 Gilanra, Caller of Wirewood
+1 Glissa Sunslayer
+1 Glissa, Herald of Predation
+1 Harald, King of Skemfar
+1 High Perfect Morcant
+1 Immaculate Magistrate
+1 Imperious Perfect
+1 Incubation Druid
+5 Island
+1 Izoni, Center of the Web
+1 Jungle Hollow
+1 Krydle of Baldur's Gate
+1 Lathril, Blade of the Elves
+1 Llanowar Elves
+1 Llanowar Wastes
+1 Lluwen, Imperfect Naturalist
+1 Maralen, Fae Ascendant
+1 Marwyn, the Nurturer
+1 Momir Vig, Simic Visionary
+1 Nath of the Gilt-Leaf
+1 Nature's Lore
+1 Negate
+1 Nissa, Worldsoul Speaker
+1 Path of Ancestry
+1 Priest of Titania
+1 Quirion Ranger
+1 Rampant Growth
+1 Reclamation Sage
+1 Rishkar, Peema Renegade
+1 Selfless Safewright
+1 Selvala, Heart of the Wilds
+1 Shaman of the Pack
+1 Sol Ring
+1 Sutina, Speaker of the Tajuru
+4 Swamp
+1 Tainted Isle
+1 Tainted Wood
+1 Temple of Deceit
+1 Temple of Malady
+1 Temple of Mystery
+1 Thornwood Falls
+1 Thranduil's Company
+1 Timberwatch Elf
+1 Tyvar, Jubilant Brawler
+1 Underground River
+1 Wirewood Channeler
+1 Woodland Weavemaster
+1 Yavimaya Coast
