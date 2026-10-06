@@ -22,7 +22,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass, field
 
-from parse import CardList
+from parse import CardList, is_real_active_deck
 from resolve import CardData, normalize_name
 
 
@@ -50,15 +50,6 @@ def is_basic_land(card: CardData) -> bool:
     return "basic land" in card.type_line.lower()
 
 
-def _is_real_active_deck(card_list: CardList) -> bool:
-    return (
-        card_list.kind == "deck"
-        and card_list.status == "active"
-        and not card_list.proxy
-        and not card_list.collection
-    )
-
-
 def _list_key(card_list: CardList) -> str:
     return f"{card_list.kind}-{card_list.id}"
 
@@ -83,8 +74,8 @@ def allocate(
         key = normalize_name(entry.name)
         bulk_qty_by_key[key] = bulk_qty_by_key.get(key, 0) + entry.qty
 
-    real_active_decks = [cl for cl in lists if _is_real_active_deck(cl)]
-    other_lists = [cl for cl in lists if not _is_real_active_deck(cl)]
+    real_active_decks = [cl for cl in lists if is_real_active_deck(cl)]
+    other_lists = [cl for cl in lists if not is_real_active_deck(cl)]
 
     all_keys = set(bulk_qty_by_key)
     for card_list in lists:

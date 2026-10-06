@@ -15,7 +15,7 @@ def test_apply_bulk_prices_exact_when_no_pin():
 def test_apply_bulk_prices_exact_when_pin_matches():
     card_data = {"sol ring": CardData(name="Sol Ring")}
     bulk_prices = {"sol ring": {"price_eur": 1.5, "set": "lea", "collector_number": "1"}}
-    pins = {"sol ring": PinOccurrence("bulk.txt", 1, "Sol Ring", "LEA", "1", True)}
+    pins = {"sol ring": PinOccurrence("bulk.txt", 1, "Sol Ring", "LEA", "1", True, True)}
 
     apply_bulk_prices(card_data, bulk_prices, pins)
 
@@ -25,7 +25,7 @@ def test_apply_bulk_prices_exact_when_pin_matches():
 def test_apply_bulk_prices_fallback_when_pin_mismatches():
     card_data = {"sol ring": CardData(name="Sol Ring")}
     bulk_prices = {"sol ring": {"price_eur": 1.5, "set": "lea", "collector_number": "1"}}
-    pins = {"sol ring": PinOccurrence("bulk.txt", 1, "Sol Ring", "C21", "263", True)}
+    pins = {"sol ring": PinOccurrence("bulk.txt", 1, "Sol Ring", "C21", "263", True, True)}
 
     apply_bulk_prices(card_data, bulk_prices, pins)
 

@@ -1,11 +1,12 @@
 import { getUsage } from "../data";
 import { clear, h } from "../dom";
 import { normalizeName } from "../normalize";
+import { formatPriceLabel, priceTitle } from "../priceNote";
 import type { CardData, Usage } from "../types";
 
-/** Context for opening a popover from a specific list's row, so the
- * popover can lead with a one-line summary framed for that deck's
- * situation (see REFACTOR.md §9.6) instead of only the raw numbers. */
+/** Context for opening the detail dialog from a specific list's row, so
+ * it can lead with a one-line summary framed for that deck's situation
+ * (see REFACTOR.md §9.6) instead of only the raw numbers. */
 export interface PopoverContext {
   listName: string;
   missingQty: number;
@@ -13,57 +14,49 @@ export interface PopoverContext {
 
 let closeCurrent: (() => void) | null = null;
 
-/** Opens a small detail popover near `anchor` showing a card's bulk
- * allocation (Owned/Available/which decks currently hold it), lazily
- * fetched from usage.json. Only one popover is ever open at a time;
- * clicking outside it or pressing Escape closes it. */
+/** Opens a centered card-detail dialog (image, oracle text, Scryfall
+ * link, and - lazily fetched from usage.json - bulk allocation: which
+ * decks currently hold this card). Centered on the viewport rather than
+ * anchored to the clicked element so it can never end up partially or
+ * fully off-screen. Only one dialog is ever open at a time; clicking the
+ * backdrop or pressing Escape closes it. */
 export function openCardPopover(anchor: HTMLElement, card: CardData, context?: PopoverContext): void {
   closeCurrent?.();
 
-  const popover = h("div", { class: "card-popover", role: "dialog" }, h("p", { class: "loading" }, "Loading…"));
-  document.body.append(popover);
-  position(popover, anchor);
+  const backdrop = h("div", { class: "card-modal-backdrop" });
+  const dialog = h("div", { class: "card-modal", role: "dialog", "aria-modal": "true" });
+  backdrop.append(dialog);
+  document.body.append(backdrop);
+  renderStatic(dialog, card, close);
 
   function close(): void {
-    popover.remove();
+    backdrop.remove();
     document.removeEventListener("keydown", onKeyDown, true);
-    document.removeEventListener("mousedown", onOutsideClick, true);
+    anchor.focus?.();
     if (closeCurrent === close) closeCurrent = null;
   }
   function onKeyDown(e: KeyboardEvent): void {
     if (e.key === "Escape") close();
   }
-  function onOutsideClick(e: MouseEvent): void {
-    const target = e.target as Node;
-    if (!popover.contains(target) && target !== anchor && !anchor.contains(target)) close();
+  function onBackdropClick(e: MouseEvent): void {
+    if (e.target === backdrop) close();
   }
-  // Capture phase + a microtask delay so the click that opened this
-  // popover doesn't immediately also count as the "outside click" that
-  // closes it.
-  window.setTimeout(() => {
-    document.addEventListener("keydown", onKeyDown, true);
-    document.addEventListener("mousedown", onOutsideClick, true);
-  }, 0);
+  backdrop.addEventListener("mousedown", onBackdropClick);
+  document.addEventListener("keydown", onKeyDown, true);
   closeCurrent = close;
 
   void getUsage()
     .then((usage) => {
-      if (!popover.isConnected) return; // closed before the fetch resolved
+      if (!backdrop.isConnected) return; // closed before the fetch resolved
       const key = normalizeName(card.name);
-      render(popover, card, usage[key] ?? null, context, close);
+      renderAllocation(dialog, usage[key] ?? null, context);
     })
     .catch(() => {
-      if (!popover.isConnected) return;
-      clear(popover);
-      popover.append(h("p", { class: "popover-error" }, "Could not load allocation data."));
+      if (!backdrop.isConnected) return;
+      dialog.querySelector(".allocation-section")?.replaceWith(
+        h("p", { class: "popover-error" }, "Could not load allocation data."),
+      );
     });
-}
-
-function position(popover: HTMLElement, anchor: HTMLElement): void {
-  const rect = anchor.getBoundingClientRect();
-  popover.style.position = "fixed";
-  popover.style.top = `${Math.min(rect.bottom + 6, window.innerHeight - 20)}px`;
-  popover.style.left = `${Math.min(rect.left, window.innerWidth - 280)}px`;
 }
 
 function allocationList(usage: Usage): HTMLElement {
@@ -109,14 +102,11 @@ function summaryLine(usage: Usage, context: PopoverContext): HTMLElement | false
   );
 }
 
-function render(
-  popover: HTMLElement,
-  card: CardData,
-  usage: Usage | null,
-  context: PopoverContext | undefined,
-  close: () => void,
-): void {
-  clear(popover);
+/** The part of the dialog that never needs the async usage.json fetch:
+ * image, name, oracle text, price, and the Scryfall link. Rendered
+ * immediately so the dialog is never empty/blank while usage loads. */
+function renderStatic(dialog: HTMLElement, card: CardData, close: () => void): void {
+  clear(dialog);
 
   const closeButton = h(
     "button",
@@ -124,25 +114,58 @@ function render(
     "×",
   );
 
-  if (!usage) {
-    popover.append(
-      closeButton,
+  const image = card.image_uri
+    ? h("img", { class: "popover-image", src: card.image_uri, alt: card.name })
+    : h("div", { class: "popover-image popover-image-placeholder" }, card.name);
+
+  dialog.append(
+    closeButton,
+    h(
+      "div",
+      { class: "popover-body" },
+      image,
       h(
         "div",
-        {},
+        { class: "popover-details" },
         h("h3", {}, card.name),
+        h("p", { class: "popover-meta" }, [card.type_line, card.mana_cost].filter(Boolean).join(" — ") || "—"),
+        card.oracle_text && h("p", { class: "popover-oracle" }, card.oracle_text),
+        h(
+          "p",
+          { class: "popover-price", title: priceTitle(card) },
+          `Price: ${formatPriceLabel(card)}`,
+        ),
+        card.scryfall_uri &&
+          h(
+            "a",
+            { class: "popover-scryfall-link", href: card.scryfall_uri, target: "_blank", rel: "noopener" },
+            "View on Scryfall ↗",
+          ),
+        h("div", { class: "allocation-section" }, h("p", { class: "loading" }, "Loading allocation…")),
+      ),
+    ),
+  );
+}
+
+function renderAllocation(dialog: HTMLElement, usage: Usage | null, context: PopoverContext | undefined): void {
+  const section = dialog.querySelector(".allocation-section");
+  if (!section) return;
+
+  if (!usage) {
+    section.replaceWith(
+      h(
+        "div",
+        { class: "allocation-section" },
         h("p", { class: "popover-note" }, "Not tracked in bulk (e.g. a basic land - always available)."),
       ),
     );
     return;
   }
 
-  popover.append(
-    closeButton,
+  section.replaceWith(
     h(
       "div",
-      {},
-      h("h3", {}, card.name),
+      { class: "allocation-section" },
       context && summaryLine(usage, context),
       h("p", {}, `Owned: ${usage.owned}`),
       h("p", {}, `Available: ${usage.available}`),

@@ -111,6 +111,21 @@ def normalize_name(name: str) -> str:
     return unicodedata.normalize("NFC", name).strip().lower()
 
 
+def is_real_active_deck(card_list: CardList) -> bool:
+    """True for a list that represents physical cards actually committed
+    to a deck right now - i.e. one that can claim scarce bulk supply (see
+    REFACTOR.md §9.3) and whose printing pins must agree with bulk.txt
+    (see resolve.resolve_pin_conflicts). Archived decks, proxy decks, and
+    collections/wishlists are all excluded - none of them represent a
+    real, current claim on a physical card."""
+    return (
+        card_list.kind == "deck"
+        and card_list.status == "active"
+        and not card_list.proxy
+        and not card_list.collection
+    )
+
+
 def _parse_entry_text(line: str) -> tuple[int, str, str | None, str | None, bool]:
     """Parse one entry line's text into (qty, name, set, collector_number,
     foil), raising EntryGrammarError with a human-readable message for

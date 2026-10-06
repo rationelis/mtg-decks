@@ -19,10 +19,14 @@ resolved before is a hard error (see REFACTOR.md §6.2).
 A name can optionally be pinned to a specific printing (e.g. "Mystical
 Tutor (DMR) 289" in a source file, see parse.py). Every such pin is
 verified directly via /cards/{set}/{number} and must both exist and
-actually be a printing of that same card - a mismatch or a conflicting
-pin across files is a hard error (see REFACTOR.md §6.1), never silently
-ignored. This never changes the lookup key, which stays the bare oracle
-name, so ownership diffing is unaffected.
+actually be a printing of that same card - a mismatch is always a hard
+error. A conflicting pin (one that disagrees with what bulk.txt records
+as owned) is only a hard error when it comes from bulk.txt itself or a
+real active deck (see parse.is_real_active_deck) - collections,
+wishlists, proxy decks, and archived decks are exempt, since their pins
+are aspirational/informational, not a claim about a physical card you
+own (see REFACTOR.md §6.1/§9.3). This never changes the lookup key,
+which stays the bare oracle name, so ownership diffing is unaffected.
 """
 
 from __future__ import annotations
@@ -35,7 +39,7 @@ from typing import Any
 import requests
 
 from net import get_json, post_json
-from parse import BuildError, CardList, normalize_name
+from parse import BuildError, CardList, is_real_active_deck, normalize_name
 
 COLLECTION_URL = "https://api.scryfall.com/cards/collection"
 NAMED_FUZZY_URL = "https://api.scryfall.com/cards/named"
@@ -75,6 +79,7 @@ class PinOccurrence:
     set: str
     collector_number: str
     is_bulk: bool
+    binding: bool  # must agree with bulk.txt's pin, or it's a conflict (see §9.3)
 
 
 def _face_colors(card: dict[str, Any]) -> list[str]:
@@ -192,6 +197,7 @@ def collect_pins(bulk: CardList, lists: list[CardList]) -> dict[str, list[PinOcc
     pins: dict[str, list[PinOccurrence]] = {}
     for card_list in [bulk, *lists]:
         is_bulk = card_list.kind == "bulk"
+        binding = is_bulk or is_real_active_deck(card_list)
         for entry in card_list.entries:
             if not (entry.set and entry.collector_number):
                 continue
@@ -204,6 +210,7 @@ def collect_pins(bulk: CardList, lists: list[CardList]) -> dict[str, list[PinOcc
                     set=entry.set,
                     collector_number=entry.collector_number,
                     is_bulk=is_bulk,
+                    binding=binding,
                 )
             )
     return pins
@@ -213,21 +220,25 @@ def resolve_pin_conflicts(
     pins: dict[str, list[PinOccurrence]],
 ) -> tuple[dict[str, PinOccurrence], list[BuildError]]:
     """For each key with one or more pins, pick the authoritative pin for
-    identity/price-matching purposes, and flag any pin outside bulk.txt
-    that disagrees with it as a BuildError (see REFACTOR.md §6.1).
+    identity/price-matching purposes, and flag any *binding* pin outside
+    bulk.txt that disagrees with it as a BuildError (see REFACTOR.md
+    §6.1/§9.3).
 
     bulk.txt is the sole source of truth for "what you physically have" -
     its own pin(s) are authoritative, and never conflict with each other
     even when there's more than one (owning two different printings of
     the same card is normal; that's two lines in bulk.txt, not a
-    conflict). A pin in any other file is only flagged when bulk.txt has
-    at least one pin for that name and this one matches none of them -
-    i.e. it claims a printing you don't have recorded as owned. When
-    bulk.txt has no pin for a name at all (e.g. a basic land, or simply
-    never pinned), there is no physical truth to disagree with, so every
-    file's choice of pin for that name is treated as a non-binding
-    display preference - including when two non-bulk files disagree with
-    each other.
+    conflict). A pin in a real active deck (see parse.is_real_active_deck)
+    is only flagged when bulk.txt has at least one pin for that name and
+    this one matches none of them - i.e. it claims a printing you don't
+    have recorded as owned. Non-binding pins (collections/wishlists,
+    proxy decks, archived decks) never conflict with anything - a
+    wishlist pin records a printing you'd like to acquire, not one you
+    already own, so it has nothing to disagree with. When bulk.txt has no
+    pin for a name at all (e.g. a basic land, or simply never pinned),
+    there is no physical truth to disagree with, so every file's choice
+    of pin for that name is treated as a non-binding display preference -
+    including when two non-bulk files disagree with each other.
 
     Returns (authoritative pin per key - used to pick a display printing
     and to judge price exactness, errors).
@@ -251,6 +262,8 @@ def resolve_pin_conflicts(
         for occ in occurrences:
             if occ.is_bulk:
                 continue  # bulk's own multiple pins never conflict with each other
+            if not occ.binding:
+                continue  # collection/proxy/archived pin - never a conflict
             if (occ.set.lower(), occ.collector_number.lower()) in owned_pins:
                 continue  # matches a printing actually recorded as owned
             errors.append(

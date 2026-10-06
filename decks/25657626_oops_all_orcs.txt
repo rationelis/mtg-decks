@@ -1,119 +1,119 @@
 # collection: true
-1x Alesha's Vanguard
-1x Ambuscade Shaman
-1x Angrath's Ambusher
-1x Argivian Cavalier
-1x Armory Veteran
-1x Ascendant Dustspeaker
-1x Battle Brawler
-1x Bellowing Saddlebrute
-1x Blood-Chin Fanatic
-1x Brassclaw Orcs
-1x Brazen Blademaster
-1x Brutal Hordechief
-1x Burakos, Party Leader
-1x Cadira, Caller of the Small
-1x Captain Vargus Wrath
-1x Cheerful Osteomancer // Raise Dead
-1x Cirith Ungol Patrol
-1x Coercive Recruiter
-1x Cutthroat Negotiator
-1x Devoted Paladin
-1x Dire Fleet Captain
-1x Dire Fleet Neckbreaker
-1x Dire Fleet Ravager
-1x Dire Fleet Warmonger
-1x Effortless Master
-1x Elemental Expressionist
-1x Fathom Fleet Boarder
-1x Fathom Fleet Swordjack
-1x Feywild Caretaker
-1x Frenzied Saddlebrute
-1x Garrison Excavator
-1x Gemcutter Buccaneer
-1x Gorbag of Minas Morgul
-1x Grakk the Pacifist
-1x Gruesome Scourger
-1x Guild Thief
-1x Half-Orc, Half-
-1x Headstrong Brute
-1x Imperious Inkmage
-1x Intrepid Outlander
-1x Ire Shaman
-1x Ironclaw Buzzardiers
-1x Ironclaw Orcs
-1x Ironwill Forger
-1x Jeskai Brushmaster
-1x Jeskai Devotee
-1x Krumar Bond-Kin
-1x Mardu Outrider
-1x Mardu Roughrider
-1x Mardu Warshrieker
-1x Marshal of the Lost
-1x Mauhúr, Uruk-hai Captain
-1x Merciless Executioner
-1x Mer-Ek Nightblade
-1x Moria Scavenger
-1x Orc General
-1x Orcish Artillery
-1x Orcish Bloodpainter
-1x Orcish Bowmasters
-1x Orcish Cannoneers
-1x Orcish Captain
-1x Orcish Conscripts
-1x Orcish Farmer
-1x Orcish Healer
-1x Orcish Hellraiser
-1x Orcish Librarian
-1x Orcish Lumberjack
-1x Orcish Mechanics
-1x Orcish Paratroopers
-1x Orcish Settlers
-1x Orcish Siegemaster
-1x Orcish Spy
-1x Orcish Squatters
-1x Orcish Vandal
-1x Orcish Veteran
-1x Orc Sureshot
-1x Pigment Wrangler // Striking Palette
-1x Pitiless Horde
-1x Plargg and Nassari
-1x Plargg, Dean of Chaos // Augusta, Dean of Order
-1x Plundering Pirate
-1x Poisoner's Apprentice
-1x Port Razer
-1x Prismari Pledgemage
-1x Redoubled Stormsinger
-1x Reigning Victor
-1x Rootha, Mastering the Moment
-1x Rootha, Mercurial Artist
-1x Ruin Raider
-1x Ruthless Knave
-1x Screamreach Brawler
-1x Sek'Kuar, Deathkeeper
-1x Shagrat, Loot Bearer
-1x Shaman of the Great Hunt
-1x Storm Fleet Arsonist
-1x Strife Scholar // Awaken the Ages
-1x Strongbox Raider
-1x Tackle Artist
-1x Temur Battlecrier
-1x Tersa Lightshatter
-1x Thrasher Brute
-1x Tymora's Invoker
-1x Uglúk of the White Hand
-1x Unyielding Krumar
-1x Uruk-hai Berserker
-1x Vaultbreaker
-1x Venerated Stormsinger
-1x Vengeful Warchief
-1x Warbringer
-1x Warg Rider
-1x Wayspeaker Bodyguard
-1x White Plume Adventurer
-1x Wild-Magic Sorcerer
-1x Zurgo and Ojutai
-1x Zurgo Bellstriker
-1x Zurgo Helmsmasher
-1x Zurgo Stormrender
-1x Zurgo, Thunder's Decree
+1 Alesha's Vanguard (FRF) 60
+1 Ambuscade Shaman (DTK) 87
+1 Angrath's Ambusher (RIX) 202
+1 Argivian Cavalier (DMU) 4
+1 Armory Veteran (AFR) 130
+1 Ascendant Dustspeaker (SOS) 8
+1 Battle Brawler (FRF) 63
+1 Bellowing Saddlebrute (KTK) 64
+1 Blood-Chin Fanatic (DTK) 88
+1 Brassclaw Orcs (FEM) 49a
+1 Brazen Blademaster (LCI) 136
+1 Brutal Hordechief (FRF) 64
+1 Burakos, Party Leader (CLB) 622
+1 Cadira, Caller of the Small (CLB) 269
+1 Captain Vargus Wrath (CMR) 273
+1 Cheerful Osteomancer // Raise Dead (SOS) 76
+1 Cirith Ungol Patrol (LTR) 80
+1 Coercive Recruiter (CMR) 169
+1 Cutthroat Negotiator (MOC) 40
+1 Devoted Paladin (AFR) 11
+1 Dire Fleet Captain (XLN) 221
+1 Dire Fleet Neckbreaker (RIX) 156
+1 Dire Fleet Ravager (XLN) 104
+1 Dire Fleet Warmonger (M21) 217
+1 Effortless Master (TDM) 181
+1 Elemental Expressionist (STX) 181
+1 Fathom Fleet Boarder (RIX) 71
+1 Fathom Fleet Swordjack (CMR) 177
+1 Feywild Caretaker (CLB) 69
+1 Frenzied Saddlebrute (CMR) 180
+1 Garrison Excavator (SOS) 116
+1 Gemcutter Buccaneer (LCC) 55
+1 Gorbag of Minas Morgul (LTR) 86
+1 Grakk the Pacifist (MBC) 2
+1 Gruesome Scourger (M20) 104
+1 Guild Thief (AFR) 61
+1 Half-Orc, Half- (UST) 84
+1 Headstrong Brute (XLN) 147
+1 Imperious Inkmage (SOS) 195
+1 Intrepid Outlander (AFR) 191
+1 Ire Shaman (DTK) 141
+1 Ironclaw Buzzardiers (TSP) 165
+1 Ironclaw Orcs (LEA) 159
+1 Ironwill Forger (TDC) 13
+1 Jeskai Brushmaster (TDM) 195
+1 Jeskai Devotee (TDM) 110
+1 Krumar Bond-Kin (KTK) 77
+1 Mardu Outrider (ANB) 52
+1 Mardu Roughrider (KTK) 187
+1 Mardu Warshrieker (KTK) 117
+1 Marshal of the Lost (TDM) 207
+1 Mauhúr, Uruk-hai Captain (LTR) 214
+1 Merciless Executioner (FRF) 76
+1 Mer-Ek Nightblade (KTK) 79
+1 Moria Scavenger (LTC) 63
+1 Orc General (DRK) 73
+1 Orcish Artillery (LEA) 165
+1 Orcish Bloodpainter (CSP) 94
+1 Orcish Bowmasters (LTR) 103
+1 Orcish Cannoneers (ICE) 205
+1 Orcish Captain (FEM) 60
+1 Orcish Conscripts (ICE) 206
+1 Orcish Farmer (ICE) 207
+1 Orcish Healer (ICE) 208
+1 Orcish Hellraiser (MH1) 136
+1 Orcish Librarian (ICE) 209
+1 Orcish Lumberjack (ICE) 210
+1 Orcish Mechanics (ATQ) 27
+1 Orcish Paratroopers (UNH) 83
+1 Orcish Settlers (WTH) 112
+1 Orcish Siegemaster (LTC) 33
+1 Orcish Spy (FEM) 61a
+1 Orcish Squatters (ICE) 211
+1 Orcish Vandal (DOM) 137
+1 Orcish Veteran (FEM) 62a
+1 Orc Sureshot (FRF) 78
+1 Pigment Wrangler // Striking Palette (SOS) 126
+1 Pitiless Horde (DTK) 112
+1 Plargg and Nassari (MAT) 18
+1 Plargg, Dean of Chaos // Augusta, Dean of Order (STX) 155
+1 Plundering Pirate (LCI) 160
+1 Poisoner's Apprentice (SOS) 92
+1 Port Razer (CMR) 193
+1 Prismari Pledgemage (STX) 215
+1 Redoubled Stormsinger (TDC) 37
+1 Reigning Victor (TDM) 216
+1 Rootha, Mastering the Moment (SOC) 8
+1 Rootha, Mercurial Artist (STX) 227
+1 Ruin Raider (XLN) 118
+1 Ruthless Knave (XLN) 119
+1 Screamreach Brawler (DTK) 155
+1 Sek'Kuar, Deathkeeper (CSP) 131
+1 Shagrat, Loot Bearer (LTR) 228
+1 Shaman of the Great Hunt (FRF) 113
+1 Storm Fleet Arsonist (XLN) 162
+1 Strife Scholar // Awaken the Ages (SOS) 131
+1 Strongbox Raider (FDN) 96
+1 Tackle Artist (SOS) 133
+1 Temur Battlecrier (TDM) 228
+1 Tersa Lightshatter (TDM) 127
+1 Thrasher Brute (BBD) 52
+1 Tymora's Invoker (CLB) 101
+1 Uglúk of the White Hand (LTR) 235
+1 Unyielding Krumar (KTK) 94
+1 Uruk-hai Berserker (LTR) 112
+1 Vaultbreaker (FRF) 117
+1 Venerated Stormsinger (TDM) 97
+1 Vengeful Warchief (M20) 121
+1 Warbringer (DTK) 168
+1 Warg Rider (LTR) 826
+1 Wayspeaker Bodyguard (TDM) 34
+1 White Plume Adventurer (CLB) 49
+1 Wild-Magic Sorcerer (AFC) 36
+1 Zurgo and Ojutai (MOM) 258
+1 Zurgo Bellstriker (DTK) 169
+1 Zurgo Helmsmasher (DDN) 1
+1 Zurgo Stormrender (TDC) 10
+1 Zurgo, Thunder's Decree (TDM) 237

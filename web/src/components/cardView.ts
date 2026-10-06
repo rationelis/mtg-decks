@@ -69,15 +69,9 @@ function popoverContext(row: CardRow, listName: string | undefined): PopoverCont
   return { listName, missingQty: row.missingQty };
 }
 
-/** Where a card's image should link to: its Scryfall page when known,
- * falling back to the raw image. null only when there's no image at
- * all to link to. */
-function cardLinkHref(card: CardData): string | null {
-  return card.scryfall_uri || card.image_uri || null;
-}
-
-/** An <img> for a card. Clicking it opens the allocation detail popover
- * instead of navigating - shared by gallery and list mode so there's one
+/** An <img> for a card. Clicking it opens the card-detail dialog
+ * (image, oracle text, Scryfall link, allocation) instead of
+ * navigating - shared by gallery and list mode so there's one
  * clickable-image implementation. */
 function cardImage(card: CardData, row: CardRow, listName: string | undefined, className?: string): HTMLElement {
   const onclick = (e: Event) => {
@@ -96,7 +90,7 @@ function cardImage(card: CardData, row: CardRow, listName: string | undefined, c
     src: card.image_uri,
     loading: "lazy",
     alt: card.name,
-    title: cardLinkHref(card) ? "Click for allocation details" : card.oracle_text || card.name,
+    title: "Click for card details",
   });
   return h("a", { href: "#", class: className, onclick }, img);
 }

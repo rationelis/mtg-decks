@@ -5,14 +5,16 @@ from parse import CardList, Entry
 from resolve import collect_pins, resolve_pin_conflicts
 
 
-def make_list(id_, kind, name, entries, is_bulk=False):
+def make_list(id_, kind, name, entries, is_bulk=False, proxy=False, collection=False, status="active"):
     return CardList(
         id=id_,
         kind="bulk" if is_bulk else kind,
-        status="active",
+        status=status,
         name=name,
         source_path=f"{kind}/{id_}.txt" if not is_bulk else "bulk.txt",
         entries=entries,
+        proxy=proxy,
+        collection=collection,
     )
 
 
@@ -116,6 +118,40 @@ def test_matching_pins_across_files_produce_no_error():
     deck = make_list("a", "deck", "A", [pinned_entry("Sol Ring", "c21", "263", 5)])
 
     pins = collect_pins(bulk, [deck])
+    _, errors = resolve_pin_conflicts(pins)
+
+    assert errors == []
+
+
+def test_collection_pin_disagreeing_with_bulk_is_not_a_conflict():
+    bulk = make_list("bulk", "bulk", "Bulk", [pinned_entry("Orcish Vandal", "DOM", "137", 1)], is_bulk=True)
+    wishlist = make_list(
+        "a", "collection", "Wishlist", [pinned_entry("Orcish Vandal", "2XM", "137", 5)], collection=True
+    )
+
+    pins = collect_pins(bulk, [wishlist])
+    _, errors = resolve_pin_conflicts(pins)
+
+    assert errors == []
+
+
+def test_proxy_deck_pin_disagreeing_with_bulk_is_not_a_conflict():
+    bulk = make_list("bulk", "bulk", "Bulk", [pinned_entry("Sol Ring", "C21", "263", 1)], is_bulk=True)
+    proxy_deck = make_list("a", "deck", "A", [pinned_entry("Sol Ring", "LEA", "1", 5)], proxy=True)
+
+    pins = collect_pins(bulk, [proxy_deck])
+    _, errors = resolve_pin_conflicts(pins)
+
+    assert errors == []
+
+
+def test_archived_deck_pin_disagreeing_with_bulk_is_not_a_conflict():
+    bulk = make_list("bulk", "bulk", "Bulk", [pinned_entry("Sol Ring", "C21", "263", 1)], is_bulk=True)
+    archived_deck = make_list(
+        "a", "deck", "A", [pinned_entry("Sol Ring", "LEA", "1", 5)], status="archived"
+    )
+
+    pins = collect_pins(bulk, [archived_deck])
     _, errors = resolve_pin_conflicts(pins)
 
     assert errors == []
