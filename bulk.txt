@@ -732,6 +732,7 @@
 1 Seize the Spoils (KHM) 149
 1 Select for Inspection (KLD) 63
 1 Selfless Safewright (ECL) 193
+1 Selvala, Heart of the Wilds (M3C) 246
 1 Semester Foreseer // Peer Review (FRA) 39
 1 Sengir Connoisseur (DMU) 104
 1 Sentry Bot (PIP) 24
@@ -911,6 +912,7 @@
 1 Tyranid Prime (40K) 145
 1 Tyrant Guard (40K) 103
 1 Tyvar's Stand (SOC) 291
+1 Tyvar, Jubilant Brawler (ONE) 218
 1 Uglúk of the White Hand (LTR) 235
 1 Uldaros Theorix (FRA) 159
 1 Unauthorized Exit (MKM) 298
