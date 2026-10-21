@@ -103,6 +103,7 @@
 1 Bolg of the North (HOB) 148
 1 Bombur, Gentle Dreamer (HOB) 88
 1 Bone Sabres (40K) 88
+1 Boros Mastiff (DGM) 1
 1 Bothersome Noisemaker (HOB) 89
 1 Boughside Wanderers (HOB) 121
 1 Braids, Arisen Nightmare (EOC) 82
@@ -230,6 +231,7 @@
 1 Druid of the Cowl (FDN) 554
 1 Duskwatch Hunter (HOB) 153
 1 Duskwatch Hunter (HOB) 153
+1 Dwarven Grunt (ODY) 185
 1 Dwarven Mauler (HOB) 95
 1 Dwarven Provisioner (HOB) 9
 1 Dwynen's Elite (FDN) 218
@@ -916,6 +918,7 @@
 1 Uglúk of the White Hand (LTR) 235
 1 Uldaros Theorix (FRA) 159
 1 Unauthorized Exit (MKM) 298
+1 Underground River (BRO) 267
 1 Undying Malice (FDN) 528
 1 Undying Malice (FDN) 528
 1 Unexpected Windfall (PIP) 193

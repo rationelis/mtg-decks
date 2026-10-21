@@ -1,121 +1,121 @@
 {
   "archidektDeckId": "25868036",
   "deckName": "BULK",
-  "fetchedAt": "2026-10-09T10:24:46+00:00",
+  "fetchedAt": "2026-10-21T17:07:12+00:00",
   "prices": {
     "aang, the last airbender": {
       "collector_number": "4",
-      "price_eur": 0.09,
+      "price_eur": 0.05,
       "set": "tla"
     },
     "aberrant": {
       "collector_number": "86",
-      "price_eur": 5.38,
+      "price_eur": 4.44,
       "set": "40k"
     },
     "abomination of llanowar": {
       "collector_number": "81",
-      "price_eur": 0.26,
+      "price_eur": 0.18,
       "set": "khc"
     },
     "abundance": {
       "collector_number": "210",
-      "price_eur": 0.42,
+      "price_eur": 0.55,
       "set": "40k"
     },
     "academic ascent": {
       "collector_number": "2",
-      "price_eur": 0.04,
+      "price_eur": 0.11,
       "set": "fra"
     },
     "acolyte hybrid": {
       "collector_number": "70",
-      "price_eur": 0.44,
+      "price_eur": 0.1,
       "set": "40k"
     },
     "adamant will": {
       "collector_number": "488",
-      "price_eur": 0.25,
+      "price_eur": 0.3,
       "set": "fdn"
     },
     "adarkar wastes": {
       "collector_number": "316",
-      "price_eur": 0.62,
+      "price_eur": 0.41,
       "set": "m3c"
     },
     "advocate of the beast": {
       "collector_number": "164",
-      "price_eur": 0.02,
+      "price_eur": 0.24,
       "set": "m14"
     },
     "aether hub": {
       "collector_number": "145",
-      "price_eur": 0.15,
+      "price_eur": 0.22,
       "set": "drc"
     },
     "aether refinery": {
       "collector_number": "106",
-      "price_eur": 0.4,
+      "price_eur": 0.26,
       "set": "m3c"
     },
     "aether revolt": {
       "collector_number": "113",
-      "price_eur": 0.18,
+      "price_eur": 0.2,
       "set": "mh3"
     },
     "aether spike": {
       "collector_number": "398",
-      "price_eur": 0.25,
+      "price_eur": 0.1,
       "set": "mh3"
     },
     "aethergeode miner": {
       "collector_number": "163",
-      "price_eur": 0.1,
+      "price_eur": 0.23,
       "set": "m3c"
     },
     "aetherize": {
       "collector_number": "191",
-      "price_eur": 0.69,
+      "price_eur": 0.39,
       "set": "40k"
     },
     "aethersphere harvester": {
       "collector_number": "280",
-      "price_eur": 0.21,
+      "price_eur": 0.18,
       "set": "m3c"
     },
     "aethersquall ancient": {
       "collector_number": "174",
-      "price_eur": 0.1,
+      "price_eur": 0.13,
       "set": "m3c"
     },
     "aetherstorm roc": {
       "collector_number": "164",
-      "price_eur": 0.1,
+      "price_eur": 0.16,
       "set": "m3c"
     },
     "aethertide whale": {
       "collector_number": "175",
-      "price_eur": 0.1,
+      "price_eur": 0.08,
       "set": "m3c"
     },
     "aetherworks marvel": {
       "collector_number": "281",
-      "price_eur": 0.25,
+      "price_eur": 0.27,
       "set": "m3c"
     },
     "aftermath analyst": {
       "collector_number": "91",
-      "price_eur": 1.3,
+      "price_eur": 1.44,
       "set": "eoc"
     },
     "agate assault": {
       "collector_number": "122",
-      "price_eur": 0.02,
+      "price_eur": 0.15,
       "set": "blb"
     },
     "agent of the iron throne": {
       "collector_number": "107",
-      "price_eur": 0.79,
+      "price_eur": 0.71,
       "set": "clb"
     },
     "aggressive mammoth": {
@@ -130,27 +130,27 @@
     },
     "airbender's reversal": {
       "collector_number": "7",
-      "price_eur": 0.12,
+      "price_eur": 0.17,
       "set": "tla"
     },
     "airbending lesson": {
       "collector_number": "8",
-      "price_eur": 0.06,
+      "price_eur": 0.13,
       "set": "tla"
     },
     "ajani unrelenting": {
       "collector_number": "242",
-      "price_eur": 6.26,
+      "price_eur": 11.94,
       "set": "fra"
     },
     "ajani's pridemate": {
       "collector_number": "135",
-      "price_eur": 0.1,
+      "price_eur": 0.14,
       "set": "fdn"
     },
     "akroma's will": {
       "collector_number": "165",
-      "price_eur": 12.96,
+      "price_eur": 17.03,
       "set": "m3c"
     },
     "alesha's vanguard": {
@@ -160,52 +160,52 @@
     },
     "amped raptor": {
       "collector_number": "114",
-      "price_eur": 0.34,
+      "price_eur": 0.2,
       "set": "mh3"
     },
     "an offer you can't refuse": {
       "collector_number": "160",
-      "price_eur": 3.1,
+      "price_eur": 3.75,
       "set": "fdn"
     },
     "ancestor dragon": {
       "collector_number": "489",
-      "price_eur": 0.45,
+      "price_eur": 0.47,
       "set": "fdn"
     },
     "ancient animus": {
       "collector_number": "215",
-      "price_eur": 0.04,
+      "price_eur": 0.22,
       "set": "cmr"
     },
     "angel of invention": {
       "collector_number": "166",
-      "price_eur": 0.51,
+      "price_eur": 0.32,
       "set": "m3c"
     },
     "angelic edict": {
       "collector_number": "490",
-      "price_eur": 0.02,
+      "price_eur": 0.3,
       "set": "fdn"
     },
     "angrath's ambusher": {
       "collector_number": "202",
-      "price_eur": 0.08,
+      "price_eur": 0.05,
       "set": "rix"
     },
     "anticausal vestige": {
       "collector_number": "317",
-      "price_eur": 3.18,
+      "price_eur": 2.0,
       "set": "eoe"
     },
     "appa, loyal sky bison": {
       "collector_number": "9",
-      "price_eur": 0.08,
+      "price_eur": 0.06,
       "set": "tla"
     },
     "arasta of the endless web": {
       "collector_number": "165",
-      "price_eur": 0.2,
+      "price_eur": 0.25,
       "set": "thb"
     },
     "arcane bombardment": {
@@ -220,22 +220,22 @@
     },
     "arcane epiphany": {
       "collector_number": "29",
-      "price_eur": 0.24,
+      "price_eur": 0.04,
       "set": "fdn"
     },
     "arcane signet": {
       "collector_number": "55",
-      "price_eur": 1.32,
+      "price_eur": 1.47,
       "set": "ecc"
     },
     "archive arbiter": {
       "collector_number": "167",
-      "price_eur": 0.14,
+      "price_eur": 0.11,
       "set": "fra"
     },
     "archmage emeritus": {
       "collector_number": "90",
-      "price_eur": 0.98,
+      "price_eur": 1.53,
       "set": "otc"
     },
     "argivian cavalier": {
@@ -245,12 +245,12 @@
     },
     "armory veteran": {
       "collector_number": "130",
-      "price_eur": 0.05,
+      "price_eur": 0.02,
       "set": "afr"
     },
     "artifist acumen": {
       "collector_number": "73",
-      "price_eur": 0.07,
+      "price_eur": 0.03,
       "set": "fra"
     },
     "ascendant dustspeaker": {
@@ -260,32 +260,32 @@
     },
     "assassin's trophy": {
       "collector_number": "294",
-      "price_eur": 1.74,
+      "price_eur": 1.55,
       "set": "soc"
     },
     "assaultron dominator": {
       "collector_number": "54",
-      "price_eur": 0.22,
+      "price_eur": 0.49,
       "set": "pip"
     },
     "atalan jackal": {
       "collector_number": "105",
-      "price_eur": 3.24,
+      "price_eur": 2.49,
       "set": "40k"
     },
     "augur of autumn": {
       "collector_number": "92",
-      "price_eur": 0.56,
+      "price_eur": 0.51,
       "set": "eoc"
     },
     "aurora shifter": {
       "collector_number": "97",
-      "price_eur": 1.1,
+      "price_eur": 0.16,
       "set": "m3c"
     },
     "austere command": {
       "collector_number": "167",
-      "price_eur": 0.49,
+      "price_eur": 0.46,
       "set": "m3c"
     },
     "automated assembly line": {
@@ -295,57 +295,57 @@
     },
     "awaken the inferno": {
       "collector_number": "74",
-      "price_eur": 0.04,
+      "price_eur": 0.19,
       "set": "fra"
     },
     "baloth prime": {
       "collector_number": "13",
-      "price_eur": 0.38,
+      "price_eur": 0.35,
       "set": "eoc"
     },
     "baral's expertise": {
       "collector_number": "91",
-      "price_eur": 0.2,
+      "price_eur": 0.19,
       "set": "otc"
     },
     "bastion of remembrance": {
       "collector_number": "171",
-      "price_eur": 0.6,
+      "price_eur": 0.49,
       "set": "tdc"
     },
     "battle brawler": {
       "collector_number": "63",
-      "price_eur": 0.25,
+      "price_eur": 0.08,
       "set": "frf"
     },
     "battle-rattle shaman": {
       "collector_number": "533",
-      "price_eur": 0.02,
+      "price_eur": 0.1,
       "set": "fdn"
     },
     "battlefield forge": {
       "collector_number": "321",
-      "price_eur": 0.34,
+      "price_eur": 0.37,
       "set": "m3c"
     },
     "bear cub": {
       "collector_number": "552",
-      "price_eur": 0.41,
+      "price_eur": 0.76,
       "set": "fdn"
     },
     "beast within": {
       "collector_number": "93",
-      "price_eur": 1.02,
+      "price_eur": 0.75,
       "set": "eoc"
     },
     "beast-kin ranger": {
       "collector_number": "100",
-      "price_eur": 0.04,
+      "price_eur": 0.07,
       "set": "fdn"
     },
     "behemoth of vault 0": {
       "collector_number": "127",
-      "price_eur": 0.96,
+      "price_eur": 0.45,
       "set": "pip"
     },
     "bejeweled warg": {
@@ -355,17 +355,17 @@
     },
     "bellowing saddlebrute": {
       "collector_number": "64",
-      "price_eur": 0.02,
+      "price_eur": 0.05,
       "set": "ktk"
     },
     "beorn's hospitality": {
       "collector_number": "120",
-      "price_eur": 0.12,
+      "price_eur": 0.11,
       "set": "hob"
     },
     "beorn, reluctant host // till and tend": {
       "collector_number": "118",
-      "price_eur": 0.07,
+      "price_eur": 0.08,
       "set": "hob"
     },
     "bespoke battlewagon": {
@@ -375,12 +375,12 @@
     },
     "bident of thassa": {
       "collector_number": "177",
-      "price_eur": 0.57,
+      "price_eur": 0.65,
       "set": "m3c"
     },
     "big score": {
       "collector_number": "237",
-      "price_eur": 0.84,
+      "price_eur": 0.83,
       "set": "soc"
     },
     "bigfin bouncer": {
@@ -390,102 +390,107 @@
     },
     "bilbo baggins, burglar // take a glance": {
       "collector_number": "34",
-      "price_eur": 0.05,
+      "price_eur": 0.03,
       "set": "hob"
     },
     "bilbo's deadly slice": {
       "collector_number": "62",
-      "price_eur": 0.03,
+      "price_eur": 0.04,
       "set": "hob"
     },
     "bilbo, luckwearer // burglar's plot": {
       "collector_number": "32",
-      "price_eur": 0.11,
+      "price_eur": 0.09,
       "set": "hob"
     },
     "binding the old gods": {
       "collector_number": "52",
-      "price_eur": 0.14,
+      "price_eur": 0.25,
       "set": "eoc"
     },
     "biogenic upgrade": {
       "collector_number": "553",
-      "price_eur": 0.02,
+      "price_eur": 0.79,
       "set": "fdn"
     },
     "biophagus": {
       "collector_number": "87",
-      "price_eur": 16.24,
+      "price_eur": 13.18,
       "set": "40k"
     },
     "bishop's soldier": {
       "collector_number": "491",
-      "price_eur": 0.06,
+      "price_eur": 0.3,
       "set": "fdn"
     },
     "bite down": {
       "collector_number": "212",
-      "price_eur": 0.13,
+      "price_eur": 0.11,
       "set": "fdn"
     },
     "bitter reunion": {
       "collector_number": "156",
-      "price_eur": 1.24,
+      "price_eur": 0.99,
       "set": "otc"
     },
     "blasphemous act": {
       "collector_number": "86",
-      "price_eur": 1.47,
+      "price_eur": 1.2,
       "set": "eoc"
     },
     "blaster hulk": {
       "collector_number": "107",
-      "price_eur": 0.17,
+      "price_eur": 0.23,
       "set": "m3c"
     },
     "blight rot": {
       "collector_number": "89",
-      "price_eur": 0.11,
+      "price_eur": 0.02,
       "set": "ecl"
     },
     "blightbelly rat": {
       "collector_number": "289",
-      "price_eur": 0.06,
+      "price_eur": 0.1,
       "set": "one"
     },
     "bloodthirsty adversary": {
       "collector_number": "157",
-      "price_eur": 0.38,
+      "price_eur": 0.25,
       "set": "otc"
     },
     "bloodtithe collector": {
       "collector_number": "516",
-      "price_eur": 0.25,
+      "price_eur": 0.05,
       "set": "fdn"
     },
     "bloombrute": {
       "collector_number": "124",
-      "price_eur": 0.13,
+      "price_eur": 0.07,
       "set": "fra"
     },
     "bolg of the north": {
       "collector_number": "148",
-      "price_eur": 0.08,
+      "price_eur": 0.29,
       "set": "hob"
     },
     "bombur, gentle dreamer": {
       "collector_number": "88",
-      "price_eur": 0.13,
+      "price_eur": 0.11,
       "set": "hob"
     },
     "bone sabres": {
       "collector_number": "88",
-      "price_eur": 4.0,
+      "price_eur": 3.19,
       "set": "40k"
+    },
+    "boros mastiff": {
+      "collector_number": "1",
+      "price_eur": 0.27,
+      "set": "dgm"
     },
     "bothersome noisemaker": {
       "collector_number": "89",
-      "price_eur": 0.13,
+      "price_eur": 0.3,
       "set": "hob"
     },
     "boughside wanderers": {
@@ -495,12 +500,12 @@
     },
     "braids, arisen nightmare": {
       "collector_number": "82",
-      "price_eur": 4.95,
+      "price_eur": 4.82,
       "set": "eoc"
     },
     "brainstorm": {
       "collector_number": "28",
-      "price_eur": 2.66,
+      "price_eur": 1.35,
       "set": "fca"
     },
     "brazen blademaster": {
@@ -510,62 +515,62 @@
     },
     "bred for the hunt": {
       "collector_number": "222",
-      "price_eur": 0.83,
+      "price_eur": 0.43,
       "set": "40k"
     },
     "brineborn cutthroat": {
       "collector_number": "152",
-      "price_eur": 0.11,
+      "price_eur": 0.24,
       "set": "fdn"
     },
     "broadcast rambler": {
       "collector_number": "293",
-      "price_eur": 0.02,
+      "price_eur": 0.05,
       "set": "dft"
     },
     "broken wings": {
       "collector_number": "214",
-      "price_eur": 0.03,
+      "price_eur": 0.02,
       "set": "fdn"
     },
     "broodlord": {
       "collector_number": "89",
-      "price_eur": 0.88,
+      "price_eur": 0.39,
       "set": "40k"
     },
     "brotherhood scribe": {
       "collector_number": "13",
-      "price_eur": 0.15,
+      "price_eur": 0.79,
       "set": "pip"
     },
     "brudiclad, telchor engineer": {
       "collector_number": "257",
-      "price_eur": 0.29,
+      "price_eur": 0.3,
       "set": "m3c"
     },
     "buried alive": {
       "collector_number": "63",
-      "price_eur": 2.72,
+      "price_eur": 2.99,
       "set": "wth"
     },
     "burnished hart": {
       "collector_number": "250",
-      "price_eur": 0.04,
+      "price_eur": 0.2,
       "set": "fdn"
     },
     "burrog befuddler": {
       "collector_number": "504",
-      "price_eur": 0.02,
+      "price_eur": 0.3,
       "set": "fdn"
     },
     "cadira, caller of the small": {
       "collector_number": "417",
-      "price_eur": 0.2,
+      "price_eur": 0.05,
       "set": "clb"
     },
     "campus crier": {
       "collector_number": "4",
-      "price_eur": 0.02,
+      "price_eur": 0.2,
       "set": "fra"
     },
     "cancel": {
@@ -575,17 +580,17 @@
     },
     "canyon slough": {
       "collector_number": "152",
-      "price_eur": 0.26,
+      "price_eur": 0.2,
       "set": "eoc"
     },
     "captain vargus wrath": {
       "collector_number": "273",
-      "price_eur": 0.05,
+      "price_eur": 0.1,
       "set": "cmr"
     },
     "carnelian orb of dragonkind": {
       "collector_number": "534",
-      "price_eur": 0.71,
+      "price_eur": 0.6,
       "set": "fdn"
     },
     "carnivorous cultivator // enroot": {
@@ -595,97 +600,97 @@
     },
     "cascade bluffs": {
       "collector_number": "276",
-      "price_eur": 1.4,
+      "price_eur": 1.0,
       "set": "otc"
     },
     "cast away doubt": {
       "collector_number": "51",
-      "price_eur": 0.13,
+      "price_eur": 0.05,
       "set": "fra"
     },
     "castle vantress": {
       "collector_number": "327",
-      "price_eur": 0.23,
+      "price_eur": 0.35,
       "set": "m3c"
     },
     "cathartic reunion": {
       "collector_number": "91",
-      "price_eur": 0.05,
+      "price_eur": 0.06,
       "set": "ecc"
     },
     "cayth, famed mechanist": {
       "collector_number": "6",
-      "price_eur": 0.49,
+      "price_eur": 0.36,
       "set": "m3c"
     },
     "celeborn the wise": {
       "collector_number": "156",
-      "price_eur": 0.07,
+      "price_eur": 0.1,
       "set": "ltr"
     },
     "cemetery recruitment": {
       "collector_number": "517",
-      "price_eur": 0.25,
+      "price_eur": 0.05,
       "set": "fdn"
     },
     "centaur vinecrasher": {
       "collector_number": "94",
-      "price_eur": 0.1,
+      "price_eur": 0.17,
       "set": "eoc"
     },
     "cerulean wisps": {
       "collector_number": "31",
-      "price_eur": 0.87,
+      "price_eur": 1.99,
       "set": "shm"
     },
     "chainweb aracnir": {
       "collector_number": "167",
-      "price_eur": 0.04,
+      "price_eur": 0.11,
       "set": "thb"
     },
     "chaos charm": {
       "collector_number": "163",
-      "price_eur": 0.03,
+      "price_eur": 0.32,
       "set": "mir"
     },
     "chaos warp": {
       "collector_number": "160",
-      "price_eur": 0.48,
+      "price_eur": 0.39,
       "set": "otc"
     },
     "cheerful osteomancer // raise dead": {
       "collector_number": "76",
-      "price_eur": 0.02,
+      "price_eur": 0.05,
       "set": "sos"
     },
     "chief warg's company": {
       "collector_number": "151",
-      "price_eur": 0.4,
+      "price_eur": 0.42,
       "set": "hob"
     },
     "child of night": {
       "collector_number": "89",
-      "price_eur": 0.02,
+      "price_eur": 0.06,
       "set": "m19"
     },
     "cinder glade": {
       "collector_number": "269",
-      "price_eur": 0.35,
+      "price_eur": 0.23,
       "set": "40k"
     },
     "cirith ungol patrol": {
       "collector_number": "80",
-      "price_eur": 0.03,
+      "price_eur": 0.1,
       "set": "ltr"
     },
     "clamavus": {
       "collector_number": "90",
-      "price_eur": 2.34,
+      "price_eur": 1.75,
       "set": "40k"
     },
     "clash of elements": {
       "collector_number": "126",
-      "price_eur": 0.11,
+      "price_eur": 0.2,
       "set": "fra"
     },
     "clear shot": {
@@ -695,37 +700,37 @@
     },
     "clifftop retreat": {
       "collector_number": "351",
-      "price_eur": 0.39,
+      "price_eur": 0.38,
       "set": "tdc"
     },
     "clinquant skymage": {
       "collector_number": "33",
-      "price_eur": 0.02,
+      "price_eur": 0.05,
       "set": "fdn"
     },
     "coalition relic": {
       "collector_number": "286",
-      "price_eur": 0.42,
+      "price_eur": 0.22,
       "set": "m3c"
     },
     "coercive recruiter": {
       "collector_number": "169",
-      "price_eur": 0.2,
+      "price_eur": 0.02,
       "set": "cmr"
     },
     "combustible gearhulk": {
       "collector_number": "210",
-      "price_eur": 0.83,
+      "price_eur": 0.34,
       "set": "m3c"
     },
     "command tower": {
       "collector_number": "270",
-      "price_eur": 0.4,
+      "price_eur": 0.54,
       "set": "40k"
     },
     "compel brutality": {
       "collector_number": "101",
-      "price_eur": 0.06,
+      "price_eur": 0.02,
       "set": "fra"
     },
     "compelling deterrence": {
@@ -735,77 +740,77 @@
     },
     "concerted defense": {
       "collector_number": "52",
-      "price_eur": 0.13,
+      "price_eur": 0.04,
       "set": "znr"
     },
     "confiscation coup": {
       "collector_number": "178",
-      "price_eur": 0.1,
+      "price_eur": 0.08,
       "set": "m3c"
     },
     "confusticate and bebother": {
       "collector_number": "35",
-      "price_eur": 0.08,
+      "price_eur": 0.1,
       "set": "hob"
     },
     "consider": {
       "collector_number": "148",
-      "price_eur": 0.62,
+      "price_eur": 0.71,
       "set": "tdc"
     },
     "contest of claws": {
       "collector_number": "24",
-      "price_eur": 2.49,
+      "price_eur": 3.25,
       "set": "lcc"
     },
     "conversion apparatus": {
       "collector_number": "128",
-      "price_eur": 0.5,
+      "price_eur": 0.25,
       "set": "m3c"
     },
     "corsair captain": {
       "collector_number": "506",
-      "price_eur": 0.37,
+      "price_eur": 0.39,
       "set": "fdn"
     },
     "cosmic hunger": {
       "collector_number": "182",
-      "price_eur": 0.04,
+      "price_eur": 0.05,
       "set": "mom"
     },
     "costly plunder": {
       "collector_number": "80",
-      "price_eur": 0.05,
+      "price_eur": 0.25,
       "set": "2xm"
     },
     "counterspell": {
       "collector_number": "4",
-      "price_eur": 2.86,
+      "price_eur": 2.63,
       "set": "fca"
     },
     "coveted jewel": {
       "collector_number": "287",
-      "price_eur": 0.15,
+      "price_eur": 0.13,
       "set": "m3c"
     },
     "crackling spellslinger": {
       "collector_number": "25",
-      "price_eur": 0.29,
+      "price_eur": 0.99,
       "set": "otc"
     },
     "craftwork crusher": {
       "collector_number": "127",
-      "price_eur": 0.14,
+      "price_eur": 0.09,
       "set": "fra"
     },
     "crimson wisps": {
       "collector_number": "88",
-      "price_eur": 1.11,
+      "price_eur": 1.38,
       "set": "shm"
     },
     "crossway troublemakers": {
       "collector_number": "518",
-      "price_eur": 0.3,
+      "price_eur": 0.28,
       "set": "fdn"
     },
     "crow of dark tidings": {
@@ -815,252 +820,252 @@
     },
     "crumb and get it": {
       "collector_number": "8",
-      "price_eur": 0.07,
+      "price_eur": 0.02,
       "set": "blb"
     },
     "cryotheory adept": {
       "collector_number": "27",
-      "price_eur": 0.02,
+      "price_eur": 0.03,
       "set": "fra"
     },
     "cultivate": {
       "collector_number": "211",
-      "price_eur": 1.11,
+      "price_eur": 1.67,
       "set": "40k"
     },
     "cunning maneuver": {
       "collector_number": "130",
-      "price_eur": 0.03,
+      "price_eur": 0.14,
       "set": "tla"
     },
     "curse of the swine": {
       "collector_number": "92",
-      "price_eur": 0.89,
+      "price_eur": 0.22,
       "set": "otc"
     },
     "cursed mirror": {
       "collector_number": "161",
-      "price_eur": 0.5,
+      "price_eur": 0.39,
       "set": "otc"
     },
     "danitha, spear of agony": {
       "collector_number": "227",
-      "price_eur": 0.09,
+      "price_eur": 0.19,
       "set": "fra"
     },
     "danitha, sword of hope": {
       "collector_number": "196",
-      "price_eur": 0.14,
+      "price_eur": 0.17,
       "set": "fra"
     },
     "daze": {
       "collector_number": "44",
-      "price_eur": 1.79,
+      "price_eur": 1.71,
       "set": "ema"
     },
     "dazzling angel": {
       "collector_number": "9",
-      "price_eur": 0.09,
+      "price_eur": 0.13,
       "set": "fdn"
     },
     "deadly dispute": {
       "collector_number": "115",
-      "price_eur": 0.66,
+      "price_eur": 0.69,
       "set": "j25"
     },
     "deadly plot": {
       "collector_number": "520",
-      "price_eur": 0.61,
+      "price_eur": 0.69,
       "set": "fdn"
     },
     "deadly riposte": {
       "collector_number": "492",
-      "price_eur": 0.25,
+      "price_eur": 0.05,
       "set": "fdn"
     },
     "death baron": {
       "collector_number": "521",
-      "price_eur": 1.99,
+      "price_eur": 2.57,
       "set": "fdn"
     },
     "death's presence": {
       "collector_number": "212",
-      "price_eur": 0.5,
+      "price_eur": 0.22,
       "set": "40k"
     },
     "deathbloom ritualist": {
       "collector_number": "208",
-      "price_eur": 0.32,
+      "price_eur": 0.34,
       "set": "bro"
     },
     "deathleaper, terror weapon": {
       "collector_number": "115",
-      "price_eur": 0.37,
+      "price_eur": 0.49,
       "set": "40k"
     },
     "deathreap ritual": {
       "collector_number": "86",
-      "price_eur": 0.1,
+      "price_eur": 0.2,
       "set": "dsc"
     },
     "deathrite shaman": {
       "collector_number": "213",
-      "price_eur": 6.07,
+      "price_eur": 5.68,
       "set": "rtr"
     },
     "decoction module": {
       "collector_number": "128",
-      "price_eur": 0.34,
+      "price_eur": 0.04,
       "set": "drc"
     },
     "deep analysis": {
       "collector_number": "94",
-      "price_eur": 0.49,
+      "price_eur": 0.33,
       "set": "otc"
     },
     "defiant strike": {
       "collector_number": "7",
-      "price_eur": 0.25,
+      "price_eur": 0.03,
       "set": "ktk"
     },
     "demand answers": {
       "collector_number": "122",
-      "price_eur": 0.64,
+      "price_eur": 0.45,
       "set": "mkm"
     },
     "demolition field": {
       "collector_number": "687",
-      "price_eur": 0.34,
+      "price_eur": 0.57,
       "set": "fdn"
     },
     "demonic pact": {
       "collector_number": "92",
-      "price_eur": 1.94,
+      "price_eur": 0.99,
       "set": "ori"
     },
     "desert were-worm": {
       "collector_number": "92",
-      "price_eur": 0.35,
+      "price_eur": 0.3,
       "set": "hob"
     },
     "desolation of smaug": {
       "collector_number": "93",
-      "price_eur": 0.55,
+      "price_eur": 0.54,
       "set": "hob"
     },
     "desperate ritual": {
       "collector_number": "163",
-      "price_eur": 1.6,
+      "price_eur": 1.97,
       "set": "chk"
     },
     "devoted druid": {
       "collector_number": "286",
-      "price_eur": 1.47,
+      "price_eur": 0.95,
       "set": "ncc"
     },
     "devoted paladin": {
       "collector_number": "11",
-      "price_eur": 0.14,
+      "price_eur": 0.02,
       "set": "afr"
     },
     "dig through time": {
       "collector_number": "95",
-      "price_eur": 0.28,
+      "price_eur": 0.35,
       "set": "otc"
     },
     "dire fleet captain": {
       "collector_number": "221",
-      "price_eur": 0.1,
+      "price_eur": 0.04,
       "set": "xln"
     },
     "dire fleet ravager": {
       "collector_number": "749",
-      "price_eur": 0.33,
+      "price_eur": 0.39,
       "set": "clb"
     },
     "dire fleet warmonger": {
       "collector_number": "217",
-      "price_eur": 0.05,
+      "price_eur": 0.03,
       "set": "m21"
     },
     "diregraf ghoul": {
       "collector_number": "171",
-      "price_eur": 0.02,
+      "price_eur": 0.06,
       "set": "fdn"
     },
     "disciple of the vault": {
       "collector_number": "86",
-      "price_eur": 0.39,
+      "price_eur": 0.45,
       "set": "2xm"
     },
     "dismal backwater": {
       "collector_number": "168",
-      "price_eur": 0.02,
+      "price_eur": 0.18,
       "set": "frf"
     },
     "dispel": {
       "collector_number": "26",
-      "price_eur": 0.9,
+      "price_eur": 0.73,
       "set": "wwk"
     },
     "dive down": {
       "collector_number": "588",
-      "price_eur": 0.12,
+      "price_eur": 0.42,
       "set": "fdn"
     },
     "dori, bearer of friends": {
       "collector_number": "94",
-      "price_eur": 0.05,
+      "price_eur": 0.04,
       "set": "hob"
     },
     "down in the valley": {
       "collector_number": "124",
-      "price_eur": 0.2,
+      "price_eur": 0.23,
       "set": "hob"
     },
     "down, down to goblin-town": {
       "collector_number": "65",
-      "price_eur": 0.11,
+      "price_eur": 0.26,
       "set": "hob"
     },
     "dr. madison li": {
       "collector_number": "3",
-      "price_eur": 0.25,
+      "price_eur": 0.79,
       "set": "pip"
     },
     "draconic roar": {
       "collector_number": "123",
-      "price_eur": 0.14,
+      "price_eur": 0.07,
       "set": "ima"
     },
     "draconic visitor": {
       "collector_number": "80",
-      "price_eur": 4.82,
+      "price_eur": 4.08,
       "set": "fra"
     },
     "dragon fodder": {
       "collector_number": "535",
-      "price_eur": 0.25,
+      "price_eur": 0.02,
       "set": "fdn"
     },
     "dragonloft idol": {
       "collector_number": "215",
-      "price_eur": 0.05,
+      "price_eur": 0.15,
       "set": "ima"
     },
     "dragonlord's servant": {
       "collector_number": "210",
-      "price_eur": 0.39,
+      "price_eur": 0.25,
       "set": "tdc"
     },
     "dreaded bat-cloud": {
       "collector_number": "66",
-      "price_eur": 0.07,
+      "price_eur": 0.04,
       "set": "hob"
     },
     "dropkick bomber": {
       "collector_number": "537",
-      "price_eur": 1.2,
+      "price_eur": 1.43,
       "set": "fdn"
     },
     "drudge sentinel": {
@@ -1070,27 +1075,32 @@
     },
     "druid of the cowl": {
       "collector_number": "554",
-      "price_eur": 0.34,
+      "price_eur": 0.1,
       "set": "fdn"
     },
     "duskwatch hunter": {
       "collector_number": "153",
-      "price_eur": 0.04,
+      "price_eur": 0.03,
       "set": "hob"
+    },
+    "dwarven grunt": {
+      "collector_number": "185",
+      "price_eur": 0.19,
+      "set": "ody"
     },
     "dwarven mauler": {
       "collector_number": "95",
-      "price_eur": 0.1,
+      "price_eur": 0.42,
       "set": "hob"
     },
     "dwarven provisioner": {
       "collector_number": "9",
-      "price_eur": 0.06,
+      "price_eur": 0.04,
       "set": "hob"
     },
     "dwynen's elite": {
       "collector_number": "218",
-      "price_eur": 0.05,
+      "price_eur": 0.35,
       "set": "fdn"
     },
     "dwynen, gilt-leaf daen": {
@@ -1100,97 +1110,97 @@
     },
     "dynavolt tower": {
       "collector_number": "208",
-      "price_eur": 0.1,
+      "price_eur": 0.2,
       "set": "kld"
     },
     "dáin, lord of the iron hills": {
       "collector_number": "8",
-      "price_eur": 0.15,
+      "price_eur": 0.14,
       "set": "hob"
     },
     "eagle of the great shelf": {
       "collector_number": "11",
-      "price_eur": 0.08,
+      "price_eur": 0.15,
       "set": "hob"
     },
     "eagle's rescue": {
       "collector_number": "155",
-      "price_eur": 0.05,
+      "price_eur": 0.06,
       "set": "hob"
     },
     "eaten alive": {
       "collector_number": "106",
-      "price_eur": 0.04,
+      "price_eur": 0.02,
       "set": "inr"
     },
     "eaten by piranhas": {
       "collector_number": "507",
-      "price_eur": 0.76,
+      "price_eur": 0.35,
       "set": "fdn"
     },
     "edgar, ancient bloodlord": {
       "collector_number": "270",
-      "price_eur": 0.15,
+      "price_eur": 0.12,
       "set": "fra"
     },
     "edric, spymaster of trest": {
       "collector_number": "221",
-      "price_eur": 0.91,
+      "price_eur": 1.0,
       "set": "otc"
     },
     "effortless master": {
       "collector_number": "181",
-      "price_eur": 0.11,
+      "price_eur": 0.04,
       "set": "tdm"
     },
     "electrosiphon": {
       "collector_number": "104",
-      "price_eur": 1.25,
+      "price_eur": 0.63,
       "set": "pip"
     },
     "electrostatic field": {
       "collector_number": "164",
-      "price_eur": 1.99,
+      "price_eur": 1.53,
       "set": "otc"
     },
     "elemental eruption": {
       "collector_number": "27",
-      "price_eur": 2.23,
+      "price_eur": 2.67,
       "set": "otc"
     },
     "elemental expressionist": {
       "collector_number": "181",
-      "price_eur": 0.07,
+      "price_eur": 0.18,
       "set": "stx"
     },
     "elrond, lord of rivendell": {
       "collector_number": "49",
-      "price_eur": 0.13,
+      "price_eur": 0.08,
       "set": "ltr"
     },
     "elrond, moon-reader": {
       "collector_number": "36",
-      "price_eur": 2.92,
+      "price_eur": 2.85,
       "set": "hob"
     },
     "elspeth's smite": {
       "collector_number": "493",
-      "price_eur": 0.21,
+      "price_eur": 0.45,
       "set": "fdn"
     },
     "elven passage": {
       "collector_number": "238",
-      "price_eur": 1.98,
+      "price_eur": 2.55,
       "set": "hob"
     },
     "elven raft-steerer": {
       "collector_number": "37",
-      "price_eur": 0.14,
+      "price_eur": 0.16,
       "set": "hob"
     },
     "elvenking's harper": {
       "collector_number": "38",
-      "price_eur": 0.08,
+      "price_eur": 0.02,
       "set": "hob"
     },
     "elvish archdruid": {
@@ -1205,57 +1215,57 @@
     },
     "elvish mystic": {
       "collector_number": "266",
-      "price_eur": 0.95,
+      "price_eur": 0.96,
       "set": "soc"
     },
     "elvish regrower": {
       "collector_number": "104",
-      "price_eur": 0.18,
+      "price_eur": 0.17,
       "set": "fdn"
     },
     "emergency phytomedic // seed suture": {
       "collector_number": "130",
-      "price_eur": 0.06,
+      "price_eur": 0.1,
       "set": "fra"
     },
     "emil, vastlands roamer": {
       "collector_number": "146",
-      "price_eur": 0.22,
+      "price_eur": 0.08,
       "set": "sos"
     },
     "enchanted river's grasp": {
       "collector_number": "39",
-      "price_eur": 0.02,
+      "price_eur": 0.1,
       "set": "hob"
     },
     "epic experiment": {
       "collector_number": "222",
-      "price_eur": 0.99,
+      "price_eur": 0.49,
       "set": "otc"
     },
     "era of innovation": {
       "collector_number": "75",
-      "price_eur": 0.34,
+      "price_eur": 0.02,
       "set": "drc"
     },
     "eris, roar of the storm": {
       "collector_number": "5",
-      "price_eur": 1.9,
+      "price_eur": 1.74,
       "set": "otc"
     },
     "erudite wizard": {
       "collector_number": "37",
-      "price_eur": 0.03,
+      "price_eur": 0.02,
       "set": "fdn"
     },
     "escape to the wilds": {
       "collector_number": "115",
-      "price_eur": 0.17,
+      "price_eur": 0.23,
       "set": "eoc"
     },
     "esgaroth garrison": {
       "collector_number": "13",
-      "price_eur": 0.13,
+      "price_eur": 0.02,
       "set": "hob"
     },
     "eternal witness": {
@@ -1270,42 +1280,42 @@
     },
     "eumidian wastewaker": {
       "collector_number": "8",
-      "price_eur": 0.15,
+      "price_eur": 0.14,
       "set": "eoc"
     },
     "evendo brushrazer": {
       "collector_number": "10",
-      "price_eur": 0.25,
+      "price_eur": 0.34,
       "set": "eoc"
     },
     "exclusion mage": {
       "collector_number": "508",
-      "price_eur": 0.25,
+      "price_eur": 0.05,
       "set": "fdn"
     },
     "exocrine": {
       "collector_number": "76",
-      "price_eur": 1.69,
+      "price_eur": 1.14,
       "set": "40k"
     },
     "exotic orchard": {
       "collector_number": "278",
-      "price_eur": 0.4,
+      "price_eur": 0.25,
       "set": "40k"
     },
     "expedite": {
       "collector_number": "413",
-      "price_eur": 0.19,
+      "price_eur": 0.23,
       "set": "cmr"
     },
     "expel from orazca": {
       "collector_number": "37",
-      "price_eur": 0.4,
+      "price_eur": 0.45,
       "set": "rix"
     },
     "exploration broodship": {
       "collector_number": "14",
-      "price_eur": 2.88,
+      "price_eur": 3.28,
       "set": "eoc"
     },
     "explore": {
@@ -1315,7 +1325,7 @@
     },
     "expressive iteration": {
       "collector_number": "309",
-      "price_eur": 0.31,
+      "price_eur": 0.64,
       "set": "soc"
     },
     "exsanguinate": {
@@ -1325,47 +1335,47 @@
     },
     "ezuri, claw of progress": {
       "collector_number": "44",
-      "price_eur": 1.0,
+      "price_eur": 1.23,
       "set": "c15"
     },
     "ezuri, renegade leader": {
       "collector_number": "119",
-      "price_eur": 10.83,
+      "price_eur": 17.7,
       "set": "som"
     },
     "fabled passage": {
       "collector_number": "60",
-      "price_eur": 1.5,
+      "price_eur": 1.46,
       "set": "eoc"
     },
     "fabrication module": {
       "collector_number": "211",
-      "price_eur": 0.36,
+      "price_eur": 0.12,
       "set": "kld"
     },
     "faithless looting": {
       "collector_number": "165",
-      "price_eur": 0.61,
+      "price_eur": 0.78,
       "set": "otc"
     },
     "farewell": {
       "collector_number": "170",
-      "price_eur": 3.87,
+      "price_eur": 4.45,
       "set": "m3c"
     },
     "farseek": {
       "collector_number": "45",
-      "price_eur": 0.61,
+      "price_eur": 0.73,
       "set": "fca"
     },
     "fatehold chronologist // peer review": {
       "collector_number": "133",
-      "price_eur": 0.02,
+      "price_eur": 0.07,
       "set": "fra"
     },
     "fateshaper aspirant": {
       "collector_number": "6",
-      "price_eur": 0.05,
+      "price_eur": 0.02,
       "set": "fra"
     },
     "fathom fleet boarder": {
@@ -1375,92 +1385,92 @@
     },
     "fathom fleet swordjack": {
       "collector_number": "177",
-      "price_eur": 0.23,
+      "price_eur": 0.79,
       "set": "cmr"
     },
     "fauna shaman": {
       "collector_number": "179",
-      "price_eur": 3.14,
+      "price_eur": 2.85,
       "set": "bro"
     },
     "fblthp, impossibly lost": {
       "collector_number": "213",
-      "price_eur": 0.17,
+      "price_eur": 0.15,
       "set": "fra"
     },
     "fblthp, knows the way": {
       "collector_number": "258",
-      "price_eur": 0.1,
+      "price_eur": 0.03,
       "set": "fra"
     },
     "feasting hobbit": {
       "collector_number": "37",
-      "price_eur": 0.58,
+      "price_eur": 0.48,
       "set": "ltc"
     },
     "fecundity": {
       "collector_number": "145",
-      "price_eur": 0.54,
+      "price_eur": 0.35,
       "set": "c13"
     },
     "felidar savior": {
       "collector_number": "12",
-      "price_eur": 0.2,
+      "price_eur": 0.05,
       "set": "fdn"
     },
     "felling blow": {
       "collector_number": "105",
-      "price_eur": 0.14,
+      "price_eur": 0.1,
       "set": "fdn"
     },
     "fellwar stone": {
       "collector_number": "347",
-      "price_eur": 1.04,
+      "price_eur": 1.28,
       "set": "soc"
     },
     "ferrous lake": {
       "collector_number": "294",
-      "price_eur": 0.39,
+      "price_eur": 0.59,
       "set": "otc"
     },
     "festering thicket": {
       "collector_number": "21",
-      "price_eur": 0.24,
+      "price_eur": 0.19,
       "set": "eoc"
     },
     "fever charm": {
       "collector_number": "202",
-      "price_eur": 0.03,
+      "price_eur": 0.05,
       "set": "ons"
     },
     "feywild caretaker": {
       "collector_number": "69",
-      "price_eur": 0.09,
+      "price_eur": 0.1,
       "set": "clb"
     },
     "fiery annihilation": {
       "collector_number": "86",
-      "price_eur": 0.24,
+      "price_eur": 0.02,
       "set": "fdn"
     },
     "fiery islet": {
       "collector_number": "278",
-      "price_eur": 3.4,
+      "price_eur": 2.38,
       "set": "who"
     },
     "filigree racer": {
       "collector_number": "108",
-      "price_eur": 0.13,
+      "price_eur": 0.25,
       "set": "m3c"
     },
     "finale of promise": {
       "collector_number": "166",
-      "price_eur": 0.35,
+      "price_eur": 1.08,
       "set": "otc"
     },
     "finale of revelation": {
       "collector_number": "97",
-      "price_eur": 0.5,
+      "price_eur": 1.0,
       "set": "otc"
     },
     "fire elemental": {
@@ -1470,27 +1480,27 @@
     },
     "fire nation attacks": {
       "collector_number": "133",
-      "price_eur": 0.1,
+      "price_eur": 0.09,
       "set": "tla"
     },
     "firebending lesson": {
       "collector_number": "138",
-      "price_eur": 0.08,
+      "price_eur": 0.19,
       "set": "tla"
     },
     "firebending student": {
       "collector_number": "139",
-      "price_eur": 1.04,
+      "price_eur": 0.68,
       "set": "tla"
     },
     "firespitter whelp": {
       "collector_number": "197",
-      "price_eur": 0.09,
+      "price_eur": 0.07,
       "set": "fdn"
     },
     "fists of flame": {
       "collector_number": "166",
-      "price_eur": 0.3,
+      "price_eur": 0.39,
       "set": "tle"
     },
     "fleeting distraction": {
@@ -1500,7 +1510,7 @@
     },
     "flourishing grapple": {
       "collector_number": "372",
-      "price_eur": 0.35,
+      "price_eur": 0.22,
       "set": "fra"
     },
     "forced worship": {
@@ -1510,97 +1520,97 @@
     },
     "forger's foundry": {
       "collector_number": "14",
-      "price_eur": 0.2,
+      "price_eur": 0.25,
       "set": "otc"
     },
     "formless genesis": {
       "collector_number": "96",
-      "price_eur": 0.26,
+      "price_eur": 0.2,
       "set": "eoc"
     },
     "frantic search": {
       "collector_number": "111",
-      "price_eur": 0.5,
+      "price_eur": 0.49,
       "set": "c20"
     },
     "frenzied goblin": {
       "collector_number": "199",
-      "price_eur": 0.07,
+      "price_eur": 0.05,
       "set": "fdn"
     },
     "frenzied saddlebrute": {
       "collector_number": "180",
-      "price_eur": 0.25,
+      "price_eur": 0.33,
       "set": "cmr"
     },
     "front porch sentries": {
       "collector_number": "67",
-      "price_eur": 0.1,
+      "price_eur": 0.04,
       "set": "hob"
     },
     "frostboil snarl": {
       "collector_number": "298",
-      "price_eur": 0.22,
+      "price_eur": 0.2,
       "set": "otc"
     },
     "furnace punisher": {
       "collector_number": "291",
-      "price_eur": 0.03,
+      "price_eur": 0.06,
       "set": "one"
     },
     "furycalm snarl": {
       "collector_number": "345",
-      "price_eur": 0.21,
+      "price_eur": 0.18,
       "set": "m3c"
     },
     "fyndhorn elves": {
       "collector_number": "228",
-      "price_eur": 3.0,
+      "price_eur": 2.93,
       "set": "cmr"
     },
     "fíli the pathfinder": {
       "collector_number": "14",
-      "price_eur": 0.23,
+      "price_eur": 0.33,
       "set": "hob"
     },
     "galion, elvenking's butler": {
       "collector_number": "125",
-      "price_eur": 0.12,
+      "price_eur": 0.11,
       "set": "hob"
     },
     "galvanic discharge": {
       "collector_number": "122",
-      "price_eur": 0.3,
+      "price_eur": 0.17,
       "set": "mh3"
     },
     "game trail": {
       "collector_number": "282",
-      "price_eur": 0.24,
+      "price_eur": 0.23,
       "set": "40k"
     },
     "gandalf, wandering wizard": {
       "collector_number": "41",
-      "price_eur": 0.03,
+      "price_eur": 0.04,
       "set": "hob"
     },
     "gargoyle flock": {
       "collector_number": "123",
-      "price_eur": 0.19,
+      "price_eur": 0.14,
       "set": "40k"
     },
     "gargoyle sentinel": {
       "collector_number": "236",
-      "price_eur": 0.1,
+      "price_eur": 0.02,
       "set": "m19"
     },
     "garrison excavator": {
       "collector_number": "116",
-      "price_eur": 0.06,
+      "price_eur": 0.04,
       "set": "sos"
     },
     "garruk, curse breaker": {
       "collector_number": "259",
-      "price_eur": 3.85,
+      "price_eur": 3.43,
       "set": "fra"
     },
     "gatekeeper gargoyle": {
@@ -1610,17 +1620,17 @@
     },
     "gatewatch beacon": {
       "collector_number": "721",
-      "price_eur": 0.56,
+      "price_eur": 0.54,
       "set": "cmm"
     },
     "gaze of granite": {
       "collector_number": "116",
-      "price_eur": 0.14,
+      "price_eur": 0.16,
       "set": "eoc"
     },
     "generous gift": {
       "collector_number": "624",
-      "price_eur": 1.28,
+      "price_eur": 1.72,
       "set": "cmm"
     },
     "generous revival": {
@@ -1630,62 +1640,62 @@
     },
     "genestealer locus": {
       "collector_number": "21",
-      "price_eur": 0.07,
+      "price_eur": 0.09,
       "set": "40k"
     },
     "genestealer patriarch": {
       "collector_number": "22",
-      "price_eur": 0.22,
+      "price_eur": 0.12,
       "set": "40k"
     },
     "ghalta the immovable": {
       "collector_number": "197",
-      "price_eur": 0.2,
+      "price_eur": 0.19,
       "set": "fra"
     },
     "ghalta the unstoppable": {
       "collector_number": "260",
-      "price_eur": 0.34,
+      "price_eur": 0.32,
       "set": "fra"
     },
     "ghyrson starn, kelermorph": {
       "collector_number": "124",
-      "price_eur": 25.62,
+      "price_eur": 21.5,
       "set": "40k"
     },
     "giant growth": {
       "collector_number": "223",
-      "price_eur": 0.17,
+      "price_eur": 0.05,
       "set": "fdn"
     },
     "giant's boulder": {
       "collector_number": "173",
-      "price_eur": 0.44,
+      "price_eur": 0.4,
       "set": "hob"
     },
     "gideon's memorial": {
       "collector_number": "292",
-      "price_eur": 0.99,
+      "price_eur": 1.01,
       "set": "fra"
     },
     "gilanra, caller of wirewood": {
       "collector_number": "230",
-      "price_eur": 0.18,
+      "price_eur": 0.02,
       "set": "cmr"
     },
     "gilded goose": {
       "collector_number": "221",
-      "price_eur": 0.63,
+      "price_eur": 0.88,
       "set": "blc"
     },
     "glacial fortress": {
       "collector_number": "367",
-      "price_eur": 0.39,
+      "price_eur": 0.36,
       "set": "tdc"
     },
     "glamdring, foe-hammer // gleam of death": {
       "collector_number": "174",
-      "price_eur": 0.6,
+      "price_eur": 0.68,
       "set": "hob"
     },
     "glider kids": {
@@ -1700,37 +1710,37 @@
     },
     "glissa sunslayer": {
       "collector_number": "202",
-      "price_eur": 1.57,
+      "price_eur": 1.87,
       "set": "one"
     },
     "glissa, herald of predation": {
       "collector_number": "226",
-      "price_eur": 0.21,
+      "price_eur": 0.27,
       "set": "mom"
     },
     "glóin the mighty // easy pickings": {
       "collector_number": "227",
-      "price_eur": 0.15,
+      "price_eur": 0.25,
       "set": "hob"
     },
     "gnashing of teeth": {
       "collector_number": "69",
-      "price_eur": 0.03,
+      "price_eur": 0.22,
       "set": "hob"
     },
     "goblin electromancer": {
       "collector_number": "228",
-      "price_eur": 0.19,
+      "price_eur": 0.14,
       "set": "otc"
     },
     "goblin firebomb": {
       "collector_number": "562",
-      "price_eur": 0.02,
+      "price_eur": 0.1,
       "set": "fdn"
     },
     "goblin oriflamme": {
       "collector_number": "539",
-      "price_eur": 0.25,
+      "price_eur": 0.08,
       "set": "fdn"
     },
     "goblin plate mail": {
@@ -1740,62 +1750,62 @@
     },
     "goblin smuggler": {
       "collector_number": "540",
-      "price_eur": 0.12,
+      "price_eur": 0.11,
       "set": "fdn"
     },
     "goblin-town flunkies": {
       "collector_number": "100",
-      "price_eur": 0.05,
+      "price_eur": 0.04,
       "set": "hob"
     },
     "god-eternal bontu": {
       "collector_number": "83",
-      "price_eur": 0.46,
+      "price_eur": 0.58,
       "set": "eoc"
     },
     "goldspan dragon": {
       "collector_number": "212",
-      "price_eur": 8.58,
+      "price_eur": 9.57,
       "set": "m3c"
     },
     "golgari charm": {
       "collector_number": "201",
-      "price_eur": 1.64,
+      "price_eur": 0.95,
       "set": "uma"
     },
     "golgari signet": {
       "collector_number": "246",
-      "price_eur": 0.35,
+      "price_eur": 0.48,
       "set": "dsc"
     },
     "goliath truck": {
       "collector_number": "158",
-      "price_eur": 0.79,
+      "price_eur": 0.2,
       "set": "40k"
     },
     "gollum the abandoned": {
       "collector_number": "72",
-      "price_eur": 0.08,
+      "price_eur": 0.22,
       "set": "hob"
     },
     "gollum, silent slinker // meager meal": {
       "collector_number": "71",
-      "price_eur": 0.04,
+      "price_eur": 0.05,
       "set": "hob"
     },
     "gonti's aether heart": {
       "collector_number": "294",
-      "price_eur": 0.77,
+      "price_eur": 0.41,
       "set": "m3c"
     },
     "gorbag of minas morgul": {
       "collector_number": "86",
-      "price_eur": 0.11,
+      "price_eur": 0.28,
       "set": "ltr"
     },
     "graft surgeon": {
       "collector_number": "10",
-      "price_eur": 0.02,
+      "price_eur": 0.04,
       "set": "fra"
     },
     "great fierce bee": {
@@ -1805,42 +1815,42 @@
     },
     "great ugly-looking goblin // clap! snap!": {
       "collector_number": "74",
-      "price_eur": 0.09,
+      "price_eur": 0.03,
       "set": "hob"
     },
     "greenhouse propagator": {
       "collector_number": "104",
-      "price_eur": 0.08,
+      "price_eur": 0.04,
       "set": "fra"
     },
     "grenzo, havoc raiser": {
       "collector_number": "213",
-      "price_eur": 0.2,
+      "price_eur": 0.27,
       "set": "m3c"
     },
     "grim haruspex": {
       "collector_number": "118",
-      "price_eur": 2.07,
+      "price_eur": 1.98,
       "set": "c19"
     },
     "groundskeeper": {
       "collector_number": "97",
-      "price_eur": 0.02,
+      "price_eur": 0.11,
       "set": "eoc"
     },
     "gruesome scourger": {
       "collector_number": "104",
-      "price_eur": 0.08,
+      "price_eur": 0.15,
       "set": "m20"
     },
     "guardian of the halls": {
       "collector_number": "127",
-      "price_eur": 0.04,
+      "price_eur": 0.08,
       "set": "hob"
     },
     "guide of souls": {
       "collector_number": "29",
-      "price_eur": 3.33,
+      "price_eur": 3.49,
       "set": "mh3"
     },
     "guild thief": {
@@ -1855,42 +1865,42 @@
     },
     "guttersnipe": {
       "collector_number": "217",
-      "price_eur": 0.23,
+      "price_eur": 0.26,
       "set": "tdc"
     },
     "hallway heckler // vicious verse": {
       "collector_number": "85",
-      "price_eur": 0.02,
+      "price_eur": 0.05,
       "set": "fra"
     },
     "hammer of purphoros": {
       "collector_number": "88",
-      "price_eur": 0.21,
+      "price_eur": 0.31,
       "set": "eoc"
     },
     "harald, king of skemfar": {
       "collector_number": "212",
-      "price_eur": 0.06,
+      "price_eur": 0.04,
       "set": "khm"
     },
     "hardened scales": {
       "collector_number": "215",
-      "price_eur": 2.25,
+      "price_eur": 2.74,
       "set": "40k"
     },
     "harrow": {
       "collector_number": "216",
-      "price_eur": 0.77,
+      "price_eur": 0.37,
       "set": "40k"
     },
     "haruspex": {
       "collector_number": "91",
-      "price_eur": 0.25,
+      "price_eur": 0.16,
       "set": "40k"
     },
     "haughty djinn": {
       "collector_number": "99",
-      "price_eur": 0.61,
+      "price_eur": 0.56,
       "set": "otc"
     },
     "head of the homestead": {
@@ -1905,157 +1915,157 @@
     },
     "heaped harvest": {
       "collector_number": "175",
-      "price_eur": 0.22,
+      "price_eur": 0.15,
       "set": "blb"
     },
     "hearthhull, the worldseed": {
       "collector_number": "1",
-      "price_eur": 0.81,
+      "price_eur": 0.4,
       "set": "eoc"
     },
     "helios one": {
       "collector_number": "149",
-      "price_eur": 1.49,
+      "price_eur": 0.54,
       "set": "pip"
     },
     "helpful hunter": {
       "collector_number": "16",
-      "price_eur": 0.12,
+      "price_eur": 0.05,
       "set": "fdn"
     },
     "herald of faith": {
       "collector_number": "494",
-      "price_eur": 0.44,
+      "price_eur": 0.39,
       "set": "fdn"
     },
     "herald's horn": {
       "collector_number": "241",
-      "price_eur": 5.0,
+      "price_eur": 5.99,
       "set": "40k"
     },
     "hero's downfall": {
       "collector_number": "175",
-      "price_eur": 0.07,
+      "price_eur": 0.17,
       "set": "fdn"
     },
     "hierophant bio-titan": {
       "collector_number": "92",
-      "price_eur": 1.25,
+      "price_eur": 0.8,
       "set": "40k"
     },
     "high perfect morcant": {
       "collector_number": "229",
-      "price_eur": 1.37,
+      "price_eur": 1.22,
       "set": "ecl"
     },
     "highborn vampire": {
       "collector_number": "522",
-      "price_eur": 0.02,
+      "price_eur": 0.3,
       "set": "fdn"
     },
     "highway robbery": {
       "collector_number": "129",
-      "price_eur": 0.91,
+      "price_eur": 0.88,
       "set": "otj"
     },
     "hinterland sanctifier": {
       "collector_number": "730",
-      "price_eur": 0.27,
+      "price_eur": 0.26,
       "set": "fdn"
     },
     "horizon explorer": {
       "collector_number": "15",
-      "price_eur": 3.03,
+      "price_eur": 2.96,
       "set": "eoc"
     },
     "hormagaunt horde": {
       "collector_number": "93",
-      "price_eur": 0.88,
+      "price_eur": 0.19,
       "set": "40k"
     },
     "hourglass of the lost": {
       "collector_number": "92",
-      "price_eur": 0.24,
+      "price_eur": 0.32,
       "set": "m3c"
     },
     "how to start a riot": {
       "collector_number": "140",
-      "price_eur": 0.04,
+      "price_eur": 0.15,
       "set": "tla"
     },
     "hull breach": {
       "collector_number": "224",
-      "price_eur": 1.24,
+      "price_eur": 1.21,
       "set": "40k"
     },
     "hungry ghoul": {
       "collector_number": "62",
-      "price_eur": 0.18,
+      "price_eur": 0.02,
       "set": "fdn"
     },
     "icewind elemental": {
       "collector_number": "42",
-      "price_eur": 0.03,
+      "price_eur": 0.23,
       "set": "fdn"
     },
     "icon of ancestry": {
       "collector_number": "242",
-      "price_eur": 0.49,
+      "price_eur": 0.55,
       "set": "40k"
     },
     "immaculate magistrate": {
       "collector_number": "117",
-      "price_eur": 3.45,
+      "price_eur": 3.65,
       "set": "cma"
     },
     "imperious inkmage": {
       "collector_number": "195",
-      "price_eur": 0.03,
+      "price_eur": 0.02,
       "set": "sos"
     },
     "imperious perfect": {
       "collector_number": "173",
-      "price_eur": 0.4,
+      "price_eur": 0.52,
       "set": "ema"
     },
     "impulsive pilferer": {
       "collector_number": "171",
-      "price_eur": 0.48,
+      "price_eur": 0.36,
       "set": "otc"
     },
     "incinerating blast": {
       "collector_number": "90",
-      "price_eur": 0.04,
+      "price_eur": 0.02,
       "set": "fdn"
     },
     "incubation druid": {
       "collector_number": "309",
-      "price_eur": 1.51,
+      "price_eur": 1.49,
       "set": "fic"
     },
     "infernal grasp": {
       "collector_number": "216",
-      "price_eur": 0.5,
+      "price_eur": 0.47,
       "set": "soc"
     },
     "ingenious leonin": {
       "collector_number": "495",
-      "price_eur": 0.02,
+      "price_eur": 0.15,
       "set": "fdn"
     },
     "inscription of abundance": {
       "collector_number": "186",
-      "price_eur": 0.23,
+      "price_eur": 0.27,
       "set": "dsc"
     },
     "inspiring call": {
       "collector_number": "217",
-      "price_eur": 1.0,
+      "price_eur": 0.3,
       "set": "40k"
     },
     "inspiring overseer": {
       "collector_number": "496",
-      "price_eur": 0.16,
+      "price_eur": 0.22,
       "set": "fdn"
     },
     "into the roil": {
@@ -2065,17 +2075,17 @@
     },
     "intrepid outlander": {
       "collector_number": "191",
-      "price_eur": 0.13,
+      "price_eur": 0.25,
       "set": "afr"
     },
     "invasion reinforcements": {
       "collector_number": "24",
-      "price_eur": 0.25,
+      "price_eur": 0.16,
       "set": "tla"
     },
     "iron hills blacksmith": {
       "collector_number": "216",
-      "price_eur": 0.16,
+      "price_eur": 0.1,
       "set": "hob"
     },
     "ironclaw buzzardiers": {
@@ -2085,32 +2095,32 @@
     },
     "ishkanah, grafwidow": {
       "collector_number": "187",
-      "price_eur": 0.58,
+      "price_eur": 0.48,
       "set": "dsc"
     },
     "izoni, center of the web": {
       "collector_number": "209",
-      "price_eur": 0.05,
+      "price_eur": 0.09,
       "set": "mkm"
     },
     "izzet boilerworks": {
       "collector_number": "350",
-      "price_eur": 0.23,
+      "price_eur": 0.2,
       "set": "m3c"
     },
     "izzet generatorium": {
       "collector_number": "191",
-      "price_eur": 0.32,
+      "price_eur": 0.21,
       "set": "mh3"
     },
     "izzet signet": {
       "collector_number": "320",
-      "price_eur": 0.63,
+      "price_eur": 0.7,
       "set": "tdc"
     },
     "jazal goldmane": {
       "collector_number": "497",
-      "price_eur": 0.25,
+      "price_eur": 0.09,
       "set": "fdn"
     },
     "jeong jeong's deserters": {
@@ -2120,7 +2130,7 @@
     },
     "jeskai brushmaster": {
       "collector_number": "195",
-      "price_eur": 0.05,
+      "price_eur": 0.1,
       "set": "tdm"
     },
     "jeskai devotee": {
@@ -2135,82 +2145,82 @@
     },
     "jolt": {
       "collector_number": "70",
-      "price_eur": 0.75,
+      "price_eur": 0.06,
       "set": "mir"
     },
     "jolted awake": {
       "collector_number": "33",
-      "price_eur": 0.03,
+      "price_eur": 0.02,
       "set": "mh3"
     },
     "joraga invocation": {
       "collector_number": "555",
-      "price_eur": 0.08,
+      "price_eur": 0.05,
       "set": "fdn"
     },
     "jungle hollow": {
       "collector_number": "313",
-      "price_eur": 0.2,
+      "price_eur": 0.69,
       "set": "blc"
     },
     "juri, master of the revue": {
       "collector_number": "119",
-      "price_eur": 0.05,
+      "price_eur": 0.2,
       "set": "eoc"
     },
     "kargan dragonrider": {
       "collector_number": "541",
-      "price_eur": 0.39,
+      "price_eur": 0.1,
       "set": "fdn"
     },
     "karplusan forest": {
       "collector_number": "164",
-      "price_eur": 0.8,
+      "price_eur": 0.95,
       "set": "eoc"
     },
     "kaza, roil chaser": {
       "collector_number": "232",
-      "price_eur": 0.2,
+      "price_eur": 0.13,
       "set": "otc"
     },
     "keeper of the quiet hour": {
       "collector_number": "171",
-      "price_eur": 0.02,
+      "price_eur": 0.05,
       "set": "fra"
     },
     "kindled fury": {
       "collector_number": "542",
-      "price_eur": 0.02,
+      "price_eur": 0.3,
       "set": "fdn"
     },
     "kitesail corsair": {
       "collector_number": "510",
-      "price_eur": 0.25,
+      "price_eur": 0.3,
       "set": "fdn"
     },
     "koala-sheep": {
       "collector_number": "80",
-      "price_eur": 0.08,
+      "price_eur": 0.25,
       "set": "tle"
     },
     "kodama's reach": {
       "collector_number": "113",
-      "price_eur": 1.42,
+      "price_eur": 1.99,
       "set": "ecc"
     },
     "korvold, fae-cursed king": {
       "collector_number": "120",
-      "price_eur": 1.25,
+      "price_eur": 1.09,
       "set": "eoc"
     },
     "krumar bond-kin": {
       "collector_number": "77",
-      "price_eur": 0.02,
+      "price_eur": 0.04,
       "set": "ktk"
     },
     "krydle of baldur's gate": {
       "collector_number": "226",
-      "price_eur": 0.13,
+      "price_eur": 0.12,
       "set": "afr"
     },
     "lake-town lookout": {
@@ -2220,107 +2230,107 @@
     },
     "lake-town mariners // gone fishing": {
       "collector_number": "44",
-      "price_eur": 0.15,
+      "price_eur": 0.05,
       "set": "hob"
     },
     "lakeshore apothecary": {
       "collector_number": "43",
-      "price_eur": 0.03,
+      "price_eur": 0.05,
       "set": "hob"
     },
     "large bear": {
       "collector_number": "159",
-      "price_eur": 0.18,
+      "price_eur": 0.25,
       "set": "hob"
     },
     "last gasp": {
       "collector_number": "56",
-      "price_eur": 0.03,
+      "price_eur": 0.2,
       "set": "fra"
     },
     "lathril, blade of the elves": {
       "collector_number": "242",
-      "price_eur": 1.54,
+      "price_eur": 1.48,
       "set": "fdn"
     },
     "legion loyalty": {
       "collector_number": "171",
-      "price_eur": 0.3,
+      "price_eur": 0.38,
       "set": "m3c"
     },
     "leonin skyhunter": {
       "collector_number": "498",
-      "price_eur": 0.79,
+      "price_eur": 0.25,
       "set": "fdn"
     },
     "leonin vanguard": {
       "collector_number": "499",
-      "price_eur": 0.5,
+      "price_eur": 0.1,
       "set": "fdn"
     },
     "leyline dowser": {
       "collector_number": "39",
-      "price_eur": 0.21,
+      "price_eur": 0.35,
       "set": "otc"
     },
     "liberty prime, recharged": {
       "collector_number": "5",
-      "price_eur": 0.45,
+      "price_eur": 0.35,
       "set": "pip"
     },
     "lictor": {
       "collector_number": "94",
-      "price_eur": 0.13,
+      "price_eur": 0.27,
       "set": "40k"
     },
     "lightning runner": {
       "collector_number": "215",
-      "price_eur": 0.2,
+      "price_eur": 0.28,
       "set": "m3c"
     },
     "lightning strike": {
       "collector_number": "146",
-      "price_eur": 0.03,
+      "price_eur": 0.04,
       "set": "tla"
     },
     "little bear": {
       "collector_number": "128",
-      "price_eur": 0.11,
+      "price_eur": 0.06,
       "set": "hob"
     },
     "living library": {
       "collector_number": "172",
-      "price_eur": 0.02,
+      "price_eur": 0.03,
       "set": "fra"
     },
     "llanowar elves": {
       "collector_number": "253",
-      "price_eur": 0.05,
+      "price_eur": 0.39,
       "set": "9ed"
     },
     "llanowar wastes": {
       "collector_number": "165",
-      "price_eur": 1.12,
+      "price_eur": 1.25,
       "set": "eoc"
     },
     "lluwen, imperfect naturalist": {
       "collector_number": "232",
-      "price_eur": 0.21,
+      "price_eur": 0.1,
       "set": "ecl"
     },
     "loamcrafter faun": {
       "collector_number": "99",
-      "price_eur": 0.08,
+      "price_eur": 0.1,
       "set": "eoc"
     },
     "localized destruction": {
       "collector_number": "93",
-      "price_eur": 0.34,
+      "price_eur": 0.4,
       "set": "m3c"
     },
     "lock and load": {
       "collector_number": "15",
-      "price_eur": 0.69,
+      "price_eur": 1.42,
       "set": "otc"
     },
     "locthwain gargoyle": {
@@ -2330,22 +2340,22 @@
     },
     "long lake nuisance": {
       "collector_number": "45",
-      "price_eur": 0.02,
+      "price_eur": 0.04,
       "set": "hob"
     },
     "long-bodied grey dog": {
       "collector_number": "1",
-      "price_eur": 0.04,
+      "price_eur": 0.1,
       "set": "hob"
     },
     "longshot, rebel bowman": {
       "collector_number": "120",
-      "price_eur": 9.45,
+      "price_eur": 9.74,
       "set": "tle"
     },
     "loot, the anomaly": {
       "collector_number": "232",
-      "price_eur": 0.13,
+      "price_eur": 0.08,
       "set": "fra"
     },
     "loot, the nexus": {
@@ -2355,7 +2365,7 @@
     },
     "lumberknot": {
       "collector_number": "206",
-      "price_eur": 0.4,
+      "price_eur": 0.02,
       "set": "inr"
     },
     "lumengrid gargoyle": {
@@ -2365,37 +2375,37 @@
     },
     "lure": {
       "collector_number": "175",
-      "price_eur": 0.05,
+      "price_eur": 0.4,
       "set": "ima"
     },
     "maalfeld twins": {
       "collector_number": "523",
-      "price_eur": 0.06,
+      "price_eur": 0.19,
       "set": "fdn"
     },
     "magnificent end": {
       "collector_number": "20",
-      "price_eur": 0.04,
+      "price_eur": 0.08,
       "set": "hob"
     },
     "magnigoth sentry": {
       "collector_number": "556",
-      "price_eur": 0.1,
+      "price_eur": 0.11,
       "set": "fdn"
     },
     "magus lucea kane": {
       "collector_number": "174",
-      "price_eur": 2.5,
+      "price_eur": 1.75,
       "set": "40k"
     },
     "mai, jaded edge": {
       "collector_number": "147",
-      "price_eur": 0.04,
+      "price_eur": 0.25,
       "set": "tla"
     },
     "malanthrope": {
       "collector_number": "132",
-      "price_eur": 0.34,
+      "price_eur": 0.19,
       "set": "40k"
     },
     "malcolm, the eyes": {
@@ -2405,57 +2415,57 @@
     },
     "maralen, fae ascendant": {
       "collector_number": "233",
-      "price_eur": 0.22,
+      "price_eur": 0.28,
       "set": "ecl"
     },
     "mardu roughrider": {
       "collector_number": "187",
-      "price_eur": 0.5,
+      "price_eur": 0.04,
       "set": "ktk"
     },
     "mardu warshrieker": {
       "collector_number": "117",
-      "price_eur": 0.39,
+      "price_eur": 0.02,
       "set": "ktk"
     },
     "marionette apprentice": {
       "collector_number": "100",
-      "price_eur": 1.32,
+      "price_eur": 1.26,
       "set": "mh3"
     },
     "marionette master": {
       "collector_number": "109",
-      "price_eur": 1.74,
+      "price_eur": 2.99,
       "set": "brc"
     },
     "marshal of the lost": {
       "collector_number": "207",
-      "price_eur": 0.13,
+      "price_eur": 0.14,
       "set": "tdm"
     },
     "marwyn, the nurturer": {
       "collector_number": "172",
-      "price_eur": 4.66,
+      "price_eur": 4.97,
       "set": "dom"
     },
     "mauhúr, uruk-hai captain": {
       "collector_number": "214",
-      "price_eur": 0.16,
+      "price_eur": 0.19,
       "set": "ltr"
     },
     "mawloc": {
       "collector_number": "133",
-      "price_eur": 2.0,
+      "price_eur": 3.25,
       "set": "40k"
     },
     "mayhem devil": {
       "collector_number": "121",
-      "price_eur": 0.33,
+      "price_eur": 0.42,
       "set": "eoc"
     },
     "mazirek, kraul death priest": {
       "collector_number": "122",
-      "price_eur": 0.3,
+      "price_eur": 0.43,
       "set": "eoc"
     },
     "memory trap": {
@@ -2465,32 +2475,32 @@
     },
     "mer-ek nightblade": {
       "collector_number": "79",
-      "price_eur": 0.12,
+      "price_eur": 0.13,
       "set": "ktk"
     },
     "merchant scroll": {
       "collector_number": "33",
-      "price_eur": 4.49,
+      "price_eur": 4.82,
       "set": "hml"
     },
     "merciless executioner": {
       "collector_number": "76",
-      "price_eur": 0.64,
+      "price_eur": 0.43,
       "set": "frf"
     },
     "midnight clock": {
       "collector_number": "100",
-      "price_eur": 0.38,
+      "price_eur": 0.34,
       "set": "otc"
     },
     "midnight reaper": {
       "collector_number": "77",
-      "price_eur": 0.39,
+      "price_eur": 0.62,
       "set": "grn"
     },
     "midnight tilling": {
       "collector_number": "182",
-      "price_eur": 0.05,
+      "price_eur": 0.1,
       "set": "ecl"
     },
     "mighty leap": {
@@ -2500,147 +2510,147 @@
     },
     "mild-mannered librarian": {
       "collector_number": "228",
-      "price_eur": 0.02,
+      "price_eur": 0.05,
       "set": "fdn"
     },
     "mind meanderer": {
       "collector_number": "141",
-      "price_eur": 0.05,
+      "price_eur": 0.14,
       "set": "fra"
     },
     "mind stone": {
       "collector_number": "352",
-      "price_eur": 0.32,
+      "price_eur": 0.22,
       "set": "soc"
     },
     "mindseeker oculus": {
       "collector_number": "33",
-      "price_eur": 0.04,
+      "price_eur": 0.03,
       "set": "fra"
     },
     "minor misstep": {
       "collector_number": "64",
-      "price_eur": 0.02,
+      "price_eur": 0.05,
       "set": "one"
     },
     "mirkwood bats": {
       "collector_number": "421",
-      "price_eur": 0.32,
+      "price_eur": 0.47,
       "set": "ltr"
     },
     "mirkwood meditator": {
       "collector_number": "48",
-      "price_eur": 0.02,
+      "price_eur": 0.03,
       "set": "hob"
     },
     "mirkwood nurturer": {
       "collector_number": "160",
-      "price_eur": 0.12,
+      "price_eur": 0.02,
       "set": "hob"
     },
     "miscast": {
       "collector_number": "57",
-      "price_eur": 1.22,
+      "price_eur": 1.2,
       "set": "m21"
     },
     "mischievous mystic": {
       "collector_number": "47",
-      "price_eur": 0.18,
+      "price_eur": 0.09,
       "set": "fdn"
     },
     "mission briefing": {
       "collector_number": "110",
-      "price_eur": 0.25,
+      "price_eur": 0.21,
       "set": "mkc"
     },
     "mizzium skin": {
       "collector_number": "45",
-      "price_eur": 0.35,
+      "price_eur": 0.18,
       "set": "rtr"
     },
     "mizzix's mastery": {
       "collector_number": "175",
-      "price_eur": 5.88,
+      "price_eur": 9.63,
       "set": "otc"
     },
     "moldervine reclamation": {
       "collector_number": "320",
-      "price_eur": 0.19,
+      "price_eur": 0.31,
       "set": "soc"
     },
     "moment of craving": {
       "collector_number": "524",
-      "price_eur": 0.1,
+      "price_eur": 0.04,
       "set": "fdn"
     },
     "moment of glory": {
       "collector_number": "21",
-      "price_eur": 0.07,
+      "price_eur": 0.02,
       "set": "hob"
     },
     "moment of triumph": {
       "collector_number": "500",
-      "price_eur": 0.3,
+      "price_eur": 0.32,
       "set": "fdn"
     },
     "momir vig, simic visionary": {
       "collector_number": "119",
-      "price_eur": 0.57,
+      "price_eur": 0.99,
       "set": "gk2"
     },
     "monk gyatso": {
       "collector_number": "81",
-      "price_eur": 5.89,
+      "price_eur": 6.99,
       "set": "tle"
     },
     "moraug, fury of akoum": {
       "collector_number": "89",
-      "price_eur": 2.6,
+      "price_eur": 2.77,
       "set": "eoc"
     },
     "morbid opportunist": {
       "collector_number": "219",
-      "price_eur": 0.38,
+      "price_eur": 0.25,
       "set": "soc"
     },
     "muddle the mixture": {
       "collector_number": "60",
-      "price_eur": 1.02,
+      "price_eur": 0.82,
       "set": "rav"
     },
     "multani, yavimaya's avatar": {
       "collector_number": "100",
-      "price_eur": 0.24,
+      "price_eur": 0.3,
       "set": "eoc"
     },
     "murmuring mystic": {
       "collector_number": "102",
-      "price_eur": 0.47,
+      "price_eur": 0.55,
       "set": "otc"
     },
     "murmuring volume": {
       "collector_number": "174",
-      "price_eur": 0.06,
+      "price_eur": 0.09,
       "set": "fra"
     },
     "myr battlesphere": {
       "collector_number": "301",
-      "price_eur": 0.18,
+      "price_eur": 0.5,
       "set": "m3c"
     },
     "mystic archaeologist": {
       "collector_number": "511",
-      "price_eur": 0.14,
+      "price_eur": 0.02,
       "set": "fdn"
     },
     "mystic gate": {
       "collector_number": "359",
-      "price_eur": 2.49,
+      "price_eur": 1.99,
       "set": "m3c"
     },
     "mystic monastery": {
       "collector_number": "318",
-      "price_eur": 0.21,
+      "price_eur": 0.14,
       "set": "blc"
     },
     "mystic sanctuary": {
@@ -2650,32 +2660,32 @@
     },
     "mystical tutor": {
       "collector_number": "289",
-      "price_eur": 12.0,
+      "price_eur": 11.0,
       "set": "dmr"
     },
     "nadier's nightblade": {
       "collector_number": "184",
-      "price_eur": 0.14,
+      "price_eur": 0.33,
       "set": "blc"
     },
     "nath of the gilt-leaf": {
       "collector_number": "213",
-      "price_eur": 0.9,
+      "price_eur": 0.3,
       "set": "c16"
     },
     "nature's lore": {
       "collector_number": "244",
-      "price_eur": 2.32,
+      "price_eur": 3.01,
       "set": "clb"
     },
     "necroblossom snarl": {
       "collector_number": "319",
-      "price_eur": 0.74,
+      "price_eur": 0.97,
       "set": "blc"
     },
     "negate": {
       "collector_number": "69",
-      "price_eur": 0.08,
+      "price_eur": 0.05,
       "set": "m20"
     },
     "new horizons": {
@@ -2685,87 +2695,87 @@
     },
     "nexos": {
       "collector_number": "95",
-      "price_eur": 9.5,
+      "price_eur": 6.9,
       "set": "40k"
     },
     "night of the sweets' revenge": {
       "collector_number": "178",
-      "price_eur": 0.24,
+      "price_eur": 0.42,
       "set": "woe"
     },
     "night's whisper": {
       "collector_number": "85",
-      "price_eur": 0.59,
+      "price_eur": 0.45,
       "set": "eoc"
     },
     "nissa, worldsoul speaker": {
       "collector_number": "13",
-      "price_eur": 0.19,
+      "price_eur": 0.25,
       "set": "drc"
     },
     "niv-mizzet, parun": {
       "collector_number": "235",
-      "price_eur": 2.41,
+      "price_eur": 2.8,
       "set": "otc"
     },
     "no admittance": {
       "collector_number": "89",
-      "price_eur": 0.05,
+      "price_eur": 0.07,
       "set": "fra"
     },
     "noble's purse": {
       "collector_number": "331",
-      "price_eur": 0.37,
+      "price_eur": 0.54,
       "set": "clb"
     },
     "nori, teller of tales": {
       "collector_number": "161",
-      "price_eur": 0.06,
+      "price_eur": 0.1,
       "set": "hob"
     },
     "octavia, living thesis": {
       "collector_number": "103",
-      "price_eur": 0.65,
+      "price_eur": 0.3,
       "set": "otc"
     },
     "offer immortality": {
       "collector_number": "525",
-      "price_eur": 0.25,
+      "price_eur": 0.05,
       "set": "fdn"
     },
     "old fat spider can't see me": {
       "collector_number": "50",
-      "price_eur": 0.12,
+      "price_eur": 0.02,
       "set": "hob"
     },
     "old one eye": {
       "collector_number": "96",
-      "price_eur": 2.19,
+      "price_eur": 1.79,
       "set": "40k"
     },
     "old thrush": {
       "collector_number": "2",
-      "price_eur": 0.05,
+      "price_eur": 0.18,
       "set": "hob"
     },
     "omnath, locus of rage": {
       "collector_number": "123",
-      "price_eur": 0.33,
+      "price_eur": 0.47,
       "set": "eoc"
     },
     "opt": {
       "collector_number": "104",
-      "price_eur": 0.24,
+      "price_eur": 0.14,
       "set": "otc"
     },
     "oracle of mul daya": {
       "collector_number": "102",
-      "price_eur": 2.56,
+      "price_eur": 2.89,
       "set": "eoc"
     },
     "orc sureshot": {
       "collector_number": "78",
-      "price_eur": 0.35,
+      "price_eur": 0.02,
       "set": "frf"
     },
     "orcish artillery": {
@@ -2790,22 +2800,22 @@
     },
     "ordinary bear": {
       "collector_number": "133",
-      "price_eur": 0.08,
+      "price_eur": 0.02,
       "set": "hob"
     },
     "ori, keeper of songs": {
       "collector_number": "23",
-      "price_eur": 0.06,
+      "price_eur": 0.2,
       "set": "hob"
     },
     "overclocked electromancer": {
       "collector_number": "110",
-      "price_eur": 0.26,
+      "price_eur": 0.4,
       "set": "m3c"
     },
     "overgrowth": {
       "collector_number": "219",
-      "price_eur": 0.35,
+      "price_eur": 0.23,
       "set": "40k"
     },
     "pacifism": {
@@ -2815,37 +2825,37 @@
     },
     "panharmonicon": {
       "collector_number": "135",
-      "price_eur": 5.73,
+      "price_eur": 6.29,
       "set": "drc"
     },
     "path of ancestry": {
       "collector_number": "287",
-      "price_eur": 0.18,
+      "price_eur": 0.25,
       "set": "40k"
     },
     "path to exile": {
       "collector_number": "248",
-      "price_eur": 1.55,
+      "price_eur": 1.49,
       "set": "fic"
     },
     "path to redemption": {
       "collector_number": "31",
-      "price_eur": 0.04,
+      "price_eur": 0.02,
       "set": "tla"
     },
     "patient instructor": {
       "collector_number": "162",
-      "price_eur": 0.2,
+      "price_eur": 0.17,
       "set": "hob"
     },
     "penumbra spider": {
       "collector_number": "223",
-      "price_eur": 0.04,
+      "price_eur": 0.5,
       "set": "tsr"
     },
     "peregrin took": {
       "collector_number": "315",
-      "price_eur": 0.15,
+      "price_eur": 0.13,
       "set": "ltr"
     },
     "perilous voyage": {
@@ -2855,57 +2865,57 @@
     },
     "personal tutor": {
       "collector_number": "110",
-      "price_eur": 5.75,
+      "price_eur": 5.45,
       "set": "cmm"
     },
     "pest infestation": {
       "collector_number": "103",
-      "price_eur": 0.52,
+      "price_eur": 0.59,
       "set": "eoc"
     },
     "pestilent souleater": {
       "collector_number": "149",
-      "price_eur": 0.14,
+      "price_eur": 0.02,
       "set": "nph"
     },
     "phyrexian ironworks": {
       "collector_number": "130",
-      "price_eur": 0.18,
+      "price_eur": 0.14,
       "set": "mh3"
     },
     "pia, aether ascetic": {
       "collector_number": "264",
-      "price_eur": 0.5,
+      "price_eur": 0.52,
       "set": "fra"
     },
     "pia, determined rebuilder": {
       "collector_number": "250",
-      "price_eur": 0.1,
+      "price_eur": 0.11,
       "set": "fra"
     },
     "pigment wrangler // striking palette": {
       "collector_number": "126",
-      "price_eur": 0.05,
+      "price_eur": 0.15,
       "set": "sos"
     },
     "pillarfield ox": {
       "collector_number": "76",
-      "price_eur": 0.02,
+      "price_eur": 0.05,
       "set": "cns"
     },
     "pinecone strike": {
       "collector_number": "107",
-      "price_eur": 0.03,
+      "price_eur": 0.05,
       "set": "hob"
     },
     "pirate's cutlass": {
       "collector_number": "563",
-      "price_eur": 0.2,
+      "price_eur": 0.3,
       "set": "fdn"
     },
     "pirate's pillage": {
       "collector_number": "120",
-      "price_eur": 0.37,
+      "price_eur": 0.16,
       "set": "2x2"
     },
     "pitchburn devils": {
@@ -2915,42 +2925,42 @@
     },
     "pitiless horde": {
       "collector_number": "112",
-      "price_eur": 0.36,
+      "price_eur": 0.2,
       "set": "dtk"
     },
     "pitiless plunderer": {
       "collector_number": "208",
-      "price_eur": 3.57,
+      "price_eur": 4.0,
       "set": "lcc"
     },
     "planetary annihilation": {
       "collector_number": "12",
-      "price_eur": 0.12,
+      "price_eur": 0.29,
       "set": "eoc"
     },
     "plargg, dean of chaos // augusta, dean of order": {
       "collector_number": "155",
-      "price_eur": 0.24,
+      "price_eur": 0.1,
       "set": "stx"
     },
     "plasma caster": {
       "collector_number": "64",
-      "price_eur": 0.1,
+      "price_eur": 0.49,
       "set": "pip"
     },
     "plumb the forbidden": {
       "collector_number": "224",
-      "price_eur": 0.52,
+      "price_eur": 0.51,
       "set": "soc"
     },
     "plunder the trollshaws": {
       "collector_number": "51",
-      "price_eur": 0.14,
+      "price_eur": 0.12,
       "set": "hob"
     },
     "plundering pirate": {
       "collector_number": "160",
-      "price_eur": 0.1,
+      "price_eur": 0.12,
       "set": "lci"
     },
     "poison-tip archer": {
@@ -2960,137 +2970,137 @@
     },
     "poisoner's apprentice": {
       "collector_number": "92",
-      "price_eur": 0.02,
+      "price_eur": 0.06,
       "set": "sos"
     },
     "pompous battlemage // improvised act": {
       "collector_number": "90",
-      "price_eur": 3.98,
+      "price_eur": 2.92,
       "set": "fra"
     },
     "ponder": {
       "collector_number": "159",
-      "price_eur": 4.13,
+      "price_eur": 5.42,
       "set": "tdc"
     },
     "pongify": {
       "collector_number": "160",
-      "price_eur": 2.23,
+      "price_eur": 2.15,
       "set": "tdc"
     },
     "port town": {
       "collector_number": "364",
-      "price_eur": 0.19,
+      "price_eur": 0.2,
       "set": "m3c"
     },
     "prairie stream": {
       "collector_number": "365",
-      "price_eur": 0.36,
+      "price_eur": 0.28,
       "set": "m3c"
     },
     "prayer of binding": {
       "collector_number": "502",
-      "price_eur": 0.25,
+      "price_eur": 0.1,
       "set": "fdn"
     },
     "precise redaction": {
       "collector_number": "36",
-      "price_eur": 0.12,
+      "price_eur": 0.03,
       "set": "fra"
     },
     "preordain": {
       "collector_number": "161",
-      "price_eur": 1.53,
+      "price_eur": 2.1,
       "set": "tdc"
     },
     "prey upon": {
       "collector_number": "178",
-      "price_eur": 0.05,
+      "price_eur": 0.23,
       "set": "uma"
     },
     "prideful parent": {
       "collector_number": "21",
-      "price_eur": 0.04,
+      "price_eur": 0.05,
       "set": "fdn"
     },
     "priest of titania": {
       "collector_number": "210",
-      "price_eur": 0.49,
+      "price_eur": 0.8,
       "set": "c14"
     },
     "prismari pledgemage": {
       "collector_number": "215",
-      "price_eur": 0.02,
+      "price_eur": 0.05,
       "set": "stx"
     },
     "prizefight": {
       "collector_number": "154",
-      "price_eur": 0.69,
+      "price_eur": 0.05,
       "set": "snc"
     },
     "professional face-breaker": {
       "collector_number": "216",
-      "price_eur": 5.46,
+      "price_eur": 6.32,
       "set": "m3c"
     },
     "proft, consulting detective": {
       "collector_number": "218",
-      "price_eur": 0.11,
+      "price_eur": 0.14,
       "set": "fra"
     },
     "proft, sinister mastermind": {
       "collector_number": "235",
-      "price_eur": 0.12,
+      "price_eur": 0.09,
       "set": "fra"
     },
     "propaganda": {
       "collector_number": "191",
-      "price_eur": 2.87,
+      "price_eur": 2.57,
       "set": "m3c"
     },
     "prophesied end": {
       "collector_number": "17",
-      "price_eur": 0.13,
+      "price_eur": 0.06,
       "set": "fra"
     },
     "pteramander": {
       "collector_number": "109",
-      "price_eur": 0.15,
+      "price_eur": 0.07,
       "set": "otc"
     },
     "puppet crafting": {
       "collector_number": "111",
-      "price_eur": 0.34,
+      "price_eur": 0.13,
       "set": "fra"
     },
     "purestrain genestealer": {
       "collector_number": "97",
-      "price_eur": 0.99,
+      "price_eur": 0.19,
       "set": "40k"
     },
     "putrefy": {
       "collector_number": "238",
-      "price_eur": 0.1,
+      "price_eur": 0.24,
       "set": "otc"
     },
     "pyretic charge": {
       "collector_number": "29",
-      "price_eur": 0.28,
+      "price_eur": 0.08,
       "set": "otc"
     },
     "quandrix charm": {
       "collector_number": "217",
-      "price_eur": 0.15,
+      "price_eur": 0.05,
       "set": "sos"
     },
     "quarrel": {
       "collector_number": "135",
-      "price_eur": 0.12,
+      "price_eur": 0.08,
       "set": "hob"
     },
     "quick study": {
       "collector_number": "513",
-      "price_eur": 0.25,
+      "price_eur": 0.23,
       "set": "fdn"
     },
     "quick-draw katana": {
@@ -3100,52 +3110,52 @@
     },
     "quirion ranger": {
       "collector_number": "117",
-      "price_eur": 3.0,
+      "price_eur": 2.86,
       "set": "vis"
     },
     "rabaroo troop": {
       "collector_number": "32",
-      "price_eur": 0.06,
+      "price_eur": 0.02,
       "set": "tla"
     },
     "radical idea": {
       "collector_number": "110",
-      "price_eur": 0.14,
+      "price_eur": 0.22,
       "set": "otc"
     },
     "rage into the valley": {
       "collector_number": "79",
-      "price_eur": 0.13,
+      "price_eur": 0.06,
       "set": "hob"
     },
     "ragged short spear": {
       "collector_number": "108",
-      "price_eur": 0.07,
+      "price_eur": 0.27,
       "set": "hob"
     },
     "raging redcap": {
       "collector_number": "543",
-      "price_eur": 0.02,
+      "price_eur": 0.08,
       "set": "fdn"
     },
     "rakdos charm": {
       "collector_number": "125",
-      "price_eur": 0.77,
+      "price_eur": 0.69,
       "set": "eoc"
     },
     "ram through": {
       "collector_number": "314",
-      "price_eur": 0.54,
+      "price_eur": 0.4,
       "set": "cmm"
     },
     "rampaging baloths": {
       "collector_number": "104",
-      "price_eur": 0.23,
+      "price_eur": 0.35,
       "set": "eoc"
     },
     "rampant growth": {
       "collector_number": "265",
-      "price_eur": 0.51,
+      "price_eur": 0.49,
       "set": "tdc"
     },
     "ranger's guile": {
@@ -3155,32 +3165,32 @@
     },
     "rapacious dragon": {
       "collector_number": "229",
-      "price_eur": 0.07,
+      "price_eur": 0.2,
       "set": "tdc"
     },
     "ravener": {
       "collector_number": "138",
-      "price_eur": 0.35,
+      "price_eur": 0.19,
       "set": "40k"
     },
     "ravening warg": {
       "collector_number": "80",
-      "price_eur": 0.03,
+      "price_eur": 0.21,
       "set": "hob"
     },
     "razorfield ripper": {
       "collector_number": "94",
-      "price_eur": 0.5,
+      "price_eur": 0.4,
       "set": "m3c"
     },
     "read the bones": {
       "collector_number": "154",
-      "price_eur": 0.35,
+      "price_eur": 0.39,
       "set": "dsc"
     },
     "reassembling skeleton": {
       "collector_number": "195",
-      "price_eur": 0.23,
+      "price_eur": 0.15,
       "set": "tdc"
     },
     "reclamation sage": {
@@ -3190,17 +3200,17 @@
     },
     "recursive recruitment": {
       "collector_number": "147",
-      "price_eur": 0.1,
+      "price_eur": 0.07,
       "set": "fra"
     },
     "redoubled stormsinger": {
       "collector_number": "251",
-      "price_eur": 0.27,
+      "price_eur": 0.16,
       "set": "soc"
     },
     "refocus": {
       "collector_number": "47",
-      "price_eur": 0.05,
+      "price_eur": 0.08,
       "set": "frf"
     },
     "reigning victor": {
@@ -3210,147 +3220,147 @@
     },
     "reiterating bolt": {
       "collector_number": "134",
-      "price_eur": 0.02,
+      "price_eur": 0.03,
       "set": "mh3"
     },
     "rescue": {
       "collector_number": "63",
-      "price_eur": 0.05,
+      "price_eur": 0.02,
       "set": "dom"
     },
     "reverent howl": {
       "collector_number": "81",
-      "price_eur": 0.04,
+      "price_eur": 0.05,
       "set": "hob"
     },
     "riddle gate gargoyle": {
       "collector_number": "201",
-      "price_eur": 0.02,
+      "price_eur": 0.1,
       "set": "mh3"
     },
     "rishkar, peema renegade": {
       "collector_number": "305",
-      "price_eur": 0.2,
+      "price_eur": 0.26,
       "set": "ncc"
     },
     "rite of flame": {
       "collector_number": "96",
-      "price_eur": 2.58,
+      "price_eur": 2.95,
       "set": "csp"
     },
     "roar of challenge": {
       "collector_number": "145",
-      "price_eur": 0.18,
+      "price_eur": 0.17,
       "set": "ktk"
     },
     "roil cartographer": {
       "collector_number": "67",
-      "price_eur": 0.3,
+      "price_eur": 0.13,
       "set": "mh3"
     },
     "roiling canopy": {
       "collector_number": "187",
-      "price_eur": 1.33,
+      "price_eur": 1.15,
       "set": "fra"
     },
     "roiling regrowth": {
       "collector_number": "105",
-      "price_eur": 0.25,
+      "price_eur": 0.35,
       "set": "eoc"
     },
     "rootha, mastering the moment": {
       "collector_number": "8",
-      "price_eur": 0.7,
+      "price_eur": 0.28,
       "set": "soc"
     },
     "rootha, mercurial artist": {
       "collector_number": "227",
-      "price_eur": 0.03,
+      "price_eur": 0.13,
       "set": "stx"
     },
     "rotwidow pack": {
       "collector_number": "212",
-      "price_eur": 0.28,
+      "price_eur": 0.15,
       "set": "mh1"
     },
     "rousing refrain": {
       "collector_number": "178",
-      "price_eur": 0.5,
+      "price_eur": 0.49,
       "set": "otc"
     },
     "rust goliath": {
       "collector_number": "204",
-      "price_eur": 0.02,
+      "price_eur": 0.05,
       "set": "bro"
     },
     "ruthless knave": {
       "collector_number": "119",
-      "price_eur": 0.08,
+      "price_eur": 0.14,
       "set": "xln"
     },
     "ruthless negotiation": {
       "collector_number": "108",
-      "price_eur": 0.22,
+      "price_eur": 0.19,
       "set": "blb"
     },
     "sakura-tribe elder": {
       "collector_number": "285",
-      "price_eur": 0.45,
+      "price_eur": 0.51,
       "set": "soc"
     },
     "salvation colossus": {
       "collector_number": "95",
-      "price_eur": 0.22,
+      "price_eur": 0.23,
       "set": "m3c"
     },
     "samut's sprint": {
       "collector_number": "142",
-      "price_eur": 0.12,
+      "price_eur": 0.09,
       "set": "war"
     },
     "satya, aetherflux genius": {
       "collector_number": "3",
-      "price_eur": 0.23,
+      "price_eur": 0.38,
       "set": "m3c"
     },
     "satyr wayfinder": {
       "collector_number": "106",
-      "price_eur": 0.14,
+      "price_eur": 0.15,
       "set": "eoc"
     },
     "savannah lions": {
       "collector_number": "146",
-      "price_eur": 0.05,
+      "price_eur": 0.21,
       "set": "fdn"
     },
     "savor": {
       "collector_number": "109",
-      "price_eur": 0.02,
+      "price_eur": 0.03,
       "set": "blb"
     },
     "savvy hunter": {
       "collector_number": "200",
-      "price_eur": 0.24,
+      "price_eur": 0.08,
       "set": "eld"
     },
     "scorching dragonfire": {
       "collector_number": "545",
-      "price_eur": 0.02,
+      "price_eur": 0.05,
       "set": "fdn"
     },
     "scouring swarm": {
       "collector_number": "16",
-      "price_eur": 0.09,
+      "price_eur": 0.19,
       "set": "eoc"
     },
     "screamer-killer": {
       "collector_number": "84",
-      "price_eur": 0.88,
+      "price_eur": 0.5,
       "set": "40k"
     },
     "screamreach brawler": {
       "collector_number": "155",
-      "price_eur": 0.02,
+      "price_eur": 0.05,
       "set": "dtk"
     },
     "scroll thief": {
@@ -3360,7 +3370,7 @@
     },
     "scurry of gremlins": {
       "collector_number": "203",
-      "price_eur": 0.03,
+      "price_eur": 0.16,
       "set": "mh3"
     },
     "seismic stomp": {
@@ -3370,18 +3380,23 @@
     },
     "seize the spoils": {
       "collector_number": "149",
-      "price_eur": 0.23,
+      "price_eur": 0.15,
       "set": "khm"
     },
     "select for inspection": {
       "collector_number": "63",
-      "price_eur": 0.04,
+      "price_eur": 0.09,
       "set": "kld"
     },
     "selfless safewright": {
       "collector_number": "193",
-      "price_eur": 0.73,
+      "price_eur": 0.92,
       "set": "ecl"
+    },
+    "selvala, heart of the wilds": {
+      "collector_number": "246",
+      "price_eur": 4.44,
+      "set": "m3c"
     },
     "semester foreseer // peer review": {
       "collector_number": "39",
@@ -3395,37 +3410,37 @@
     },
     "sentry bot": {
       "collector_number": "24",
-      "price_eur": 0.14,
+      "price_eur": 0.43,
       "set": "pip"
     },
     "serum visions": {
       "collector_number": "112",
-      "price_eur": 0.85,
+      "price_eur": 0.68,
       "set": "otc"
     },
     "setessan tactics": {
       "collector_number": "140",
-      "price_eur": 1.08,
+      "price_eur": 0.67,
       "set": "jou"
     },
     "shadow in the warp": {
       "collector_number": "140",
-      "price_eur": 18.64,
+      "price_eur": 16.0,
       "set": "40k"
     },
     "shaman of the great hunt": {
       "collector_number": "113",
-      "price_eur": 0.58,
+      "price_eur": 1.5,
       "set": "frf"
     },
     "shaman of the pack": {
       "collector_number": "92",
-      "price_eur": 0.69,
+      "price_eur": 0.6,
       "set": "khc"
     },
     "shark typhoon": {
       "collector_number": "113",
-      "price_eur": 1.81,
+      "price_eur": 1.99,
       "set": "otc"
     },
     "shatterwing pegasus": {
@@ -3435,47 +3450,47 @@
     },
     "shelob, child of ungoliant": {
       "collector_number": "230",
-      "price_eur": 0.75,
+      "price_eur": 0.46,
       "set": "ltr"
     },
     "sheltered thicket": {
       "collector_number": "178",
-      "price_eur": 0.2,
+      "price_eur": 1.0,
       "set": "eoc"
     },
     "shivan reef": {
       "collector_number": "320",
-      "price_eur": 0.47,
+      "price_eur": 0.44,
       "set": "otc"
     },
     "shore up": {
       "collector_number": "69",
-      "price_eur": 0.11,
+      "price_eur": 0.09,
       "set": "blb"
     },
     "silence the echo": {
       "collector_number": "66",
-      "price_eur": 0.02,
+      "price_eur": 0.05,
       "set": "fra"
     },
     "silklash spider": {
       "collector_number": "145",
-      "price_eur": 0.25,
+      "price_eur": 0.15,
       "set": "cma"
     },
     "silverquill lecturer": {
       "collector_number": "96",
-      "price_eur": 0.29,
+      "price_eur": 0.18,
       "set": "m3c"
     },
     "simian spirit guide": {
       "collector_number": "190",
-      "price_eur": 1.22,
+      "price_eur": 1.82,
       "set": "tsr"
     },
     "six": {
       "collector_number": "169",
-      "price_eur": 4.87,
+      "price_eur": 4.45,
       "set": "mh3"
     },
     "skeleton archer": {
@@ -3485,17 +3500,17 @@
     },
     "skilled battlecarver": {
       "collector_number": "92",
-      "price_eur": 0.02,
+      "price_eur": 0.35,
       "set": "fra"
     },
     "skullclamp": {
       "collector_number": "283",
-      "price_eur": 6.89,
+      "price_eur": 6.04,
       "set": "blc"
     },
     "skullport merchant": {
       "collector_number": "149",
-      "price_eur": 0.1,
+      "price_eur": 0.22,
       "set": "clb"
     },
     "sky diamond": {
@@ -3505,27 +3520,27 @@
     },
     "skyclave apparition": {
       "collector_number": "172",
-      "price_eur": 0.35,
+      "price_eur": 0.72,
       "set": "m3c"
     },
     "skyclave sentinel": {
       "collector_number": "253",
-      "price_eur": 0.2,
+      "price_eur": 0.02,
       "set": "znr"
     },
     "skyraker giant": {
       "collector_number": "547",
-      "price_eur": 0.15,
+      "price_eur": 0.14,
       "set": "fdn"
     },
     "skyship buccaneer": {
       "collector_number": "50",
-      "price_eur": 0.02,
+      "price_eur": 0.06,
       "set": "fdn"
     },
     "skyshroud claim": {
       "collector_number": "107",
-      "price_eur": 1.18,
+      "price_eur": 1.48,
       "set": "eoc"
     },
     "smaug's fury": {
@@ -3535,172 +3550,172 @@
     },
     "smaug, the great calamity // spew flame": {
       "collector_number": "109",
-      "price_eur": 0.05,
+      "price_eur": 0.08,
       "set": "hob"
     },
     "smaug, wicked worm": {
       "collector_number": "164",
-      "price_eur": 1.8,
+      "price_eur": 1.44,
       "set": "hob"
     },
     "smoldering marsh": {
       "collector_number": "182",
-      "price_eur": 0.27,
+      "price_eur": 0.24,
       "set": "eoc"
     },
     "smoldering stagecoach": {
       "collector_number": "30",
-      "price_eur": 0.2,
+      "price_eur": 0.17,
       "set": "otc"
     },
     "snakeskin veil": {
       "collector_number": "159",
-      "price_eur": 0.1,
+      "price_eur": 0.14,
       "set": "tdm"
     },
     "snap": {
       "collector_number": "43",
-      "price_eur": 3.03,
+      "price_eur": 3.34,
       "set": "ulg"
     },
     "sol ring": {
       "collector_number": "267",
-      "price_eur": 1.54,
+      "price_eur": 1.8,
       "set": "otc"
     },
     "solar transformer": {
       "collector_number": "137",
-      "price_eur": 0.17,
+      "price_eur": 0.1,
       "set": "drc"
     },
     "solemn simulacrum": {
       "collector_number": "306",
-      "price_eur": 0.15,
+      "price_eur": 0.39,
       "set": "m3c"
     },
     "solve for disappointment": {
       "collector_number": "67",
-      "price_eur": 0.14,
+      "price_eur": 0.02,
       "set": "fra"
     },
     "solve the equation": {
       "collector_number": "54",
-      "price_eur": 2.38,
+      "price_eur": 2.81,
       "set": "stx"
     },
     "soul of windgrace": {
       "collector_number": "126",
-      "price_eur": 0.25,
+      "price_eur": 0.38,
       "set": "eoc"
     },
     "sound the trumpets": {
       "collector_number": "55",
-      "price_eur": 0.08,
+      "price_eur": 0.05,
       "set": "hob"
     },
     "sparkshaper visionary": {
       "collector_number": "726",
-      "price_eur": 0.3,
+      "price_eur": 0.38,
       "set": "cmm"
     },
     "spectral sailor": {
       "collector_number": "164",
-      "price_eur": 0.07,
+      "price_eur": 0.08,
       "set": "fdn"
     },
     "spell pierce": {
       "collector_number": "64",
-      "price_eur": 0.25,
+      "price_eur": 0.36,
       "set": "dft"
     },
     "sphinx of the revelation": {
       "collector_number": "127",
-      "price_eur": 0.43,
+      "price_eur": 0.41,
       "set": "m3c"
     },
     "sphinx's approach": {
       "collector_number": "41",
-      "price_eur": 0.76,
+      "price_eur": 0.39,
       "set": "fra"
     },
     "spider spawning": {
       "collector_number": "216",
-      "price_eur": 0.02,
+      "price_eur": 0.09,
       "set": "inr"
     },
     "spinning wheel kick": {
       "collector_number": "207",
-      "price_eur": 0.11,
+      "price_eur": 0.19,
       "set": "neo"
     },
     "splendid reclamation": {
       "collector_number": "108",
-      "price_eur": 0.61,
+      "price_eur": 0.71,
       "set": "eoc"
     },
     "sporeweb weaver": {
       "collector_number": "208",
-      "price_eur": 0.3,
+      "price_eur": 0.48,
       "set": "m21"
     },
     "sporocyst": {
       "collector_number": "98",
-      "price_eur": 16.78,
+      "price_eur": 16.39,
       "set": "40k"
     },
     "springbloom druid": {
       "collector_number": "287",
-      "price_eur": 0.22,
+      "price_eur": 0.25,
       "set": "soc"
     },
     "sprouting goblin": {
       "collector_number": "90",
-      "price_eur": 0.27,
+      "price_eur": 0.18,
       "set": "eoc"
     },
     "star compass": {
       "collector_number": "229",
-      "price_eur": 0.28,
+      "price_eur": 0.29,
       "set": "ima"
     },
     "starlight snare": {
       "collector_number": "514",
-      "price_eur": 0.1,
+      "price_eur": 0.08,
       "set": "fdn"
     },
     "starstorm": {
       "collector_number": "208",
-      "price_eur": 0.21,
+      "price_eur": 0.38,
       "set": "40k"
     },
     "stella lee, wild card": {
       "collector_number": "3",
-      "price_eur": 3.5,
+      "price_eur": 3.31,
       "set": "otc"
     },
     "stickytongue sentinel": {
       "collector_number": "193",
-      "price_eur": 0.17,
+      "price_eur": 0.24,
       "set": "blb"
     },
     "stingerquill voxmancer // vicious verse": {
       "collector_number": "151",
-      "price_eur": 0.13,
+      "price_eur": 0.1,
       "set": "fra"
     },
     "stir up trouble": {
       "collector_number": "84",
-      "price_eur": 0.04,
+      "price_eur": 0.05,
       "set": "hob"
     },
     "stone idol generator": {
       "collector_number": "129",
-      "price_eur": 0.85,
+      "price_eur": 0.25,
       "set": "m3c"
     },
     "stony-voiced goblins": {
       "collector_number": "85",
-      "price_eur": 0.06,
+      "price_eur": 0.03,
       "set": "hob"
     },
     "storm fleet arsonist": {
@@ -3710,52 +3725,52 @@
     },
     "storm fleet spy": {
       "collector_number": "515",
-      "price_eur": 0.25,
+      "price_eur": 0.05,
       "set": "fdn"
     },
     "storm of memories": {
       "collector_number": "126",
-      "price_eur": 1.6,
+      "price_eur": 0.89,
       "set": "tle"
     },
     "storm-kiln artist": {
       "collector_number": "255",
-      "price_eur": 1.55,
+      "price_eur": 1.64,
       "set": "soc"
     },
     "strife scholar // awaken the ages": {
       "collector_number": "131",
-      "price_eur": 0.1,
+      "price_eur": 0.02,
       "set": "sos"
     },
     "strike it rich": {
       "collector_number": "12",
-      "price_eur": 0.98,
+      "price_eur": 0.58,
       "set": "h2r"
     },
     "stromkirk bloodthief": {
       "collector_number": "185",
-      "price_eur": 0.06,
+      "price_eur": 0.05,
       "set": "fdn"
     },
     "strongbox raider": {
       "collector_number": "96",
-      "price_eur": 0.24,
+      "price_eur": 0.02,
       "set": "fdn"
     },
     "sulfur falls": {
       "collector_number": "322",
-      "price_eur": 0.81,
+      "price_eur": 0.49,
       "set": "otc"
     },
     "sulfurous springs": {
       "collector_number": "185",
-      "price_eur": 1.48,
+      "price_eur": 1.0,
       "set": "eoc"
     },
     "sunshower druid": {
       "collector_number": "195",
-      "price_eur": 0.18,
+      "price_eur": 0.02,
       "set": "blb"
     },
     "sureshot sower": {
@@ -3765,147 +3780,147 @@
     },
     "surveillance phantasm": {
       "collector_number": "42",
-      "price_eur": 0.1,
+      "price_eur": 0.03,
       "set": "fra"
     },
     "suspicious shambler": {
       "collector_number": "527",
-      "price_eur": 0.26,
+      "price_eur": 0.08,
       "set": "fdn"
     },
     "sutina, speaker of the tajuru": {
       "collector_number": "56",
-      "price_eur": 0.29,
+      "price_eur": 0.27,
       "set": "j25"
     },
     "swab goblin": {
       "collector_number": "548",
-      "price_eur": 0.1,
+      "price_eur": 0.12,
       "set": "fdn"
     },
     "swiftfoot boots": {
       "collector_number": "328",
-      "price_eur": 1.75,
+      "price_eur": 2.64,
       "set": "tdc"
     },
     "swords to plowshares": {
       "collector_number": "179",
-      "price_eur": 2.22,
+      "price_eur": 3.01,
       "set": "soc"
     },
     "synth eradicator": {
       "collector_number": "67",
-      "price_eur": 0.41,
+      "price_eur": 0.32,
       "set": "pip"
     },
     "szarel, genesis shepherd": {
       "collector_number": "4",
-      "price_eur": 1.99,
+      "price_eur": 0.64,
       "set": "eoc"
     },
     "tackle artist": {
       "collector_number": "133",
-      "price_eur": 0.39,
+      "price_eur": 0.02,
       "set": "sos"
     },
     "tainted isle": {
       "collector_number": "141",
-      "price_eur": 1.59,
+      "price_eur": 1.83,
       "set": "tor"
     },
     "tainted wood": {
       "collector_number": "305",
-      "price_eur": 0.33,
+      "price_eur": 0.38,
       "set": "dsc"
     },
     "tajuru pathwarden": {
       "collector_number": "558",
-      "price_eur": 0.05,
+      "price_eur": 0.69,
       "set": "fdn"
     },
     "talisman of conviction": {
       "collector_number": "329",
-      "price_eur": 0.31,
+      "price_eur": 0.3,
       "set": "tdc"
     },
     "talisman of creativity": {
       "collector_number": "357",
-      "price_eur": 2.49,
+      "price_eur": 3.1,
       "set": "soc"
     },
     "talisman of progress": {
       "collector_number": "333",
-      "price_eur": 0.69,
+      "price_eur": 0.4,
       "set": "tdc"
     },
     "talrand, sky summoner": {
       "collector_number": "116",
-      "price_eur": 0.15,
+      "price_eur": 0.39,
       "set": "otc"
     },
     "tam's resistance": {
       "collector_number": "153",
-      "price_eur": 0.03,
+      "price_eur": 0.02,
       "set": "fra"
     },
     "tear asunder": {
       "collector_number": "109",
-      "price_eur": 0.31,
+      "price_eur": 0.27,
       "set": "eoc"
     },
     "temple of abandon": {
       "collector_number": "297",
-      "price_eur": 0.25,
+      "price_eur": 0.24,
       "set": "40k"
     },
     "temple of deceit": {
       "collector_number": "205",
-      "price_eur": 0.32,
+      "price_eur": 0.25,
       "set": "brc"
     },
     "temple of enlightenment": {
       "collector_number": "386",
-      "price_eur": 0.12,
+      "price_eur": 0.31,
       "set": "m3c"
     },
     "temple of epiphany": {
       "collector_number": "298",
-      "price_eur": 0.24,
+      "price_eur": 0.23,
       "set": "40k"
     },
     "temple of malady": {
       "collector_number": "388",
-      "price_eur": 0.15,
+      "price_eur": 0.2,
       "set": "m3c"
     },
     "temple of mystery": {
       "collector_number": "299",
-      "price_eur": 0.39,
+      "price_eur": 0.23,
       "set": "40k"
     },
     "temple of triumph": {
       "collector_number": "392",
-      "price_eur": 0.21,
+      "price_eur": 0.35,
       "set": "m3c"
     },
     "temur battlecrier": {
       "collector_number": "425",
-      "price_eur": 0.69,
+      "price_eur": 0.8,
       "set": "tdm"
     },
     "termagant swarm": {
       "collector_number": "99",
-      "price_eur": 1.35,
+      "price_eur": 1.07,
       "set": "40k"
     },
     "terror of mount velus": {
       "collector_number": "549",
-      "price_eur": 1.48,
+      "price_eur": 1.25,
       "set": "fdn"
     },
     "tervigon": {
       "collector_number": "100",
-      "price_eur": 4.49,
+      "price_eur": 4.66,
       "set": "40k"
     },
     "tether technician": {
@@ -3920,57 +3935,57 @@
     },
     "tezzeret's gambit": {
       "collector_number": "194",
-      "price_eur": 0.17,
+      "price_eur": 0.47,
       "set": "m3c"
     },
     "the chief warg": {
       "collector_number": "150",
-      "price_eur": 0.16,
+      "price_eur": 0.07,
       "set": "hob"
     },
     "the eagles are coming!": {
       "collector_number": "12",
-      "price_eur": 0.75,
+      "price_eur": 0.57,
       "set": "hob"
     },
     "the first tyrannic war": {
       "collector_number": "121",
-      "price_eur": 0.25,
+      "price_eur": 0.19,
       "set": "40k"
     },
     "the gitrog monster": {
       "collector_number": "117",
-      "price_eur": 1.03,
+      "price_eur": 1.13,
       "set": "eoc"
     },
     "the lord of the eagles": {
       "collector_number": "46",
-      "price_eur": 0.35,
+      "price_eur": 0.28,
       "set": "hob"
     },
     "the motherlode, excavator": {
       "collector_number": "62",
-      "price_eur": 0.2,
+      "price_eur": 0.25,
       "set": "pip"
     },
     "the mountain-king's return": {
       "collector_number": "22",
-      "price_eur": 0.1,
+      "price_eur": 0.05,
       "set": "hob"
     },
     "the red terror": {
       "collector_number": "83",
-      "price_eur": 3.39,
+      "price_eur": 3.95,
       "set": "40k"
     },
     "the swarmlord": {
       "collector_number": "176",
-      "price_eur": 0.43,
+      "price_eur": 0.38,
       "set": "40k"
     },
     "the theorist, jace beleren": {
       "collector_number": "43",
-      "price_eur": 24.33,
+      "price_eur": 49.2,
       "set": "fra"
     },
     "theorix metamage // omit variables": {
@@ -3980,17 +3995,17 @@
     },
     "think twice": {
       "collector_number": "168",
-      "price_eur": 0.1,
+      "price_eur": 0.05,
       "set": "tdc"
     },
     "third path iconoclast": {
       "collector_number": "307",
-      "price_eur": 0.52,
+      "price_eur": 0.43,
       "set": "tdc"
     },
     "thirst for identity": {
       "collector_number": "79",
-      "price_eur": 0.12,
+      "price_eur": 0.33,
       "set": "ecl"
     },
     "thistledown players": {
@@ -4005,57 +4020,57 @@
     },
     "thornbite staff": {
       "collector_number": "145",
-      "price_eur": 6.51,
+      "price_eur": 4.91,
       "set": "mor"
     },
     "thornweald archer": {
       "collector_number": "559",
-      "price_eur": 0.05,
+      "price_eur": 0.22,
       "set": "fdn"
     },
     "thornwood falls": {
       "collector_number": "302",
-      "price_eur": 0.1,
+      "price_eur": 0.13,
       "set": "40k"
     },
     "thranduil's company": {
       "collector_number": "168",
-      "price_eur": 0.55,
+      "price_eur": 0.29,
       "set": "hob"
     },
     "thranduil, the elvenking": {
       "collector_number": "167",
-      "price_eur": 0.53,
+      "price_eur": 0.55,
       "set": "hob"
     },
     "thrasher brute": {
       "collector_number": "52",
-      "price_eur": 0.5,
+      "price_eur": 0.04,
       "set": "bbd"
     },
     "thrashing brontodon": {
       "collector_number": "560",
-      "price_eur": 0.25,
+      "price_eur": 0.1,
       "set": "fdn"
     },
     "three tree scribe": {
       "collector_number": "199",
-      "price_eur": 0.25,
+      "price_eur": 0.1,
       "set": "blb"
     },
     "thrill of possibility": {
       "collector_number": "210",
-      "price_eur": 0.09,
+      "price_eur": 0.08,
       "set": "fdn"
     },
     "thrór's map": {
       "collector_number": "179",
-      "price_eur": 0.12,
+      "price_eur": 0.11,
       "set": "hob"
     },
     "thunderclap drake": {
       "collector_number": "17",
-      "price_eur": 3.5,
+      "price_eur": 2.42,
       "set": "otc"
     },
     "tidings of war": {
@@ -4070,152 +4085,162 @@
     },
     "tireless provisioner": {
       "collector_number": "243",
-      "price_eur": 2.5,
+      "price_eur": 2.49,
       "set": "blc"
     },
     "tireless tracker": {
       "collector_number": "110",
-      "price_eur": 0.18,
+      "price_eur": 0.31,
       "set": "eoc"
     },
     "titania, protector of argoth": {
       "collector_number": "111",
-      "price_eur": 0.49,
+      "price_eur": 0.3,
       "set": "eoc"
     },
     "tolarian terror": {
       "collector_number": "167",
-      "price_eur": 0.06,
+      "price_eur": 0.34,
       "set": "fdn"
     },
     "tomakul honor guard": {
       "collector_number": "195",
-      "price_eur": 0.02,
+      "price_eur": 0.03,
       "set": "bro"
     },
     "toxicrene": {
       "collector_number": "101",
-      "price_eur": 0.47,
+      "price_eur": 0.43,
       "set": "40k"
     },
     "trail of crumbs": {
       "collector_number": "179",
-      "price_eur": 0.46,
+      "price_eur": 0.28,
       "set": "eld"
     },
     "treasure cruise": {
       "collector_number": "205",
-      "price_eur": 0.1,
+      "price_eur": 0.14,
       "set": "soc"
     },
     "troll negotiations": {
       "collector_number": "138",
-      "price_eur": 0.14,
+      "price_eur": 0.05,
       "set": "hob"
     },
     "troop of ponies": {
       "collector_number": "199",
-      "price_eur": 0.26,
+      "price_eur": 0.27,
       "set": "hob"
     },
     "trygon prime": {
       "collector_number": "143",
-      "price_eur": 0.17,
+      "price_eur": 0.14,
       "set": "40k"
     },
     "tune the narrative": {
       "collector_number": "75",
-      "price_eur": 0.18,
+      "price_eur": 0.07,
       "set": "mh3"
     },
     "twilight mire": {
       "collector_number": "189",
-      "price_eur": 0.54,
+      "price_eur": 0.76,
       "set": "eoc"
     },
     "twin-silk spider": {
       "collector_number": "188",
-      "price_eur": 0.36,
+      "price_eur": 0.05,
       "set": "mh1"
     },
     "twinblade paladin": {
       "collector_number": "503",
-      "price_eur": 1.0,
+      "price_eur": 0.85,
       "set": "fdn"
     },
     "twinned vision": {
       "collector_number": "157",
-      "price_eur": 0.12,
+      "price_eur": 0.15,
       "set": "fra"
     },
     "twisted fealty": {
       "collector_number": "154",
-      "price_eur": 0.13,
+      "price_eur": 0.05,
       "set": "woe"
     },
     "twitch": {
       "collector_number": "43",
-      "price_eur": 0.1,
+      "price_eur": 0.39,
       "set": "wwk"
     },
     "ty lee, artful acrobat": {
       "collector_number": "158",
-      "price_eur": 0.11,
+      "price_eur": 0.02,
       "set": "tla"
     },
     "tymora's invoker": {
       "collector_number": "101",
-      "price_eur": 0.11,
+      "price_eur": 0.02,
       "set": "clb"
     },
     "tyranid harridan": {
       "collector_number": "144",
-      "price_eur": 0.25,
+      "price_eur": 0.28,
       "set": "40k"
     },
     "tyranid invasion": {
       "collector_number": "102",
-      "price_eur": 0.24,
+      "price_eur": 0.09,
       "set": "40k"
     },
     "tyranid prime": {
       "collector_number": "145",
-      "price_eur": 0.39,
+      "price_eur": 0.29,
       "set": "40k"
     },
     "tyrant guard": {
       "collector_number": "103",
-      "price_eur": 4.55,
+      "price_eur": 7.4,
       "set": "40k"
     },
     "tyvar's stand": {
       "collector_number": "291",
-      "price_eur": 1.44,
+      "price_eur": 1.05,
       "set": "soc"
+    },
+    "tyvar, jubilant brawler": {
+      "collector_number": "218",
+      "price_eur": 1.73,
+      "set": "one"
     },
     "uglúk of the white hand": {
       "collector_number": "235",
-      "price_eur": 0.16,
+      "price_eur": 0.13,
       "set": "ltr"
     },
     "uldaros theorix": {
       "collector_number": "159",
-      "price_eur": 2.48,
+      "price_eur": 2.66,
       "set": "fra"
     },
     "unauthorized exit": {
       "collector_number": "298",
-      "price_eur": 0.07,
+      "price_eur": 0.09,
       "set": "mkm"
+    },
+    "underground river": {
+      "collector_number": "267",
+      "price_eur": 1.2,
+      "set": "bro"
     },
     "undying malice": {
       "collector_number": "528",
-      "price_eur": 0.61,
+      "price_eur": 0.38,
       "set": "fdn"
     },
     "unexpected windfall": {
       "collector_number": "193",
-      "price_eur": 4.44,
+      "price_eur": 3.86,
       "set": "pip"
     },
     "unnatural speed": {
@@ -4225,12 +4250,12 @@
     },
     "unstable amulet": {
       "collector_number": "142",
-      "price_eur": 0.32,
+      "price_eur": 0.6,
       "set": "mh3"
     },
     "untamed hunger": {
       "collector_number": "529",
-      "price_eur": 0.02,
+      "price_eur": 0.07,
       "set": "fdn"
     },
     "unyielding krumar": {
@@ -4240,82 +4265,82 @@
     },
     "uruk-hai berserker": {
       "collector_number": "112",
-      "price_eur": 0.26,
+      "price_eur": 0.06,
       "set": "ltr"
     },
     "uthros psionicist": {
       "collector_number": "84",
-      "price_eur": 0.15,
+      "price_eur": 0.43,
       "set": "eoe"
     },
     "uurg, spawn of turg": {
       "collector_number": "127",
-      "price_eur": 0.1,
+      "price_eur": 0.11,
       "set": "eoc"
     },
     "vampire interloper": {
       "collector_number": "530",
-      "price_eur": 0.25,
+      "price_eur": 0.02,
       "set": "fdn"
     },
     "vampire neonate": {
       "collector_number": "531",
-      "price_eur": 0.25,
+      "price_eur": 0.3,
       "set": "fdn"
     },
     "vampire spawn": {
       "collector_number": "532",
-      "price_eur": 0.02,
+      "price_eur": 0.3,
       "set": "fdn"
     },
     "vaultbreaker": {
       "collector_number": "117",
-      "price_eur": 0.02,
+      "price_eur": 0.08,
       "set": "frf"
     },
     "velvetwing butterflies // gaze in wonder": {
       "collector_number": "30",
-      "price_eur": 0.13,
+      "price_eur": 0.05,
       "set": "hob"
     },
     "venerated stormsinger": {
       "collector_number": "97",
-      "price_eur": 0.28,
+      "price_eur": 0.15,
       "set": "tdm"
     },
     "vengeful bloodwitch": {
       "collector_number": "76",
-      "price_eur": 0.22,
+      "price_eur": 0.16,
       "set": "fdn"
     },
     "vengeful warchief": {
       "collector_number": "121",
-      "price_eur": 0.24,
+      "price_eur": 0.1,
       "set": "m20"
     },
     "venomthrope": {
       "collector_number": "147",
-      "price_eur": 3.58,
+      "price_eur": 4.61,
       "set": "40k"
     },
     "vernal fen": {
       "collector_number": "24",
-      "price_eur": 0.8,
+      "price_eur": 0.75,
       "set": "eoc"
     },
     "village rites": {
       "collector_number": "212",
-      "price_eur": 0.42,
+      "price_eur": 0.25,
       "set": "lcc"
     },
     "vinelasher adept": {
       "collector_number": "119",
-      "price_eur": 0.05,
+      "price_eur": 0.03,
       "set": "fra"
     },
     "viridescent bog": {
       "collector_number": "190",
-      "price_eur": 0.26,
+      "price_eur": 0.34,
       "set": "eoc"
     },
     "viridian longbow": {
@@ -4325,7 +4350,7 @@
     },
     "viscera seer": {
       "collector_number": "229",
-      "price_eur": 0.69,
+      "price_eur": 1.21,
       "set": "soc"
     },
     "voiceless spirit": {
@@ -4340,17 +4365,17 @@
     },
     "volatile stormdrake": {
       "collector_number": "79",
-      "price_eur": 0.93,
+      "price_eur": 1.05,
       "set": "mh3"
     },
     "volcanic torrent": {
       "collector_number": "260",
-      "price_eur": 0.23,
+      "price_eur": 0.18,
       "set": "soc"
     },
     "volley veteran": {
       "collector_number": "550",
-      "price_eur": 0.25,
+      "price_eur": 0.05,
       "set": "fdn"
     },
     "vow to erebor": {
@@ -4360,17 +4385,17 @@
     },
     "warbringer": {
       "collector_number": "168",
-      "price_eur": 0.5,
+      "price_eur": 0.02,
       "set": "dtk"
     },
     "warg tactics": {
       "collector_number": "139",
-      "price_eur": 0.09,
+      "price_eur": 0.1,
       "set": "hob"
     },
     "wargling": {
       "collector_number": "140",
-      "price_eur": 0.03,
+      "price_eur": 0.05,
       "set": "hob"
     },
     "watcher in the web": {
@@ -4380,12 +4405,12 @@
     },
     "way of the healer": {
       "collector_number": "207",
-      "price_eur": 0.15,
+      "price_eur": 0.06,
       "set": "fra"
     },
     "wayfarer's bauble": {
       "collector_number": "315",
-      "price_eur": 0.21,
+      "price_eur": 0.22,
       "set": "m3c"
     },
     "wayspeaker bodyguard": {
@@ -4395,112 +4420,112 @@
     },
     "well-worn spatula": {
       "collector_number": "180",
-      "price_eur": 0.03,
+      "price_eur": 0.02,
       "set": "hob"
     },
     "wheel of potential": {
       "collector_number": "144",
-      "price_eur": 0.06,
+      "price_eur": 0.18,
       "set": "mh3"
     },
     "whiplash wordsmith // vicious verse": {
       "collector_number": "164",
-      "price_eur": 0.03,
+      "price_eur": 0.09,
       "set": "fra"
     },
     "whirler virtuoso": {
       "collector_number": "122",
-      "price_eur": 0.02,
+      "price_eur": 0.04,
       "set": "drc"
     },
     "wild unraveling": {
       "collector_number": "84",
-      "price_eur": 0.03,
+      "price_eur": 0.02,
       "set": "ecl"
     },
     "wildborn preserver": {
       "collector_number": "182",
-      "price_eur": 0.2,
+      "price_eur": 0.17,
       "set": "eld"
     },
     "wilderland scrounger": {
       "collector_number": "141",
-      "price_eur": 0.14,
+      "price_eur": 0.07,
       "set": "hob"
     },
     "wildheart invoker": {
       "collector_number": "561",
-      "price_eur": 0.04,
+      "price_eur": 0.13,
       "set": "fdn"
     },
     "wildwood scourge": {
       "collector_number": "236",
-      "price_eur": 0.12,
+      "price_eur": 0.02,
       "set": "fdn"
     },
     "windfall": {
       "collector_number": "123",
-      "price_eur": 4.73,
+      "price_eur": 4.45,
       "set": "otc"
     },
     "windgrace's judgment": {
       "collector_number": "129",
-      "price_eur": 0.34,
+      "price_eur": 0.1,
       "set": "eoc"
     },
     "winged boots": {
       "collector_number": "124",
-      "price_eur": 8.1,
+      "price_eur": 8.95,
       "set": "otc"
     },
     "winged hive tyrant": {
       "collector_number": "148",
-      "price_eur": 1.28,
+      "price_eur": 2.0,
       "set": "40k"
     },
     "winter, team player": {
       "collector_number": "312",
-      "price_eur": 0.33,
+      "price_eur": 0.11,
       "set": "fra"
     },
     "winter, tormented loner": {
       "collector_number": "307",
-      "price_eur": 0.38,
+      "price_eur": 0.37,
       "set": "fra"
     },
     "wirewood channeler": {
       "collector_number": "79",
-      "price_eur": 1.12,
+      "price_eur": 0.5,
       "set": "khc"
     },
     "wood elves": {
       "collector_number": "142",
-      "price_eur": 0.07,
+      "price_eur": 0.03,
       "set": "hob"
     },
     "woodland cemetery": {
       "collector_number": "354",
-      "price_eur": 1.27,
+      "price_eur": 0.98,
       "set": "blc"
     },
     "woodland weavemaster": {
       "collector_number": "143",
-      "price_eur": 0.18,
+      "price_eur": 0.13,
       "set": "hob"
     },
     "world breaker": {
       "collector_number": "112",
-      "price_eur": 0.3,
+      "price_eur": 0.15,
       "set": "eoc"
     },
     "worldsoul's rage": {
       "collector_number": "130",
-      "price_eur": 0.12,
+      "price_eur": 0.49,
       "set": "eoc"
     },
     "wrath of the skies": {
       "collector_number": "49",
-      "price_eur": 2.53,
+      "price_eur": 2.69,
       "set": "mh3"
     },
     "wrecking gecko": {
@@ -4510,47 +4535,47 @@
     },
     "yavimaya coast": {
       "collector_number": "322",
-      "price_eur": 0.46,
+      "price_eur": 0.3,
       "set": "c20"
     },
     "you see a guard approach": {
       "collector_number": "85",
-      "price_eur": 0.17,
+      "price_eur": 0.04,
       "set": "afr"
     },
     "young pyromancer": {
       "collector_number": "185",
-      "price_eur": 0.17,
+      "price_eur": 0.22,
       "set": "otc"
     },
     "your fate ends here": {
       "collector_number": "24",
-      "price_eur": 0.08,
+      "price_eur": 0.09,
       "set": "fra"
     },
     "zoanthrope": {
       "collector_number": "149",
-      "price_eur": 0.64,
+      "price_eur": 0.59,
       "set": "40k"
     },
     "zuko, seeking honor": {
       "collector_number": "150",
-      "price_eur": 0.14,
+      "price_eur": 0.2,
       "set": "tle"
     },
     "zulaport cutthroat": {
       "collector_number": "233",
-      "price_eur": 1.89,
+      "price_eur": 1.44,
       "set": "soc"
     },
     "zuran orb": {
       "collector_number": "300",
-      "price_eur": 1.87,
+      "price_eur": 2.22,
       "set": "mh2"
     },
     "óin the brave": {
       "collector_number": "106",
-      "price_eur": 0.07,
+      "price_eur": 0.04,
       "set": "hob"
     }
   },
