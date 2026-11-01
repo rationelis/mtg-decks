@@ -163,7 +163,7 @@ def _parse_entry_text(line: str) -> tuple[int, str, str | None, str | None, bool
 def parse_entry_line(line: str) -> Entry | None:
     """Parse a single entry line, returning None instead of raising for
     anything malformed - used by loose one-off scripts that don't need
-    build-stopping strictness (e.g. sort-bulk.py)."""
+    build-stopping strictness."""
     try:
         qty, name, set_code, collector_number, foil = _parse_entry_text(line)
     except EntryGrammarError:

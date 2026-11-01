@@ -47,8 +47,8 @@
 
 # --- what goes where ----------------------------------------------------
 # bulk.txt              everything you physically own, as one flat list.
-#                       Kept alphabetically sorted (see `mask sort-bulk`) -
-#                       it has no meaningful order, so sorting keeps it
+#                       Kept alphabetically sorted,it has no meaningful 
+#                       order, so sorting keeps it
 #                       easy to scan and diff in git.
 # decks/*.txt           a deck. Ownership is never written here - it's
 #                       always computed by diffing this list against

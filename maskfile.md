@@ -2,17 +2,12 @@
 
 MTG Decks management tasks for mask CLI.
 
-## sort-bulk
+## sort-deck (deck)
 
-> Sort bulk.txt alphabetically by card name, in place
-
-Only bulk.txt is sorted - it's a flat "everything I own" list with no
-meaningful order. Decks/collections/precons are left untouched since their
-line order is often curated (e.g. a precon mirrors the printed product's
-decklist) and diffing (`mask diff`) doesn't depend on line order anyway.
+> Sorts decklist alphabetically by card name, in place
 
 ```bash
-python3 scripts/sort-bulk.py
+python3 scripts/sort-deck.py "$deck"
 ```
 
 ## build [archidekt_deck]
