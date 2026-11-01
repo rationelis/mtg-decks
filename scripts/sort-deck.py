@@ -1,15 +1,13 @@
 #!/usr/bin/env python3
-"""Sort bulk.txt alphabetically by card name, in place.
+"""Sort a card-list file alphabetically by card name, in place.
 
-Only bulk.txt is sorted - it's a flat "everything I own" list with no
-meaningful order. Decks/collections/precons are intentionally left untouched: their
-line order often mirrors a curated layout (a precon in particular mirrors the
-original product's printed decklist), which sorting would destroy for no
-benefit - ownership diffing is already order-independent (diff.py compares
-via a Counter, not line position).
+Comment and metadata lines are kept at the top.
+All parsed card entries are sorted alphabetically.
 
 Usage:
-    python3 scripts/sort-bulk.py [path]   # defaults to bulk.txt
+    python3 scripts/sort-deck.py              # defaults to bulk.txt
+    python3 scripts/sort-deck.py deck.txt
+    python3 scripts/sort-deck.py path/to/list.txt
 """
 
 from __future__ import annotations
@@ -25,18 +23,22 @@ ROOT = Path(__file__).resolve().parent.parent
 
 
 def sort_file(path: Path) -> bool:
-    """Sort a card-list file's entries alphabetically in place, keeping any
-    comment/metadata lines pinned above the entries. Returns whether the
-    file's contents changed.
+    """Sort card entries alphabetically in place.
+
+    Comment and metadata lines remain pinned above the entries.
+    Returns whether the file's contents changed.
     """
     old_text = path.read_text(encoding="utf-8")
 
     header: list[str] = []
     entries: list[str] = []
+
     for line in old_text.splitlines():
         stripped = line.strip()
+
         if not stripped:
             continue
+
         if stripped.startswith("#") or parse_entry_line(stripped) is None:
             header.append(line)
         else:
@@ -45,17 +47,25 @@ def sort_file(path: Path) -> bool:
     entries.sort(key=lambda line: normalize_name(parse_entry_line(line.strip()).name))
 
     new_text = "\n".join(header + entries) + "\n"
+
     if new_text == old_text:
         return False
+
     path.write_text(new_text, encoding="utf-8")
     return True
 
 
 def main() -> int:
     target = Path(sys.argv[1]) if len(sys.argv) > 1 else ROOT / "bulk.txt"
+
     if not target.exists():
         print(f"Not found: {target}", file=sys.stderr)
         return 1
+
+    if not target.is_file():
+        print(f"Not a file: {target}", file=sys.stderr)
+        return 1
+
     changed = sort_file(target)
     print(f"{'Sorted' if changed else 'Already sorted'}: {target}")
     return 0
