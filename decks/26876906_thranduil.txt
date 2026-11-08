@@ -30,7 +30,6 @@
 1 Glowspore Shaman
 1 Grapple with the Past
 1 Grisly Salvage
-1 Guardian Project
 1 Haldir, Lórien Lieutenant
 1 Heroic Intervention
 1 High Perfect Morcant
@@ -39,6 +38,7 @@
 1 Iron-Shield Elf
 5 Island
 1 Izoni, Thousand-Eyed
+1 Kindred Dominance
 1 Krydle of Baldur's Gate
 1 Leaf-Crowned Visionary
 1 Llanowar Elves

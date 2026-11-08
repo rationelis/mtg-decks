@@ -500,6 +500,7 @@
 1 Korvold, Fae-Cursed King (EOC) 120
 1 Krumar Bond-Kin (KTK) 77
 1 Krydle of Baldur's Gate (AFR) 226
+1 Laboratory Maniac (FCA) 30
 1 Lake-town Lookout (HOB) 18
 1 Lake-town Lookout (HOB) 18
 1 Lake-town Mariners // Gone Fishing (HOB) 44
@@ -772,6 +773,7 @@
 1 Scroll Thief (DDT) 17
 1 Scurry of Gremlins (MH3) 203
 1 Season of Renewal (NEO) 205
+1 Seeker of Skybreak (7ED) 268
 1 Seismic Stomp (EMA) 146
 1 Seize the Spoils (FDN) 546
 1 Seize the Spoils (KHM) 149
@@ -992,7 +994,6 @@
 1 Vampire Interloper (FDN) 530
 1 Vampire Neonate (FDN) 531
 1 Vampire Spawn (FDN) 532
-1 Laboratory Maniac (FCA) 30
 1 Vaultbreaker (FRF) 117
 1 Velvetwing Butterflies // Gaze in Wonder (HOB) 30
 1 Velvetwing Butterflies // Gaze in Wonder (HOB) 30
