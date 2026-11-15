@@ -68,6 +68,7 @@
 1 Automated Artificer (NEO) 239
 1 Automated Assembly Line (PIP) 10
 1 Avatar Enthusiasts (TLA) 11
+1 Awaken the Honored Dead (TDM) 170
 1 Awaken the Inferno (FRA) 74
 1 Awaken the Inferno (FRA) 74
 1 Azusa's Many Journeys // Likeness of the Seeker (NEO) 172
@@ -104,6 +105,7 @@
 1 Blaster Hulk (M3C) 107
 1 Blight Rot (ECL) 89
 1 Blightbelly Rat (ONE) 289
+1 Bloodline Bidding (ECL) 91
 1 Bloodthirsty Adversary (OTC) 157
 1 Bloodtithe Collector (FDN) 516
 1 Bloombrute (FRA) 124
@@ -130,6 +132,7 @@
 1 Callous Inspector (TLA) 89
 1 Campus Crier (FRA) 4
 1 Cancel (FDN) 505
+1 Cantankerous Keepers (HOB) 122
 1 Canyon Slough (EOC) 152
 1 Captain Vargus Wrath (CMR) 273
 1 Carnelian Orb of Dragonkind (FDN) 534
@@ -175,7 +178,7 @@
 1 Corsair Captain (FDN) 506
 1 Cosmic Hunger (MOM) 182
 1 Costly Plunder (2XM) 80
-1 Counterspell (FCA) 4
+1 Counterspell (MMQ) 69
 1 Coveted Jewel (M3C) 287
 1 Crackling Spellslinger (OTC) 25
 1 Craftwork Crusher (FRA) 127
@@ -274,6 +277,7 @@
 1 Elvish Harbinger (EVG) 4
 1 Elvish Mystic (SOC) 266
 1 Elvish Regrower (FDN) 104
+1 Elvish Warmaster (LTC) 241
 1 Emergency Phytomedic // Seed Suture (FRA) 130
 1 Emil, Vastlands Roamer (SOS) 146
 1 Enchanted River's Grasp (HOB) 39
@@ -318,6 +322,7 @@
 1 Fblthp, Knows the Way (FRA) 258
 1 Feasting Hobbit (LTC) 37
 1 Fecundity (C13) 145
+1 Feed the Flames (ECL) 137
 1 Felidar Savior (FDN) 12
 1 Felling Blow (FDN) 105
 1 Fellwar Stone (SOC) 347
@@ -384,6 +389,7 @@
 1 Glimmer of Genius (DRC) 78
 1 Glissa Sunslayer (ONE) 202
 1 Glissa, Herald of Predation (MOM) 226
+1 Glowspore Shaman (RVR) 184
 1 Glóin the Mighty // Easy Pickings (HOB) 227
 1 Gnashing of Teeth (HOB) 69
 1 Goblin Electromancer (OTC) 228
@@ -404,11 +410,13 @@
 1 Gonti's Aether Heart (M3C) 294
 1 Gorbag of Minas Morgul (LTR) 86
 1 Graft Surgeon (FRA) 10
+1 Grapple with the Past (INR) 199
 1 Great Fierce Bee (HOB) 73
 1 Great Ugly-Looking Goblin // Clap! Snap! (HOB) 74
 1 Greenhouse Propagator (FRA) 104
 1 Grenzo, Havoc Raiser (M3C) 213
 1 Grim Haruspex (C19) 118
+1 Grisly Salvage (M3C) 263
 1 Groundskeeper (EOC) 97
 1 Gruesome Scourger (M20) 104
 1 Guardian of the Halls (HOB) 127
@@ -418,6 +426,7 @@
 1 Gundabad Opportunist (HOB) 101
 1 Guttersnipe (TDC) 217
 1 Gysahl Greens (FIN) 190
+1 Haldir, Lórien Lieutenant (LTC) 39
 1 Hallway Heckler // Vicious Verse (FRA) 85
 1 Hallway Heckler // Vicious Verse (FRA) 85
 1 Hammer of Purphoros (EOC) 88
@@ -437,6 +446,7 @@
 1 Herald of Faith (FDN) 494
 1 Herald's Horn (40K) 241
 1 Hero's Downfall (FDN) 175
+1 Heroic Intervention (MAR) 78
 1 Hierophant Bio-Titan (40K) 92
 1 High Perfect Morcant (ECL) 229
 1 Highborn Vampire (FDN) 522
@@ -470,10 +480,12 @@
 1 Invasion Reinforcements (TLA) 24
 1 Invoke Despair (NEO) 379
 1 Iron Hills Blacksmith (HOB) 216
+1 Iron-Shield Elf (ECL) 108
 1 Ironclaw Buzzardiers (TSP) 165
 1 Ironclaw Buzzardiers (TSP) 165
 1 Ishkanah, Grafwidow (DSC) 187
 1 Izoni, Center of the Web (MKM) 209
+1 Izoni, Thousand-Eyed (M3C) 267
 1 Izzet Boilerworks (M3C) 350
 1 Izzet Generatorium (MH3) 191
 1 Izzet Signet (TDC) 320
@@ -494,6 +506,7 @@
 1 Keeper of the Quiet Hour (FRA) 171
 1 Kindled Fury (FDN) 542
 1 Kindled Fury (NEO) 151
+1 Kindred Dominance (MSC) 156
 1 Kitesail Corsair (FDN) 510
 1 Koala-Sheep (TLE) 80
 1 Kodama's Reach (ECC) 113
@@ -508,6 +521,7 @@
 1 Large Bear (HOB) 159
 1 Last Gasp (FRA) 56
 1 Lathril, Blade of the Elves (FDN) 242
+1 Leaf-Crowned Visionary (DMU) 167
 1 Leaves from the Vine (TLA) 185
 1 Legion Loyalty (M3C) 171
 1 Leonin Skyhunter (FDN) 498
@@ -566,6 +580,7 @@
 1 Mer-Ek Nightblade (KTK) 79
 1 Merchant Scroll (HML) 33
 1 Merciless Executioner (FRF) 76
+1 Miara, Thorn of the Glade (CMR) 133
 1 Midnight Clock (M3C) 189
 1 Midnight Clock (OTC) 100
 1 Midnight Reaper (GRN) 77
@@ -598,6 +613,7 @@
 1 Morbid Opportunist (SOC) 219
 1 Muddle the Mixture (RAV) 60
 1 Multani, Yavimaya's Avatar (EOC) 100
+1 Murky Sewer (DSK) 263
 1 Murmuring Mystic (OTC) 102
 1 Murmuring Volume (FRA) 174
 1 Murmuring Volume (FRA) 174
@@ -627,6 +643,7 @@
 1 No Admittance (FRA) 89
 1 Noble's Purse (CLB) 331
 1 Nori, Teller of Tales (HOB) 161
+1 Nyx Weaver (TDC) 298
 1 Octavia, Living Thesis (OTC) 103
 1 Offer Immortality (FDN) 525
 1 Old Fat Spider Can't See Me (HOB) 50
@@ -635,6 +652,7 @@
 1 Omnath, Locus of Rage (EOC) 123
 1 Opt (FDN) 512
 1 Opt (OTC) 104
+1 Opulent Palace (TDM) 264
 1 Oracle of Mul Daya (EOC) 102
 1 Orc Sureshot (FRF) 78
 1 Orcish Artillery (10E) 220
@@ -711,6 +729,7 @@
 1 Quirion Ranger (VIS) 117
 1 Rabaroo Troop (TLA) 32
 1 Radical Idea (OTC) 110
+1 Raft Security Officer (MSH) 33
 1 Rage into the Valley (HOB) 79
 1 Rage into the Valley (HOB) 79
 1 Ragged Short Spear (HOB) 108
@@ -741,6 +760,7 @@
 1 Reverent Howl (HOB) 81
 1 Riddle Gate Gargoyle (MH3) 201
 1 Ride the Shoopuf (FIN) 197
+1 Ripples of Undeath (MH3) 107
 1 Rishkar, Peema Renegade (NCC) 305
 1 Rite of Flame (CSP) 96
 1 Roadside Reliquary (NEO) 272
@@ -766,6 +786,7 @@
 1 Savannah Lions (FDN) 146
 1 Savor (BLB) 109
 1 Savvy Hunter (ELD) 200
+1 Scorch Rider (ZNR) 158
 1 Scorching Dragonfire (FDN) 545
 1 Scouring Swarm (EOC) 16
 1 Screamer-Killer (40K) 84
@@ -773,6 +794,7 @@
 1 Scroll Thief (DDT) 17
 1 Scurry of Gremlins (MH3) 203
 1 Season of Renewal (NEO) 205
+1 Seeker of Skybreak (7ED) 268
 1 Seeker of Skybreak (7ED) 268
 1 Seismic Stomp (EMA) 146
 1 Seize the Spoils (FDN) 546
@@ -852,6 +874,7 @@
 1 Starstorm (40K) 208
 1 Stella Lee, Wild Card (OTC) 3
 1 Stickytongue Sentinel (BLB) 193
+1 Stillness in Motion (TDM) 59
 1 Stingerquill Voxmancer // Vicious Verse (FRA) 151
 1 Stir Up Trouble (HOB) 84
 1 Stone Idol Generator (M3C) 129
@@ -877,6 +900,7 @@
 1 Swab Goblin (FDN) 548
 1 Swiftfoot Boots (TDC) 328
 1 Swords to Plowshares (SOC) 179
+1 Synchronized Spellcraft (ZNR) 168
 1 Synth Eradicator (PIP) 67
 1 Szarel, Genesis Shepherd (EOC) 4
 1 Tackle Artist (SOS) 133
@@ -892,6 +916,7 @@
 1 Tam's Resistance (FRA) 153
 1 Tamiyo's Safekeeping (NEO) 211
 1 Tear Asunder (EOC) 109
+1 Teferi's Ageless Insight (M21) 294
 1 Temple of Abandon (40K) 297
 1 Temple of Deceit (BRC) 205
 1 Temple of Enlightenment (M3C) 386
@@ -933,7 +958,9 @@
 1 Thornbite Staff (MOR) 145
 1 Thornweald Archer (FDN) 559
 1 Thornwood Falls (40K) 302
+1 Thousand-Year Elixir (LRW) 263
 1 Thranduil's Company (HOB) 168
+1 Thranduil, Sindarin Liege // Silvan Rally (HOB) 166
 1 Thranduil, the Elvenking (HOB) 167
 1 Thrasher Brute (BBD) 52
 1 Thrashing Brontodon (FDN) 560
@@ -952,6 +979,8 @@
 1 Tomik, Izzet Sparkmage (FRA) 253
 1 Tomik, Orzhov Lawmage (FRA) 206
 1 Toph, the Blind Bandit (TLA) 198
+1 Tormenting Voice (ZNR) 172
+1 Toxic Deluge (MSC) 161
 1 Toxicrene (40K) 101
 1 Trail of Crumbs (ELD) 179
 1 Transformative Commons (FRA) 193
@@ -976,10 +1005,12 @@
 1 Tyrant Guard (40K) 103
 1 Tyvar's Stand (SOC) 291
 1 Tyvar, Jubilant Brawler (ONE) 218
+1 Tyvar, the Pummeler (DSK) 202
 1 Uglúk of the White Hand (LTR) 235
 1 Uldaros Theorix (FRA) 159
 1 Unauthorized Exit (MKM) 298
 1 Underground River (BRO) 267
+1 Underrealm Lich (GRN) 211
 1 Undying Malice (FDN) 528
 1 Undying Malice (FDN) 528
 1 Unexpected Windfall (PIP) 193
