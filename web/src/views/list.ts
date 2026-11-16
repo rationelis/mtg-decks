@@ -1,10 +1,20 @@
+import { createCommanderCard } from "../components/commanderCard";
 import { createFilterBar } from "../components/filterBar";
 import { renderCardView, type CardRow, type ViewMode } from "../components/cardView";
 import { createExportButton, type ExportRow } from "../components/exportButton";
 import { createPriciestButton } from "../components/priciestButton";
 import { createSortSelect } from "../components/sortSelect";
+import { statusBadge } from "../components/statusBadge";
 import { createViewToggle } from "../components/viewToggle";
 import { getCards, getList, getMeta } from "../data";
+import {
+  deckStatus,
+  findCommanderEntry,
+  formatPriceTotal,
+  priceToComplete,
+  priceTotalNote,
+  theoreticalMinimum,
+} from "../deckStats";
 import { h, clear } from "../dom";
 import { filterFromParams, filterToParams, matchesFilter, type FilterState } from "../filters";
 import { normalizeName } from "../normalize";
@@ -41,10 +51,19 @@ export async function renderList(
 
   const ownedCount = rows.reduce((sum, r) => sum + r.ownedQty, 0);
   const missingCount = rows.reduce((sum, r) => sum + r.missingQty, 0);
-  const missingPrice = rows.reduce(
-    (sum, r) => sum + (r.missingQty > 0 ? (r.card.price_eur ?? 0) * r.missingQty : 0),
-    0,
-  );
+  const missingPrice = priceToComplete(rows);
+  const minimumValue = theoreticalMinimum(rows);
+  const status = deckStatus(list.entries);
+
+  // The commander is already one of the deck's entries (and so already
+  // counted in every total above), so it's shown in its own section and
+  // left out of the main card list rather than being counted or listed
+  // twice.
+  const commanderEntry = findCommanderEntry(list.entries, list.commander);
+  const commanderRow = commanderEntry ? rows[list.entries.indexOf(commanderEntry)] : undefined;
+  const commanderCard =
+    commanderRow?.card ?? (list.commander ? lookupCard(list.commander, cards) : undefined);
+  const listRows = commanderRow ? rows.filter((r) => r !== commanderRow) : rows;
 
   clear(root);
 
@@ -55,14 +74,15 @@ export async function renderList(
 
   const resultsContainer = h("div", { class: "results" });
 
-  function rowsForTab(tab: Tab): Required<CardRow>[] {
-    if (tab === "owned") return rows.filter((r) => r.ownedQty > 0);
-    if (tab === "missing") return rows.filter((r) => r.missingQty > 0);
-    return rows;
+  function rowsForTab(tab: Tab, source: Required<CardRow>[] = listRows): Required<CardRow>[] {
+    if (tab === "owned") return source.filter((r) => r.ownedQty > 0);
+    if (tab === "missing") return source.filter((r) => r.missingQty > 0);
+    return source;
   }
 
+  // Exports cover the whole deck, commander included.
   function exportRowsForTab(tab: Tab): ExportRow[] {
-    return rowsForTab(tab)
+    return rowsForTab(tab, rows)
       .filter((r) => matchesFilter(r.card, currentFilter))
       .map((r) => ({
         name: r.name,
@@ -108,7 +128,7 @@ export async function renderList(
   }
 
   const filterBar = createFilterBar(
-    rows.map((r) => r.card),
+    listRows.map((r) => r.card),
     (state) => {
       currentFilter = state;
       replaceQueryParams(filterToParams(state));
@@ -144,32 +164,63 @@ export async function renderList(
         list.proxy && h("span", { class: "badge badge-proxy" }, "proxy"),
         list.collection && h("span", { class: "badge badge-collection" }, "collection"),
         list.status === "archived" && h("span", { class: "badge badge-archived" }, "archived"),
+        statusBadge(status),
       ),
-      list.commander && h("p", { class: "commander" }, `Commander: ${list.commander}`),
     ),
     h(
       "div",
-      { class: "stats" },
+      { class: "deck-overview" },
+      ...(commanderCard
+        ? [
+            createCommanderCard(commanderCard, {
+              listName: list.name,
+              ownedQty: commanderRow?.ownedQty,
+              missingQty: commanderRow?.missingQty,
+            }),
+          ]
+        : []),
       h(
         "div",
-        { class: "stat" },
-        h("span", { class: "stat-value" }, String(ownedCount)),
-        h("span", { class: "stat-label" }, "Owned"),
-      ),
-      h(
-        "div",
-        { class: "stat" },
-        h("span", { class: "stat-value" }, String(missingCount)),
-        h("span", { class: "stat-label" }, "Missing"),
-      ),
-      h(
-        "div",
-        { class: "stat" },
-        h("span", { class: "stat-value" }, `€${missingPrice.toFixed(2)}`),
-        h("span", { class: "stat-label" }, "Price to complete"),
+        { class: "deck-overview-side" },
+        h(
+          "div",
+          { class: "stats" },
+          h(
+            "div",
+            { class: "stat" },
+            h("span", { class: "stat-value" }, String(ownedCount)),
+            h("span", { class: "stat-label" }, "Owned"),
+          ),
+          h(
+            "div",
+            { class: "stat" },
+            h("span", { class: "stat-value" }, String(missingCount)),
+            h("span", { class: "stat-label" }, "Missing"),
+          ),
+          h(
+            "div",
+            { class: "stat" },
+            h(
+              "span",
+              { class: "stat-value", title: priceTotalNote(missingPrice) },
+              formatPriceTotal(missingPrice),
+            ),
+            h("span", { class: "stat-label" }, "Price to complete"),
+          ),
+          h(
+            "div",
+            { class: "stat" },
+            h(
+              "span",
+              { class: "stat-value", title: priceTotalNote(minimumValue) },
+              formatPriceTotal(minimumValue),
+            ),
+            h("span", { class: "stat-label" }, "Theoretical minimum"),
+          ),
+        ),
+        h("p", { class: "price-note" }, priceNote(meta)),
       ),
     ),
-    h("p", { class: "price-note" }, priceNote(meta)),
     h("div", { class: "tabs" }, ...tabButtons.values()),
     h(
       "div",

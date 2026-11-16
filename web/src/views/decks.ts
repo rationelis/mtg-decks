@@ -1,8 +1,16 @@
+import { statusBadge } from "../components/statusBadge";
 import { getCards, getIndex, getList } from "../data";
+import {
+  deckStatus,
+  formatPriceTotal,
+  priceToComplete,
+  priceTotalNote,
+  theoreticalMinimum,
+} from "../deckStats";
 import { h, clear } from "../dom";
 import { isCollectionLike } from "../listKind";
 import { normalizeName } from "../normalize";
-import type { IndexEntry } from "../types";
+import type { CardData, IndexEntry } from "../types";
 
 export async function renderDecks(root: HTMLElement): Promise<void> {
   clear(root);
@@ -82,9 +90,11 @@ function buildTable(
   const headerCells = [h("th", {}, options.nameLabel)];
   if (options.showCommander) headerCells.push(h("th", {}, "Commander"));
   headerCells.push(
+    h("th", {}, "Status"),
     h("th", {}, "Owned"),
     h("th", {}, "Missing"),
     h("th", {}, "Price to complete"),
+    h("th", {}, "Theoretical minimum"),
     h("th", {}, ""),
   );
 
@@ -117,9 +127,11 @@ function renderSkeletonRow(entry: IndexEntry, options: { showCommander: boolean 
     cells.push(h("td", { class: "cell-commander" }, entry.commander ?? "—"));
   }
   cells.push(
+    h("td", { class: "cell-status" }),
     h("td", { class: "cell-owned" }, "…"),
     h("td", { class: "cell-missing" }, "…"),
     h("td", { class: "cell-price" }, "…"),
+    h("td", { class: "cell-minimum" }, "…"),
     h("td", { class: "cell-total" }, `${entry.entryCount} unique / ${entry.totalQty} total`),
   );
   return h("tr", {}, ...cells);
@@ -140,11 +152,15 @@ async function fillInStats(
 
       const ownedCount = list.entries.reduce((sum, e) => sum + (e.ownedQty ?? 0), 0);
       const missingCount = list.entries.reduce((sum, e) => sum + (e.missingQty ?? 0), 0);
-      const missingPrice = list.entries.reduce((sum, e) => {
-        if (!e.missingQty) return sum;
-        const card = cards[normalizeName(e.name)];
-        return sum + (card?.price_eur ?? 0) * e.missingQty;
-      }, 0);
+      const priceRows = list.entries.map((e) => ({
+        qty: e.qty,
+        ownedQty: e.ownedQty,
+        missingQty: e.missingQty,
+        card: cards[normalizeName(e.name)] ?? ({ price_eur: null } as Pick<CardData, "price_eur">),
+      }));
+      const missingPrice = priceToComplete(priceRows);
+      const minimumValue = theoreticalMinimum(priceRows);
+      const status = deckStatus(list.entries);
 
       const ownedCell = row.querySelector(".cell-owned");
       const missingCell = row.querySelector(".cell-missing");
@@ -154,7 +170,22 @@ async function fillInStats(
         missingCell.textContent = String(missingCount);
         missingCell.classList.toggle("missing", missingCount > 0);
       }
-      if (priceCell) priceCell.textContent = `€${missingPrice.toFixed(2)}`;
+      if (priceCell) {
+        priceCell.textContent = formatPriceTotal(missingPrice);
+        setTitle(priceCell, priceTotalNote(missingPrice));
+      }
+      const minimumCell = row.querySelector(".cell-minimum");
+      if (minimumCell) {
+        minimumCell.textContent = formatPriceTotal(minimumValue);
+        setTitle(minimumCell, priceTotalNote(minimumValue));
+      }
+      const badge = statusBadge(status);
+      if (badge) row.querySelector(".cell-status")?.append(badge);
     }),
   );
+}
+
+function setTitle(el: Element, title: string | undefined): void {
+  if (title) el.setAttribute("title", title);
+  else el.removeAttribute("title");
 }

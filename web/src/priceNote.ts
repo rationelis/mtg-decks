@@ -20,6 +20,7 @@ export function priceNote(meta: BuildMeta): string {
     `💶 Prices are real Cardmarket listings, fetched via Archidekt on ${date}. ` +
     "Cards with no price haven't been mirrored into that Archidekt deck yet. " +
     "A tilde (~€) means the price isn't confirmed for the exact printing shown. " +
+    "A trailing + on a total means some cards have no price and aren't included in it. " +
     "Prices change over time - check Cardmarket for current listings.";
   const listSources = meta.listPrices?.sources ? Object.values(meta.listPrices.sources) : [];
   if (listSources.length > 0) {

@@ -148,7 +148,8 @@ h1 {
 .cell-missing,
 .cell-qty,
 .cell-mv,
-.cell-price {
+.cell-price,
+.cell-minimum {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
@@ -546,7 +547,8 @@ tr.row-missing .cell-name {
 }
 
 .gallery-card-price[title],
-.cell-price[title] {
+.cell-price[title],
+.cell-minimum[title] {
   text-decoration: underline dotted var(--muted);
   cursor: help;
 }
@@ -679,4 +681,105 @@ tr.row-missing .cell-name {
     width: 100%;
     max-width: none;
   }
+}
+
+/* Deck status badges */
+
+.badge-status {
+  text-transform: none;
+}
+
+.badge-status-complete {
+  background: color-mix(in srgb, #2e9d57 30%, transparent);
+}
+
+.badge-status-incomplete {
+  background: color-mix(in srgb, #e8a317 35%, transparent);
+}
+
+.badge-status-in-progress {
+  background: color-mix(in srgb, dodgerblue 30%, transparent);
+}
+
+/* Commander section on the deck page */
+
+.commander-section {
+  margin: 0.5rem 0 1rem;
+}
+
+.commander-card {
+  position: relative;
+  display: block;
+  flex: 0 0 auto;
+  width: 150px;
+  max-width: 40vw;
+  line-height: 0;
+  border-radius: 4.5% / 3.2%;
+  overflow: hidden;
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.commander-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.4);
+}
+
+.commander-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.commander-card-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 63 / 88;
+  padding: 0.75rem;
+  line-height: 1.4;
+  text-align: center;
+  color: var(--muted);
+}
+
+.commander-card-missing img {
+  filter: grayscale(0.5) brightness(0.8);
+}
+
+.commander-missing-label {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0.3rem;
+  line-height: 1.2;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-align: center;
+  color: #fff;
+  background: rgba(40, 50, 70, 0.8);
+}
+
+/* Commander on the left, stats and price note flowing to its right */
+
+.deck-overview {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 0 1.5rem;
+}
+
+.deck-overview .commander-section {
+  flex: 0 0 auto;
+}
+
+.deck-overview-side {
+  flex: 1 1 24rem;
+  min-width: 0;
+}
+
+.deck-overview-side .stats {
+  margin-top: 0.5rem;
 }
