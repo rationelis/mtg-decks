@@ -110,6 +110,29 @@ def price_map(deck: dict, normalize) -> tuple[dict[str, dict[str, Any]], list[st
     return prices, unpriced
 
 
+def printing_price_map(deck: dict, normalize) -> tuple[dict[str, list[dict[str, Any]]], list[str]]:
+    """Like `price_map`, but never collapses two printings of the same
+    card into one: each `normalize(name)` maps to a list of
+    `{price_eur, set, collector_number}` - one per priced row - sorted by
+    (set, collector_number) so the written cache is stable. Used for the
+    bulk-mirror deck, where owning two printings of one card (say a plain
+    and a borderless copy) is normal and each has its own price.
+    Returns (prices, names_with_no_price).
+    """
+    prices: dict[str, list[dict[str, Any]]] = {}
+    unpriced: list[str] = []
+    for entry in main_deck_entries(deck):
+        name = oracle_name(entry)
+        priced = price_entry(entry)
+        if priced["price_eur"]:
+            prices.setdefault(normalize(name), []).append(priced)
+        else:
+            unpriced.append(name)
+    for rows in prices.values():
+        rows.sort(key=lambda p: (p["set"], p["collector_number"]))
+    return prices, unpriced
+
+
 def total_price_cm(deck: dict) -> float:
     return sum(unit_price_cm(e) * e.get("quantity", 1) for e in main_deck_entries(deck))
 

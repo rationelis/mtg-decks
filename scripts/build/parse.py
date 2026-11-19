@@ -111,6 +111,13 @@ def normalize_name(name: str) -> str:
     return unicodedata.normalize("NFC", name).strip().lower()
 
 
+def printing_key(set_code: str, collector_number: str) -> str:
+    """Stable key for one specific printing of a card, e.g. "hob/246".
+    Used on both sides of the build (price cache, cards.json printings,
+    entry `printing` fields) and mirrored by web/src/printing.ts."""
+    return f"{set_code.strip().lower()}/{collector_number.strip().lower()}"
+
+
 def is_real_active_deck(card_list: CardList) -> bool:
     """True for a list that represents physical cards actually committed
     to a deck right now - i.e. one that can claim scarce bulk supply (see

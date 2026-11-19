@@ -354,3 +354,79 @@ def test_resolve_identity_pin_not_found_is_hard_error(monkeypatch):
 
     assert len(errors) == 1
     assert "was not found on Scryfall" in errors[0].message
+
+
+def _thranduil_card(set_code, number, image):
+    return {
+        "name": "Thranduil, the Elvenking",
+        "cmc": 5.0,
+        "type_line": "Legendary Creature - Elf Noble",
+        "set": set_code,
+        "set_name": "The Hobbit",
+        "rarity": "rare",
+        "collector_number": number,
+        "image_uris": {"normal": image},
+        "id": f"id-{number}",
+    }
+
+
+def test_resolve_identity_records_every_pinned_printing_and_defaults_to_authoritative(monkeypatch):
+    bulk = _bulk_with(
+        [
+            pinned_entry("Thranduil, the Elvenking", "HOB", "167", 1),
+            pinned_entry("Thranduil, the Elvenking", "HOB", "246", 2),
+        ]
+    )
+    deck = make_list("a", "deck", "A", [pinned_entry("Thranduil, the Elvenking", "HOB", "246", 2)])
+
+    def fake_post_json(url, payload):
+        return {"data": [_thranduil_card("hob", "167", "plain.jpg")], "not_found": []}
+
+    def fake_get_json(url, params=None):
+        number = url.rsplit("/", 1)[1]
+        return _thranduil_card("hob", number, "plain.jpg" if number == "167" else "borderless.jpg")
+
+    monkeypatch.setattr(resolve, "post_json", fake_post_json)
+    monkeypatch.setattr(resolve, "get_json", fake_get_json)
+
+    cache = {}
+    card_data, pins, errors, _ = resolve.resolve_identity(bulk, [deck], cache)
+
+    assert errors == []
+    card = card_data["thranduil, the elvenking"]
+    assert set(card.printings) == {"hob/167", "hob/246"}
+    assert card.image_uri == "plain.jpg"  # default = first bulk pin
+    assert card.printings["hob/167"].image_uri == "plain.jpg"
+    assert card.printings["hob/246"].image_uri == "borderless.jpg"
+    # printings survive a round-trip through the identity cache
+    reused = resolve._cached_card_data("Thranduil, the Elvenking", cache["thranduil, the elvenking"])
+    assert set(reused.printings) == {"hob/167", "hob/246"}
+    assert reused.printings["hob/246"].image_uri == "borderless.jpg"
+
+
+def test_resolve_identity_verifies_non_authoritative_pins_too(monkeypatch):
+    bulk = _bulk_with([pinned_entry("Sol Ring", "C21", "263", 1)])
+    wishlist = make_list(
+        "w", "collection", "Wishlist", [pinned_entry("Sol Ring", "ZZZ", "1", 3)], collection=True
+    )
+
+    def fake_post_json(url, payload):
+        return {
+            "data": [{"name": "Sol Ring", "cmc": 1.0, "type_line": "Artifact", "set": "c21", "id": "x"}],
+            "not_found": [],
+        }
+
+    def fake_get_json(url, params=None):
+        if url.endswith("/zzz/1"):
+            return None
+        return {"name": "Sol Ring", "set": "c21"}
+
+    monkeypatch.setattr(resolve, "post_json", fake_post_json)
+    monkeypatch.setattr(resolve, "get_json", fake_get_json)
+
+    _, _, errors, _ = resolve.resolve_identity(bulk, [wishlist], {})
+
+    assert len(errors) == 1
+    assert errors[0].path == "collection/w.txt"
+    assert errors[0].line == 3
+    assert "was not found on Scryfall" in errors[0].message

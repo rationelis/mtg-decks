@@ -962,6 +962,7 @@
 1 Thranduil's Company (HOB) 168
 1 Thranduil, Sindarin Liege // Silvan Rally (HOB) 166
 1 Thranduil, the Elvenking (HOB) 167
+1 Thranduil, the Elvenking (HOB) 246
 1 Thrasher Brute (BBD) 52
 1 Thrashing Brontodon (FDN) 560
 1 Three Tree Scribe (BLB) 199

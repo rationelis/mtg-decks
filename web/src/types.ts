@@ -5,14 +5,10 @@
 
 export type PriceState = "exact" | "fallback" | "unavailable";
 
-export interface CardData {
-  name: string;
-  mana_cost: string;
-  mana_value: number;
-  colors: string[];
-  color_identity: string[];
-  type_line: string;
-  oracle_text: string;
+/** The per-printing slice of a card: what can differ between two
+ * printings of the same oracle card. Keyed by printingKey() in
+ * CardData.printings (see scripts/build/resolve.py's PrintingData). */
+export interface CardPrinting {
   set: string;
   set_name: string;
   rarity: string;
@@ -23,12 +19,35 @@ export interface CardData {
   released_at: string | null;
 }
 
+export interface CardData {
+  name: string;
+  mana_cost: string;
+  mana_value: number;
+  colors: string[];
+  color_identity: string[];
+  type_line: string;
+  oracle_text: string;
+  /** set..released_at describe the card's default printing; an entry that
+   * pins a different printing uses `printings` instead (see printing.ts). */
+  set: string;
+  set_name: string;
+  rarity: string;
+  image_uri: string | null;
+  scryfall_uri: string | null;
+  price_eur: number | null;
+  price_state: PriceState;
+  released_at: string | null;
+  printings: Record<string, CardPrinting>;
+}
+
 /** Keyed by normalizeName(card.name). */
 export type CardsIndex = Record<string, CardData>;
 
 export interface ListEntry {
   name: string;
   qty: number;
+  /** printingKey() of the entry's "(SET) NUM" pin; absent when unpinned. */
+  printing?: string;
   /** Present on every list except bulk.json - see scripts/build/allocate.py. */
   ownedQty?: number;
   missingQty?: number;

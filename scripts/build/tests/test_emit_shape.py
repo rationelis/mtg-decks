@@ -14,7 +14,7 @@ from pathlib import Path
 from allocate import Allocation, EntryOwnership, Usage
 from emit import emit_all
 from parse import CardList, Entry
-from resolve import CardData
+from resolve import CardData, PrintingData
 
 FIXTURES = Path(__file__).resolve().parent / "fixtures"
 
@@ -24,7 +24,12 @@ def _load(name: str) -> list[str]:
 
 
 def test_card_json_field_set_matches_fixture():
-    data_dir_card = CardData(name="Sol Ring", price_eur=1.5, price_state="exact")
+    data_dir_card = CardData(
+        name="Sol Ring",
+        price_eur=1.5,
+        price_state="exact",
+        printings={"lea/1": PrintingData(set="lea", price_eur=1.5, price_state="exact")},
+    )
     bulk = CardList(id="bulk", kind="bulk", status="active", name="Bulk", source_path="bulk.txt", entries=[])
 
     import tempfile
@@ -44,6 +49,35 @@ def test_card_json_field_set_matches_fixture():
         cards_json = json.loads((data_dir / "cards.json").read_text(encoding="utf-8"))
 
     assert set(cards_json["sol ring"].keys()) == set(_load("card_json_fields.json"))
+    assert set(cards_json["sol ring"]["printings"]["lea/1"].keys()) == set(
+        _load("printing_json_fields.json")
+    )
+
+
+def test_pinned_entries_carry_a_printing_key_and_unpinned_ones_do_not():
+    bulk = CardList(
+        id="bulk",
+        kind="bulk",
+        status="active",
+        name="Bulk",
+        source_path="bulk.txt",
+        entries=[
+            Entry(name="Sol Ring", qty=1, line=1, set="HOB", collector_number="246"),
+            Entry(name="Sol Ring", qty=1, line=2),
+        ],
+    )
+
+    import tempfile
+
+    with tempfile.TemporaryDirectory() as tmp:
+        data_dir = Path(tmp)
+        emit_all(
+            data_dir, bulk, [], {"sol ring": CardData(name="Sol Ring")}, {}, {}, [], "2024-01-01T00:00:00+00:00"
+        )
+        bulk_json = json.loads((data_dir / "bulk.json").read_text(encoding="utf-8"))
+
+    assert bulk_json["entries"][0]["printing"] == "hob/246"
+    assert "printing" not in bulk_json["entries"][1]
 
 
 def test_list_entry_json_field_set_matches_fixture_when_ownership_present():
@@ -67,6 +101,29 @@ def test_list_entry_json_field_set_matches_fixture_when_ownership_present():
         list_json = json.loads((data_dir / "lists" / "deck-a.json").read_text(encoding="utf-8"))
 
     assert set(list_json["entries"][0].keys()) == set(_load("list_entry_json_fields.json"))
+
+
+def test_pinned_list_entry_json_field_set_matches_fixture():
+    deck = CardList(
+        id="a",
+        kind="deck",
+        status="active",
+        name="Deck A",
+        source_path="decks/a.txt",
+        entries=[Entry(name="Sol Ring", qty=1, line=1, set="LEA", collector_number="1")],
+    )
+    bulk = CardList(id="bulk", kind="bulk", status="active", name="Bulk", source_path="bulk.txt", entries=[])
+    card_data = {"sol ring": CardData(name="Sol Ring")}
+    entry_ownership = {"deck-a": [EntryOwnership(owned_qty=1, missing_qty=0)]}
+
+    import tempfile
+
+    with tempfile.TemporaryDirectory() as tmp:
+        data_dir = Path(tmp)
+        emit_all(data_dir, bulk, [deck], card_data, {}, entry_ownership, [], "2024-01-01T00:00:00+00:00")
+        list_json = json.loads((data_dir / "lists" / "deck-a.json").read_text(encoding="utf-8"))
+
+    assert set(list_json["entries"][0].keys()) == set(_load("list_entry_pinned_json_fields.json"))
 
 
 def test_usage_json_field_set_matches_fixture():

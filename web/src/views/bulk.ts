@@ -6,7 +6,7 @@ import { createViewToggle } from "../components/viewToggle";
 import { getBulk, getCards, getMeta } from "../data";
 import { h, clear } from "../dom";
 import { filterFromParams, filterToParams, matchesFilter, type FilterState } from "../filters";
-import { normalizeName } from "../normalize";
+import { cardForEntry } from "../printing";
 import { priceNote } from "../priceNote";
 import { replaceQueryParams } from "../router";
 import { sortRows, type SortKey } from "../sort";
@@ -27,6 +27,7 @@ const UNRESOLVED_PLACEHOLDER: Omit<CardData, "name"> = {
   price_eur: null,
   price_state: "unavailable",
   released_at: null,
+  printings: {},
 };
 
 /** Bulk has no ownership columns of its own - it IS the inventory - so
@@ -36,7 +37,7 @@ function bulkRows(bulk: CardList, cards: CardsIndex): CardRow[] {
   return bulk.entries.map((e) => ({
     name: e.name,
     qty: e.qty,
-    card: cards[normalizeName(e.name)] ?? { name: e.name, ...UNRESOLVED_PLACEHOLDER },
+    card: cardForEntry(cards, e) ?? { name: e.name, ...UNRESOLVED_PLACEHOLDER },
   }));
 }
 

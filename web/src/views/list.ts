@@ -17,11 +17,11 @@ import {
 } from "../deckStats";
 import { h, clear } from "../dom";
 import { filterFromParams, filterToParams, matchesFilter, type FilterState } from "../filters";
-import { normalizeName } from "../normalize";
+import { cardForEntry } from "../printing";
 import { priceNote } from "../priceNote";
 import { replaceQueryParams } from "../router";
 import { sortRows, type SortKey } from "../sort";
-import type { CardsIndex, ListEntry } from "../types";
+import type { CardData, CardsIndex, ListEntry } from "../types";
 
 type Tab = "all" | "owned" | "missing";
 
@@ -46,7 +46,7 @@ export async function renderList(
     qty: e.qty,
     ownedQty: e.ownedQty ?? 0,
     missingQty: e.missingQty ?? 0,
-    card: lookupCard(e.name, cards),
+    card: lookupCard(e, cards),
   }));
 
   const ownedCount = rows.reduce((sum, r) => sum + r.ownedQty, 0);
@@ -62,7 +62,8 @@ export async function renderList(
   const commanderEntry = findCommanderEntry(list.entries, list.commander);
   const commanderRow = commanderEntry ? rows[list.entries.indexOf(commanderEntry)] : undefined;
   const commanderCard =
-    commanderRow?.card ?? (list.commander ? lookupCard(list.commander, cards) : undefined);
+    commanderRow?.card ??
+    (list.commander ? lookupCard({ name: list.commander }, cards) : undefined);
   const listRows = commanderRow ? rows.filter((r) => r !== commanderRow) : rows;
 
   clear(root);
@@ -241,10 +242,10 @@ export async function renderList(
   render();
 }
 
-function lookupCard(name: string, cards: CardsIndex) {
+function lookupCard(entry: { name: string; printing?: string }, cards: CardsIndex): CardData {
   return (
-    cards[normalizeName(name)] ?? {
-      name,
+    cardForEntry(cards, entry) ?? {
+      name: entry.name,
       mana_cost: "",
       mana_value: 0,
       colors: [],
@@ -259,6 +260,7 @@ function lookupCard(name: string, cards: CardsIndex) {
       price_eur: null,
       price_state: "unavailable" as const,
       released_at: null,
+      printings: {},
     }
   );
 }

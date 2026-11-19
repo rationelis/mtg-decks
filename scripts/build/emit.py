@@ -12,8 +12,8 @@ from pathlib import Path
 from typing import Any
 
 from allocate import EntryOwnership, Usage
-from parse import CardList
-from resolve import CardData
+from parse import CardList, printing_key
+from resolve import CardData, PrintingData
 
 # Fields kept in cards.json. Deliberately excludes bookkeeping fields
 # (last_checked, fuzzy_matched_from) that only matter for the build itself.
@@ -33,17 +33,41 @@ _CARD_FIELDS = (
     "price_eur",
     "price_state",
     "released_at",
+    "printings",
+)
+
+# Fields kept for each entry of a card's `printings` map - the slice of
+# a card that can differ between printings of the same oracle card.
+_PRINTING_FIELDS = (
+    "set",
+    "set_name",
+    "rarity",
+    "image_uri",
+    "scryfall_uri",
+    "price_eur",
+    "price_state",
+    "released_at",
 )
 
 
+def _printing_json(printing: PrintingData) -> dict[str, Any]:
+    return {field: getattr(printing, field) for field in _PRINTING_FIELDS}
+
+
 def _card_json(data: CardData) -> dict[str, Any]:
-    return {field: getattr(data, field) for field in _CARD_FIELDS}
+    payload = {field: getattr(data, field) for field in _CARD_FIELDS if field != "printings"}
+    payload["printings"] = {
+        key: _printing_json(printing) for key, printing in sorted(data.printings.items())
+    }
+    return payload
 
 
 def _list_json(card_list: CardList, ownership: list[EntryOwnership] | None) -> dict[str, Any]:
     entries = []
     for i, e in enumerate(card_list.entries):
         entry: dict[str, Any] = {"name": e.name, "qty": e.qty}
+        if e.set and e.collector_number:
+            entry["printing"] = printing_key(e.set, e.collector_number)
         if ownership is not None:
             entry["ownedQty"] = ownership[i].owned_qty
             entry["missingQty"] = ownership[i].missing_qty

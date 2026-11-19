@@ -1,6 +1,6 @@
 import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
-import type { Allocation, CardData, ListEntry, Usage } from "./types";
+import type { Allocation, CardData, CardPrinting, ListEntry, Usage } from "./types";
 
 // Mirrors scripts/build/tests/test_emit_shape.py - both sides load the
 // same fixture files under scripts/build/tests/fixtures/ so a field
@@ -33,8 +33,23 @@ describe("CardData shape matches the shared Python/TypeScript fixture", () => {
       price_eur: 1.2,
       price_state: "exact",
       released_at: "2023-08-04",
+      printings: {},
     };
     expect(Object.keys(sample).sort()).toEqual(loadFixture("card_json_fields.json").sort());
+  });
+
+  it("has exactly the per-printing fields emit.py writes", () => {
+    const sample: CardPrinting = {
+      set: "cmm",
+      set_name: "Commander Masters",
+      rarity: "uncommon",
+      image_uri: null,
+      scryfall_uri: null,
+      price_eur: 1.2,
+      price_state: "exact",
+      released_at: "2023-08-04",
+    };
+    expect(Object.keys(sample).sort()).toEqual(loadFixture("printing_json_fields.json").sort());
   });
 });
 
@@ -43,12 +58,24 @@ describe("ListEntry shape matches the shared fixture", () => {
     const sample: Required<ListEntry> = {
       name: "Sol Ring",
       qty: 1,
+      printing: "lea/1",
       ownedQty: 1,
       missingQty: 0,
     };
     expect(Object.keys(sample).sort()).toEqual(
-      loadFixture("list_entry_json_fields.json").sort(),
+      loadFixture("list_entry_pinned_json_fields.json").sort(),
     );
+  });
+
+  it("has exactly the fields emit.py writes for an unpinned entry", () => {
+    const { printing: _printing, ...unpinned } = {
+      name: "Sol Ring",
+      qty: 1,
+      printing: "lea/1",
+      ownedQty: 1,
+      missingQty: 0,
+    } satisfies Required<ListEntry>;
+    expect(Object.keys(unpinned).sort()).toEqual(loadFixture("list_entry_json_fields.json").sort());
   });
 });
 

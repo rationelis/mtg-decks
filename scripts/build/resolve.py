@@ -39,12 +39,29 @@ from typing import Any
 import requests
 
 from net import get_json, post_json
-from parse import BuildError, CardList, is_real_active_deck, normalize_name
+from parse import BuildError, CardList, is_real_active_deck, normalize_name, printing_key
 
 COLLECTION_URL = "https://api.scryfall.com/cards/collection"
 NAMED_FUZZY_URL = "https://api.scryfall.com/cards/named"
 CARD_BY_SET_NUMBER_URL = "https://api.scryfall.com/cards/{set}/{number}"
 BATCH_SIZE = 75
+
+
+@dataclass
+class PrintingData:
+    """The per-printing slice of a card: everything that can differ
+    between two printings of the same oracle card (art, set, rarity,
+    and - crucially - price). Keyed by parse.printing_key in
+    CardData.printings."""
+
+    set: str = ""
+    set_name: str = ""
+    rarity: str = ""
+    image_uri: str | None = None
+    scryfall_uri: str | None = None
+    released_at: str | None = None
+    price_eur: float | None = None
+    price_state: str = "unavailable"  # "exact" | "fallback" | "unavailable"
 
 
 @dataclass
@@ -67,6 +84,11 @@ class CardData:
     released_at: str | None = None
     last_checked: str | None = None
     fuzzy_matched_from: str | None = None
+    # Every verified printing pin for this card across bulk + lists. The
+    # top-level fields above describe the *default* printing (the
+    # authoritative pin); a list entry that pins a different printing is
+    # shown using its own entry here instead.
+    printings: dict[str, PrintingData] = field(default_factory=dict)
 
 
 @dataclass(frozen=True)
@@ -138,6 +160,30 @@ def _card_to_data(card: dict[str, Any], now: str) -> CardData:
     )
 
 
+def _printing_of(data: CardData) -> PrintingData:
+    """The per-printing slice of a freshly resolved CardData (no price -
+    prices are applied separately, see apply_bulk_prices)."""
+    return PrintingData(
+        set=data.set,
+        set_name=data.set_name,
+        rarity=data.rarity,
+        image_uri=data.image_uri,
+        scryfall_uri=data.scryfall_uri,
+        released_at=data.released_at,
+    )
+
+
+def _cached_printing(cached: dict[str, Any]) -> PrintingData:
+    return PrintingData(
+        set=str(cached.get("set", "")),
+        set_name=str(cached.get("set_name", "")),
+        rarity=str(cached.get("rarity", "")),
+        image_uri=cached.get("image_uri"),
+        scryfall_uri=cached.get("scryfall_uri"),
+        released_at=cached.get("released_at"),
+    )
+
+
 def _cached_card_data(name: str, cached: dict[str, Any]) -> CardData:
     """Explicit field-by-field extraction (rather than **cached) so a
     malformed/older cache entry can't crash the build - anything missing
@@ -159,6 +205,11 @@ def _cached_card_data(name: str, cached: dict[str, Any]) -> CardData:
         price_eur=None,
         released_at=cached.get("released_at"),
         last_checked=cached.get("last_checked"),
+        printings={
+            str(k): _cached_printing(v)
+            for k, v in (cached.get("printings") or {}).items()
+            if isinstance(v, dict)
+        },
     )
 
 
@@ -392,57 +443,80 @@ def resolve_identity(
         ):
             continue
 
-    # Pin verification: every authoritative pin must exist on Scryfall and
-    # actually be a printing of the pinned name.
-    for key, pin in authoritative_pins.items():
+    # Pin verification: every distinct pinned printing (not just the
+    # authoritative one per name) must exist on Scryfall and actually be a
+    # printing of the pinned name. Each verified printing is recorded on
+    # the card's `printings`; the authoritative one also becomes the
+    # card's default printing.
+    for key in sorted(pins_by_key):
         if key not in result:
             continue  # the name itself already errored above
-        try:
-            card = get_json(
-                CARD_BY_SET_NUMBER_URL.format(
-                    set=pin.set.lower(), number=pin.collector_number
-                )
-            )
-        except requests.RequestException as e:
-            warnings.append(
-                f"Could not verify pinned printing '({pin.set}) {pin.collector_number}' for "
-                f"'{result[key].name}' ({e}); keeping its default printing."
-            )
-            continue
 
-        if card is None:
-            errors.append(
-                BuildError(
-                    path=pin.path,
-                    line=pin.line,
-                    message=(
-                        f"Pinned printing ({pin.set}) {pin.collector_number} was not found "
-                        "on Scryfall."
-                    ),
-                )
-            )
-            continue
+        authoritative = authoritative_pins[key]
+        # One representative occurrence per distinct printing, used for
+        # error attribution and messages. The authoritative pin always
+        # represents its own printing.
+        representatives: dict[str, PinOccurrence] = {
+            printing_key(authoritative.set, authoritative.collector_number): authoritative
+        }
+        for occ in sorted(pins_by_key[key], key=lambda o: (o.path, o.line)):
+            representatives.setdefault(printing_key(occ.set, occ.collector_number), occ)
 
-        pinned_key = normalize_name(card.get("name", ""))
-        if pinned_key != key:
-            errors.append(
-                BuildError(
-                    path=pin.path,
-                    line=pin.line,
-                    message=(
-                        f"Pinned printing ({pin.set}) {pin.collector_number} does not match "
-                        f'"{pin.name}" - that printing is a different card '
-                        f'("{card.get("name", "")}").'
-                    ),
-                )
-            )
-            continue
+        default_data: CardData | None = None
+        verified: dict[str, PrintingData] = {}
 
-        price = result[key].price_eur
-        data = _card_to_data(card, now)
-        data.price_eur = price
-        result[key] = data
-        cache[key] = asdict(data)
+        for pkey, pin in representatives.items():
+            try:
+                card = get_json(
+                    CARD_BY_SET_NUMBER_URL.format(
+                        set=pin.set.lower(), number=pin.collector_number
+                    )
+                )
+            except requests.RequestException as e:
+                warnings.append(
+                    f"Could not verify pinned printing '({pin.set}) {pin.collector_number}' for "
+                    f"'{result[key].name}' ({e}); keeping its default printing."
+                )
+                continue
+
+            if card is None:
+                errors.append(
+                    BuildError(
+                        path=pin.path,
+                        line=pin.line,
+                        message=(
+                            f"Pinned printing ({pin.set}) {pin.collector_number} was not found "
+                            "on Scryfall."
+                        ),
+                    )
+                )
+                continue
+
+            pinned_key = normalize_name(card.get("name", ""))
+            if pinned_key != key:
+                errors.append(
+                    BuildError(
+                        path=pin.path,
+                        line=pin.line,
+                        message=(
+                            f"Pinned printing ({pin.set}) {pin.collector_number} does not match "
+                            f'"{pin.name}" - that printing is a different card '
+                            f'("{card.get("name", "")}").'
+                        ),
+                    )
+                )
+                continue
+
+            printing = _card_to_data(card, now)
+            verified[pkey] = _printing_of(printing)
+            if pin is authoritative:
+                default_data = printing
+
+        if default_data is not None:
+            default_data.printings = dict(result[key].printings)
+            result[key] = default_data
+        result[key].printings.update(verified)
+        cache[key] = asdict(result[key])
 
     return result, authoritative_pins, errors, warnings
 
@@ -481,48 +555,77 @@ def _use_cache_or_error(
     return True
 
 
+def _priced_printings(entry: Any) -> list[tuple[str, str, float]]:
+    """Normalize one bulk-prices.json value into (set, collector_number,
+    price) tuples, skipping unpriced rows. Accepts the current format (a
+    list of {price_eur, set, collector_number}), the previous
+    one-printing-per-name dict, and the original flat-float format (no
+    printing info available).
+    """
+    if isinstance(entry, list):
+        rows = [r for r in entry if isinstance(r, dict)]
+    elif isinstance(entry, dict):
+        rows = [entry]
+    else:
+        rows = [{"price_eur": entry}]
+
+    priced: list[tuple[str, str, float]] = []
+    for row in rows:
+        price = row.get("price_eur")
+        if price is None:
+            continue
+        priced.append((str(row.get("set", "")), str(row.get("collector_number", "")), price))
+    return priced
+
+
 def apply_bulk_prices(
     card_data: dict[str, CardData],
     bulk_prices: dict[str, Any],
     pins: dict[str, PinOccurrence],
 ) -> int:
-    """Set price_eur (and price_state) to the real Cardmarket price for
-    any card present in the bulk-mirror price cache. A priced entry whose
-    (set, number) doesn't match this card's pinned printing is still
-    applied (it's the real price for the copy you own), but marked
-    "fallback" rather than "exact" since it's not pricing the exact
-    printing currently displayed. Always wins over apply_list_prices -
-    it reflects a card you actually own. Returns how many cards were
-    priced.
+    """Set real Cardmarket prices from the bulk-mirror price cache.
+
+    Every priced row whose (set, number) is one of the card's pinned
+    printings prices that printing exactly, so two owned printings of
+    one card each keep their own price. The card's own (default)
+    price_eur/price_state describes its default printing, i.e. the
+    authoritative pin: "exact" when that printing has its own price,
+    otherwise the cheapest priced printing of the same name marked
+    "fallback" (a real price for a copy you own, but not for the printing
+    currently displayed). With no pin at all there's no way to tell
+    which printing is displayed, so the cheapest priced one is used and
+    called "exact". Always wins over apply_list_prices - it reflects a
+    card you actually own. Returns how many cards were priced.
     """
     applied = 0
     for key, entry in bulk_prices.items():
         data = card_data.get(key)
         if data is None:
             continue
-        if isinstance(entry, dict):
-            price = entry.get("price_eur")
-            priced_set = str(entry.get("set", ""))
-            priced_num = str(entry.get("collector_number", ""))
-        else:
-            # Legacy flat-float cache format - no printing info available.
-            price = entry
-            priced_set = ""
-            priced_num = ""
-        if price is None:
+        priced = _priced_printings(entry)
+        if not priced:
             continue
 
-        data.price_eur = price
+        by_printing: dict[str, float] = {}
+        for set_code, number, price in priced:
+            if set_code and number:
+                by_printing[printing_key(set_code, number)] = price
+
+        for pkey, printing in data.printings.items():
+            if pkey in by_printing:
+                printing.price_eur = by_printing[pkey]
+                printing.price_state = "exact"
+
         pin = pins.get(key)
-        if pin is None:
-            data.price_state = "exact"
-        elif (priced_set.lower(), priced_num.lower()) == (
-            pin.set.lower(),
-            pin.collector_number.lower(),
-        ):
+        pin_price = (
+            by_printing.get(printing_key(pin.set, pin.collector_number)) if pin is not None else None
+        )
+        if pin_price is not None:
+            data.price_eur = pin_price
             data.price_state = "exact"
         else:
-            data.price_state = "fallback"
+            data.price_eur = min(price for _, _, price in priced)
+            data.price_state = "exact" if pin is None else "fallback"
         applied += 1
     return applied
 
@@ -546,3 +649,19 @@ def apply_list_prices(
             data.price_state = "fallback"
             applied += 1
     return applied
+
+
+def fill_printing_prices(card_data: dict[str, CardData]) -> None:
+    """Give every pinned printing that has no price of its own the
+    card's default price, marked "fallback" - e.g. a wishlist pins a
+    printing you don't own, or one the bulk-mirror deck doesn't cover.
+    Run after apply_bulk_prices and apply_list_prices so printings with
+    their own exact price are never overwritten.
+    """
+    for data in card_data.values():
+        if data.price_eur is None:
+            continue
+        for printing in data.printings.values():
+            if printing.price_eur is None:
+                printing.price_eur = data.price_eur
+                printing.price_state = "fallback"

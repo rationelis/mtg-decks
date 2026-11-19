@@ -9,7 +9,7 @@ import {
 } from "../deckStats";
 import { h, clear } from "../dom";
 import { isCollectionLike } from "../listKind";
-import { normalizeName } from "../normalize";
+import { cardForEntry } from "../printing";
 import type { CardData, IndexEntry } from "../types";
 
 export async function renderDecks(root: HTMLElement): Promise<void> {
@@ -156,7 +156,7 @@ async function fillInStats(
         qty: e.qty,
         ownedQty: e.ownedQty,
         missingQty: e.missingQty,
-        card: cards[normalizeName(e.name)] ?? ({ price_eur: null } as Pick<CardData, "price_eur">),
+        card: cardForEntry(cards, e) ?? ({ price_eur: null } as Pick<CardData, "price_eur">),
       }));
       const missingPrice = priceToComplete(priceRows);
       const minimumValue = theoreticalMinimum(priceRows);

@@ -19,6 +19,7 @@ function row(name: string, overrides: Partial<CardData> = {}) {
     price_eur: null,
     price_state: "unavailable",
     released_at: null,
+    printings: {},
     ...overrides,
   };
   return { card };

@@ -44,7 +44,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from allocate import allocate  # noqa: E402
-from archidekt import fetch_deck, price_map  # noqa: E402
+from archidekt import fetch_deck, price_map, printing_price_map  # noqa: E402
 from emit import emit_all  # noqa: E402
 from parse import CardList, discover_card_lists, normalize_name  # noqa: E402
 from resolve import (  # noqa: E402
@@ -52,6 +52,7 @@ from resolve import (  # noqa: E402
     apply_list_prices,
     load_cache,
     prune_cache,
+    fill_printing_prices,
     resolve_identity,
     save_cache,
 )
@@ -116,7 +117,7 @@ def fetch_bulk_prices(deck_id: str | None, warnings: list[str]) -> dict[str, Any
         return existing
 
     deck_name = deck.get("name", "Unknown deck")
-    prices, unpriced = price_map(deck, normalize_name)
+    prices, unpriced = printing_price_map(deck, normalize_name)
     if unpriced:
         print(
             f"NOTE: {len(unpriced)} card(s) in the bulk-mirror deck have no Cardmarket "
@@ -246,6 +247,8 @@ def main() -> int:
             f"Applied {applied} reference Cardmarket price(s) from "
             f"{LIST_PRICES_PATH.name} (unowned-card fallback)."
         )
+
+    fill_printing_prices(card_data)
 
     usage, entry_ownership = allocate(bulk, lists, card_data)
 

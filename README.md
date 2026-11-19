@@ -94,6 +94,16 @@ automatically. A card not in your bulk-mirror deck (or with no printing
 picked there) simply has no price - the fix is to mirror it into
 Archidekt and rebuild, not a guessed-at Scryfall estimate.
 
+### Several printings of one card
+
+Ownership and allocation are by card name, but identity and price are
+per printing. If you own two printings of a card (two `(SET) NUM` lines in
+`bulk.txt`, mirrored as two rows in the Archidekt bulk deck), each one
+keeps its own art, rarity and Cardmarket price, in `cards.json`'s
+`printings` map. A list entry that pins a printing shows that printing;
+an unpinned entry shows the card's default printing (the first pin in
+`bulk.txt`). Every distinct pin is verified against Scryfall.
+
 A priced card's `price_state` tells you how literally to trust the
 number: `exact` means the price came from the exact printing currently
 displayed; `fallback` means it's a reference price for a *different*

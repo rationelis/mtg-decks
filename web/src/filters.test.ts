@@ -25,6 +25,7 @@ function card(overrides: Partial<CardData> = {}): CardData {
     price_eur: 1.2,
     price_state: "exact",
     released_at: "2023-08-04",
+    printings: {},
     ...overrides,
   };
 }
