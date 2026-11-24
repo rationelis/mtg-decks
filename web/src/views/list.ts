@@ -108,7 +108,7 @@ export async function renderList(
   }
 
   const tabLabels: Record<Tab, string> = {
-    all: `All (${rows.length})`,
+    all: `All (${rows.reduce((sum, r) => sum + r.qty, 0)})`,
     owned: `Owned (${ownedCount})`,
     missing: `Missing (${missingCount})`,
   };
