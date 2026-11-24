@@ -33,6 +33,7 @@ _CARD_FIELDS = (
     "price_eur",
     "price_state",
     "released_at",
+    "cardmarket_id",
     "printings",
 )
 
@@ -47,6 +48,7 @@ _PRINTING_FIELDS = (
     "price_eur",
     "price_state",
     "released_at",
+    "cardmarket_id",
 )
 
 
@@ -68,6 +70,8 @@ def _list_json(card_list: CardList, ownership: list[EntryOwnership] | None) -> d
         entry: dict[str, Any] = {"name": e.name, "qty": e.qty}
         if e.set and e.collector_number:
             entry["printing"] = printing_key(e.set, e.collector_number)
+        if e.foil:
+            entry["foil"] = True
         if ownership is not None:
             entry["ownedQty"] = ownership[i].owned_qty
             entry["missingQty"] = ownership[i].missing_qty

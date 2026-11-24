@@ -3,9 +3,11 @@ import { renderCardView, type CardRow, type ViewMode } from "../components/cardV
 import { createPriciestButton } from "../components/priciestButton";
 import { createSortSelect } from "../components/sortSelect";
 import { createViewToggle } from "../components/viewToggle";
-import { getBulk, getCards, getMeta } from "../data";
+import { getBulk, getCards, getMeta, getUsage } from "../data";
 import { h, clear } from "../dom";
 import { filterFromParams, filterToParams, matchesFilter, type FilterState } from "../filters";
+import { freeRows } from "../freeCopies";
+import { normalizeName } from "../normalize";
 import { cardForEntry } from "../printing";
 import { priceNote } from "../priceNote";
 import { replaceQueryParams } from "../router";
@@ -27,6 +29,7 @@ const UNRESOLVED_PLACEHOLDER: Omit<CardData, "name"> = {
   price_eur: null,
   price_state: "unavailable",
   released_at: null,
+  cardmarket_id: null,
   printings: {},
 };
 
@@ -37,6 +40,7 @@ function bulkRows(bulk: CardList, cards: CardsIndex): CardRow[] {
   return bulk.entries.map((e) => ({
     name: e.name,
     qty: e.qty,
+    foil: e.foil ?? false,
     card: cardForEntry(cards, e) ?? { name: e.name, ...UNRESOLVED_PLACEHOLDER },
   }));
 }
@@ -45,18 +49,33 @@ export async function renderBulk(root: HTMLElement, params: URLSearchParams): Pr
   clear(root);
   root.append(h("h1", {}, "Bulk"), h("p", { class: "loading" }, "Loading bulk…"));
 
-  const [bulk, cards, meta] = await Promise.all([getBulk(), getCards(), getMeta()]);
+  const [bulk, cards, meta, usage] = await Promise.all([
+    getBulk(),
+    getCards(),
+    getMeta(),
+    getUsage(),
+  ]);
   const rows = bulkRows(bulk, cards);
+  // Same rows, narrowed to copies no deck currently holds.
+  const freeOnlyRows = freeRows(rows, usage, normalizeName);
 
   clear(root);
 
   const resultsContainer = h("div", { class: "results" });
   let sortKey: SortKey = "name-asc";
   let currentFilter: FilterState = filterFromParams(params);
+  let notInDecks = params.get("free") === "1";
   let mode: ViewMode = "gallery";
 
+  function syncUrl(): void {
+    const next = filterToParams(currentFilter);
+    if (notInDecks) next.set("free", "1");
+    replaceQueryParams(next);
+  }
+
   function render(): void {
-    const filtered = rows.filter((r) => matchesFilter(r.card, currentFilter));
+    const source = notInDecks ? freeOnlyRows : rows;
+    const filtered = source.filter((r) => matchesFilter(r.card, currentFilter, r.foil));
     renderCardView(resultsContainer, sortRows(filtered, sortKey), { mode });
   }
 
@@ -64,10 +83,27 @@ export async function renderBulk(root: HTMLElement, params: URLSearchParams): Pr
     rows.map((r) => r.card),
     (state) => {
       currentFilter = state;
-      replaceQueryParams(filterToParams(state));
+      syncUrl();
       render();
     },
     currentFilter,
+  );
+  const notInDecksToggle = h(
+    "button",
+    {
+      type: "button",
+      class: notInDecks ? "view-toggle-btn active" : "view-toggle-btn",
+      "aria-pressed": String(notInDecks),
+      title: "Only show cards that aren't currently in a deck (partly-used cards show just their free copies)",
+      onclick: () => {
+        notInDecks = !notInDecks;
+        notInDecksToggle.classList.toggle("active", notInDecks);
+        notInDecksToggle.setAttribute("aria-pressed", String(notInDecks));
+        syncUrl();
+        render();
+      },
+    },
+    "📦 Not in decks",
   );
   const sortSelect = createSortSelect((key) => {
     sortKey = key;
@@ -93,7 +129,7 @@ export async function renderBulk(root: HTMLElement, params: URLSearchParams): Pr
       "div",
       { class: "toolbar" },
       filterBar,
-      h("div", { class: "toolbar-actions" }, sortSelect, priciestButton, viewToggle),
+      h("div", { class: "toolbar-actions" }, notInDecksToggle, sortSelect, priciestButton, viewToggle),
     ),
     resultsContainer,
   );

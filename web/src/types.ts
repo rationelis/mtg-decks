@@ -17,6 +17,8 @@ export interface CardPrinting {
   price_eur: number | null;
   price_state: PriceState;
   released_at: string | null;
+  /** Scryfall's Cardmarket product id for this printing (null if none). */
+  cardmarket_id: number | null;
 }
 
 export interface CardData {
@@ -37,6 +39,7 @@ export interface CardData {
   price_eur: number | null;
   price_state: PriceState;
   released_at: string | null;
+  cardmarket_id: number | null;
   printings: Record<string, CardPrinting>;
 }
 
@@ -48,6 +51,8 @@ export interface ListEntry {
   qty: number;
   /** printingKey() of the entry's "(SET) NUM" pin; absent when unpinned. */
   printing?: string;
+  /** Present (always `true`) only when the source line is marked `*F*`. */
+  foil?: boolean;
   /** Present on every list except bulk.json - see scripts/build/allocate.py. */
   ownedQty?: number;
   missingQty?: number;

@@ -12,6 +12,8 @@ export interface CardRow {
   name: string;
   qty: number;
   card: CardData;
+  /** This specific copy is a foil (`*F*` in the source list). */
+  foil?: boolean;
   ownedQty?: number;
   missingQty?: number;
 }
@@ -64,6 +66,15 @@ function notOwnedOverlay(row: CardRow): HTMLElement | false {
   );
 }
 
+function foilTag(row: CardRow): HTMLElement | false {
+  if (!row.foil) return false;
+  return h(
+    "span",
+    { class: "foil-tag", title: "Foil copy - priced with Cardmarket's foil average" },
+    "✦ Foil",
+  );
+}
+
 function popoverContext(row: CardRow, listName: string | undefined): PopoverContext | undefined {
   if (row.missingQty === undefined || !listName) return undefined;
   return { listName, missingQty: row.missingQty };
@@ -76,7 +87,7 @@ function popoverContext(row: CardRow, listName: string | undefined): PopoverCont
 function cardImage(card: CardData, row: CardRow, listName: string | undefined, className?: string): HTMLElement {
   const onclick = (e: Event) => {
     e.preventDefault();
-    openCardPopover(e.currentTarget as HTMLElement, card, popoverContext(row, listName));
+    openCardPopover(e.currentTarget as HTMLElement, card, popoverContext(row, listName), !!row.foil);
   };
 
   if (!card.image_uri) {
@@ -120,11 +131,12 @@ function renderGalleryCard(row: CardRow, showDiff: boolean, listName: string | u
     { class: missing ? "gallery-card gallery-card-missing" : "gallery-card" },
     h(
       "div",
-      { class: "gallery-card-image" },
+      { class: row.foil ? "gallery-card-image is-foil" : "gallery-card-image" },
       cardImage(card, row, listName, "gallery-card-link"),
       showDiff && notOwnedOverlay(row),
       row.qty > 1 && h("span", { class: "qty-badge" }, `×${row.qty}`),
       showDiff && diffBadge(row),
+      foilTag(row),
     ),
     h(
       "figcaption",
@@ -203,6 +215,7 @@ function renderTableRow(row: CardRow, showDiff: boolean, listName: string | unde
       "td",
       { class: "cell-name" },
       card.name,
+      foilTag(row),
       missing &&
         h(
           "span",

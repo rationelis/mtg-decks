@@ -44,6 +44,7 @@ export async function renderList(
   const rows: Required<CardRow>[] = list.entries.map((e: ListEntry) => ({
     name: e.name,
     qty: e.qty,
+    foil: e.foil ?? false,
     ownedQty: e.ownedQty ?? 0,
     missingQty: e.missingQty ?? 0,
     card: lookupCard(e, cards),
@@ -84,7 +85,7 @@ export async function renderList(
   // Exports cover the whole deck, commander included.
   function exportRowsForTab(tab: Tab): ExportRow[] {
     return rowsForTab(tab, rows)
-      .filter((r) => matchesFilter(r.card, currentFilter))
+      .filter((r) => matchesFilter(r.card, currentFilter, r.foil))
       .map((r) => ({
         name: r.name,
         qty: tab === "owned" ? r.ownedQty : tab === "missing" ? r.missingQty : r.qty,
@@ -98,7 +99,9 @@ export async function renderList(
   }
 
   function render(): void {
-    const visible = rowsForTab(activeTab).filter((r) => matchesFilter(r.card, currentFilter));
+    const visible = rowsForTab(activeTab).filter((r) =>
+          matchesFilter(r.card, currentFilter, r.foil),
+        );
     renderCardView(resultsContainer, sortRows(visible, sortKey), {
       mode,
       showDiffColumns: true,
@@ -260,6 +263,7 @@ function lookupCard(entry: { name: string; printing?: string }, cards: CardsInde
       price_eur: null,
       price_state: "unavailable" as const,
       released_at: null,
+      cardmarket_id: null,
       printings: {},
     }
   );

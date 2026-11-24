@@ -18,6 +18,7 @@ const thranduil: CardData = {
   price_eur: 0.44,
   price_state: "exact",
   released_at: "2026-08-14",
+  cardmarket_id: 1,
   printings: {
     "hob/167": {
       set: "hob",
@@ -28,6 +29,7 @@ const thranduil: CardData = {
       price_eur: 0.44,
       price_state: "exact",
       released_at: "2026-08-14",
+      cardmarket_id: 1,
     },
     "hob/246": {
       set: "hob",
@@ -38,6 +40,7 @@ const thranduil: CardData = {
       price_eur: 6.8,
       price_state: "exact",
       released_at: "2026-08-14",
+      cardmarket_id: 2,
     },
   },
 };

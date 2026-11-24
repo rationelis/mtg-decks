@@ -126,6 +126,30 @@ def test_pinned_list_entry_json_field_set_matches_fixture():
     assert set(list_json["entries"][0].keys()) == set(_load("list_entry_pinned_json_fields.json"))
 
 
+def test_foil_list_entry_json_field_set_matches_fixture():
+    deck = CardList(
+        id="a",
+        kind="deck",
+        status="active",
+        name="Deck A",
+        source_path="decks/a.txt",
+        entries=[Entry(name="Sol Ring", qty=1, line=1, set="LEA", collector_number="1", foil=True)],
+    )
+    bulk = CardList(id="bulk", kind="bulk", status="active", name="Bulk", source_path="bulk.txt", entries=[])
+    card_data = {"sol ring": CardData(name="Sol Ring")}
+    entry_ownership = {"deck-a": [EntryOwnership(owned_qty=1, missing_qty=0)]}
+
+    import tempfile
+
+    with tempfile.TemporaryDirectory() as tmp:
+        data_dir = Path(tmp)
+        emit_all(data_dir, bulk, [deck], card_data, {}, entry_ownership, [], "2024-01-01T00:00:00+00:00")
+        list_json = json.loads((data_dir / "lists" / "deck-a.json").read_text(encoding="utf-8"))
+
+    assert list_json["entries"][0]["foil"] is True
+    assert set(list_json["entries"][0].keys()) == set(_load("list_entry_foil_json_fields.json"))
+
+
 def test_usage_json_field_set_matches_fixture():
     bulk = CardList(id="bulk", kind="bulk", status="active", name="Bulk", source_path="bulk.txt", entries=[])
     usage = {

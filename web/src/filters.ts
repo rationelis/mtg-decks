@@ -10,6 +10,8 @@ export interface FilterState {
   set: string;
   priceMin: number | null;
   priceMax: number | null;
+  /** Only show copies marked foil (`*F*` in the source list). */
+  foilOnly: boolean;
 }
 
 export function emptyFilter(): FilterState {
@@ -23,6 +25,7 @@ export function emptyFilter(): FilterState {
     set: "",
     priceMin: null,
     priceMax: null,
+    foilOnly: false,
   };
 }
 
@@ -36,7 +39,8 @@ export function isFilterEmpty(f: FilterState): boolean {
     f.rarity === "" &&
     f.set === "" &&
     f.priceMin === null &&
-    f.priceMax === null
+    f.priceMax === null &&
+    !f.foilOnly
   );
 }
 
@@ -55,6 +59,7 @@ const PARAM_KEYS = {
   set: "set",
   priceMin: "pricemin",
   priceMax: "pricemax",
+  foilOnly: "foil",
 } as const;
 
 /** Serializes a filter into URL query params, so the current filter state
@@ -72,6 +77,7 @@ export function filterToParams(f: FilterState): URLSearchParams {
   if (f.set) params.set(PARAM_KEYS.set, f.set);
   if (f.priceMin !== null) params.set(PARAM_KEYS.priceMin, String(f.priceMin));
   if (f.priceMax !== null) params.set(PARAM_KEYS.priceMax, String(f.priceMax));
+  if (f.foilOnly) params.set(PARAM_KEYS.foilOnly, "1");
   return params;
 }
 
@@ -117,10 +123,16 @@ export function filterFromParams(params: URLSearchParams): FilterState {
     f.priceMax = Number(priceMax);
   }
 
+  if (params.get(PARAM_KEYS.foilOnly) === "1") f.foilOnly = true;
+
   return f;
 }
 
-export function matchesFilter(card: CardData, f: FilterState): boolean {
+/** `foil` is a property of the list entry (one specific copy), not of the
+ * card record, so callers pass it alongside the card. */
+export function matchesFilter(card: CardData, f: FilterState, foil = false): boolean {
+  if (f.foilOnly && !foil) return false;
+
   if (f.search) {
     const q = f.search.toLowerCase();
     const haystack = `${card.name} ${card.oracle_text}`.toLowerCase();

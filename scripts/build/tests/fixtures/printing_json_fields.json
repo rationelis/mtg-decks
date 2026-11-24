@@ -6,5 +6,6 @@
   "scryfall_uri",
   "price_eur",
   "price_state",
-  "released_at"
+  "released_at",
+  "cardmarket_id"
 ]

@@ -1,7 +1,7 @@
 {
   "archidektDeckId": "25868036",
   "deckName": "BULK",
-  "fetchedAt": "2026-11-24T17:17:21+00:00",
+  "fetchedAt": "2026-11-24T19:51:34+00:00",
   "prices": {
     "aang's journey": [
       {
@@ -104,7 +104,7 @@
     "aether spike": [
       {
         "collector_number": "398",
-        "price_eur": 0.03,
+        "price_eur": 0.1,
         "set": "mh3"
       }
     ],
@@ -467,6 +467,11 @@
       }
     ],
     "awaken the inferno": [
+      {
+        "collector_number": "74",
+        "price_eur": 0.09,
+        "set": "fra"
+      },
       {
         "collector_number": "74",
         "price_eur": 0.09,
@@ -959,7 +964,7 @@
     "cayth, famed mechanist": [
       {
         "collector_number": "6",
-        "price_eur": 0.33,
+        "price_eur": 0.42,
         "set": "m3c"
       }
     ],
@@ -1069,7 +1074,7 @@
     "clear shot": [
       {
         "collector_number": "28",
-        "price_eur": 0.02,
+        "price_eur": 0.05,
         "set": "otp"
       }
     ],
@@ -1576,6 +1581,11 @@
     "draconic visitor": [
       {
         "collector_number": "80",
+        "price_eur": 3.0,
+        "set": "fra"
+      },
+      {
+        "collector_number": "80",
         "price_eur": 3.05,
         "set": "fra"
       }
@@ -1639,6 +1649,11 @@
     "duskwatch hunter": [
       {
         "collector_number": "153",
+        "price_eur": 0.05,
+        "set": "hob"
+      },
+      {
+        "collector_number": "153",
         "price_eur": 0.35,
         "set": "hob"
       }
@@ -1653,7 +1668,7 @@
     "dwarven mauler": [
       {
         "collector_number": "95",
-        "price_eur": 0.18,
+        "price_eur": 0.3,
         "set": "hob"
       }
     ],
@@ -2158,7 +2173,7 @@
     "feed the flames": [
       {
         "collector_number": "137",
-        "price_eur": 0.02,
+        "price_eur": 0.05,
         "set": "ecl"
       }
     ],
@@ -2450,7 +2465,7 @@
     "garruk, curse breaker": [
       {
         "collector_number": "259",
-        "price_eur": 3.33,
+        "price_eur": 4.04,
         "set": "fra"
       }
     ],
@@ -2658,6 +2673,11 @@
       }
     ],
     "goblin-town flunkies": [
+      {
+        "collector_number": "100",
+        "price_eur": 0.07,
+        "set": "hob"
+      },
       {
         "collector_number": "100",
         "price_eur": 0.03,
@@ -3078,7 +3098,7 @@
     "icy reception": [
       {
         "collector_number": "30",
-        "price_eur": 0.1,
+        "price_eur": 0.2,
         "set": "fra"
       }
     ],
@@ -3461,7 +3481,7 @@
     "lathril, blade of the elves": [
       {
         "collector_number": "242",
-        "price_eur": 0.97,
+        "price_eur": 1.16,
         "set": "fdn"
       }
     ],
@@ -3686,6 +3706,11 @@
       }
     ],
     "magnificent end": [
+      {
+        "collector_number": "20",
+        "price_eur": 0.03,
+        "set": "hob"
+      },
       {
         "collector_number": "20",
         "price_eur": 0.02,
@@ -4838,6 +4863,11 @@
         "collector_number": "79",
         "price_eur": 0.1,
         "set": "hob"
+      },
+      {
+        "collector_number": "79",
+        "price_eur": 0.1,
+        "set": "hob"
       }
     ],
     "ragged short spear": [
@@ -4981,7 +5011,7 @@
     "reiterating bolt": [
       {
         "collector_number": "134",
-        "price_eur": 0.39,
+        "price_eur": 0.24,
         "set": "mh3"
       }
     ],
@@ -5901,7 +5931,7 @@
     "sureshot sower": [
       {
         "collector_number": "115",
-        "price_eur": 0.03,
+        "price_eur": 0.06,
         "set": "fra"
       }
     ],
@@ -6247,14 +6277,12 @@
         "set": "40k"
       }
     ],
-    "the theorist, jace beleren": [
-      {
-        "collector_number": "43",
-        "price_eur": 40.29,
-        "set": "fra"
-      }
-    ],
     "theorix metamage // omit variables": [
+      {
+        "collector_number": "156",
+        "price_eur": 0.03,
+        "set": "fra"
+      },
       {
         "collector_number": "156",
         "price_eur": 0.02,
@@ -6465,7 +6493,7 @@
     "toph, the blind bandit": [
       {
         "collector_number": "198",
-        "price_eur": 0.09,
+        "price_eur": 0.2,
         "set": "tla"
       }
     ],
@@ -6535,7 +6563,7 @@
     "tune the narrative": [
       {
         "collector_number": "75",
-        "price_eur": 0.14,
+        "price_eur": 0.2,
         "set": "mh3"
       }
     ],
@@ -6752,7 +6780,7 @@
     "uthros psionicist": [
       {
         "collector_number": "84",
-        "price_eur": 0.09,
+        "price_eur": 0.15,
         "set": "eoe"
       }
     ],
@@ -7172,7 +7200,7 @@
     "your fate ends here": [
       {
         "collector_number": "24",
-        "price_eur": 0.02,
+        "price_eur": 0.11,
         "set": "fra"
       }
     ],

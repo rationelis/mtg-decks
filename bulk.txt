@@ -12,7 +12,7 @@
 1 Aether Hub (DRC) 145
 1 Aether Refinery (M3C) 106
 1 Aether Revolt (MH3) 113
-1 Aether Spike (MH3) 398
+1 Aether Spike (MH3) 398 *F*
 1 Aethergeode Miner (M3C) 163
 1 Aetherize (40K) 191
 1 Aethersphere Harvester (M3C) 280
@@ -69,7 +69,7 @@
 1 Automated Assembly Line (PIP) 10
 1 Avatar Enthusiasts (TLA) 11
 1 Awaken the Honored Dead (TDM) 170
-1 Awaken the Inferno (FRA) 74
+1 Awaken the Inferno (FRA) 74 *F*
 1 Awaken the Inferno (FRA) 74
 1 Azusa's Many Journeys // Likeness of the Seeker (NEO) 172
 1 Badgermole (TLA) 166
@@ -141,7 +141,7 @@
 1 Cast Away Doubt (FRA) 51
 1 Castle Vantress (M3C) 327
 1 Cathartic Reunion (ECC) 91
-1 Cayth, Famed Mechanist (M3C) 6
+1 Cayth, Famed Mechanist (M3C) 6 *F*
 1 Celeborn the Wise (LTR) 156
 1 Cemetery Recruitment (FDN) 517
 1 Centaur Vinecrasher (EOC) 94
@@ -158,7 +158,7 @@
 1 Cirith Ungol Patrol (LTR) 80
 1 Clamavus (40K) 90
 1 Clash of Elements (FRA) 126
-1 Clear Shot (OTP) 28
+1 Clear Shot (OTP) 28 *F*
 1 Clifftop Retreat (TDC) 351
 1 Clinquant Skymage (FDN) 33
 1 Coalition Relic (M3C) 286
@@ -234,7 +234,7 @@
 1 Down, Down to Goblin-town (HOB) 65
 1 Dr. Madison Li (PIP) 3 *F*
 1 Draconic Roar (IMA) 123
-1 Draconic Visitor (FRA) 80
+1 Draconic Visitor (FRA) 80 *F*
 1 Draconic Visitor (FRA) 80
 1 Dragon Fodder (FDN) 535
 1 Dragonloft Idol (IMA) 215
@@ -244,10 +244,10 @@
 1 Dropkick Bomber (FDN) 537
 1 Drudge Sentinel (DOM) 89
 1 Druid of the Cowl (FDN) 554
-1 Duskwatch Hunter (HOB) 153
+1 Duskwatch Hunter (HOB) 153 *F*
 1 Duskwatch Hunter (HOB) 153
 1 Dwarven Grunt (ODY) 185
-1 Dwarven Mauler (HOB) 95
+1 Dwarven Mauler (HOB) 95 *F*
 1 Dwarven Provisioner (HOB) 9
 1 Dwynen's Elite (FDN) 218
 1 Dwynen, Gilt-Leaf Daen (FDN) 217
@@ -322,7 +322,7 @@
 1 Fblthp, Knows the Way (FRA) 258
 1 Feasting Hobbit (LTC) 37
 1 Fecundity (C13) 145
-1 Feed the Flames (ECL) 137
+1 Feed the Flames (ECL) 137 *F*
 1 Felidar Savior (FDN) 12
 1 Felling Blow (FDN) 105
 1 Fellwar Stone (SOC) 347
@@ -367,7 +367,7 @@
 1 Gargoyle Sentinel (M19) 236
 1 Garrison Excavator (SOS) 116
 1 Garrison Excavator (SOS) 116
-1 Garruk, Curse Breaker (FRA) 259
+1 Garruk, Curse Breaker (FRA) 259 *F*
 1 Gatekeeper Gargoyle (GRN) 235
 1 Gatewatch Beacon (CMM) 721
 1 Gaze of Granite (EOC) 116
@@ -397,7 +397,7 @@
 1 Goblin Oriflamme (FDN) 539
 1 Goblin Plate Mail (HOB) 157
 1 Goblin Smuggler (FDN) 540
-1 Goblin-town Flunkies (HOB) 100
+1 Goblin-town Flunkies (HOB) 100 *F*
 1 Goblin-town Flunkies (HOB) 100
 1 God-Eternal Bontu (EOC) 83
 1 Goldspan Dragon (M3C) 212
@@ -461,7 +461,7 @@
 1 Ice Flan (FIN) 55
 1 Icewind Elemental (FDN) 42
 1 Icon of Ancestry (40K) 242
-1 Icy Reception (FRA) 30
+1 Icy Reception (FRA) 30 *F*
 1 Immaculate Magistrate (CMA) 117
 1 Imperious Inkmage (SOS) 195
 1 Imperious Inkmage (SOS) 195
@@ -520,7 +520,7 @@
 1 Lakeshore Apothecary (HOB) 43
 1 Large Bear (HOB) 159
 1 Last Gasp (FRA) 56
-1 Lathril, Blade of the Elves (FDN) 242
+1 Lathril, Blade of the Elves (FDN) 242 *F*
 1 Leaf-Crowned Visionary (DMU) 167
 1 Leaves from the Vine (TLA) 185
 1 Legion Loyalty (M3C) 171
@@ -555,7 +555,7 @@
 1 Lure (IMA) 175
 1 Maalfeld Twins (FDN) 523
 1 Magitek Infantry (FIN) 25
-1 Magnificent End (HOB) 20
+1 Magnificent End (HOB) 20 *F*
 1 Magnificent End (HOB) 20
 1 Magnigoth Sentry (FDN) 556
 1 Magus Lucea Kane (40K) 174 *F*
@@ -730,7 +730,7 @@
 1 Rabaroo Troop (TLA) 32
 1 Radical Idea (OTC) 110
 1 Raft Security Officer (MSH) 33
-1 Rage into the Valley (HOB) 79
+1 Rage into the Valley (HOB) 79 *F*
 1 Rage into the Valley (HOB) 79
 1 Ragged Short Spear (HOB) 108
 1 Ragged Short Spear (HOB) 108
@@ -754,7 +754,7 @@
 1 Refocus (FRF) 47
 1 Regent's Authority (NEO) 32
 1 Reigning Victor (TDM) 216
-1 Reiterating Bolt (MH3) 134
+1 Reiterating Bolt (MH3) 134 *F*
 1 Rescue (DOM) 63
 1 Return to Action (NEO) 121
 1 Reverent Howl (HOB) 81
@@ -893,7 +893,7 @@
 1 Sulfur Falls (OTC) 322
 1 Sulfurous Springs (EOC) 185
 1 Sunshower Druid (BLB) 195
-1 Sureshot Sower (FRA) 115
+1 Sureshot Sower (FRA) 115 *F*
 1 Surveillance Phantasm (FRA) 42
 1 Suspicious Shambler (FDN) 527
 1 Sutina, Speaker of the Tajuru (J25) 56
@@ -947,7 +947,7 @@
 1 The Red Terror (40K) 83
 1 The Swarmlord (40K) 321 *E*
 1 The Swarmlord (40K) 176 *F*
-1 Theorix Metamage // Omit Variables (FRA) 156
+1 Theorix Metamage // Omit Variables (FRA) 156 *F*
 1 Theorix Metamage // Omit Variables (FRA) 156
 1 Think Twice (TDC) 168
 1 Third Path Iconoclast (TDC) 307
@@ -978,7 +978,7 @@
 1 Tomakul Honor Guard (BRO) 195
 1 Tomik, Izzet Sparkmage (FRA) 253
 1 Tomik, Orzhov Lawmage (FRA) 206
-1 Toph, the Blind Bandit (TLA) 198
+1 Toph, the Blind Bandit (TLA) 198 *F*
 1 Tormenting Voice (ZNR) 172
 1 Toxic Deluge (MSC) 161
 1 Toxicrene (40K) 101
@@ -988,7 +988,7 @@
 1 Troll Negotiations (HOB) 138
 1 Troop of Ponies (HOB) 199
 1 Trygon Prime (40K) 143
-1 Tune the Narrative (MH3) 75
+1 Tune the Narrative (MH3) 75 *F*
 1 Twilight Mire (EOC) 189
 1 Twin-Silk Spider (MH1) 188
 1 Twinblade Paladin (FDN) 503
@@ -1020,7 +1020,7 @@
 1 Untamed Hunger (FDN) 529
 1 Unyielding Krumar (KTK) 94
 1 Uruk-hai Berserker (LTR) 112
-1 Uthros Psionicist (EOE) 84
+1 Uthros Psionicist (EOE) 84 *F*
 1 Uurg, Spawn of Turg (EOC) 127
 1 Vampire Interloper (FDN) 530
 1 Vampire Neonate (FDN) 531
@@ -1085,7 +1085,7 @@
 1 Yip Yip! (TLA) 43
 1 You See a Guard Approach (AFR) 85
 1 Young Pyromancer (OTC) 185
-1 Your Fate Ends Here (FRA) 24
+1 Your Fate Ends Here (FRA) 24 *F*
 1 Yuyan Archers (TLA) 161
 1 Zenos yae Galvus // Shinryu, Transcendent Rival (FIN) 384 *F*
 1 Zoanthrope (40K) 149

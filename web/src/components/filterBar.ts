@@ -164,6 +164,23 @@ export function createFilterBar(
   ) as HTMLSelectElement;
   raritySelect.value = state.rarity;
 
+  const foilToggle = h(
+    "button",
+    {
+      type: "button",
+      class: state.foilOnly ? "foil-filter active" : "foil-filter",
+      "aria-pressed": String(state.foilOnly),
+      title: "Show only foil copies",
+      onclick: () => {
+        state.foilOnly = !state.foilOnly;
+        foilToggle.classList.toggle("active", state.foilOnly);
+        foilToggle.setAttribute("aria-pressed", String(state.foilOnly));
+        emit();
+      },
+    },
+    "✦ Foil only",
+  );
+
   const resetButton = h(
     "button",
     {
@@ -181,6 +198,8 @@ export function createFilterBar(
         updateSetTitle();
         raritySelect.value = "";
         colorPips.forEach((btn) => btn.classList.remove("active"));
+        foilToggle.classList.remove("active");
+        foilToggle.setAttribute("aria-pressed", "false");
         emit();
       },
     },
@@ -222,6 +241,7 @@ export function createFilterBar(
     raritySelect,
     setSelect,
     h("label", { class: "range-group" }, "€", priceMin, "–", priceMax),
+    foilToggle,
     resetButton,
     copyLinkButton,
   );

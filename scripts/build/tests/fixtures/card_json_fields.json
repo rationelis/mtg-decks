@@ -14,5 +14,6 @@
   "price_eur",
   "price_state",
   "released_at",
+  "cardmarket_id",
   "printings"
 ]

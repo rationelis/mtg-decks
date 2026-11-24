@@ -783,3 +783,150 @@ tr.row-missing .cell-name {
 .deck-overview-side .stats {
   margin-top: 0.5rem;
 }
+
+/* Foil copies: a subtle rainbow sheen over the card art plus a "✦ Foil"
+   tag. Purely presentational - prices already use the foil average. */
+.foil-tag {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  line-height: 1;
+  padding: 0.15rem 0.4rem;
+  border-radius: 1rem;
+  color: #1b1b1b;
+  background: linear-gradient(115deg, #ffe27a, #ff9ed2 35%, #8fd3ff 70%, #b7ffb0);
+  white-space: nowrap;
+}
+
+.foil-tag-inline {
+  margin-left: 0.5rem;
+  vertical-align: middle;
+}
+
+.cell-name .foil-tag {
+  margin-left: 0.5rem;
+}
+
+.gallery-card-image .foil-tag {
+  position: absolute;
+  bottom: 0.35rem;
+  left: 0.35rem;
+  pointer-events: none;
+}
+
+.popover-image-box {
+  position: relative;
+  flex: 0 0 auto;
+  align-self: flex-start; /* don't stretch to the text column's height, or the foil sheen overflows the card */
+  line-height: 0;
+  border-radius: 4.5% / 3.2%;
+  overflow: hidden;
+}
+
+.is-foil {
+  --foil-sheen: linear-gradient(
+    115deg,
+    transparent 20%,
+    rgba(255, 120, 200, 0.35) 35%,
+    rgba(120, 200, 255, 0.35) 50%,
+    rgba(160, 255, 160, 0.35) 65%,
+    transparent 80%
+  );
+}
+
+.is-foil::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--foil-sheen);
+  background-size: 250% 100%;
+  mix-blend-mode: color-dodge;
+  pointer-events: none;
+  animation: foil-shimmer 6s ease-in-out infinite alternate;
+}
+
+@keyframes foil-shimmer {
+  from {
+    background-position: 100% 0;
+  }
+  to {
+    background-position: 0 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .is-foil::after {
+    animation: none;
+    background-position: 50% 0;
+  }
+}
+
+@media (max-width: 560px) {
+  .popover-image-box {
+    width: 100%;
+  }
+}
+
+.popover-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 1rem;
+  margin: 0.3rem 0 0.6rem;
+}
+
+.popover-links a {
+  margin: 0;
+}
+
+.popover-cardmarket-link {
+  display: inline-block;
+  padding: 0.3rem 0.7rem;
+  border-radius: 0.35rem;
+  background: var(--accent);
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* "Foil only" filter toggle - lights up with the foil gradient when on. */
+.foil-filter {
+  padding: 0.35rem 0.7rem;
+  border-radius: 0.35rem;
+  border: 1px solid var(--border);
+  background: canvas;
+  color: inherit;
+  cursor: pointer;
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+.foil-filter.active {
+  color: #1b1b1b;
+  font-weight: 600;
+  border-color: transparent;
+  background: linear-gradient(115deg, #ffe27a, #ff9ed2 35%, #8fd3ff 70%, #b7ffb0);
+}
+
+/* Rarity line in the card popover, tinted like the usual set symbols. */
+.popover-rarity {
+  margin: 0.2rem 0 0.5rem;
+  font-size: 0.9rem;
+}
+
+.popover-rarity.rarity-uncommon strong {
+  color: #7a9aa8;
+}
+
+.popover-rarity.rarity-rare strong {
+  color: #b8962e;
+}
+
+.popover-rarity.rarity-mythic strong {
+  color: #d9561f;
+}
+
+.popover-rarity.rarity-special strong,
+.popover-rarity.rarity-bonus strong {
+  color: #9b59b6;
+}

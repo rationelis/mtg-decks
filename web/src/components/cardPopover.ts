@@ -1,3 +1,4 @@
+import { cardmarketUrl } from "../cardmarket";
 import { getUsage } from "../data";
 import { clear, h } from "../dom";
 import { normalizeName } from "../normalize";
@@ -20,14 +21,19 @@ let closeCurrent: (() => void) | null = null;
  * anchored to the clicked element so it can never end up partially or
  * fully off-screen. Only one dialog is ever open at a time; clicking the
  * backdrop or pressing Escape closes it. */
-export function openCardPopover(anchor: HTMLElement, card: CardData, context?: PopoverContext): void {
+export function openCardPopover(
+  anchor: HTMLElement,
+  card: CardData,
+  context?: PopoverContext,
+  foil = false,
+): void {
   closeCurrent?.();
 
   const backdrop = h("div", { class: "card-modal-backdrop" });
   const dialog = h("div", { class: "card-modal", role: "dialog", "aria-modal": "true" });
   backdrop.append(dialog);
   document.body.append(backdrop);
-  renderStatic(dialog, card, close);
+  renderStatic(dialog, card, close, foil);
 
   function close(): void {
     backdrop.remove();
@@ -57,6 +63,10 @@ export function openCardPopover(anchor: HTMLElement, card: CardData, context?: P
         h("p", { class: "popover-error" }, "Could not load allocation data."),
       );
     });
+}
+
+function capitalize(s: string): string {
+  return s.charAt(0).toUpperCase() + s.slice(1);
 }
 
 function allocationList(usage: Usage): HTMLElement {
@@ -105,7 +115,7 @@ function summaryLine(usage: Usage, context: PopoverContext): HTMLElement | false
 /** The part of the dialog that never needs the async usage.json fetch:
  * image, name, oracle text, price, and the Scryfall link. Rendered
  * immediately so the dialog is never empty/blank while usage loads. */
-function renderStatic(dialog: HTMLElement, card: CardData, close: () => void): void {
+function renderStatic(dialog: HTMLElement, card: CardData, close: () => void, foil: boolean): void {
   clear(dialog);
 
   const closeButton = h(
@@ -117,30 +127,53 @@ function renderStatic(dialog: HTMLElement, card: CardData, close: () => void): v
   const image = card.image_uri
     ? h("img", { class: "popover-image", src: card.image_uri, alt: card.name })
     : h("div", { class: "popover-image popover-image-placeholder" }, card.name);
+  const imageBox = h("div", { class: foil ? "popover-image-box is-foil" : "popover-image-box" }, image);
 
   dialog.append(
     closeButton,
     h(
       "div",
       { class: "popover-body" },
-      image,
+      imageBox,
       h(
         "div",
         { class: "popover-details" },
-        h("h3", {}, card.name),
+        h("h3", {}, card.name, foil && h("span", { class: "foil-tag foil-tag-inline" }, "✦ Foil")),
         h("p", { class: "popover-meta" }, [card.type_line, card.mana_cost].filter(Boolean).join(" — ") || "—"),
+        card.rarity &&
+          h(
+            "p",
+            { class: `popover-rarity rarity-${card.rarity}` },
+            h("strong", {}, capitalize(card.rarity)),
+            card.set_name && ` · ${card.set_name}${card.set ? ` (${card.set.toUpperCase()})` : ""}`,
+          ),
         card.oracle_text && h("p", { class: "popover-oracle" }, card.oracle_text),
         h(
           "p",
           { class: "popover-price", title: priceTitle(card) },
-          `Price: ${formatPriceLabel(card)}`,
+          `Price: ${formatPriceLabel(card)}${foil ? " (foil)" : ""}`,
         ),
-        card.scryfall_uri &&
+        h(
+          "div",
+          { class: "popover-links" },
           h(
             "a",
-            { class: "popover-scryfall-link", href: card.scryfall_uri, target: "_blank", rel: "noopener" },
-            "View on Scryfall ↗",
+            {
+              class: "popover-cardmarket-link",
+              href: cardmarketUrl(card, foil),
+              target: "_blank",
+              rel: "noopener",
+              title: foil ? "Open on Cardmarket, filtered to foil offers" : "Open on Cardmarket",
+            },
+            "Cardmarket ↗",
           ),
+          card.scryfall_uri &&
+            h(
+              "a",
+              { class: "popover-scryfall-link", href: card.scryfall_uri, target: "_blank", rel: "noopener" },
+              "View on Scryfall ↗",
+            ),
+        ),
         h("div", { class: "allocation-section" }, h("p", { class: "loading" }, "Loading allocation…")),
       ),
     ),

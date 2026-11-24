@@ -25,6 +25,7 @@ function card(overrides: Partial<CardData> = {}): CardData {
     price_eur: 1.2,
     price_state: "exact",
     released_at: "2023-08-04",
+    cardmarket_id: null,
     printings: {},
     ...overrides,
   };
@@ -78,6 +79,14 @@ describe("matchesFilter", () => {
     expect(matchesFilter(card({ set: "lea" }), f)).toBe(false);
   });
 
+  it("filters to foil copies only, using the entry's foil flag", () => {
+    const f = { ...emptyFilter(), foilOnly: true };
+    expect(matchesFilter(card(), f, true)).toBe(true);
+    expect(matchesFilter(card(), f, false)).toBe(false);
+    expect(matchesFilter(card(), f)).toBe(false);
+    expect(matchesFilter(card(), emptyFilter(), false)).toBe(true);
+  });
+
   it("filters by price range, excluding unpriced cards", () => {
     const f = { ...emptyFilter(), priceMin: 1, priceMax: 5 };
     expect(matchesFilter(card({ price_eur: 2 }), f)).toBe(true);
@@ -99,6 +108,7 @@ describe("filterToParams / filterFromParams", () => {
       set: "lea",
       priceMin: 0,
       priceMax: 2,
+      foilOnly: true,
     };
     const roundTripped = filterFromParams(filterToParams(f));
     expect(roundTripped.search).toBe(f.search);
@@ -110,6 +120,7 @@ describe("filterToParams / filterFromParams", () => {
     expect(roundTripped.set).toBe(f.set);
     expect(roundTripped.priceMin).toBe(f.priceMin);
     expect(roundTripped.priceMax).toBe(f.priceMax);
+    expect(roundTripped.foilOnly).toBe(true);
   });
 
   it("produces empty params for an empty filter", () => {
@@ -119,5 +130,11 @@ describe("filterToParams / filterFromParams", () => {
   it("isFilterEmpty agrees with an empty filter", () => {
     expect(isFilterEmpty(emptyFilter())).toBe(true);
     expect(isFilterEmpty({ ...emptyFilter(), search: "x" })).toBe(false);
+    expect(isFilterEmpty({ ...emptyFilter(), foilOnly: true })).toBe(false);
+  });
+
+  it("only emits the foil param when foil-only is on", () => {
+    expect(filterToParams({ ...emptyFilter(), foilOnly: true }).get("foil")).toBe("1");
+    expect(filterToParams(emptyFilter()).has("foil")).toBe(false);
   });
 });

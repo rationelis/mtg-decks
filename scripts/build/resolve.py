@@ -60,6 +60,7 @@ class PrintingData:
     image_uri: str | None = None
     scryfall_uri: str | None = None
     released_at: str | None = None
+    cardmarket_id: int | None = None
     price_eur: float | None = None
     price_state: str = "unavailable"  # "exact" | "fallback" | "unavailable"
 
@@ -79,6 +80,7 @@ class CardData:
     image_uri: str | None = None
     scryfall_uri: str | None = None
     scryfall_id: str | None = None
+    cardmarket_id: int | None = None
     price_eur: float | None = None
     price_state: str = "unavailable"  # "exact" | "fallback" | "unavailable"
     released_at: str | None = None
@@ -155,6 +157,7 @@ def _card_to_data(card: dict[str, Any], now: str) -> CardData:
         image_uri=_image_uri(card),
         scryfall_uri=card.get("scryfall_uri"),
         scryfall_id=card.get("id"),
+        cardmarket_id=card.get("cardmarket_id"),
         released_at=card.get("released_at"),
         last_checked=now,
     )
@@ -170,6 +173,7 @@ def _printing_of(data: CardData) -> PrintingData:
         image_uri=data.image_uri,
         scryfall_uri=data.scryfall_uri,
         released_at=data.released_at,
+        cardmarket_id=data.cardmarket_id,
     )
 
 
@@ -181,6 +185,7 @@ def _cached_printing(cached: dict[str, Any]) -> PrintingData:
         image_uri=cached.get("image_uri"),
         scryfall_uri=cached.get("scryfall_uri"),
         released_at=cached.get("released_at"),
+        cardmarket_id=cached.get("cardmarket_id"),
     )
 
 
@@ -202,6 +207,7 @@ def _cached_card_data(name: str, cached: dict[str, Any]) -> CardData:
         image_uri=cached.get("image_uri"),
         scryfall_uri=cached.get("scryfall_uri"),
         scryfall_id=cached.get("scryfall_id"),
+        cardmarket_id=cached.get("cardmarket_id"),
         price_eur=None,
         released_at=cached.get("released_at"),
         last_checked=cached.get("last_checked"),

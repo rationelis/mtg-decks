@@ -33,6 +33,7 @@ describe("CardData shape matches the shared Python/TypeScript fixture", () => {
       price_eur: 1.2,
       price_state: "exact",
       released_at: "2023-08-04",
+      cardmarket_id: 12345,
       printings: {},
     };
     expect(Object.keys(sample).sort()).toEqual(loadFixture("card_json_fields.json").sort());
@@ -48,6 +49,7 @@ describe("CardData shape matches the shared Python/TypeScript fixture", () => {
       price_eur: 1.2,
       price_state: "exact",
       released_at: "2023-08-04",
+      cardmarket_id: 12345,
     };
     expect(Object.keys(sample).sort()).toEqual(loadFixture("printing_json_fields.json").sort());
   });
@@ -55,10 +57,11 @@ describe("CardData shape matches the shared Python/TypeScript fixture", () => {
 
 describe("ListEntry shape matches the shared fixture", () => {
   it("has exactly the fields emit.py writes when ownership is present", () => {
-    const sample: Required<ListEntry> = {
+    const { foil: _foil, ...sample }: Required<ListEntry> = {
       name: "Sol Ring",
       qty: 1,
       printing: "lea/1",
+      foil: true,
       ownedQty: 1,
       missingQty: 0,
     };
@@ -68,14 +71,29 @@ describe("ListEntry shape matches the shared fixture", () => {
   });
 
   it("has exactly the fields emit.py writes for an unpinned entry", () => {
-    const { printing: _printing, ...unpinned } = {
+    const { printing: _printing, foil: _foil, ...unpinned } = {
       name: "Sol Ring",
       qty: 1,
       printing: "lea/1",
+      foil: true,
       ownedQty: 1,
       missingQty: 0,
     } satisfies Required<ListEntry>;
     expect(Object.keys(unpinned).sort()).toEqual(loadFixture("list_entry_json_fields.json").sort());
+  });
+
+  it("has exactly the fields emit.py writes for a foil entry", () => {
+    const sample: Required<ListEntry> = {
+      name: "Sol Ring",
+      qty: 1,
+      printing: "lea/1",
+      foil: true,
+      ownedQty: 1,
+      missingQty: 0,
+    };
+    expect(Object.keys(sample).sort()).toEqual(
+      loadFixture("list_entry_foil_json_fields.json").sort(),
+    );
   });
 });
 
