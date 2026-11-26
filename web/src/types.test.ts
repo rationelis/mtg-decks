@@ -27,6 +27,7 @@ describe("CardData shape matches the shared Python/TypeScript fixture", () => {
       oracle_text: "{T}: Add {C}{C}.",
       set: "cmm",
       set_name: "Commander Masters",
+      collector_number: "",
       rarity: "uncommon",
       image_uri: null,
       scryfall_uri: null,
@@ -43,6 +44,7 @@ describe("CardData shape matches the shared Python/TypeScript fixture", () => {
     const sample: CardPrinting = {
       set: "cmm",
       set_name: "Commander Masters",
+      collector_number: "",
       rarity: "uncommon",
       image_uri: null,
       scryfall_uri: null,

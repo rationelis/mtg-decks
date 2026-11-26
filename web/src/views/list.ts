@@ -1,6 +1,7 @@
 import { createCommanderCard } from "../components/commanderCard";
 import { createFilterBar } from "../components/filterBar";
 import { renderCardView, type CardRow, type ViewMode } from "../components/cardView";
+import { createCsvButton, type CsvRow } from "../components/csvExport";
 import { createExportButton, type ExportRow } from "../components/exportButton";
 import { createPriciestButton } from "../components/priciestButton";
 import { createSortSelect } from "../components/sortSelect";
@@ -92,6 +93,22 @@ export async function renderList(
       }));
   }
 
+  // Same selection as the text export (active tab + filters, commander
+  // included), but keeping the whole row so the CSV can include set, foil
+  // and price.
+  function csvRowsForTab(tab: Tab): CsvRow[] {
+    return rowsForTab(tab, rows)
+      .filter((r) => matchesFilter(r.card, currentFilter, r.foil))
+      .map((r) => ({
+        row: r,
+        qty: tab === "owned" ? r.ownedQty : tab === "missing" ? r.missingQty : r.qty,
+      }));
+  }
+
+  function csvScope(): string {
+    return `${list.name} ${activeTab}`;
+  }
+
   function exportLabel(): string {
     const tabLabel = activeTab === "owned" ? "Owned" : activeTab === "missing" ? "Missing" : "All";
     const count = exportRowsForTab(activeTab).reduce((sum, r) => sum + r.qty, 0);
@@ -155,6 +172,7 @@ export async function renderList(
   });
 
   const exportButton = createExportButton(() => exportRowsForTab(activeTab), exportLabel);
+  const csvButton = createCsvButton(() => csvRowsForTab(activeTab), csvScope);
 
   root.append(
     h(
@@ -237,6 +255,7 @@ export async function renderList(
         priciestButton,
         viewToggle,
         exportButton.element,
+        csvButton,
       ),
     ),
     resultsContainer,
@@ -257,6 +276,7 @@ function lookupCard(entry: { name: string; printing?: string }, cards: CardsInde
       oracle_text: "",
       set: "",
       set_name: "",
+      collector_number: "",
       rarity: "",
       image_uri: null,
       scryfall_uri: null,

@@ -13,6 +13,7 @@ function card(overrides: Partial<CardData>): CardData {
     oracle_text: "",
     set: "fin",
     set_name: "Final Fantasy",
+    collector_number: "",
     rarity: "rare",
     image_uri: null,
     scryfall_uri: null,

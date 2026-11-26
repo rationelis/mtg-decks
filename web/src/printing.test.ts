@@ -12,6 +12,7 @@ const thranduil: CardData = {
   oracle_text: "",
   set: "hob",
   set_name: "The Hobbit",
+  collector_number: "",
   rarity: "rare",
   image_uri: "plain.jpg",
   scryfall_uri: null,
@@ -23,6 +24,7 @@ const thranduil: CardData = {
     "hob/167": {
       set: "hob",
       set_name: "The Hobbit",
+      collector_number: "",
       rarity: "rare",
       image_uri: "plain.jpg",
       scryfall_uri: null,
@@ -34,6 +36,7 @@ const thranduil: CardData = {
     "hob/246": {
       set: "hob",
       set_name: "The Hobbit",
+      collector_number: "",
       rarity: "rare",
       image_uri: "borderless.jpg",
       scryfall_uri: null,

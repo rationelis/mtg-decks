@@ -8,6 +8,7 @@
   "oracle_text",
   "set",
   "set_name",
+  "collector_number",
   "rarity",
   "image_uri",
   "scryfall_uri",

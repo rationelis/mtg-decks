@@ -19,6 +19,7 @@ function card(overrides: Partial<CardData> = {}): CardData {
     oracle_text: "{T}: Add {C}{C}.",
     set: "cmm",
     set_name: "Commander Masters",
+    collector_number: "",
     rarity: "uncommon",
     image_uri: null,
     scryfall_uri: null,

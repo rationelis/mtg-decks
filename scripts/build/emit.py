@@ -27,6 +27,7 @@ _CARD_FIELDS = (
     "oracle_text",
     "set",
     "set_name",
+    "collector_number",
     "rarity",
     "image_uri",
     "scryfall_uri",
@@ -42,6 +43,7 @@ _CARD_FIELDS = (
 _PRINTING_FIELDS = (
     "set",
     "set_name",
+    "collector_number",
     "rarity",
     "image_uri",
     "scryfall_uri",

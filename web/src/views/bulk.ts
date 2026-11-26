@@ -1,4 +1,5 @@
 import { createFilterBar } from "../components/filterBar";
+import { createCsvButton } from "../components/csvExport";
 import { renderCardView, type CardRow, type ViewMode } from "../components/cardView";
 import { createPriciestButton } from "../components/priciestButton";
 import { createSortSelect } from "../components/sortSelect";
@@ -23,6 +24,7 @@ const UNRESOLVED_PLACEHOLDER: Omit<CardData, "name"> = {
   oracle_text: "",
   set: "",
   set_name: "",
+  collector_number: "",
   rarity: "",
   image_uri: null,
   scryfall_uri: null,
@@ -73,10 +75,13 @@ export async function renderBulk(root: HTMLElement, params: URLSearchParams): Pr
     replaceQueryParams(next);
   }
 
-  function render(): void {
+  function visibleRows(): CardRow[] {
     const source = notInDecks ? freeOnlyRows : rows;
-    const filtered = source.filter((r) => matchesFilter(r.card, currentFilter, r.foil));
-    renderCardView(resultsContainer, sortRows(filtered, sortKey), { mode });
+    return source.filter((r) => matchesFilter(r.card, currentFilter, r.foil));
+  }
+
+  function render(): void {
+    renderCardView(resultsContainer, sortRows(visibleRows(), sortKey), { mode });
   }
 
   const filterBar = createFilterBar(
@@ -119,6 +124,11 @@ export async function renderBulk(root: HTMLElement, params: URLSearchParams): Pr
     render();
   });
 
+  const csvButton = createCsvButton(
+    () => visibleRows().map((row) => ({ row, qty: row.qty })),
+    () => (notInDecks ? "bulk not in decks" : "bulk"),
+  );
+
   const totalQty = bulk.entries.reduce((sum, e) => sum + e.qty, 0);
 
   root.append(
@@ -129,7 +139,7 @@ export async function renderBulk(root: HTMLElement, params: URLSearchParams): Pr
       "div",
       { class: "toolbar" },
       filterBar,
-      h("div", { class: "toolbar-actions" }, notInDecksToggle, sortSelect, priciestButton, viewToggle),
+      h("div", { class: "toolbar-actions" }, notInDecksToggle, sortSelect, priciestButton, viewToggle, csvButton),
     ),
     resultsContainer,
   );

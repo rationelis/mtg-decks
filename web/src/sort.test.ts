@@ -13,6 +13,7 @@ function row(name: string, overrides: Partial<CardData> = {}) {
     oracle_text: "",
     set: "",
     set_name: "",
+    collector_number: "",
     rarity: "",
     image_uri: null,
     scryfall_uri: null,

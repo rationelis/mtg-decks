@@ -56,6 +56,7 @@ class PrintingData:
 
     set: str = ""
     set_name: str = ""
+    collector_number: str = ""
     rarity: str = ""
     image_uri: str | None = None
     scryfall_uri: str | None = None
@@ -76,6 +77,7 @@ class CardData:
     oracle_text: str = ""
     set: str = ""
     set_name: str = ""
+    collector_number: str = ""
     rarity: str = ""
     image_uri: str | None = None
     scryfall_uri: str | None = None
@@ -153,6 +155,7 @@ def _card_to_data(card: dict[str, Any], now: str) -> CardData:
         oracle_text=_oracle_text(card),
         set=card.get("set", ""),
         set_name=card.get("set_name", ""),
+        collector_number=str(card.get("collector_number", "")),
         rarity=card.get("rarity", ""),
         image_uri=_image_uri(card),
         scryfall_uri=card.get("scryfall_uri"),
@@ -169,6 +172,7 @@ def _printing_of(data: CardData) -> PrintingData:
     return PrintingData(
         set=data.set,
         set_name=data.set_name,
+        collector_number=data.collector_number,
         rarity=data.rarity,
         image_uri=data.image_uri,
         scryfall_uri=data.scryfall_uri,
@@ -181,6 +185,7 @@ def _cached_printing(cached: dict[str, Any]) -> PrintingData:
     return PrintingData(
         set=str(cached.get("set", "")),
         set_name=str(cached.get("set_name", "")),
+        collector_number=str(cached.get("collector_number", "")),
         rarity=str(cached.get("rarity", "")),
         image_uri=cached.get("image_uri"),
         scryfall_uri=cached.get("scryfall_uri"),
@@ -203,6 +208,7 @@ def _cached_card_data(name: str, cached: dict[str, Any]) -> CardData:
         oracle_text=str(cached.get("oracle_text", "")),
         set=str(cached.get("set", "")),
         set_name=str(cached.get("set_name", "")),
+        collector_number=str(cached.get("collector_number", "")),
         rarity=str(cached.get("rarity", "")),
         image_uri=cached.get("image_uri"),
         scryfall_uri=cached.get("scryfall_uri"),

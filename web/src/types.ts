@@ -11,6 +11,8 @@ export type PriceState = "exact" | "fallback" | "unavailable";
 export interface CardPrinting {
   set: string;
   set_name: string;
+  /** The printing's collector number (e.g. "292"), as Scryfall has it. */
+  collector_number: string;
   rarity: string;
   image_uri: string | null;
   scryfall_uri: string | null;
@@ -33,6 +35,8 @@ export interface CardData {
    * pins a different printing uses `printings` instead (see printing.ts). */
   set: string;
   set_name: string;
+  /** The printing's collector number (e.g. "292"), as Scryfall has it. */
+  collector_number: string;
   rarity: string;
   image_uri: string | null;
   scryfall_uri: string | null;
