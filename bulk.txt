@@ -260,7 +260,6 @@
 1 Edgar, Ancient Bloodlord (FRA) 270
 1 Edric, Spymaster of Trest (OTC) 221
 1 Effortless Master (TDM) 181
-1 Eiganjo, Seat of the Empire (NEO) 268
 1 Electrosiphon (PIP) 104
 1 Electrostatic Field (OTC) 164
 1 Elemental Eruption (OTC) 27
