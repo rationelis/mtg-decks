@@ -10,7 +10,6 @@ browsing bulk and comparing it against decks/collections.
 bulk.txt        everything physically owned, as one flat list
 decks/          decks (a subfolder decks/archived/ holds retired ones)
 collections/    other desired-card lists (wishlists, cubes, etc.) - optional
-precons/        untouched precon reference lists, for manual diffing only
 cache/          Scryfall identity cache + Cardmarket bulk prices, committed
 scripts/build/  the build pipeline (parse → resolve → emit JSON)
 web/            the static viewer (Vite + TypeScript)
@@ -47,7 +46,7 @@ Recognized keys: `name`, `commander`, `archidekt`, `status`
 `collections/`). None are required - a plain list with zero metadata
 works fine.
 
-**Ownership is never stored.** A deck/collection is a *desired* list; the
+**Ownership is never stored.** A deck/collection is a _desired_ list; the
 build computes Owned/Missing by allocating `bulk.txt` across every "real"
 active deck at once (so two decks can't both claim the same scarce
 physical copy - see "Card allocation" below), then ships the result as
@@ -106,7 +105,7 @@ an unpinned entry shows the card's default printing (the first pin in
 
 A priced card's `price_state` tells you how literally to trust the
 number: `exact` means the price came from the exact printing currently
-displayed; `fallback` means it's a reference price for a *different*
+displayed; `fallback` means it's a reference price for a _different_
 printing of the same card (or a reference/wishlist deck you don't own);
 `unavailable` means no price at all. The web app shows a small note
 wherever prices are displayed, naming the Cardmarket fetch date and
